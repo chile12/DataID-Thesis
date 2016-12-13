@@ -1,0 +1,519 @@
+% (C) Jörn Hoffmann, 2014
+% Technische Informatik
+% Institut für Mathematik und Informatik
+% Universität Leipzig 
+
+
+\documentclass[a4paper,ngerman,twoside,BCOR1.5cm,headsepline,DIV12,appendixprefix,final,12pt]{scrbook}
+%************************************************************************************************************************
+%* packages
+%************************************************************************************************************************
+% Select language
+\usepackage[english, german, ngerman]{babel}
+\selectlanguage{ngerman}
+%\usepackage[left=3cm, right=3cm]{geometry}
+%\usepackage{times}             % use times font
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{lmodern}            % use lmodern fonts
+\usepackage{longtable}
+\usepackage{textcomp}           % for \textmu (non-italic $\mu$)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}     % can use native umlauts
+\setcounter{secnumdepth}{3}     % limit enumeration depth
+\setcounter{tocdepth}{3}        % limit TOC depth
+\usepackage[sf,bf,tight,hang,raggedright]{subfigure}
+\usepackage{varioref}           % nice refs
+\usepackage{amsmath}            % math fonts
+\usepackage{amssymb}            % math symbols
+\usepackage{graphicx}
+\usepackage{setspace}           % line spacing 
+%\setstretch{1.1}
+\makeatletter
+\usepackage{fancybox}           % provide nice boxes
+%\usepackage{units}              % unified way of setting values with units
+\usepackage[clearempty]{titlesec}
+\pagenumbering{Roman}
+\usepackage[small,sf,bf,hang]{caption}
+% for geralpha
+\usepackage{babelbib} %\usepackage{bibgerm}
+% space between caption & float
+%\setlength{\abovecaptionskip}{-0.3cm}   % 0.5cm as an example
+%\setlength{\belowcaptionskip}{-0.2cm}   % 0.5cm as an example
+\usepackage{fancyvrb}           % algorithm-boxes
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage{remreset}
+\usepackage{palatino}
+\usepackage{hyphenat}
+
+\usepackage{cleveref}
+\usepackage{xspace}
+
+\usepackage{todonotes}
+% custom hyphenation
+%\hyphenation{cSCAN SCAN SSTF SATF FIFO in-te-res-siert}
+%\lefthyphenmin=3
+%\righthyphenmax=3
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10,babel]{microtype}% Better typography
+
+%Codelistings:
+%\usepackage{minted}
+
+%Graphics: (Bachelor: alternatively use inkscape and export PDFs -> \include{...})
+%\usepackage{tikz}
+
+
+%************************************************************************************************************************
+%* command changes, definitions
+%************************************************************************************************************************
+
+\newcommand{\provenance}{{\ttfamily\scshape\bfseries provenance}\xspace}
+\newcommand{\licensing}{{\ttfamily\scshape\bfseries licensing}\xspace}
+\newcommand{\access}{{\ttfamily\scshape\bfseries access}\xspace}
+\newcommand{\extensibility}{{\ttfamily\scshape\bfseries extensibility}\xspace}
+\newcommand{\interoperability}{{\ttfamily\scshape\bfseries interoperability}\xspace}
+\newcommand{\evolvability}{{\ttfamily\scshape\bfseries evolvability}\xspace}
+
+
+\newcommand{\odrl}{{\ttfamily\scshape\bfseries odrl}\xspace}
+\newcommand{\cmdi}{{\ttfamily\scshape\bfseries cmdi}\xspace}
+\newcommand{\cmd}{{\ttfamily\scshape\bfseries cmd}\xspace}
+\newcommand{\org}{{\ttfamily\scshape\bfseries org}\xspace}
+\newcommand{\prov}{{\ttfamily\scshape\bfseries prov-o}\xspace}
+\newcommand{\void}{{\ttfamily\scshape\bfseries void}\xspace}
+\newcommand{\dct}{{\ttfamily\scshape\bfseries dcterms}\xspace}
+\newcommand{\ckan}{{\ttfamily\scshape\bfseries ckan}\xspace}
+\newcommand{\dcat}{{\ttfamily\scshape\bfseries dcat}\xspace}
+\newcommand{\dcatap}{{\ttfamily\scshape\bfseries dcat-ap}\xspace}
+\newcommand{\dmp}{{\ttfamily\scshape\bfseries dmp}\xspace}
+\newcommand{\adms}{{\ttfamily\scshape\bfseries adms}\xspace}
+\newcommand{\metashare}{{\ttfamily\scshape\bfseries meta-share}\xspace}
+
+
+\newcommand{\prop}[1]{{{\texttt{#1}}}}
+
+\newcommand\footnoteurl[1]{\footnote{\scriptsize\url{#1}}}
+
+\fancyhead{} % clear all header fields
+\fancyhead[LE]{\bfseries \leftmark}
+\fancyhead[RO]{\bfseries \rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\bgroup\sffamily\thepage\egroup}
+
+\renewcommand*{\ps@plain}{%
+ \renewcommand*{\@oddhead}{}%
+  \let\@evenhead\@oddhead
+  \renewcommand*{\@evenfoot}{%
+  \set@tempdima@hw\hss\hb@xt@ \@tempdima{\vbox{%
+  \if@fsl \hrule \vskip 3\p@ \fi
+  \hb@xt@ \@tempdima{{\sffamily\thepage\hfil}}}}}%
+ \renewcommand*{\@oddfoot}{%
+    \set@tempdima@hw\hb@xt@ \@tempdima{\vbox{%
+    \if@fsl \hrule \vskip 3\p@ \fi
+    \hb@xt@ \@tempdima{{\hfil\sffamily\thepage
+    \if@twoside\else\hfil\fi}}}}\hss}%
+}
+
+\parindent0pt
+\parskip0.5\baselineskip
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+%\definecolor{bgcolor}{rgb}{1.0,0.95,0.95}
+\def\sectionmark#1{\markright{\ifnum \c@secnumdepth>\z@
+\sffamily\thesection\ \relax \fi\sffamily #1}}
+\def\chaptermark#1{\markboth{\ifnum \c@secnumdepth>\m@ne\sffamily\thechapter.\ \fi\sffamily #1}{}}
+\renewcommand*\footnoterule{%
+	\kern-3\p@\ifx\@textbottom\relax\else\vskip \z@ \@plus.1fil\fi
+  \hrule\@width.1\columnwidth
+  \kern 2.6\p@}
+
+% instead of sloppy
+%\tolerance 1414
+%\hbadness 1414
+\tolerance 2414
+\hbadness 2414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000     % Hurenkinder
+\clubpenalty=10000      % Schusterjungen
+\vfuzz \hfuzz
+\raggedbottom
+
+% use nice footnote indentation
+\deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}\,}
+\usepackage{xspace}
+
+%figures
+\newlength{\figurewidth}
+\setlength{\figurewidth}{.077cm}
+
+%change footnot counter to count over the whole document
+\@removefromreset{footnote}{chapter}
+
+\def\emph{\textit}
+
+%************************************************************************************************************************
+%* common commands 
+%************************************************************************************************************************
+\newcommand\para[1]{\paragraph{#1}} %~\medskip\\
+% ... more ...
+
+%************************************************************************************************************************
+%* pdflatex checks, custom meta informations for the pdf
+%************************************************************************************************************************
+% check whether we are running pdflatex
+\newif\ifmypdf
+\ifx\pdfoutput\undefined
+\mypdffalse % we are not running pdflatex(älteren, aktuellen)
+\else
+\pdfoutput=1 % we are running pdflatex
+\pdfcompresslevel=9     % compression level for text and image;
+\mypdftrue
+\fi
+
+% remove "pagebackref" for the final version
+\ifmypdf
+  \usepackage[pdftex,
+              citebordercolor={0.75 0.75 1},
+              filebordercolor={0.75 0.75 1},
+              linkbordercolor={0.75 0.75 1},
+            % pagebordercolor={0.75 0.75 1},
+              urlbordercolor={0.75 0.75 1},
+              pdfborder={0.75 0.75 1},
+              pagebackref, plainpages=false,pdfpagelabels=true]{hyperref}
+  \hypersetup{
+    %
+    pdftitle={...},
+    pdfauthor={...},
+    pdfkeywords={...},
+    pdfsubject={...},
+    % ...
+  }
+\else
+  \newcommand{\texorpdfstring}[2]{#1}
+\fi
+
+%************************************************************************************************************************
+%* begin document
+%************************************************************************************************************************
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\large
+~\\
+\vspace{1cm}
+\textbf{\sffamily	Universität Leipzig\\
+			Fakultät für Mathematik und Informatik\\
+			Institut für Informatik\\}
+
+\vspace{3cm}
+{\Large\textbf{\sffamily Master Thesis }}
+
+
+\large
+DataID\\ Towards Semantically Rich Metadata for Complex Datasets
+\vspace{1cm}
+\end{center}
+
+Abstract: <Gegenstand und Resultate der Arbeit. Was ist neu? Warum sollte man die Arbeit lesen?>
+
+\vfill
+
+{\large
+\begin{tabular}{p{7cm} l}
+&\\
+\small
+Leipzig, Oktober 2016		& \small vorgelegt von\\
+				& \small Markus Freudenberg\\
+				& \small Studiengang Informatik
+\end{tabular}}
+
+\begin{tabular}{p{7cm} l}
+&\\
+\small
+Betreuender Hochschullehrer: 	& \small Dr. Sebastian Hellmann \\
+				& \small Fakultät für Mathematik und Informatik\\
+				& \small Betriebliche Informationssysteme, Semantic Web
+\end{tabular} 
+
+
+\newpage
+\thispagestyle{empty}
+
+\section*{Acknowledgements}
+\todo{thx}
+
+\cleardoublepage{}
+\tableofcontents{}
+
+%\sloppy{}
+\listoffigures
+%\fussy{}
+
+\frenchspacing
+%\lefthyphenmin=3
+%\righthyphenmin=3
+
+%************************************************************************************************************************
+%* main chapters
+%************************************************************************************************************************
+\mainmatter
+\shorthandoff{"}
+
+\chapter{Schreibhilfen}
+\label{chap:writing}
+Das folgende Kapitel dient der Themenabgrenzung und soll gibt Orientierung bei der Arbeit. Es ist in der fertigen Arbeit nicht zu finden.
+
+Die Kapitel Mindmap, Exposé und Zeitplan sollten VOR Beginn der Arbeit erstell werden und beim Betreuer abgegeben werden; das ist nicht direkter Bestandteil der schriftlichen Ausarbeitung der Bachelor/Master/Diplomarbeit.
+
+\section{Einfache Worte}
+Hier wird mit einfachen Worten, also ohne Fachwörter zu benutzen, das Thema in einem Satz beschrieben.
+
+\section{Wissenschaftlicher Dreisatz}
+Nachfolgend der wissenschaftliche Dreisatz, um das Thema und das Vorgehen näher zu beschreiben.
+
+\paragraph{Thema}
+Hier wird das Thema kurz und bündig wiedergegeben, z.B.: Ich forsche an / arbeite an / untersuche / beschäftige mich mit etc.
+
+\paragraph{Erkenntnisinteresse}
+Nachfolgend wird die Fragestellung herausgehoben, z.B.: Weil ich herausfinden möchte was / wie / warum / ob etc.
+
+\paragraph{Absicht und Ziele}
+Hier werden die Ziele und Absichten dargestellt, also : Um zu zeigen warum, wie, weshalb etc. Es folgt eine Auflistung der Ziele und Teilziele:
+
+\begin{enumerate}
+\item Darstellung der Methode.
+\item Darstellung der Funktionsweise.
+\item Unterlegen mit Messerwerten.
+\item etc...
+\end{enumerate}
+
+\section{Mindmap}
+Die nachfolgende Mindmap stellt die Zusammenhänge der Arbeit dar. Dabei sollten die Wissensgebiete sowie noch zu klärende Themen abgesteckt werden. Das Vorgehen sollte dabei ersichtlich sein.
+
+\section{Exposé}
+Das nachfolgende Exposé gibt einen Abriss der geplanten Arbeit. Behandelt werden muss das Thema, die Motivation, die Methoden, das Vorgehen, eine  Literaturliste sowie das  zu erwartende Ergebnis. 
+
+\section{Zeitplan}
+Nach dem Exposé folgt ein grober Zeitplan bzw. Projektplan. Dieser sollte die wesentlichen Arbeitsschritte, Meilensteine und Konsultationstermine enthalten. Beispiele sind etwa die Literaturrecherche, das Design, die Implementierung sowie ein oder mehrere Prototypen-Meilensteine. Auch die Schreibarbeit sollte geplant werden. Beispiele ist der Abschluss des Inhaltsverzeichnisses, der Abschluss einer Stichpunktfassung, die erste Grobfassung etc. Auch eine gewisse Zeit für Korrekturen sollte eingeplant werden.
+
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Motivation}
+In 2006, Clive Humby coined the phrase "the new oil" for (digital) data\footnoteurl{https://www.theguardian.com/technology/2013/aug/23/tech-giants-data}, heralding the ever-expanding realm of what is now summarised as Big Data. Attributed with the same transformative and wealth-producing abilities, once connected to crude oil bursting out of the earth, data has become a cornerstone of economical and societal visions. In fact, the amount of data generated around the world has increased dramatically over the last years, begging the question if those visions have already come to pass. 
+
+The steep increase in data produced can be ascribed to multiple factors. To name just a few:
+\begin{itemize}
+\item The growth in content and reach of the World Wide Web.
+\item The digitalising of former analogue data.
+\item The realisation of what is called the Internet of Things (IoT)\footnoteurl{http://siliconangle.com/blog/2015/10/28/page/3\#post-254300}.
+\item The shift of classic fields of research and industry to computer-aided processes and digital resource management (e.g. digital humanities, industry 4.0).
+\item Huge data collections about protein sequences or human disease taxonomies are established in the life sciences.
+\item Research areas like natural language processing or machine learning are generating and refining data. 
+\item In addition, open data initiatives like the Open Knowledge Foundation are following the call for 'Raw data, Now!'\footnoteurl{http://www.wired.co.uk/news/archive/2012-11/09/raw-data} of Tim Berners-Lee, demanding open data from governments and organisations.
+\end{itemize} 
+%While others, like DBpedia, are publishing huge open public datasets, refining human knowledge into machine-readable data.
+
+As a new discipline, data engineering is dealing with the fallout of this trend, namely with issues of how to extract, aggregate, store, refine, combine and distribute data of different sources in ways which give equal consideration to the four V's of Big Data: Volume, Velocity, Variety and Veracity\footnoteurl{http://www.ibmbigdatahub.com/infographic/four-vs-big-data}. 
+
+Datasets are the building blocks of these endeavours. They are the combination of multiple datums bundled together by at least one dimension of distinction (such as source, topic or category). When working with these bricks of information, additional data about datasets (or metadata) is needed. Dataset metadata enables users to discover, understand and (automatically) process the data it holds, as well as providing provenance on how a dataset came into existence. 
+This metadata is often created, maintained and stored in diverse data repositories featuring disparate data models that are often unable to provide the metadata necessary to automatically process the datasets described. In addition, many use cases for dataset metadata call for more specific information than provided by most available metadata vocabularies, depending on the use case at hand. Extending existing metadata models to fit these scenarios is a cumbersome process resulting often in non-reusable solutions. 
+
+One vocabulary for dataset metadata is breaking this trend. 
+Since its introduction in 2013, the Data Catalog Vocabulary [DCAT] vocabulary, a W3C recommendation, has been widely adopted as a foundation for dataset metadata in research, government and industry [needs at least one link to back this up]. The very general approach adopted by the authors of DCAT allows for portraying any given (digital) object with this ontology. Extending DCAT is very easy and mappings to other metadata formats are not difficult to achieve. 
+
+Conversely, the general approach of DCAT is often too imprecise where specificity is needed. A short list of the most pressing issues resulting from this impreciseness:
+
+\begin{itemize}
+\item Insufficient provenance information
+\item Missing relations between Datasets
+\item Relations to agents are too cursory
+\item Technical description of web-resources is lacking, restricting the accessibility of the data
+\item General lack of specificity, inviting non-machine-readable expressions of resources
+\end{itemize}
+
+Similar findings were concluded at the W3C/VRE4EIC workshop Smart Descriptions \& Smarter Vocabularies (SDSVoc) in 2016 [reference to the proceedings (not yet published)]. As a result of lacking specificity, current representations of datasets with DCAT are often not contributing to the main benefits for publishing data on the web [DWBP] : Reuse, Comprehension, Linkability, Discoverability, Trust, Access, Interoperability and Processability. This, in turn, amplifies broader problems with published datasets, especially in the open data community, reflected by the Open Data Strategy[needs link], defining the following six barriers for “open public data” [needs link], proposed by the European Commission in 2011:
+
+\begin{enumerate}
+\item a lack of information that certain data actually exists and is available,
+\item a lack of clarity of which public authority holds the data,
+\item a lack of clarity about the terms of re-use,
+\item data made available in formats that are difficult or expensive to use,
+\item complicated licensing procedures or prohibitive fees,
+\item exclusive re-use agreements with one commercial actor or re-use restricted to a government-owned company.
+\end{enumerate}
+
+Many issues with DCAT itself or their manifestation in reality can be solved by existing ontologies, even when restricted only to W3C recommended ontologies. For example, the PROV Ontology [PROV-O], deals with questions on how to record provenance information on a very granular level. While the Open Digital Rights Language [ODRL] provides machine readable descriptions of licenses and other policies. The existence of problems, like those listed above, despite these offered solutions, speaks to a larger problem of missing organisational structures for landscaping of vocabularies (offering recommendations on combining, revising and usage of ontologies). A study of 91 commonly used vocabularies concluded\cite{feeney2015linked}:
+
+\begin{quote}
+"Our validation detected a total of 6 typos, 14
+missing or unavailable ontologies, 73 language level
+errors, 310 instances of ontology namespace violations
+and 2 class cycles which we believe to be errors."
+\end{quote}
+
+These errors accumulate when strong interdependencies exist between
+vocabularies, adding logical and practical problems, which make model unification inconsistent.
+
+\section{Objectives}
+In this thesis, I will present the metadata model of DataID, a multi-layered metadata ecosystem, which, in its core, describes complex datasets and their different manifestations, as well as relations to agents like persons or organisations, in regard to their rights and responsibilities.
+
+Improving the portrayal of \provenance, \licensing and \access, while maintaining the easy \extensibility and \interoperability of DCAT, are the linchpin objectives in our effort to present a comprehensive, extensible and interoperable metadata vocabulary.
+Multiple well established ontologies (such as PROV-O, VOID and FOAF [needs links]) are reused for maximum compatibility to establish a uniform and accepted way to describe and deliver dataset metadata for arbitrary datasets and to put existing standards into practice.
+
+The DataID Ecosystem is a suite of ontologies comprised of DataID core and multiple extension ontologies, clustered around DataID core. It is the result of a modularisation process, which was necessary to preserve \extensibility and \interoperability of the DCAT vocabulary, on which all ontologies are based.
+
+I want to present my solution for most of the current problems with dataset metadata in general and DCAT in particular, following these objectives:
+
+\begin{enumerate}
+\item Provide sufficient support for extensive and machine-readable representations for \provenance, \licensing and data \access.
+\item Achieve this by extending DCAT with well-established ontologies to solve as many issues as possible (favour W3C recommended ontologies).
+\item Show, that by modularising into a landscape of ontologies, DataID preserves the general character of DCAT, supporting \extensibility and \interoperability.
+\item Prove that the resulting ecosystem is capable of serving for complex demands on dataset metadata (proving \extensibility).
+\item Demonstrate the \interoperability with other metadata formats.
+\item Evaluate the universal applicability of DataID for datasets in any given domain or scenario.
+\end{enumerate}
+
+DataID was developed under the sponsorship of the ALIGNED project\todo{link}, following its main goals:
+\begin{itemize}
+\item to be part of a unified software and data engineering process
+\item describing the complete data lifecycle and domain model
+\item with an emphasis on data quality and integrity
+\end{itemize}
+
+\section{Structure}
+The remainder of this document is structured as follows:
+ \todo{add structure of thesis here}
+%In a previous version of DataID\cite{dataID2014} we already provided a solution for an accessible, compatible and granular best-practice of dataset descriptions for Linked Open Data (LOD).
+
+%We want to build on this foundation, presenting improvements in regard to \provenance, \licensing and \access. In particular, we want to address the aspects \extensibility and \interoperability of dataset metadata, demonstrating the universal applicability of DataID in any domain or scenario.
+%As a proof of concept for its \extensibility we will show how to provide extensive metadata for Data Management Plans (\dmp) of research projects (cf. \Cref{dmps}) by extending the DataID model with properties specific to this scenario.
+%The \interoperability with other metadata models is exemplified by the mapping of common \cmdi (CLARIN) profiles to DataID in \Cref{cmdi}.
+
+
+\chapter{Grundlagen}
+\label{chap:base}
+
+Das Grundlagenkapitel, kurz und knapp. Hier sollten die Themen auftauchen, die später wieder aufgegriffen werden und zum Verständnis der Arbeit nötig sind (mehr nicht). Hier stehen meist Referenzen/ Zitate von Lehrbüchern und anderen Publikationen.  Das Kapitel sollte ca. 5 - 10,  max. 15 Seiten umfassen.
+
+\chapter{Related Work}
+\label{chap:relatedwork}
+
+The Data Catalog Vocabulary (\dcat) is a W3C Recommendation \cite{ddcat} and serves as a foundation for many available dataset vocabularies and application profiles.
+In \cite{MaaliCP10} the authors introduce a standardised interchange format for machine-readable representations of government data catalogues. 
+%Vocabulary terms for \dcat are inferred from the survey on seven data catalogs from Europe, US, New Zealand and Australia.
+The \dcat vocabulary includes the special class Distribution
+for the representation of the available materialisations of a
+dataset (e.g. CSV file, an API or RSS feed). These distributions cannot be described further within \dcat (e.g. the type of data, or access procedures).
+Applications which utilise the \dcat vocabulary (e.g. datahub.io\footnoteurl{http://datahub.io/}) provide no standardised means for describing more complex datasets either. 
+Yet, the basic class structure of \dcat (Catalog, CatalogRecord, Dataset, Distribution) has prevailed. Range definitions of properties provided for these classes are general enough to make this vocabulary easy to extend.
+
+%\todo{rewritten, please read} The Provenance Ontology\cite{prov} (\prov) is a widely adopted W3C standard and serves as a lightweight way to express the interactions between activities, agents and entities (e.g. datasets).
+%\dcat only uses basic metadata to express provenance based on \dct properties like 
+%\prop{dct:creator} or 
+\dcat, as opposed to \prov, expresses provenance in a limited way using a few basic properties such as
+\prop{dct:source} or \prop{dct:creator}, thus it does not relate semantically to persons or organisations involved in the publishing, maintenance etc. of the dataset. %Other related entities, like software, projects, funding etc., are neglected all together.
+There is no support or incentive to describe source datasets or conversion activities of transformations responsible for the dataset at hand. This lack is crucial, especially in a scientific contexts, as it omits the processes necessary to replicate a specific dataset, a feature easily obtainable by the use of \prov.
+\iffalse
+The Open Digital Rights Language (\odrl)\footnoteurl{https://www.w3.org/ns/odrl/2/ODRL21} is an initiative of the W3C community group\footnoteurl{https://www.w3.org/community/odrl/}, aiming to develop an open standard for policy expressions. The \odrl version 2.0 core model defines
+%8 classes to define a 
+licensing policies in regard to their permissions
+granted, duties and constraints associated with these
+permissions as well as involved legal parties. Thus, an \odrl
+description allows to specify, in a machine-readable way, if
+data can be edited, integrated or redistributed.
+\fi%\todo{commented out part on odrl to save space!}
+
+Metadata models vary and most of them do not offer enough granularity to sufficiently describe complex datasets in a semantically rich way. 
+For example, \ckan{}\footnoteurl{http://ckan.org/}(Comprehensive Knowledge Archive Network), which is used as a metadata schema in data portals like datahub.io, partially implements the \dcat vocabulary, but only describes resources associated with a dataset superficially.
+%KM: Changed sentence from: Most additional properties described [...] paris linked by 
+Additional properties are simple key-value pairs which themselves are linked by \prop{dct:relation} properties. This data model is semantically poor and inadequate for most use cases wanting to automatically consume the data of a dataset. 
+
+While not implementing the \dcat vocabulary, \metashare \cite{mccrae_2015_OWLmetashare} does provide an almost complete mapping to \dcat, providing an extensive description of language resources, based on a XSD schema.
+In addition it offers an exemplary way of describing licenses and terms of reuse. Yet, \metashare is specialised on language resources, thus lacking generality and extensibility for other use cases.
+%almost exclusively applicable to language resources (as intended), making it hard to extend for other purposes. 
+%, and is therefore no choice for many use cases.
+%Therefore it is no choice for many use cases.
+
+Likewise the Asset Description Metadata Schema\footnoteurl{https://www.w3.org/TR/vocab-adms/} (\adms) is a profile of \dcat, which only describes a specialised class of datasets: so-called Semantic Assets. 
+%%\todo{SH: not clear what a semantic asset is, maybe reusable text snippets?, MF: This sentence is more or less the exect description of an asset from the W3C documentation... } 
+Highly reusable metadata (e.g. code lists, XML schemata, taxonomies, vocabularies etc.), which is comprised of relatively small text files.
+
+\dcatap (\dcat Application Profile for data portals in Europe\footnoteurl{https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11}) is a profile, extending \dcat with some \adms properties. It has been endorsed by the ISA Committee in January of 2016\footnoteurl{https://joinup.ec.europa.eu/community/semic/news/dcat-ap-v11-endorsed-isa-committee}.  Due to the stringent cardinality restrictions, extending \dcatap to serve more elaborate purposes will prove difficult. As remarked in section 7 the representation of different agent roles is lacking in the current version of \dcatap. 
+%In our opinion the second solution proposed, using \prov, is the most comprehensive way of resolving this issue. 
+Neither \dcatap nor \adms give any consideration to defining responsibilities of agents, extending provenance or providing thorough machine-readable licensing information.
+
+Similar problems afflicted the previous version of the DataID ontology\cite{dataID2014}. Rooted in the Linked Open Data world, it neglected important information or provided properties (e.g. \prop{dataid:graphName}) which are orphans outside this domain. While already importing the \prov ontology, it was lacking a specific management of rights and responsibilities.
+
+
+Aufführung anderer bzw. ähnlichen Arbeiten zum Thema. Hier stehen die meisten Zitate zu \emph{wissenschaftlichen} Publikationen. Dies müssen nicht nur aktuelle Paper sein, sondern können auch Publikationen älteren Datums sein. Die Prägnanz, die Generalisierung und der Vergleiche stehen hierbei im Vordergrund. Auch kann eine Diskussion enthalten sein.
+
+Das Kapitel sollte so viele Seiten wie nötig umfassen, um eine Einordnung des Sachverhalts gegenüber anderen Gebieten zu erreichen. Der Richtwert sind 5 bis max. 10 Seiten. 
+
+\chapter{Entwurf}
+\label{chap:design}
+In diesem Kapitel wird der Entwurf des System beschrieben. Dies soll kein Lasten / Pflichtenheft sein oder die Anforderungen bis ins kleinste Details aufzählen. Vielmehr sollen wichtige Design Entscheidungen erklärt werden. Hierzu gehören das Design, Konzepte und Modelle. 
+
+Wichtig ist, dass die eigenen Ideen und Beiträge als solche hervorgehoben werden. In Bachelorarbeiten sollte hierbei das gelernte Wissen geschickt angewandt werden. In Master und Diplom sollten hierbei wissenschaftliche Innovationen oder die kreative Anwendung anklingen. In einer Dissertation muss hier klar der wissenschaftliche Fortschritt (eine Erfindung, eine Neuerung) sowie der Nutzen ersichtlich sein.
+
+Dies ist das Hauptkapitel der Arbeit und sollte so viele Seiten wie nötig enthalten.
+
+
+\chapter{Implementierung}
+\label{cahp:impl}
+
+In diesem Kapitel werden Implementierungsdetails behandelt. Dabei wird der Aufbau des System, die eigentliche Umsetzung, Konfigurationen und die Handhabung betrachtet. Das Kapitel sollte sich nicht in Details verlieren aber dennoch die Anwendung behandeln. 
+
+Das Kapitel sollte soviel wie nötige Seiten umfassen, dabei aber knapp gehalten werden!
+
+\chapter{Auswertung}
+\label{chap:eval}
+
+In diesem Kapitel folgt die Auswertung der Arbeit. Hier werden Messerreihen wie z.B. die Latenzzeit, die Performanz, der Speicherverbrauch, die Erkennungsrate etc. aufgeführt. Ferner werden die Methoden erläutert, die Ergebnisse interpretiert und diskutiert.
+
+Auch hier gibt es keinen Richtwert, das Kapitel sollte umfassend wie nötig sein.
+
+\chapter{Zusammenfassung und Ausblick}
+\label{chap:conclusion}
+
+Am Ende der Arbeit steht die Zusammenfassung, die alle wichtigen Punkte und Ergebnisse der Arbeit in einfachen Worten wiedergibt. Anschließend folgt ein Ausblick auf anschließende Arbeiten und Themenvorschläge.
+
+Das Kapitel sollte zwischen einer und drei Seiten umfassen.
+
+%************************************************************************************************************************
+%* glossary, appendix, bibliography, etc.
+%************************************************************************************************************************
+\addchap{Glossar}
+\begin{description}
+\item[Vocabulary] On the Semantic Web, vocabularies define the concepts and relationships (also referred to as "terms") used to describe and represent an area of concern. Vocabularies are used to classify the terms that can be used in a particular application, characterize possible relationships, and define possible constraints on using those terms. In practice, vocabularies can be very complex (with several thousands of terms) or very simple (describing one or two concepts only)\cite{W3CVOCONTO}.
+
+\item[Ontology] There is no clear division between what is referred to as "vocabularies" (see Vocabulary) and "ontologies". The trend is to use the word "ontology" for more complex, and possibly quite formal collection of terms, whereas "vocabulary" is used when such strict formalism is not necessarily used or only in a very loose sense. Vocabularies are the basic building blocks for inference techniques on the Semantic Web\cite{W3CVOCONTO}.
+\end{description}
+
+\addchap{Abkürzungsverzeichniss}
+<falls viele Abkürzungen vorkommen>
+\begin{description}
+\item [TLA] Three Letter Acronym
+\item [TLB] Translation Lookaside Buffer
+\item [RTFM] ...
+\end{description}
+
+\bibliographystyle{alpha}
+\bibliography{own.bib}
+
+\addchap{Erklärung}
+\thispagestyle{empty}
+"`Ich versichere, dass ich die vorliegende Arbeit selbständig und nur unter Verwendung der angegebenen Quellen und Hilfsmittel angefertigt habe, insbesondere sind wörtliche oder sinngemäße Zitate als solche gekennzeichnet. Mir ist bekannt, dass Zuwiderhandlung auch nachträglich zur Aberkennung des Abschlusses führen kann"'.
+
+\vspace{3cm}
+\begin{tabularx}{\linewidth}{X X X}
+Ort & Datum	& Unterschrift\\
+\end{tabularx}
+
+\end{document}

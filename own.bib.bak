@@ -1,0 +1,242 @@
+@article{ICT4DBibliography2639,
+author = {Beñat Bilbao-Osorio and Soumitra Dutta and Bruno Lanvin},
+title = {Global Information Technology Report 2014. Rewards and Risks of Big Data},
+journal = {},
+year = {2014},
+volume = {},
+number = {},
+pages = {},
+note = {},
+keywords = {},
+ISBN = {},
+url = {http://www3.weforum.org/docs/WEF_GlobalInformationTechnology_Report_2014.pdf},
+annote = {Imported from http://ictlogy.net/bibliography/reports/projects.php?idp=2639}
+}
+
+@inproceedings{mccrae_2015_OWLmetashare,
+    author = {McCrae, John P. and Labropoulou, Penny and Gracia, Jorge and Villegas, Marta and Doncel, Victor R. and Cimiano, Philipp},
+    booktitle = {Proc. of 12th Extended Semantic Web Conference (ESWC 2015) Satellite Events, Portoro\v{z}, Slovenia},
+    citeulike-article-id = {13626970},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1007/978-3-319-25639-9\_42},
+    citeulike-linkout-1 = {http://dx.doi.org/10.1007/978-3-319-25639-9\_42},
+    citeulike-linkout-2 = {http://msw4.insight-centre.org/wp-content/uploads/2015/05/MSW4\_submission\_3.pdf},
+    keywords = {language\_resources, linguistic\_linked\_data, metashare, multilingualism},
+    month = jun,
+    pages = {271--282},
+    posted-at = {2015-05-25 16:44:21},
+    priority = {2},
+    title = {{One ontology to bind them all: The META-SHARE OWL ontology for the interoperability of linguistic datasets on the Web}},
+    volume = {9341},
+    year = {2015}
+}
+
+@misc{owl2rl,
+  author = {},
+  title = {},
+  howpublished = "\url{https://www.w3.org/TR/owl2-profiles/}"
+}
+
+@misc{shacl,
+  author = {},
+  title = {},
+  howpublished = "\url{http://w3c.github.io/data-shapes/shacl/}"
+}
+
+@inproceedings{r3dSchema,
+  author = {R\"{u}cknagel, Jessika and Vierkant, Paul and Ulrich, Robert and Kloska, Gabriele and Schnepf, Edeltraud },
+  publisher = {GFZ Germans Research Center for Geosciences},
+  title = {Metadata Schema for the Description of Research Data Repositories}
+}
+
+@misc{sixBarriers,
+  author = {},
+  title = {},
+  howpublished = "\url{http://service.re3data.org/schema}"
+}
+
+@misc{ddcat,
+  added-at = {2015-05-29T13:46:12.000+0200},
+  author = {Fadi Maali and DERI and NUI Galway},
+  institution = {W3C},
+  keywords = {ontologies semantic-web},
+  timestamp = {2015-09-20T13:07:21.000+0200},
+  title = {Data Catalog Vocabulary ({DCAT})},
+  type = {{W3C} Recommendation},
+  url = {https://www.w3.org/TR/vocab-dcat/}
+}
+
+@misc{ckan,
+  author = {},
+  title = {},
+  howpublished = "\url{http://ckan.org/}"
+}
+
+@misc{datahub,
+  author = {},
+  title = {},
+  howpublished = "\url{http://datahub.io/}"
+}
+
+@misc{adms,
+  author = {},
+  title = {},
+  howpublished = "\url{https://www.w3.org/TR/vocab-adms/}"
+}
+
+@misc{dcat-ap,
+  author = {},
+  title = {},
+  howpublished = "\url{https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11}"
+}
+
+@misc{isa,
+  author = {},
+  title = {},
+  howpublished = "\url{https://joinup.ec.europa.eu/community/semic/news/dcat-ap-v11-endorsed-isa-committee}"
+}
+
+@misc{datacube,
+    added-at = {2015-05-29T13:46:12.000+0200},
+  author = {Richard Cyganiak and DERI and NUI Galway Dave Reynolds and Epimorphics Ltd},
+  institution = {W3C},
+  keywords = {ontologies semantic-web},
+  timestamp = {2015-09-20T13:07:21.000+0200},
+  title = {The RDF Data Cube Vocabulary},
+  type = {{W3C} Recommendation},
+  url = {https://www.w3.org/TR/vocab-data-cube/},
+}
+
+@misc{ivse,
+  author = {Henrik Frystyk Nielsen},
+  title = {{Interoperability and Evolvability}},
+  howpublished = "\url{https://www.w3.org/Protocols/Design/Interevol.html}"
+}
+
+@misc{prov,
+  added-at = {2015-05-29T13:46:12.000+0200},
+  author = {McGuinness, Deborah and Lebo, Timothy and Sahoo, Satya},
+  institution = {W3C},
+  keywords = {ontologies semantic-web},
+  timestamp = {2015-09-20T13:07:21.000+0200},
+  title = {The {PROV} Ontology},
+  type = {{W3C} Recommendation},
+  url = {http://www.w3.org/TR/prov-o/},
+}
+
+
+
+@misc{odrl,
+  author = {},
+  title = {},
+  howpublished = "\url{https://www.w3.org/ns/odrl/2/ODRL21}"
+}
+
+@misc{void,
+  added-at = {2015-05-29T13:46:12.000+0200},
+  author = {Keith Alexander and Richard Cyganiak and Michael Hausenblas and Jun Zhao},
+  institution = {W3C},
+  keywords = {ontologies semantic-web},
+  timestamp = {2015-09-20T13:07:21.000+0200},
+  title = {Describing Linked Datasets with the {VoID} Vocabulary},
+  type = {{W3C} Interest Group Note},
+  url = {https://www.w3.org/TR/void/},
+}
+
+@misc{xsparql,
+  author = {},
+  title = {},
+  howpublished = "\url{https://www.w3.org/Submission/xsparql-language-specification/}"
+}
+
+@inproceedings{dataID2014,
+  acmid = {2660538},
+  added-at = {2016-04-29T16:52:51.000+0200},
+  author = {Br{\"u}mmer, Martin and Baron, Ciro and Ermilov, Ivan and Freudenberg, Markus and Kontokostas, Dimitris and Hellmann, Sebastian},
+  bdsk-url-1 = {http://doi.acm.org/10.1145/2660517.2660538},
+  bdsk-url-2 = {http://dx.doi.org/10.1145/2660517.2660538},
+  biburl = {http://www.bibsonomy.org/bibtex/2bc4517bf812e625bbefee00813a5d19a/aksw},
+  booktitle = {Proceedings of the 10th International Conference on Semantic Systems},
+  interhash = {9345f1e0c6766b9abf851d92c6c2e4a9},
+  intrahash = {bc4517bf812e625bbefee00813a5d19a},
+ % isbn = {978-1-4503-2927-9},
+  keywords = {LiderEU baron bruemmer hellmann kilt kontokostas},
+  location = {Leipzig, Germany},
+  pages = {84--91},
+  publisher = {ACM},
+  series = {SEM '14},
+  timestamp = {2016-04-29T16:52:51.000+0200},
+  title = {{DataID}: Towards Semantically Rich Metadata for Complex Datasets},
+  year = 2014
+}
+
+@inproceedings{MaaliCP10,
+  added-at = {2010-08-23T00:00:00.000+0200},
+  author = {Fadi Maali et al.},
+  biburl = {http://www.bibsonomy.org/bibtex/21d1620e37908e92d063ec363d35b0f3c/dblp},
+  booktitle = {EGOV},
+  crossref = {conf/egov/2010ifip},
+  editor = {Wimmer, Maria and Chappelet, Jean-Loup and Janssen, Marijn and Scholl, Hans Jochen},
+  ee = {http://dx.doi.org/10.1007/978-3-642-14799-9_29},
+  interhash = {0e07dafd1095b6ccc41b627e2c6e8fc8},
+  intrahash = {1d1620e37908e92d063ec363d35b0f3c},
+  %isbn = {978-3-642-14798-2},
+  keywords = {dblp},
+  publisher = {Springer},
+  series = {LNCS},
+  timestamp = {2010-08-24T11:32:54.000+0200},
+  title = {Enabling Interoperability of Government Data Catalogues.},
+  year = 2010
+}
+
+@inproceedings{Hinrichs2014,
+author = {Hinrichs, Erhard and Krauwer, Steven},
+booktitle = {Proceedings of LREC 2014},
+publisher = {European Language Resources Association (ELRA)},
+title = {{The CLARIN Research Infrastructure: Resources and Tools for e-Humanities Scholars}},
+year = {2014}
+}
+
+@inproceedings{DW2014,
+abstract = {In the European CLARIN infrastructure a growing number of resources are described with Component Metadata. In this paper we describe a transformation to make this metadata available as linked data. After this first step it becomes possible to connect the CLARIN Component Metadata with other valuable knowledge sources in the Linked Data Cloud.},
+%address = {Reykjavik, Iceland},
+author = {Durco, Matej and Windhouwer, Menzo},
+booktitle = {LDL 2014, LREC Workshop},
+keywords = {Linked Open Data,RDF,component metadata},
+title = {{From CLARIN Component Metadata to Linked Open Data}},
+year = {2014}
+}
+
+@inproceedings{BROEDER10.163,
+%address = {Valletta, Malta},
+author = {Broeder, Daan and Kemps-Snijders, Marc and Uytvanck, Dieter Van and Windhouwer, Menzo and Withers, Peter and Wittenburg, Peter and Zinn, Claus},
+booktitle = {Proceedings of LREC 2010},
+isbn = {2-9517408-6-7},
+publisher = {European Language Resources Association},
+title = {{A Data Category Registry- and Component-based Metadata Framework}},
+year = {2010}
+}
+
+@article{PAMPLE2013,
+    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-Jürgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
+    title =        "{Making Research Data Repositories Visible: The re3data.org Registry}",
+    journal =      "PLoS ONE",
+    volume =       "8(11)",
+    number =       "e78080",
+    year =         "2013"
+}
+
+@article {feeney2015linked,
+	title = {Linked data schemata: fixing unsound foundations},
+	journal = {Semantic Web Journal-Special Issue on Quality Management of Semantic Web Assets},
+	year = {2016},
+	author = {Feeney, Kevin and Mendel-Gleason, Gavin and Brennan, Rob}
+}
+
+
+@misc{W3CVOCONTO,
+  author = {W3C},
+  title = {{VOCABULARIES}},
+  howpublished = "\url{https://www.w3.org/standards/semanticweb/ontology}",
+  year = {2015}, 
+  note = "[Online; accessed 01-December-2016]"
+}

@@ -1,0 +1,13 @@
+\chapter{Einleitung}
+\label{chap:intro}
+\pagenumbering{arabic}
+
+Einleitung z.B. mit folgenden Themen:
+\begin{itemize}
+	\item Motivation, d.h. was ist an diesem Thema interessant oder dringlich. Was ist die Problemstellung und warum wurde dieses Thema gewählt.
+	\item Herangehensweise, d.h. wie wurde sich dem Thema genähert? Was waren die Methoden?
+	\item Wesentlichen Ergebnisse, was ist herausgekommen.
+	\item Aufbau, d.h. wie ist die Arbeit unterteilt. 
+\end{itemize}
+
+Das Kapitel kann gerne gewagte Aussagen enthalten, die natürlich auf gewisse Weise belegbar sein sollten. Das Kapitel sollte so kurz wie möglich sein, um den Lesenden "`Appetit auf Mehr"' zu machen. Der Richtwert sind 1-2 Seiten. 

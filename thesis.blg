@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+The style file: alpha.bst
+I couldn't open database file own.bib.bib
+---line 105 of file thesis.aux
+ : \bibdata{own.bib
+ :                 }
+I'm skipping whatever remains of this command
+I found no database files---while reading file thesis.aux
+Warning--I didn't find a database entry for "feeney2015linked"
+Warning--I didn't find a database entry for "ddcat"
+Warning--I didn't find a database entry for "MaaliCP10"
+Warning--I didn't find a database entry for "mccrae_2015_OWLmetashare"
+Warning--I didn't find a database entry for "dataID2014"
+Warning--I didn't find a database entry for "W3CVOCONTO"
+(There were 2 error messages)

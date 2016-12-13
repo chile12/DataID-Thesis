@@ -1,0 +1,36 @@
+\chapter{Schreibhilfen}
+\label{chap:writing}
+Das folgende Kapitel dient der Themenabgrenzung und soll gibt Orientierung bei der Arbeit. Es ist in der fertigen Arbeit nicht zu finden.
+
+Die Kapitel Mindmap, Exposé und Zeitplan sollten VOR Beginn der Arbeit erstell werden und beim Betreuer abgegeben werden; das ist nicht direkter Bestandteil der schriftlichen Ausarbeitung der Bachelor/Master/Diplomarbeit.
+
+\section{Einfache Worte}
+Hier wird mit einfachen Worten, also ohne Fachwörter zu benutzen, das Thema in einem Satz beschrieben.
+
+\section{Wissenschaftlicher Dreisatz}
+Nachfolgend der wissenschaftliche Dreisatz, um das Thema und das Vorgehen näher zu beschreiben.
+
+\paragraph{Thema}
+Hier wird das Thema kurz und bündig wiedergegeben, z.B.: Ich forsche an / arbeite an / untersuche / beschäftige mich mit etc.
+
+\paragraph{Erkenntnisinteresse}
+Nachfolgend wird die Fragestellung herausgehoben, z.B.: Weil ich herausfinden möchte was / wie / warum / ob etc.
+
+\paragraph{Absicht und Ziele}
+Hier werden die Ziele und Absichten dargestellt, also : Um zu zeigen warum, wie, weshalb etc. Es folgt eine Auflistung der Ziele und Teilziele:
+
+\begin{enumerate}
+\item Darstellung der Methode.
+\item Darstellung der Funktionsweise.
+\item Unterlegen mit Messerwerten.
+\item etc...
+\end{enumerate}
+
+\section{Mindmap}
+Die nachfolgende Mindmap stellt die Zusammenhänge der Arbeit dar. Dabei sollten die Wissensgebiete sowie noch zu klärende Themen abgesteckt werden. Das Vorgehen sollte dabei ersichtlich sein.
+
+\section{Exposé}
+Das nachfolgende Exposé gibt einen Abriss der geplanten Arbeit. Behandelt werden muss das Thema, die Motivation, die Methoden, das Vorgehen, eine  Literaturliste sowie das  zu erwartende Ergebnis. 
+
+\section{Zeitplan}
+Nach dem Exposé folgt ein grober Zeitplan bzw. Projektplan. Dieser sollte die wesentlichen Arbeitsschritte, Meilensteine und Konsultationstermine enthalten. Beispiele sind etwa die Literaturrecherche, das Design, die Implementierung sowie ein oder mehrere Prototypen-Meilensteine. Auch die Schreibarbeit sollte geplant werden. Beispiele ist der Abschluss des Inhaltsverzeichnisses, der Abschluss einer Stichpunktfassung, die erste Grobfassung etc. Auch eine gewisse Zeit für Korrekturen sollte eingeplant werden.
