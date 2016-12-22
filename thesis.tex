@@ -4,13 +4,12 @@
 % Universität Leipzig 
 
 
-\documentclass[a4paper,ngerman,twoside,BCOR1.5cm,headsepline,DIV12,appendixprefix,final,12pt]{scrbook}
+\documentclass[a4paper,english,twoside,BCOR1.5cm,headsepline,DIV12,appendixprefix,final,12pt]{scrbook}
 %************************************************************************************************************************
 %* packages
 %************************************************************************************************************************
 % Select language
-\usepackage[english, german, ngerman]{babel}
-\selectlanguage{ngerman}
+\usepackage[english]{babel}
 %\usepackage[left=3cm, right=3cm]{geometry}
 %\usepackage{times}             % use times font
 \usepackage{multirow}
@@ -36,20 +35,28 @@
 \pagenumbering{Roman}
 \usepackage[small,sf,bf,hang]{caption}
 % for geralpha
-\usepackage{babelbib} %\usepackage{bibgerm}
+%\usepackage{babelbib} %\usepackage{bibgerm}
 % space between caption & float
 %\setlength{\abovecaptionskip}{-0.3cm}   % 0.5cm as an example
 %\setlength{\belowcaptionskip}{-0.2cm}   % 0.5cm as an example
 \usepackage{fancyvrb}           % algorithm-boxes
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{color}
 \usepackage{remreset}
 \usepackage{palatino}
 \usepackage{hyphenat}
 
+\usepackage{rotating}
+\usepackage{enumerate}
 \usepackage{cleveref}
 \usepackage{xspace}
+\usepackage{floatrow}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.85]{beramono}
+\usepackage{listings}
+\lstset{language=SQL,morekeywords={PREFIX,java,rdf,rdfs,url}}
+
 
 \usepackage{todonotes}
 % custom hyphenation
@@ -61,7 +68,12 @@
 
 %Codelistings:
 %\usepackage{minted}
-
+\usepackage[
+backend=biber,
+style=numeric-comp,
+sorting=none,
+language=english
+]{biblatex}
 %Graphics: (Bachelor: alternatively use inkscape and export PDFs -> \include{...})
 %\usepackage{tikz}
 
@@ -78,28 +90,34 @@
 \newcommand{\evolvability}{{\ttfamily\scshape\bfseries evolvability}\xspace}
 
 
-\newcommand{\odrl}{{\ttfamily\scshape\bfseries odrl}\xspace}
-\newcommand{\cmdi}{{\ttfamily\scshape\bfseries cmdi}\xspace}
-\newcommand{\cmd}{{\ttfamily\scshape\bfseries cmd}\xspace}
-\newcommand{\org}{{\ttfamily\scshape\bfseries org}\xspace}
-\newcommand{\prov}{{\ttfamily\scshape\bfseries prov-o}\xspace}
-\newcommand{\void}{{\ttfamily\scshape\bfseries void}\xspace}
-\newcommand{\dct}{{\ttfamily\scshape\bfseries dcterms}\xspace}
-\newcommand{\ckan}{{\ttfamily\scshape\bfseries ckan}\xspace}
-\newcommand{\dcat}{{\ttfamily\scshape\bfseries dcat}\xspace}
-\newcommand{\dcatap}{{\ttfamily\scshape\bfseries dcat-ap}\xspace}
-\newcommand{\dmp}{{\ttfamily\scshape\bfseries dmp}\xspace}
-\newcommand{\adms}{{\ttfamily\scshape\bfseries adms}\xspace}
-\newcommand{\metashare}{{\ttfamily\scshape\bfseries meta-share}\xspace}
+\newcommand{\ecosystem}{{\ttfamily\bfseries DataID Ecosystem}\xspace}
+\newcommand{\dataid}{{\ttfamily\bfseries DataID}\xspace}
+\newcommand{\core}{{\ttfamily\bfseries DataID core}\xspace}
+\newcommand{\odrl}{{\scshape\bfseries odrl}\xspace}
+\newcommand{\cmdi}{{\scshape\bfseries cmdi}\xspace}
+\newcommand{\cmd}{{\scshape\bfseries cmd}\xspace}
+\newcommand{\org}{{\scshape\bfseries org}\xspace}
+\newcommand{\prov}{{\scshape\bfseries prov-o}\xspace}
+\newcommand{\void}{{\scshape\bfseries void}\xspace}
+\newcommand{\dct}{{\scshape\bfseries dcterms}\xspace}
+\newcommand{\ckan}{{\scshape\bfseries ckan}\xspace}
+\newcommand{\dcat}{{\scshape\bfseries dcat}\xspace}
+\newcommand{\dcatap}{{\scshape\bfseries dcat-ap}\xspace}
+\newcommand{\dmp}{{\scshape\bfseries dmp}\xspace}
+\newcommand{\adms}{{\scshape\bfseries adms}\xspace}
+\newcommand{\cerif}{{\scshape\bfseries cerif}\xspace}
+\newcommand{\foaf}{{\scshape\bfseries foaf}\xspace}
+\newcommand{\metashare}{{\scshape\bfseries meta-share}\xspace}
 
 
 \newcommand{\prop}[1]{{{\texttt{#1}}}}
 
 \newcommand\footnoteurl[1]{\footnote{\scriptsize\url{#1}}}
-
+%\renewcommand\footnote[1]{\footnote{\scriptsize{#1}}}
+\pagestyle{fancy}
 \fancyhead{} % clear all header fields
-\fancyhead[LE]{\bfseries \leftmark}
-\fancyhead[RO]{\bfseries \rightmark}
+\fancyhead[LE]{\iffloatpage{}{\bfseries \leftmark}}
+\fancyhead[RO]{\iffloatpage{}{\bfseries \rightmark}}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{\bgroup\sffamily\thepage\egroup}
 
@@ -122,6 +140,7 @@
 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
+\renewcommand*\contentsname{Contents}
 %\definecolor{bgcolor}{rgb}{1.0,0.95,0.95}
 \def\sectionmark#1{\markright{\ifnum \c@secnumdepth>\z@
 \sffamily\thesection\ \relax \fi\sffamily #1}}
@@ -154,6 +173,29 @@
 %change footnot counter to count over the whole document
 \@removefromreset{footnote}{chapter}
 
+
+%define listings
+\lstdefinestyle{topexample}{
+  float=tp,
+  floatplacement=tbp,
+  abovecaptionskip=-5pt
+}
+
+\lstdefinelanguage{ttl}{
+basicstyle=\ttfamily\footnotesize,
+sensitive=true,
+breaklines=true, % wrap lines if they don't fit
+frame=trbl, % draw a frame at the top, right, left and bottom of the listing
+%frameround=tttt, % make the frame round at all four corners
+showstringspaces=false,
+%morecomment=[l][\color{grey}]{@},
+abovecaptionskip=10pt,
+belowcaptionskip=10pt,
+morestring=[b][\color{blue}]\",
+keywordstyle=\color{purple},
+morekeywords={dbp,dct,dc,void,guo,pro,repo,prv,version,owl,prov,rdf,rdfs,foaf,xml,xsd,dbo,str,sso,scms,ld, fise, dcterms, itsrdf, wiktionary, nif,rlno,rlnr,olia,nif,nerd,opencalais,semitags,saple,zemanta,extractiv,yahoo,alchemyapi,wikimeta}
+}
+
 \def\emph{\textit}
 
 %************************************************************************************************************************
@@ -176,30 +218,13 @@
 \fi
 
 % remove "pagebackref" for the final version
-\ifmypdf
-  \usepackage[pdftex,
-              citebordercolor={0.75 0.75 1},
-              filebordercolor={0.75 0.75 1},
-              linkbordercolor={0.75 0.75 1},
-            % pagebordercolor={0.75 0.75 1},
-              urlbordercolor={0.75 0.75 1},
-              pdfborder={0.75 0.75 1},
-              pagebackref, plainpages=false,pdfpagelabels=true]{hyperref}
-  \hypersetup{
-    %
-    pdftitle={...},
-    pdfauthor={...},
-    pdfkeywords={...},
-    pdfsubject={...},
-    % ...
-  }
-\else
-  \newcommand{\texorpdfstring}[2]{#1}
-\fi
+
 
 %************************************************************************************************************************
 %* begin document
 %************************************************************************************************************************
+
+\addbibresource{own.bib}
 \begin{document}
 \thispagestyle{empty}
 
@@ -209,14 +234,15 @@
 \vspace{1cm}
 \textbf{\sffamily	Universität Leipzig\\
 			Fakultät für Mathematik und Informatik\\
-			Institut für Informatik\\}
+			Institut für Informatik\\
+			Abteilung für betriebliche Informationssysteme\\}
 
 \vspace{3cm}
 {\Large\textbf{\sffamily Master Thesis }}
 
 
 \large
-DataID\\ Towards Semantically Rich Metadata for Complex Datasets
+\textbf{DataID}\\ Semantically Rich Metadata for Complex Datasets
 \vspace{1cm}
 \end{center}
 
@@ -228,15 +254,15 @@ Abstract: <Gegenstand und Resultate der Arbeit. Was ist neu? Warum sollte man di
 \begin{tabular}{p{7cm} l}
 &\\
 \small
-Leipzig, Oktober 2016		& \small vorgelegt von\\
-				& \small Markus Freudenberg\\
-				& \small Studiengang Informatik
+Leipzig, January 2017	& \small Markus Freudenberg \\
+						& \small\textit{freudenberg@informatik.uni-leipzig.de}\\
 \end{tabular}}
 
 \begin{tabular}{p{7cm} l}
 &\\
 \small
-Betreuender Hochschullehrer: 	& \small Dr. Sebastian Hellmann \\
+Betreuender Hochschullehrer: 	& \small Dr.-Ing. Sebastian Hellmann and\\
+								& \small Dimitris Kontokostas \\
 				& \small Fakultät für Mathematik und Informatik\\
 				& \small Betriebliche Informationssysteme, Semantic Web
 \end{tabular} 
@@ -263,82 +289,48 @@ Betreuender Hochschullehrer: 	& \small Dr. Sebastian Hellmann \\
 %* main chapters
 %************************************************************************************************************************
 \mainmatter
-\shorthandoff{"}
-
-\chapter{Schreibhilfen}
-\label{chap:writing}
-Das folgende Kapitel dient der Themenabgrenzung und soll gibt Orientierung bei der Arbeit. Es ist in der fertigen Arbeit nicht zu finden.
-
-Die Kapitel Mindmap, Exposé und Zeitplan sollten VOR Beginn der Arbeit erstell werden und beim Betreuer abgegeben werden; das ist nicht direkter Bestandteil der schriftlichen Ausarbeitung der Bachelor/Master/Diplomarbeit.
-
-\section{Einfache Worte}
-Hier wird mit einfachen Worten, also ohne Fachwörter zu benutzen, das Thema in einem Satz beschrieben.
-
-\section{Wissenschaftlicher Dreisatz}
-Nachfolgend der wissenschaftliche Dreisatz, um das Thema und das Vorgehen näher zu beschreiben.
-
-\paragraph{Thema}
-Hier wird das Thema kurz und bündig wiedergegeben, z.B.: Ich forsche an / arbeite an / untersuche / beschäftige mich mit etc.
-
-\paragraph{Erkenntnisinteresse}
-Nachfolgend wird die Fragestellung herausgehoben, z.B.: Weil ich herausfinden möchte was / wie / warum / ob etc.
-
-\paragraph{Absicht und Ziele}
-Hier werden die Ziele und Absichten dargestellt, also : Um zu zeigen warum, wie, weshalb etc. Es folgt eine Auflistung der Ziele und Teilziele:
-
-\begin{enumerate}
-\item Darstellung der Methode.
-\item Darstellung der Funktionsweise.
-\item Unterlegen mit Messerwerten.
-\item etc...
-\end{enumerate}
-
-\section{Mindmap}
-Die nachfolgende Mindmap stellt die Zusammenhänge der Arbeit dar. Dabei sollten die Wissensgebiete sowie noch zu klärende Themen abgesteckt werden. Das Vorgehen sollte dabei ersichtlich sein.
-
-\section{Exposé}
-Das nachfolgende Exposé gibt einen Abriss der geplanten Arbeit. Behandelt werden muss das Thema, die Motivation, die Methoden, das Vorgehen, eine  Literaturliste sowie das  zu erwartende Ergebnis. 
-
-\section{Zeitplan}
-Nach dem Exposé folgt ein grober Zeitplan bzw. Projektplan. Dieser sollte die wesentlichen Arbeitsschritte, Meilensteine und Konsultationstermine enthalten. Beispiele sind etwa die Literaturrecherche, das Design, die Implementierung sowie ein oder mehrere Prototypen-Meilensteine. Auch die Schreibarbeit sollte geplant werden. Beispiele ist der Abschluss des Inhaltsverzeichnisses, der Abschluss einer Stichpunktfassung, die erste Grobfassung etc. Auch eine gewisse Zeit für Korrekturen sollte eingeplant werden.
+%\shorthandoff{"}
 
 \chapter{Introduction}
 \label{chap:introduction}
 
 \section{Motivation}
+\label{sec:motivation}
 In 2006, Clive Humby coined the phrase "the new oil" for (digital) data\footnoteurl{https://www.theguardian.com/technology/2013/aug/23/tech-giants-data}, heralding the ever-expanding realm of what is now summarised as Big Data. Attributed with the same transformative and wealth-producing abilities, once connected to crude oil bursting out of the earth, data has become a cornerstone of economical and societal visions. In fact, the amount of data generated around the world has increased dramatically over the last years, begging the question if those visions have already come to pass. 
 
 The steep increase in data produced can be ascribed to multiple factors. To name just a few:
 \begin{itemize}
-\item The growth in content and reach of the World Wide Web.
-\item The digitalising of former analogue data.
+\item The growth in content and reach of the World Wide Web\footnoteurl{http://www.internetworldstats.com/emarketing.htm}.
+\item The digitalising of former analogue data (e.g. \footnoteurl{https://www.loc.gov/programs/national-recording-preservation-board/}, \footnoteurl{https://archive.org})
 \item The realisation of what is called the Internet of Things (IoT)\footnoteurl{http://siliconangle.com/blog/2015/10/28/page/3\#post-254300}.
-\item The shift of classic fields of research and industry to computer-aided processes and digital resource management (e.g. digital humanities, industry 4.0).
-\item Huge data collections about protein sequences or human disease taxonomies are established in the life sciences.
-\item Research areas like natural language processing or machine learning are generating and refining data. 
-\item In addition, open data initiatives like the Open Knowledge Foundation are following the call for 'Raw data, Now!'\footnoteurl{http://www.wired.co.uk/news/archive/2012-11/09/raw-data} of Tim Berners-Lee, demanding open data from governments and organisations.
+\item The shift of classic fields of research and industry to computer-aided processes and digital resource management (e.g. digital humanities\footnoteurl{http://www.dh.uni-leipzig.de/wo/}, industry 4.0\footnoteurl{http://www.europarl.europa.eu/RegData/etudes/STUD/2016/570007/IPOL_STU(2016)570007_EN.pdf}).
+\item Huge data collections about protein sequences or human disease taxonomies are established in the life sciences\footnoteurl{https://www.ncbi.nlm.nih.gov/genbank/statistics/}.
+\item Research areas like Natural Language Processing or Machine Learning are generating and refining data\footnoteurl{http://archive.ics.uci.edu/ml/}. 
+\item In addition, open data initiatives like the Open Knowledge Foundation\footnoteurl{https://okfn.org} are following the call for 'Raw data, Now!'\footnoteurl{http://www.wired.co.uk/news/archive/2012-11/09/raw-data} of Tim Berners-Lee, demanding open data from governments and organisations.
 \end{itemize} 
 %While others, like DBpedia, are publishing huge open public datasets, refining human knowledge into machine-readable data.
 
-As a new discipline, data engineering is dealing with the fallout of this trend, namely with issues of how to extract, aggregate, store, refine, combine and distribute data of different sources in ways which give equal consideration to the four V's of Big Data: Volume, Velocity, Variety and Veracity\footnoteurl{http://www.ibmbigdatahub.com/infographic/four-vs-big-data}. 
+But with Big Data comes a big challenge. The increasing deluge of data is submerging data producers and possible consumers in a wave of unfiltered, unstructured and apparently unmanageable information. As a new discipline, data engineering is dealing with the fallout of this trend, namely with issues of how to extract, aggregate, store, refine, combine and distribute data of different sources in ways which give equal consideration to the four V's of Big Data: Volume, Velocity, Variety and Veracity\footnoteurl{http://www.ibmbigdatahub.com/infographic/four-vs-big-data}. 
 
-Datasets are the building blocks of these endeavours. They are the combination of multiple datums bundled together by at least one dimension of distinction (such as source, topic or category). When working with these bricks of information, additional data about datasets (or metadata) is needed. Dataset metadata enables users to discover, understand and (automatically) process the data it holds, as well as providing provenance on how a dataset came into existence. 
-This metadata is often created, maintained and stored in diverse data repositories featuring disparate data models that are often unable to provide the metadata necessary to automatically process the datasets described. In addition, many use cases for dataset metadata call for more specific information than provided by most available metadata vocabularies, depending on the use case at hand. Extending existing metadata models to fit these scenarios is a cumbersome process resulting often in non-reusable solutions. 
+Datasets are the building blocks of these endeavours. They are the combination of multiple data points (datums) bundled together by at least one dimension of distinction (such as source, topic or temporal information). When working with these chunks of data, extra data about data (or metadata) is needed. Dataset metadata enables users to discover, understand and (automatically) process the data it holds, as well as providing provenance on how a dataset came into existence. 
+This metadata is often created, maintained and stored in diverse data repositories featuring disparate data models that are often unable to provide the metadata necessary to automatically process the datasets described. In addition, many use cases for dataset metadata call for more specific information than provided by most available metadata vocabularies. Extending existing metadata models to fit these scenarios is a cumbersome process resulting often in non-reusable solutions. 
 
 One vocabulary for dataset metadata is breaking this trend. 
-Since its introduction in 2013, the Data Catalog Vocabulary [DCAT] vocabulary, a W3C recommendation, has been widely adopted as a foundation for dataset metadata in research, government and industry [needs at least one link to back this up]. The very general approach adopted by the authors of DCAT allows for portraying any given (digital) object with this ontology. Extending DCAT is very easy and mappings to other metadata formats are not difficult to achieve. 
+Since its introduction in 2013, the Data Catalog Vocabulary \cite{ddcat}, has been widely adopted as a foundation for dataset metadata in research, government and industry\footnoteurl{https://joinup.ec.europa.eu/sites/default/files/isa_field_path/2016-05-13_dcat-ap_intro_v0.05.pdf}. The very general approach adopted by the authors of \dcat allows for portraying any given (digital) object with this ontology. Extending \dcat is very easy and mappings to other metadata formats are not difficult to achieve. 
 
-Conversely, the general approach of DCAT is often too imprecise where specificity is needed. A short list of the most pressing issues resulting from this impreciseness:
+Conversely, the general approach of \dcat is often too imprecise where specificity is needed, resulting in:
 
 \begin{itemize}
 \item Insufficient provenance information
 \item Missing relations between Datasets
 \item Relations to agents are too cursory
-\item Technical description of web-resources is lacking, restricting the accessibility of the data
+\item Technical description of resources on the Web (e.g. API endpoints) is lacking, restricting the accessibility of the data
 \item General lack of specificity, inviting non-machine-readable expressions of resources
 \end{itemize}
+\todo{add dbpedia}
+Similar findings were concluded at the W3C/VRE4EIC workshop 'Smart Descriptions \& Smarter Vocabularies' (SDSVoc) in 2016 \cite{sdsvocW3C2016}. 
 
-Similar findings were concluded at the W3C/VRE4EIC workshop Smart Descriptions \& Smarter Vocabularies (SDSVoc) in 2016 [reference to the proceedings (not yet published)]. As a result of lacking specificity, current representations of datasets with DCAT are often not contributing to the main benefits for publishing data on the web [DWBP] : Reuse, Comprehension, Linkability, Discoverability, Trust, Access, Interoperability and Processability. This, in turn, amplifies broader problems with published datasets, especially in the open data community, reflected by the Open Data Strategy[needs link], defining the following six barriers for “open public data” [needs link], proposed by the European Commission in 2011:
+As a result of lacking specificity, current representations of datasets with DCAT are often not contributing to the main benefits of publishing data on the Web: \textit{"Reuse, Comprehension, Linkability, Discoverability, Trust, Access, Interoperability and Processability"} \cite{dwbpW3C2016}. This, in turn, amplifies broader problems with published datasets, especially in the open data community, reflected by the Open Data Strategy\footnoteurl{http://europa.eu/rapid/press-release_IP-11-1524_en.htm?locale=en}, defining the following six barriers for "open public data" \footnoteurl{http://europa.eu/rapid/press-release_MEMO-11-891_en.htm}, proposed by the European Commission in 2011:
 
 \begin{enumerate}
 \item a lack of information that certain data actually exists and is available,
@@ -349,47 +341,77 @@ Similar findings were concluded at the W3C/VRE4EIC workshop Smart Descriptions \
 \item exclusive re-use agreements with one commercial actor or re-use restricted to a government-owned company.
 \end{enumerate}
 
-Many issues with DCAT itself or their manifestation in reality can be solved by existing ontologies, even when restricted only to W3C recommended ontologies. For example, the PROV Ontology [PROV-O], deals with questions on how to record provenance information on a very granular level. While the Open Digital Rights Language [ODRL] provides machine readable descriptions of licenses and other policies. The existence of problems, like those listed above, despite these offered solutions, speaks to a larger problem of missing organisational structures for landscaping of vocabularies (offering recommendations on combining, revising and usage of ontologies). A study of 91 commonly used vocabularies concluded\cite{feeney2015linked}:
+Many issues with \dcat itself or their manifestation in reality can be solved by existing ontologies, even when restricted only to W3C recommended ontologies\todo{explain what that means}. For example, the PROV Ontology \cite{prov}, deals with questions on how to record provenance information on a very granular level. While the Open Digital Rights Language \cite{odrl} provides machine readable descriptions of licenses and other policies. The existence of problems, like those listed above, despite these offered solutions, speaks to a larger problem of missing organisational structures for landscaping of vocabularies (offering recommendations on combining, revising and usage of ontologies). A study of 91 commonly used vocabularies concluded:
 
 \begin{quote}
 "Our validation detected a total of 6 typos, 14
 missing or unavailable ontologies, 73 language level
 errors, 310 instances of ontology namespace violations
-and 2 class cycles which we believe to be errors."
+and 2 class cycles which we believe to be errors." \cite{feeney2015linked}
 \end{quote}
 
 These errors accumulate when strong interdependencies exist between
-vocabularies, adding logical and practical problems, which make model unification inconsistent.
+vocabularies, adding logical and practical problems and aggravating unification issues of ontologies.
 
 \section{Objectives}
-In this thesis, I will present the metadata model of DataID, a multi-layered metadata ecosystem, which, in its core, describes complex datasets and their different manifestations, as well as relations to agents like persons or organisations, in regard to their rights and responsibilities.
+\label{sec:objectives}
+In this thesis, I will present the metadata model of \dataid, a multi-layered metadata ecosystem, which, in its core, describes complex datasets and their different manifestations, their relations to other datasets and agents (such as persons or organisations) endowed with rights and responsibilities.
 
-Improving the portrayal of \provenance, \licensing and \access, while maintaining the easy \extensibility and \interoperability of DCAT, are the linchpin objectives in our effort to present a comprehensive, extensible and interoperable metadata vocabulary.
-Multiple well established ontologies (such as PROV-O, VOID and FOAF [needs links]) are reused for maximum compatibility to establish a uniform and accepted way to describe and deliver dataset metadata for arbitrary datasets and to put existing standards into practice.
+Improving the portrayal of \provenance, \licensing and \access, while maintaining the easy \extensibility and \interoperability of \dcat, are the linchpin objectives in my effort to present a comprehensive, extensible and interoperable metadata vocabulary.
+Multiple well established ontologies (such as \prov, \void and \foaf) are reused for maximum compatibility to establish a uniform and accepted way to describe and deliver dataset metadata for arbitrary datasets and to put existing standards into practice.
 
-The DataID Ecosystem is a suite of ontologies comprised of DataID core and multiple extension ontologies, clustered around DataID core. It is the result of a modularisation process, which was necessary to preserve \extensibility and \interoperability of the DCAT vocabulary, on which all ontologies are based.
+The \ecosystem is a suite of ontologies comprised of \core and multiple extension ontologies, clustered around \core. It is the result of a modularisation process, which was necessary to preserve \extensibility and \interoperability of the \dcat vocabulary, on which all ontologies are based.
 
-I want to present my solution for most of the current problems with dataset metadata in general and DCAT in particular, following these objectives:
+I want to present my solution for most of the current problems with dataset metadata in general and \dcat in particular, following these objectives:
 
 \begin{enumerate}
 \item Provide sufficient support for extensive and machine-readable representations for \provenance, \licensing and data \access.
-\item Achieve this by extending DCAT with well-established ontologies to solve as many issues as possible (favour W3C recommended ontologies).
-\item Show, that by modularising into a landscape of ontologies, DataID preserves the general character of DCAT, supporting \extensibility and \interoperability.
+\item Extend \dcat with well-established ontologies to resolve the discussed issues.
+\item Show, that by modularising into a landscape of ontologies, \dataid preserves the general character of \dcat, supporting \extensibility and \interoperability.
 \item Prove that the resulting ecosystem is capable of serving for complex demands on dataset metadata (proving \extensibility).
 \item Demonstrate the \interoperability with other metadata formats.
-\item Evaluate the universal applicability of DataID for datasets in any given domain or scenario.
+\item Evaluate the universal applicability of \dataid for datasets against common demands on data publications.
 \end{enumerate}
 
-DataID was developed under the sponsorship of the ALIGNED project\todo{link}, following its main goals:
+In addition, \dataid shall support the FAIR Data principles \cite{fair2016} (\cref{sec:fair}) as well as the best practices defined by the Data on the Web Best Practices working group \cite{dwbpW3C2016} of the W3C (restricted to those practices where metadata is of concern).
+
+\dataid was developed under the sponsorship of the H2020 project ALIGNED\footnoteurl{http://aligned-project.eu} (GA-644055), following its main goals:
 \begin{itemize}
-\item to be part of a unified software and data engineering process
-\item describing the complete data lifecycle and domain model
-\item with an emphasis on data quality and integrity
+\item to be part of a unified software and data engineering process;
+\item describing the complete data lifecycle and domain model;
+\item with an emphasis on quality, productivity and agility.
 \end{itemize}
 
+In the context of ALIGNED, \dataid is part of a shared model of software and data engineering to enable unified governance and coordination between aligned co-evolving software and data lifecycles:
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/AlignedCircles.png}
+  \caption{ALIGNED Software and Data Engineering Processes}
+  \label{fig:aligned}
+\end{figure}
+\todo{add a last sentence?}
+
 \section{Structure}
-The remainder of this document is structured as follows:
- \todo{add structure of thesis here}
+\label{sec:structure}
+This work is a comprehensive introduction to \dataid, with a particular focus on the \core ontology, at the heart of the \ecosystem. It is largely based on four publications:
+\begin{enumerate}
+\item Martin Brümmer, Ciro Baron, Ivan Ermilov, Markus Freudenberg, Dimitris Kontokostas and Sebastian Hellmann  "DataID: Towards Semantically Rich Metadata for
+Complex Datasets". In: Proceedings of the 10th International Conference on
+Semantic Systems. SEM ’14. Leipzig, Germany: ACM, 2014, pp. 84–91. \cite{dataID2014}
+An introduction to the first version of \dataid.
+\item Monika Solanki, Bojan Bozic, Markus Freudenberg, Dimitris Kontokostas, Christian Dirschl and Rob Brennan "Enabling Combined Software and Data Engineering
+at Web-Scale: The ALIGNED Suite of Ontologies". In: The Semantic Web -
+ISWC 2016 - 15th International Semantic Web Conference, Kobe, Japan, October
+17-21, 2016, Proceedings, Part II. 2016, pp. 195–203. \cite{SolankiBFKDB16}: An overview of the landscape of ontologies developed by the ALIGNED project.
+\item Markus Freudenberg, Martin Br{\"u}mmer, Jessika R{\"u}cknagel, Robert Ulrich, Thomas Eckart, Dimitris Kontokostas and Sebastian Hellmann "The Metadata Ecosystem of DataID". In: Metadata and Semantics Research: 10th International Conference, MTSR 2016, Göttingen, Germany, November 22-25, 2016, Proceedings. Ed. by Emmanouel
+Garoufallou et al. Cham: Springer International Publishing, 2016, pp. 317–332. I S B N : 978-3-319-49157-8. \cite{Freudenberg2016}: An introduction the \ecosystem
+\item DataID core Ontology (2017): A W3C member submission of the University of Leipzig, under review by the W3C at the time of writing, authored by Martin Brümmer and me.\todo{add ref}
+\end{enumerate}
+
+After a look at related work (chapter 3) on the subject of dataset metadata, I will present the \ecosystem in chapter 4, to introduce the guiding principles of this work. Chapter 5 describes the \core ontology in detail, containing a running example of a \todo{what is this?} DBpedia language edition. 
+Chapter 6 provides a best practice about publishing data on the Web with \dataid, followed by an application of those practice to a real example on how to solve complex metadata challenges with the \ecosystem, by looking at Data Management Plans (chapter 7).
+Chapter 8 provides mappings between \dataid and multiple \cmd profiles of the Component MetaData Infrastructure (\cmdi). I will evaluate \dataid in chapter 9 and discuss its development and future work in chapter 10. 
 %In a previous version of DataID\cite{dataID2014} we already provided a solution for an accessible, compatible and granular best-practice of dataset descriptions for Linked Open Data (LOD).
 
 %We want to build on this foundation, presenting improvements in regard to \provenance, \licensing and \access. In particular, we want to address the aspects \extensibility and \interoperability of dataset metadata, demonstrating the universal applicability of DataID in any domain or scenario.
@@ -397,91 +419,976 @@ The remainder of this document is structured as follows:
 %The \interoperability with other metadata models is exemplified by the mapping of common \cmdi (CLARIN) profiles to DataID in \Cref{cmdi}.
 
 
-\chapter{Grundlagen}
-\label{chap:base}
+\chapter{Foundations}
+\label{chap:foundations}
 
-Das Grundlagenkapitel, kurz und knapp. Hier sollten die Themen auftauchen, die später wieder aufgegriffen werden und zum Verständnis der Arbeit nötig sind (mehr nicht). Hier stehen meist Referenzen/ Zitate von Lehrbüchern und anderen Publikationen.  Das Kapitel sollte ca. 5 - 10,  max. 15 Seiten umfassen.
+\section{Data}
+\label{sec:data}
+Data is an almost intangible term. It is highly ambiguous and touches many fields of interest, stretching from philosophy to digital signal processing. Even in the context of Information Science, Data has multiple possible definitions. Here are some of them:
+
+\begin{quote}
+"Data is a symbol set that is quantified and/or qualified." (Prof. Aldo de Albuquerque Barreto, Brazilian Institute for Information in Science
+and Technology, Brazil \cite{Zins2007})
+\end{quote}
+
+\begin{quote}
+"Data are sensory stimuli that we perceive through our senses." (Prof. Shifra Baruchson–Arbib, Bar Ilan University, Israel \cite{Zins2007})
+\end{quote}
+
+\begin{quote}
+"By data, we mean known facts that can be recorded and that have implicit meaning." (Prof. Shamkant Navathe, College of Computing at the Georgia Institute of Technology, USA \cite{elmasri06db})
+\end{quote}
+
+\begin{quote}
+"Etymologically, data [...] 
+is the plural of datum, a noun formed from the
+past participle of the Latin verb dare–to give. Originally,
+data were things that were given (accepted as "true"). A data
+element, d, is the smallest thing which can be recognized as
+a discrete element of that class of things named by a specific
+attribute, for a given unit of measure with a given precision
+of measurement." (Prof. Charles H. Davis, Indiana University, USA \cite{Zins2007})
+\end{quote}
+
+\begin{quote}
+"Data are the basic individual items of numeric or other information,
+garnered through observation; but in themselves,
+without context, they are devoid of information."
+(Dr. Quentin L. Burrell, Isle of Man International Business School, Isle of Man \cite{Zins2007})
+\end{quote}
+
+Information and Data seem to be closely linked and are often used interchangeably, yet they are not the same thing:
+
+%Data has become the crude oil of the information age, to the extent where we can no longer speak of ours as an "information society". The call of new, vast, untapped data lakes representing limitless potential value has driven businesses, researchers and governments into an frenzied activities to produce, collect and spy out new data. The "data society" seems to be the appropriate branding of these new surroundings.
+
+%\blockquote[\cite{ventre2016information}]{
+%"Data represent the raw material, the resource , which feeds and flows through our systems, the global network of communications between individuals, between machines ans systems. Companies produce data, as do individual citizens, institutions, and the technical systems themselves; data have acquired a market value, a strategic value, so people steal them and resell them [...]."
+%}
+%Technical and social challenges arising from the ever-increasing flow of Data are plentiful and diverse (as touched on in the introduction of this work). 
+
+
+\begin{quote}
+"Datum is every thing or every unit that could increase the
+human knowledge or could allow to enlarge our field of scientific,
+theoretical or practical knowledge, and that can be
+recorded, on whichever support, or orally handed. Data can
+arouse information and knowledge in our mind." (Prof. Maria Teresa Biagetti, University of Rome 1, Italy; based on C. S. Peirce, 1931,
+1958 \cite{Zins2007})
+\end{quote}
+
+I will take a broader look at the term Data, delineating it from the concepts of Information and Knowledge.
+
+\subsection{Data, Information, Knowledge}
+\label{sec:kids}
+
+\textit{Data} is the result of the application of syntactical rules against a set (sequence, string etc.) of signs or signals, out of which a message between a sender and recipient is constructed \cite{bodendorf2003daten}. Additional schematics might apply, adding structural data. \textit{Information} can be gleaned from data if one can find meaning in it. The result of this semantic expansion (or interpretation) of \textit{Data} can be weighted by its novelty value or exceptionalness in the context of existing information, using Shannon's entropy \cite{shannon48}. \textit{Data} becomes tokens of perceptions, or more commonly used in Information Science: instances of concepts, capable of changing the understanding of a context for the recipient of the original message. Linking \textit{Information} in a context to determine their interrelations and inferring additional information under the presumption of an intellectual goal, are the processes (\textit{Pragmatics}) turning \textit{Information} into \textit{Knowledge}.
+
+\begin{figure}[t]
+\centering
+  \includegraphics[width=\textwidth]{images/kidsPyramid.png}
+  \caption{The KIDS Pyramid \cite{bodendorf2003daten}}
+  \label{fig:kids}
+\end{figure}
+
+The pyramidal structure depicted (\cref{fig:kids}) is often crowned by an additional field called "Wisdom" \cite{Rowley2007}. Wisdom could be described as a form of evaluated \textit{Knowledge} or understanding, as the pinnacle of human endeavour or enlightenment. But in the era of fake news, pathological mistrust and truthiness\footnoteurl{https://en.wikipedia.org/wiki/Truthiness}, this last step does not seem to follow naturally.
+
+Many authors describe this hierarchy or derivations of it. The following common aspects are presented throughout this literature \cite{Rowley2007}: \todo{check if we need quotation here}
+
+\begin{itemize}
+\item the key elements are data, information and knowledge,
+\item these key elements are virtually always arranged in the same order, some models offer additional stages, such as wisdom, or enlightenment,
+\item the higher elements in the hierarchy can be explained in terms of the lower elements by identifying an appropriate transformation process,
+\item the implicit challenge is to understand and explain how data is transformed into information and information is transformed into knowledge.
+\end{itemize}
+
+\subsection{Digital Data}
+\label{sec:digital}
+Digital data is represented using the binary number system of ones (1) and zeros (0). Typically, these are combined into eight of their kind - named Byte. Bytes are used to identify characters of a given alphabet, which, in turn, provide the building stones for any operation, program or data point (datum).
+
+In general, the term Digital Data is used to describes a collection of bytes, representing a digital mapping of an analogue counterpart (e.g. sound waves), or characters of an alphabet understood by humans or programs.
+
+Digital Data is often categorized in structured and unstructured data. Unstructured data does not follow any predefined model and has to be interpreted by the recipient (reader) by its own merit (usually free text). Structured data is strictly adherent to a given data model, facilitating its interpretation by machines and humans alike (such as [please insert]). 
+%Semi structured data allows for unstructured parts in a structured context (e.g. XML [needs link]).
+
+\subsection{Dataset}
+\label{sec:dataset}
+
+A dataset\footnote{or 'data set', though this spelling seems to be replaced more and more} is a bundle of data, which have at least one common dimension of distinction. For example, a music album of an artist can be viewed as a dataset, where a single song represents a unit of data. Multiple songs are collected in an album with the common feature (among others) - the artist. Most commonly a dataset corresponds to a collection of structured (digital) data in a single location (e.g. a database table, XML document etc.).
+
+Datasets can manifest in different formats (e.g. in different file types). Therefore, the distinction between dataset as a container for collecting data points of similar content or structure, and its final manifestation on a file system, is advisable.
+
+
+\subsection{Metadata}
+\label{sec:metadata}
+
+The National Information Standards Organization\footnoteurl{http://www.niso.org/home/} (NISO), a United States non-profit standards organisation, published a paper in 2004, defining metadata in a widely adopted manner:
+
+\begin{quote}
+"Metadata is structured information
+that describes, explains,
+locates, or otherwise makes it
+easier to retrieve, use, or manage
+an information resource. Metadata
+is often called data about data or
+information about information." \cite{NISO2004}
+\end{quote}
+
+Metadata does not contributes additional content to the original message, but it can ease its transmission, procession and understanding.
+The meaning of the term metadata and for what kind of data it applies is different, depending on context, disciplines and communities.
+For example, library catalogue information about a certain book might be understood as metadata in regard to the book itself, while in the context of a Library Management System this type of metadata is considered data.
+
+Specialized types of metadata can be broadly separated into three types \cite{NISO2004}:
+
+\begin{itemize}
+\item \textbf{Descriptive metadata} describes a resource for purposes such as discovery and identification. It can include elements such as title, abstract, author, and keywords. 
+\item \textbf{Structural metadata} indicates how compound objects are put together, for example, how pages are ordered to form chapters.
+\item \textbf{Administrative metadata} provides information to help manage a resource, such as when and how it was created, file type and other technical information, and who can access it. Subsets of administrative metadata include:
+\begin{itemize}
+\item \textbf{Rights management metadata}, which deals with intellectual property rights and licenses.
+\item \textbf{Preservation metadata}, which contains information needed to archive and preserve a resource.
+\end{itemize}
+\end{itemize}
+
+A metadata record conforms to a given schema, since the use of unstructured data to qualify a different data resource is an exercise in futility. Various metadata schemata or ontologies are available, often describing similar types of data. The most commonly used metadata vocabulary is Dublin Core\footnoteurl{http://dublincore.org/documents/dces/} (DC) by the Dublin Core Metadata Initiative (DCMI):
+
+\begin{quote}
+"The original objective of the
+Dublin Core was to define a set of
+elements that could be used by
+authors to describe their own Web
+resources. [...] the goal was to define a
+few elements and some simple
+rules that could be applied by
+noncatalogers [sic]." \cite{NISO2004}
+\end{quote}
+
+The following example illustrates the use of Dublin Core attributes (e.g. \prop{dc:description}) to describe a publication released as an PDF file:
+
+\begin{lstlisting}[language=ttl, captionpos=b, caption=Dublin Core example, label=lst:dcex,linewidth=\columnwidth,breaklines=true]
+dc:title="Metadata Demystified"
+dc:creator="Brand, Amy"
+dc:creator="Daly, Frank"
+dc:creator="Meyers, Barbara"
+dc:subject="metadata"
+dc:description="Presents an overview of metadata conventions."
+dc:publisher="NISO Press"
+dc:publisher="The Sheridan Press"
+dc:date="2003-07-01"
+dc:type="Text"
+dc:format="application/pdf"
+dc:identifier="http://www.niso.org/standards/resources/metadata.pdf"
+dc:language="en"
+\end{lstlisting}
+
+All Dublin Core attributes are optional, repeatable (non-functional) and present without order. Controlled vocabularies\footnote{a set of predefined values, controlled by an institution or a body of experts} are recommended to be used in connection with some fields (such as \prop{dc:subject}). Since its introduction in 1995, the initial list of 15 attributes has been revised and extended, forming the so called DCMI Metadata Terms\footnoteurl{http://dublincore.org/documents/dcmi-terms/} (DCT). The very general character of this vocabulary provides a useful foundation for more complex schemata reusing DC (for example \dcat).
+
+Metadata can describe any resource in any state or aggregation (single resource, collections, a part of a resource). Any resources, at any abstraction level of a domain model can be substantiated with metadata.
+The International Federation of Library Associations and Institutions\footnoteurl{http://www.ifla.org} (IFLA) defined the "Functional Requirements for Bibliographic Records" \cite{IFLA-Functional-1998}, a conceptual model for retrieval and access in online library catalogues and bibliographic databases: \textbf{Item} is an exemplar of a \textbf{Manifestation}, which embodies an \textbf{Expression}, realising a \textbf{Work} of an author.
+
+For example, a metadata record could describe a report, a particular edition of the report, or a specific copy of that edition of the report. \todo{is this a quote?}
+
+Metadata can be embedded in the described digital object, alongside the object (e.g. in the same directory) or stored separately. HTML documents often keep metadata in the HTML header or completely emerged in the document (see RDFa \cite{McCarronRDFaW3C2015}). While a close coupling between data and metadata is useful when updating them together, a separate approach often simplifies the management of large numbers of records.
+
+The advantages of reliable metadata for digital objects are manifold. These are the more poignant attributions of metadata:
+
+\begin{description}
+\item [Resource Discovery:] Metadata is the foremost source of information which aids agents (persons, software etc.) to discover wanted data.
+\item [Organising Electronic Resources:] Entities (e.g. books in a library) are organised in catalogues with the help of their digital metadata records.
+\item [Interoperability:] The interoperability of two digital resources can be determined by comparing their metadata entries, on a syntactical as well as on a semantic level.
+\item [Digital Identification:] Digital identifiers (such as URIs \cref{sec:semweb}) are stored with metadata records.
+\item [Provenance:] An extensive record on provenance is a key for trustworthiness, detailing facts like source data, responsible agents or origin activities.
+\item [Quality:] The quality of a data source is also established by the quality of its metadata.
+\item [Reusability:] Increasing discoverability, interoperability, provenance and quality are instrumental requirements for increasing reusability. 
+\item [Preservation:] "Metadata is key to ensuring that resources will survive and continue to be accessible into the future." \cite{NISO2004}
+\end{description}
+
+In the chain of processes transforming Signals, Data, Information into Knowledge (\cref{sec:kids}), metadata can help with all transformation steps:
+
+\begin{itemize}
+\item To provide information about schemata to which a set of structured data adheres or the syntax description needed to understand the signs transmitted.
+\item To advance the interpretation of data by providing context information (e.g. geographical or temporal).
+\item To point out related (web-) resources to broaden the context of an information (e.g. links to similar datasets or related web site).
+\end{itemize}
+
+%Metadata for datasets should provide for all of these benefits and reflect the FAIR principles (see next section \ref{sec:fair}). Specifically, dataset metadata should feature:
+
+%\begin{itemize}
+%\item machine readable resources (no free text if possible);
+%\item well defined abstraction levels (e.g. dataset, dataset catalogue etc.);
+%\item a detailed portrayal of internal hierarchies (sub-datsets);
+%\item exhaustive descriptions for data access (e.g. access procedures, capacity limitations etc.)
+%\item detailed license and rights portrayal
+%\item capability for an extensive description of provenance information (involved agents, source datasets etc.)
+%\end{itemize}
+
+%These demands on dataset metadata are not particularly unique features, but are of enormous importance to automatically process and evaluate metadata and the described data alike.
+%\pagebreak
+\subsection{The FAIR Data Principles}
+\label{sec:fair}
+
+In 2014, a workshop in Leiden, Netherlands, was held, named "Jointly Designing a Data Fairport". A wide group of academics and representatives of companies and other organisations concluded the workshop by drafting a concise and measureable set of principles to overcome common obstacles, impeding data discovery and reuse of (scientific) data.
+
+The \textbf{FAIR} Guiding Principles \cite{fair2016}
+
+\begin{enumerate}
+\item[\textbf{F}] \textbf{To be Findable:}
+\begin{enumerate}[1]
+\item (meta)data are assigned a globally unique and persistent identifier
+\item data are described with rich metadata (defined by R1 below)
+\item metadata clearly and explicitly include the identifier of the data it describes
+\item (meta)data are registered or indexed in a searchable resource
+\end{enumerate}
+\item[\textbf{A}] \textbf{To be Accessible:}
+\begin{enumerate}[1]
+\item (meta)data are retrievable by their identifier using a standardized communications protocol
+\begin{enumerate}
+\item the protocol is open, free, and universally implementable
+\item the protocol allows for an authentication and authorization procedure, where necessary
+\end{enumerate}
+\item metadata are accessible, even when the data are no longer available
+\end{enumerate}
+\item[\textbf{I}] \textbf{To be Interoperable:}
+\begin{enumerate}[1]
+\item (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.
+\item (meta)data use vocabularies that follow FAIR principles
+\item (meta)data include qualified references to other (meta)data
+\end{enumerate}
+\item[\textbf{R}] \textbf{To be Reusable:}
+\begin{enumerate}[1]
+\item (meta)data are richly described with a plurality of relevant attributes
+\item (meta)data are released with a clear and accessible data usage license
+\item (meta)data are associated with detailed provenance
+\item (meta)data meet domain-relevant community standards
+\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+\section{Semantic Web}
+\label{sec:semweb}
+
+I presented our common understanding of how data can herald information and knowledge in \cref{sec:kids}. I refrained from specifying which step or state might be restricted to humans or machines. None of those restrictions would probably be correct. While I don't want to elaborate on the question of: "Can machines have Knowledge?", I do state that machines can glean information from data. To interpret a message and derive meaning is not limited to the human mind. All what is needed is context and an understanding of the concepts a domain is constituted of (semantics).
+
+In 2001, Tim Berners-Lee, Hendler, and Lassila layed out their expectation of how the World Wide Web will eventually extend to become a Semantic Web \cite{Semweb1}. The simple extension of web resources with structured, well defined data (or metadata) would give meaning to resources, previously only decipherable by humans. To identify these data resources uniquely by Universal Resource Identifiers (URI) and provide links to other resources, would be the first steps in the direction towards a "web of data that can be processed directly and indirectly by machines". \todo{quote?}
+
+\begin{quote}
+"The Semantic Web is not a separate Web but an extension of the current one, in which information is given well-defined meaning. better enabling
+computers and people to work in cooperation." \cite{Semweb1}
+\end{quote}
+
+Tim Berners-Lee is the director of the World Wide Web Consortium\footnoteurl{https://w3.org} (W3C), which is responsible\todo{rewrite} for the development of standards for the World Wide Web, and by extension for the Semantic Web. At its core, the Semantic Web is defined by a collection of standards, which are \textit{Recommendations} by the W3C. "Semantic Web technologies enable people to create data stores on the Web, build vocabularies, and write rules for handling data." \footnoteurl{https://w3.org/standards/semanticweb/}.
+
+\subsection{Resource Description Framework (RDF)}
+\label{sec:rdf}
+
+This foundational technology of the Semantic Web and recommendation of the W3C \cite{RDF11} is used to describe any resource, using URIs as identifiers. Resources are defined by set of characteristics which are expressed as attributes or relations to other resources. Statements in the form of "subject, predicate, object" (named "triples") are used to convey such characteristics. The resource described is uniquely identified by the URI of the subject. The object corresponds to the content or reference of the statement. Literals (strings) are used to serialize content (or values), URIs of resources provide the target of a reference. The predicate is the semantic link between the subject and the object and defines the meaning of this statement.
+This simple linguistic construct makes RDF data understandable for humans and machines alike:
+
+\begin{lstlisting}[language=ttl, label=lst:triple,linewidth=\columnwidth,breaklines=true]
+<http://dbpedia.org> publisher "DBpedia Association".
+\end{lstlisting}
+
+This triple describes the resource http://dbpedia.org (identified by the URI of the subject). Its object is the literal "DBpedia Association" connected to the subject with the predicate: publisher. Without the predicate, no meaning could be ascribed to the datum "DBpedia Association", as the type of relation between subject and object would be unknown. Thus, the predicate is what lends meaning to a statement.
+
+The same information about the publisher of a website could be expressed differently in RDF data model. Since "DBpedia Association" represents an organisation, it could be introduced and described as an instance of a concept named "Organisation". This instance is capable of providing multiple attributes, not only its name:
+
+\begin{lstlisting}[language=ttl, label=lst:graph,linewidth=\columnwidth,breaklines=true]
+<http://dbpedia.org> publisher <http://dbpedia.org/DBpediaAssociation>.
+<http://dbpedia.org/DBpediaAssociation> type "Organisation".
+<http://dbpedia.org/DBpediaAssociation> name "DBpedia Association".
+<http://dbpedia.org/DBpediaAssociation> headquarter "Leipzig". 
+\end{lstlisting}
+
+It is obvious that the instantiation of the objects "Organisation" and "Leipzig" would bear the same benefits. 
+By extending this list of statements, describing additional resources and their characteristics, a directed graph is constructed. The data of this graph is highly interlinked and has the ability to relate to resource descriptions outside this graph as well. A URI identifies a resource in the world without ambiguity (when carefully constructed based on existing domain names). This allows linking of data objects without regard to resource locations (datasets, service endpoints etc.) and institutions, creating, what is called, "Linked Data" (\cref{sec:ld}).
+
+While labels like "publisher" have meaning for humans, they are ambiguous and could be misinterpreted. 
+Especially machines cannot resolve this ambiguity and could not infer meaning from such statements. 
+To address this issue, predicates are also identified by URIs that can be looked up for further information.
+Predicates are called properties in the RDF data model.
+
+\begin{lstlisting}[language=ttl, label=lst:graph,linewidth=\columnwidth,breaklines=true]
+<http://dbpedia.org> <http://purl.org/dc/terms/publisher> <http://dbpedia.org/DBpediaAssociation>.
+<http://dbpedia.org/DBpediaAssociation> <http://purl.org/dc/terms/name> "DBpedia Association".
+\end{lstlisting}
+
+Sets of properties can be defined and documented by institutions, like DCMI (\cref{sec:metadata}). They can then be reused by others, increasing interoperability and reusability. These sets of properties together with associated concepts and annotations are called ontologies.
+
+
+\subsection{Web Ontology Language (OWL)}
+\label{sec:owl}
+
+The Web Ontology Language is a W3C recommended standard \cite{OWL2} based on the RDF data model, which could be summarized as an ontology for defining ontologies. An ontology is a set of concepts, properties and logical axioms, with which to model a domain of knowledge or discourse. This conceptualization of a given domain or idea, allows for a formal representation with RDF as well as its automatic interpretation by machines.
+
+Concepts are classes under which all objects of a domain can be classified, dividing up the domain in abstract objects. Properties provide meaning for the links to instances of concepts or literal objects (values), which, in turn, lends meaning to the concepts themselves. Additionally, subclass relations and restrictions on properties (e.g. domain and range definitions) help to specify more complex relations of a domain. This semantic layer between the domain knowledge on one side and its representation in RDF on the other is free of restrictions imposed by underlying technologies, distinguishing it from other data models (e.g. database schemata). A wide range of ontologies are available for any type of domain. Upper ontologies are general use vocabularies (such as Dublin Core \cref{sec:metadata}) which can be reused together with other ontologies. High reusability is another difference to many other domain description languages. 
+
+Multiple langauge profiles are available \cite{OWLPROFILES}, introducing different logical regimes to OWL, such as Description Logic (OWL-DL) or based on Rule Languages (OWL2-RL). Profiles allow for reasoning over RDF data, adhering to ontologies under such regimes. The profile OWL Full is an extension of the RDF Schema (RDFS \cite{RDFS11}), which provides basic elements for the description of ontologies (allowing for class hierarchies and basic relations).
+
+Description Logic is a fragment of first-order predicate logic \cite{Barwise1977} and a formalism for representing knowledge. OWL is heavily influenced by Description Logic (projects like DAML+OIL \cite{HPMW07}) in order to achieve a beneficial trade-off between language expressiveness and computational complexity of reasoning.
+
+
+\subsection{Linked Data}
+\label{sec:ld}
+Linked Data is the idea of how data is freed from an islands of unconnected data, so it can be used and referenced all over the world referencing simply their URIs. Links between data objects from different sources are not bound to restrictions, authorisation procedures, licensing or any technical obstacles, they simply state that: "There is a data object (published in a well defined manner - e.g. RDF) which is related and it is identifiable on the Web with this URI". Machines and humans can follow up these links and explore the "Web of Data", expanding the contextual information.\todo{needs link}
+
+\begin{quote}
+"Technically, Linked Data refers to data published on the Web in such a way that it is
+machine-readable, its meaning is explicitly defined, it is linked to other external data sets,
+and can in turn be linked to from external data sets." \cite{bizer_linked_2009}
+\end{quote}
+
+Additionally, a set of best practices were contrived by Tim Berners-Lee to identify the necessary steps needed to publish and link structured data on the Web, since "a surprising amount of data isn't linked in 2006, because of problems with one or more of the steps" \cite{5starData}.
+
+\begin{enumerate}
+\item Use URIs as names for things.
+\item Use HTTP URIs so that people can look up those names.
+\item When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL).
+\item Include links to other URIs. so that they can discover more things.
+\end{enumerate}
+
+Linked Data extends the demands of RDF as a data model by specifying HTTP as the access
+layer of choice and requiring the openness of the resource to be regarded of high quality. \todo{quote}
+The result is a Web of Data, a machine-readable, semantic network of structured data, 
+opposed to the HTML based web of documents (from humans, for humans).
 
 \chapter{Related Work}
 \label{chap:relatedwork}
 
-The Data Catalog Vocabulary (\dcat) is a W3C Recommendation \cite{ddcat} and serves as a foundation for many available dataset vocabularies and application profiles.
-In \cite{MaaliCP10} the authors introduce a standardised interchange format for machine-readable representations of government data catalogues. 
-%Vocabulary terms for \dcat are inferred from the survey on seven data catalogs from Europe, US, New Zealand and Australia.
-The \dcat vocabulary includes the special class Distribution
-for the representation of the available materialisations of a
-dataset (e.g. CSV file, an API or RSS feed). These distributions cannot be described further within \dcat (e.g. the type of data, or access procedures).
-Applications which utilise the \dcat vocabulary (e.g. datahub.io\footnoteurl{http://datahub.io/}) provide no standardised means for describing more complex datasets either. 
-Yet, the basic class structure of \dcat (Catalog, CatalogRecord, Dataset, Distribution) has prevailed. Range definitions of properties provided for these classes are general enough to make this vocabulary easy to extend.
+\section{Dataset vocabularies}
+\label{sec:dv}
+This section is dedicated to dataset metadata vocabularies and application profiles \footnote{a set of metadata elements defined for a particular application or other limited purpose, often based on a broader schema (like an ontology)}, to compare them and list their (dis-) advantages.
 
-%\todo{rewritten, please read} The Provenance Ontology\cite{prov} (\prov) is a widely adopted W3C standard and serves as a lightweight way to express the interactions between activities, agents and entities (e.g. datasets).
-%\dcat only uses basic metadata to express provenance based on \dct properties like 
-%\prop{dct:creator} or 
-\dcat, as opposed to \prov, expresses provenance in a limited way using a few basic properties such as
-\prop{dct:source} or \prop{dct:creator}, thus it does not relate semantically to persons or organisations involved in the publishing, maintenance etc. of the dataset. %Other related entities, like software, projects, funding etc., are neglected all together.
-There is no support or incentive to describe source datasets or conversion activities of transformations responsible for the dataset at hand. This lack is crucial, especially in a scientific contexts, as it omits the processes necessary to replicate a specific dataset, a feature easily obtainable by the use of \prov.
-\iffalse
-The Open Digital Rights Language (\odrl)\footnoteurl{https://www.w3.org/ns/odrl/2/ODRL21} is an initiative of the W3C community group\footnoteurl{https://www.w3.org/community/odrl/}, aiming to develop an open standard for policy expressions. The \odrl version 2.0 core model defines
-%8 classes to define a 
+Based on the FAIR Data Principles (\cref{sec:fair}) and the list of important aspects of dataset metadata (\cref{sec:motivation}), I contrived the following list of aspects, against which I want to evaluate each vocabulary.
+
+\begin{enumerate}[A]
+\item \textbf{The vocabulary encourages the use of richly described and machine-readable resources.} 
+Concepts are defined as exhaustive as necessary to describe all relevant aspects, avoiding free text properties in general. For example, replacing a literal with a well structured instance of \prop{foaf:Agent}. 
+\item \textbf{The vocabulary assigns globally unique URIs to metadata resources.} Demanding URIs as identifiers, independent of the chosen data representation (even for non RDF or XML metadata).
+\item \textbf{The vocabulary can describe data access related properties and restrictions, enabling access for humans and machines alike.} Sufficient effort has been made to describe this important aspect in detail, considering all possible formats of a dataset.
+\item \textbf{The vocabulary can portray provenance information extensively.} Dataset provenance can be described extensively, including other datasets (e.g. sources), activities (e.g. data generation activities) and agents (e.g. publisher) as well as inter-relational properties between these concepts.
+\item \textbf{The vocabulary provides for detailed descriptions of rights and licenses.} Machine readable licenses are of utmost importance.
+\item \textbf{The vocabulary provides properties to cite identifiers of the data described.} The possibility to reference the data described directly (by identifier) in the metadata is available.
+\item \textbf{The vocabulary provides for qualified references between resources.} Relations between instances of dataset metadata can be qualified by roles (specifying the type of relations), time and other restrictions.
+\item \textbf{The vocabulary is easy to extend, to fit any given use case.} The vocabulary is general enough to fit any use case, it can easily be extended and no unnecessary restrictions, like restrictive cardinalities, are in place.
+\item \textbf{The vocabulary is unambiguous and easy to map to other metadata vocabularies.} The vocabulary is general enough to be able to match other metadata formats. Properties are defined clearly without overlapping the purpose of others (so users know which property to use).
+\item \textbf{The vocabulary offers additional properties to aid dissemination and discovery.} Extra properties are in place to provide keywords, genres, taxonomy concepts and general statements explaining the use of a dataset.
+\end{enumerate}
+
+I will assign one of the following ratings to every item: \textbf{(2)} The requirement is supported in full. \textbf{(1)} The requirement is partially met. \textbf{(0)} The vocabulary does not support this requirement. 
+While this list is helpful for evaluation and comparison purposes, the quality of a dataset vocabulary is also dependent on the intended domain of use and other factors, which I will mention as well.
+
+\subsection{The Data Catalog Vocabulary (DCAT)}
+\label{sec:dcat}
+In \cite{MaaliCP10} the authors introduce a standardised interchange format for machine-readable representations of government data catalogues. The Data Catalog Vocabulary (\dcat) is a W3C recommendation \cite{ddcat} and serves as a foundation for many available dataset vocabularies and application profiles.
+Vocabulary terms for \dcat are inferred from the survey on seven data catalogues from Europe, US, New Zealand and Australia.
+
+\begin{quote}
+"By using \dcat to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites." \cite{ddcat}
+\end{quote}
+
+\dcat defines three levels of abstraction, based on the following distinctions: A dataset describes a "collection of data, published or curated by a single agent, and available for access or download in one or more formats"\cite{ddcat}, and represents the commonalities and varieties of the data held within (the 'idea' or intellectual content of that dataset). A Dataset is part of a data catalogue, representing multiple datasets (e.g. of an organisation). Datasets manifest themselves (are available) in different forms (such as files, service endpoints, feeds etc.), expressed with the class \prop{dcat:Distribution}. A dataset might be available for download at two different locations on the Web and available to be queried through an API endpoint. This scenario can be described by using three different \prop{dcat:Distribution} instances.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/DcatIdea.png}
+  \caption{The basic idea of \dcat}
+  \label{fig:dcat}
+\end{figure}
+
+This basic idea of differentiating between catalogue, dataset and distribution, has prevailed throughout the metadata domain for digital resources (not only datasets), and has become an quasi-requirement for metadata representations of web resources\footnoteurl{https://www.w3.org/TR/dwbp/#context}. In fact, the general approach the authors of \dcat took, makes it possible to describe any digital object. This is a highly desirable feature, supporting \extensibility and \interoperability of the vocabulary.
+
+As stated before (\cref{sec:motivation}), a downside to this approach is the possible unspecificity of resources, especially in regard to machine-readability, where uncertainty about formats is problematic.
+
+\textbf{Insufficient provenance information:}
+\begin{itemize}
+\item \dcat expresses provenance in a limited way using a few basic properties such as
+\prop{dct:source} or \prop{dct:creator}, which can not be further qualified.
+\item No possibility to specify activities involved in the creation of datasets.
+\item There is no support or incentive to describe source datasets, related publications or conversion activities of transformations responsible for the dataset. This lack is crucial, especially in a scientific contexts, as it omits the processes necessary to replicate a specific dataset.
+\item Insufficient portrayal of context information (e.g. licenses, geography etc.)
+\end{itemize}
+
+\textbf{Missing relations between Datasets:}
+\begin{itemize}
+\item in general: Referencing related datasets is only possible on a very generic scale (e.g. \prop{dct:relation}).
+\item hierarchical: No inherent portrayal of dataset hierarchies is possible.
+\item evolutionary: No versioning pointers between dataset representations.
+\end{itemize}
+
+\textbf{Relations to agents are too cursory:}
+\begin{itemize}
+\item A very restricted number of properties pointing out agents, without any further qualification (e.g. \prop{dct:publisher}, \prop{dcat:contactPoint}), other related entities, like software, projects, funding etc., are neglected all together.
+\item No agent role concept to define new relations.
+\end{itemize}
+
+\textbf{Technical description of distributions is lacking, restricting the accessibility of the data:}
+\begin{itemize}
+\item Only superficial attributes for describing the technical characteristics of a distribution are available.
+\item No access information are available, such as access restrictions or service description, needed to describe service endpoints.
+\item No specificity when describing serialisation or media type of a distribution (e.g. file format).
+\end{itemize}
+
+\textbf{General lack of specificity, inviting non-machine-readable expressions of resources:}
+\begin{itemize}
+\item Insufficient specificity of property ranges (e.g.: \prop{dct:license}, \prop{dct:temporal}, \prop{dct:spatial}, \prop{dct:language}, \prop{dcat:mediaType}), thereby neglecting exactness of relevant metadata resources, such as licenses.
+\item A lack of referential and functional integrity due to missing role-based qualifications of properties (such as \prop{dct:maintainer}) \cite{jefferyCerifW3C2016}.
+\end{itemize}
+
+While this seems to be an extensive list of shortcomings, most of the points listed above are due to the general approach of \dcat. The list merely indicates that portraying dataset metadata with \dcat alone, might not be sufficient for most domains and use cases.
+
+In turn, extending \dcat as upper ontology provides a sufficient basis for any metadata descriptions, without regard to domain or use case. Adopting not only its basic ideas, but the aspects of easy \extensibility and \interoperability, should prove beneficial. Addressing the issues with \provenance, \licensing and \access as well as domain specific demands for metadata is the central task I set out to complete.
+
+\todo{The evaluation table is reused in the eval section. The numbers within have to be revisited...}
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \dcat & 2 & 2 & 0 & 0 & 0 & 1 & 0 & 2 & 2 & 2 & 11 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaldcat}
+\end{table}
+
+\subsection{Vocabulary of Interlinked Datasets (VoID)}
+\label{sec:void}
+
+The Vocabulary of Interlinked Datasets (\void) \cite{Alexander09describinglinked} is widely accepted and used within the Semantic Web community, for instance in projects such as: OpenLink Virtuoso\footnoteurl{http://virtuoso.openlinksw.com/} , LODStats\footnoteurl{http://stats.lod2.eu/} , World Bank\footnoteurl{http://worldbank.270a.info/} and others. \void can be used to express general metadata, access metadata, structural metadata and links between Linked Data datasets. Tools to create \void metadata are described in \cite{DBLP:BohmLN11} where authors also presents techniques of reduction in order to create descriptions for Web-scale datasets. In the same paper the importance of \void is well established but there is still a lack of important metadata which is not described, for example license and provenance. For simple datasets \void performs well, which is supported by the fact of wide acceptance of the vocabulary. 
+However, in a case of complex datasets \void is not expressive enough. In particular, access metadata includes the \prop{void:dataDump} property, which points to the data files of the particular dataset. This property should link directly to dump files as described in W3C Interest Group Note: Describing Linked Datasets with the \void Vocabulary\footnoteurl{http://www.w3.org/TR/void/}. Thus, additional semantic information about the data files and the structure of the dataset can not be expressed using \void. Moreover, \void does not provide a distribution concept depriving the vocabulary of an important level of abstraction. Yet, this ontology is useful especially for Linked Data datasets, offering many useful statistical properties (such as \prop{void:triples}) and the very handy concept of \prop{void:LinkSet} describing the particular relation between datasets, where one holds links to instances of the other.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \void & 2 & 2 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 10 \\
+        \hline
+    \end{tabular}
+    \label{tab:evalvoid}
+\end{table}
+
+\subsection{Comprehensive Kerbal Archive Network (CKAN)}
+\label{sec:ckan}
+
+Metadata models vary and most of them do not offer enough granularity to sufficiently describe complex datasets in a semantically rich way. 
+For example, \ckan{}\footnoteurl{http://ckan.org/} (Comprehensive Knowledge Archive Network), a data management system used widely in (Open) Data Portals (such as datahub.io\footnoteurl{http://datahub.io/}) to provide web representations for datasets, operates on a JSON  based schema\footnoteurl{https://github.com/KSP-CKAN/CKAN/blob/master/CKAN.schema} developed by the Open Knowledge Foundation\footnoteurl{https://okfn.org}.
+\ckan allows simple access to a whole range of functions related to the management of datasets (such as search and faceting of data-sources) accessible via a REST interface.
+Its metadata schema has some similarities with \dcat: Datasets are collected under organisation objects, which are used as s primitive stand in for catalogues. Datasets have 'Resources' which assume a similar role as a distribution in the \dcat vocabulary. 
+
+Alas, there is no clear definition of the resource-object within \ckan documentation, nor are there any noteworthy restrictions. This has led to a medley of different use cases for this resource, where it assumes the role of a \prop{dcat:Distribution} in one dataset (containing all data of the dataset) and providing different slices of the data in another example \cite{neum-etal-2016w3c}. Furthermore, the extensive use of key-value pairs for additional data led to a shier host of (semi-) structured data, with only marginal agreement on key names between different Data Portals \cite{neum-etal-2016w3c} adding to the general unclarity of this metadata format, complicating the mapping to other vocabularies.
+
+This data model is semantically poor and inadequate for most applications consuming data automatically. I strongly discourage any organisation from adopting the \ckan format for their dataset metadata. Since it is used so frequently in Data Portals, I feel obliged to point out that there are mapping tools for most vocabularies to \ckan (as I provided for DataID in \cite{dataID2014}).
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \ckan & 2 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 5 \\
+        \hline
+    \end{tabular}
+    \label{tab:evalckan}
+\end{table}
+
+
+\subsection{Metashare}
+\label{sec:metashare}
+The \metashare ontology\cite{mccrae_2015_OWLmetashare} is the offspring of a prior, XSD\footnote{XML Schema Definition: a W3C recommendation for how to formally describe the elements in an XML document (https://www.w3.org/TR/xmlschema11-1/)} based "metadata schema that allows aspects of [language resources] accounting for their whole lifecycle from their production to their usage to be described"\cite{mccrae_2015_OWLmetashare}.
+\metashare differentiates between language resources (basically datasets with a language related purpose - text, audio etc.), technologies (e.g., tools, services) used for their processing and additional entities like reference documents, agents, projects or licenses. This allows for the portrayal of provenance in the domain of Natural Language Processing.
+In addition it offers an exemplary way of describing licenses and terms of reuse\footnoteurl{http://www.cosasbuenas.es/static/ms-rights/}. Yet, \metashare is highly specialised for language resources, thus lacking generality and extensibility for other use cases. While not implementing the \dcat vocabulary, \metashare does provide an almost complete mapping to \dcat. Mappings to other ontologies might prove difficult, due to the large size of the vocabulary and the often employed (and ample) controlled vocabularies. The related \metashare XSD schema has been implemented in the \metashare web portal\footnoteurl{http://www.meta-share.org}, providing many NLP related datasets for download.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \metashare & 2 & 2 & 1 & 1 & 2 & 0 & 0 & 0 & 1 & 1 & 10 \\
+        \hline
+    \end{tabular}
+    \label{tab:evalmetashare}
+\end{table}
+
+\subsection{Asset Description Metadata Schema (ADMS)}
+\label{sec:adms}
+The Asset Description Metadata Schema\footnoteurl{https://www.w3.org/TR/vocab-adms/} (\adms) is a profile of \dcat, which is specialised to describe "Semantic Assets".
+Assets (as subclass of \prop{dcat:Dataset}) are highly reusable metadata (e.g. code lists, XML schemata, taxonomies, vocabularies etc.) expressing the intellectual content of the data, which is represented (in most cases) in relatively small files. 
+
+\adms adopts the \dcat structure and provides a well defined way of versioning between entities. Its specialised nature makes it unsuited for a broader approach of portraying datasets (as intended by the authors), but it can still contribute useful properties to \dcat based vocabularies (e.g. \cref{sec:dcatap}). Since \adms does not impose any restrictions it can be extended to \dcat without any consequences for \dcat based metadata documents. The evaluation below, therefore does not differ from \dcat.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \adms & 2 & 2 & 0 & 0 & 0 & 1 & 0 & 2 & 2 & 2 & 11 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaladms}
+\end{table}
+
+\subsection{DCAT Application Profile for data portals in Europe (DCAT-AP)}
+\label{sec:dcatap}
+
+The DCAT Application Profile for data portals in Europe\footnoteurl{https://joinup.ec.europa.eu/asset/dcat_application_profile/home} (\dcatap) is a specification based on \dcat (extended with \adms properties) for describing public sector datasets in Europe. It was developed by a working group under the auspices of the European Commission. Its basic use case is "to enable cross-data portal search for datasets and to make public sector data better searchable across borders and sectors" \cite{dcatap11}. This can be achieved by the exchange of descriptions of datasets among data portals.
+
+Traits of the resulting profile\footnoteurl{https://joinup.ec.europa.eu/catalogue/distribution/dcat-ap-version-11} (version 1.1) released in October 2015 \cite{dekkersDcatApW3C2016}:
+
+\begin{itemize}
+\item It proposes mandatory, recommended or optional classes and properties to be used for a particular
+application;
+\item It identifies requirements to control vocabularies for this application;
+\item It gathers other elements to be considered as priorities or requirements for an application such as
+conformance statement, agent roles or cardinalities.
+\end{itemize}
+
+\dcatap has been endorsed by the Standards Committee of ISA2\footnoteurl{https://ec.europa.eu/isa/isa2/index_en.htm} in January of 2016\footnoteurl{https://joinup.ec.europa.eu/community/semic/news/dcat-ap-v11-endorsed-isa-committee} for the use in data portals. Further, it has been implemented by over 15 open data portals in the European Union, including the European Data Portal\footnoteurl{https://www.europeandataportal.eu/}. 
+
+In general, while some recommendation are in place (e.g. using \odrl license documents - \cref{sec:odrl}), \dcatap can not propose concrete improvements in extending \dcat to advance \provenance, \licensing or \access. As remarked in section 7 of its specification\footnoteurl{https://joinup.ec.europa.eu/catalogue/distribution/dcat-ap-version-11}, the representation of different agent roles is lacking in the current version of \dcatap. In my opinion, the second solution proposed within, using \prov (Provenance Ontology - see \cref{sec:prov}), is the most comprehensive way of resolving this issue. Due to some cardinality restrictions (e.g. those on \prop{dcat:accessURL}) and its specialisation for data portals, extending \dcatap to serve more elaborate purposes, can pose challenges. 
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \dcatap & 2 & 2 & 1 & 0 & 0 & 1 & 0 & 1 & 2 & 1 & 10 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaldcatap}
+\end{table}
+
+\subsection{The HCLS Community Profile}
+\label{sec:hcls}
+The W3C interest group Semantic Web for Health Care and Life Sciences (HCLS)  represents many stakeholders of the Life Sciences, seeking to "develop, advocate for, and support the use of Semantic Web technologies across health care, life sciences, clinical research and translational medicine" \cite{hclsig}. 
+
+Their community profile (an ongoing effort by this W3C interest group\footnoteurl{https://www.w3.org/blog/hcls/}), extends \dcat with versioning and detailed summary statistics, through a three component model. This model introduces an additional abstraction level between dataset and distribution, the so called 'Version Level Description', which contains version specific properties (e.g. \prop{dct:isVersionOf}). The profile is structured in multiple modules, dealing with different levels of specificity \cite{HCLSCP2016}:
+
+\begin{description}
+\item[Core Metadata] captures generic metadata about the dataset, e.g., its title, description, and publisher.
+
+\item[Identifiers] describes the patterns used for identifiers within the dataset and for the URI namespaces for RDF datasets.
+
+\item[Provenance and Change] describes the version of the dataset and its relationship with other versions of the same dataset and related datasets, e.g., an external dataset that is used as a source of information.
+
+\item[Availability/Distributions] provides details of the distribution files, including their formats, in which the dataset is made available for reuse.
+
+\item[Statistics] used to summarise the content of the dataset.
+\end{description}
+
+The HCLS profile reuses 18 vocabularies with 61 properties \cite{HCLSCP2016}, covering many goals of my evaluation. The chosen approach of this profile is sound and achieves qualitatively good metadata, with an emphasis on FAIR Data principles.
+
+One problem is the large number of reused vocabularies with overlapping purposes, which cause difficulties when mapping to other vocabularies. Its cardinality restrictions can pose problems when extending the profile to use cases, especially outside the health care domain. Although, efforts were made to cover provenance in general, problems like qualifying otherwise static relations to agents or datasets can not be solved by the incorporated vocabularies. The approach to portray licenses does not improve \dcat.
+
+A specific problem is the use of the property \prop{dcat:accessURL}, which, according to the profile, could be used on the dataset abstraction level ('Summary Level Description'). This clearly violates the specification of \dcat. In general the boarder between \prop{dcat:Dataset} and \prop{dcat:Distribution} has to be defined more carefully when adding an additional layer in between.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of HCLS Profile & 2 & 2 & 1 & 1 & 0 & 2 & 0 & 1 & 1 & 1 & 11 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaldcatap}
+\end{table}
+
+\subsection{CERIF}
+\label{sec:cerif}
+The metadata format \cerif\footnoteurl{http://www.eurocris.org/cerif/main-features-cerif} (Common European Research Information Format) is a metadata development, which began in the early 1990s. The shortcomings of its first approach were addressed by CERIF2000, which became a EU recommendation for its member states for research data. Since 2002 \cerif is further developed by the European Current Research Information Systems\footnoteurl{http://www.eurocris.org}.
+
+\cerif provides generalized base concepts and relations between them, based on an entity-relationship\footnote{Entity–relationship model: describes inter-related things of interest in a specific domain of knowledge. An ER model is composed of entity types (which classify the things of interest) and specifies relationships that can exist between instances of those entity types.} approach \cite{CerifJefferyA10}. Relations (or 'linking entities') are qualified with roles, temporal and spacial statements, supplemented with provenance and versioning information.
+In contrast to Dublin Core based metadata standards (e.a. \dcat), \cerif was developed with a particular focus on referential and functional integrity of resources, avoiding ambiguity in interpretation \cite{jefferyCerifW3C2016}. 
+\cerif provides much more than just metadata for datasets, it addresses metadata needs for the whole science community, describing projects, funding, facilities, organisations and other.
+
+This paper lines out the main characteristics of \cerif metadata \cite{jefferyCerifW3C2016}:,
+\begin{itemize}
+\item it separates clearly base entities from relationships between them and thus represents the more
+flexible fully-connected graph rather than a hierarchy;
+\item it has generalised base entities with instances specialised by role (e.g. <person> rather
+than <author>), in the linking entities;
+\item it handles multilinguality by design and temporal information (so representing versions)
+to the appropriate attribute treated as an entity (example <title> linked to <publication>);
+\item temporal information is in the link entities not the base entities (e.g. employment between
+two dates is in the linking relation between <person> and <organisation> and not an attribute of either
+of the base entities);
+\item the temporal information in linking entities provides provenance and versioning recording (e.g.
+versions of datasets and – in the associated role attribute – the method of update or change);
+\item \cerif separates the semantics into a special 'layer' which is referenced from \cerif instances. The
+sematic layer includes permissible values for roles in any linking entity and for controlled
+values of attributes in base entities (e.g. ISO country codes). Thus semantic terms are stored once and
+referenced many times (preserving integrity). 
+\end{itemize}
+
+\cerif offers a comprehensive approach for solving a host of metadata demands in a sophisticated manner. 
+The chosen abstraction levels (layers) are appropriate and the adherence to an entity-relationship approach is arguably a working solution for qualifying relations. The main problem with \cerif is the complexity of its ontology\footnoteurl{http://eurocris.org/ontologies/cerif/1.3/} \footnoteurl{http://eurocris.org/ontologies/semcerif/1.3/} together with the unique approach to metadata (unlike the \dcat based understanding of metadata). The imposes hurdles when studying, mapping and extending this ontology. 
+%Also, while it can be used in generic way, \cerif has some very specific properties for research related purposes (e.g. \prop{cerif:linksToFunding}), adding to problems with extending and mapping. 
+Furthermore, the ontology proves to be not specific enough when dealing with information on access and licenses.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of \cerif & 2 & 2 & 0 & 2 & 0 & 2 & 2 & 1 & 1 & 1 & 13 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaldcatap}
+\end{table}
+
+
+\subsection{DataID version 1.0.0}
+\label{sec:dataid100}
+
+The common shortcomings of dataset vocabularies revealed in this section were also afflicting the previous version (1.0.0) of the \dataid ontology \cite{dataID2014}. Rooted in the Linked Data world, it neglected important information or provided properties (e.g. \prop{dataid:graphName}) which are orphans outside this domain. 
+
+While it already imported the important Provenance Ontology (\prov  - \cref{sec:prov}), to cover the general issues with \provenance, it was lacking in regard to specificity of \access and \licensing. The narrow definition of datasets (i.e. restricted to Linked Data datasets) was inadequate for use cases outside this domain and so inhibited \extensibility.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Requirement & A & B & C & D & E & F & G & H & I & J & Sum \\
+        \hline
+        Evaluation of DataID 1.0.0 & 2 & 2 & 0 & 2 & 1 & 0 & 0 & 1 & 2 & 1 & 11 \\
+        \hline
+    \end{tabular}
+    \label{tab:evaldataid100}
+\end{table}
+
+\pagebreak
+\section{Secondary Literature}
+\label{sec:auxiliary}
+
+This section proffers a collection of associated literature, not directly touching on the subject of dataset metadata. Many subjects, such as representation of licenses and data quality, are relevant for providing metadata of datasets.
+
+\subsection{The Provenance Ontology (PROV-O)}
+\label{sec:prov}
+
+\begin{quote}
+"Provenance is defined as a record that describes the people, institutions, entities, and activities involved in producing, influencing, or delivering a piece of data or a thing. In particular, the provenance of information is crucial in deciding whether information is to be trusted, how it should be integrated with other diverse information sources, and how to give credit to its originators when reusing it. In an open and inclusive environment such as the Web, where users find information that is often contradictory or questionable, provenance can help those users to make trust judgements." \cite{MoreauProvDM2013}
+\end{quote}
+
+
+The Provenance Ontology\cite{prov} (\prov) is a widely adopted W3C recommended standard and serves as a lightweight way to express the provenance and interactions between activities, agents and entities (e.g. datasets). 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/ProvLinchpin.png}
+  \caption{Linchpin of the Provenance Ontology: Entities, Agents, Activities \cite{prov}}
+  \label{fig:prov}
+\end{figure}
+
+%Provenance information is needed in any given scenario. 
+In the context of datasets, provenance information on the activities which helped to create a dataset, which agents were involved in these processes and who to contact about it as well as source datasets or other entities involved are of interest, especially when trying to determain the trustworthiness of data. This ontology is "[...] the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts." \cite{prov}
+
+Each of the relations depicted (\cref{fig:prov}) have suitable qualification classes (e.g. \prop{prov:Association}), so that a property (\prop{prov:wasAssociatedWith}) can be inferred from the qualified property path  (\prop{prov:qualifiedAssociation}/\prop{prov:agent}). Qualification classes provide qualification via properties such as \prop{prov:role}. 
+
+In this example (from the official specification of \prov \cite{prov}), an association provides additional description about the :illustrationActivity that an agent named 'Derek' influenced:
+
+\begin{lstlisting}[language=ttl, captionpos=b, label=lst:dcex,linewidth=\columnwidth,breaklines=true]
+@prefix prov: 			<http://www.w3.org/ns/prov#> .
+@prefix :     			<http://example.org#> .
+
+:illustrationActivity
+   a prov:Activity;                  ## this illustration activity was 
+   prov:wasAssociatedWith :derek;    ##   associated with Derek in some way.
+.
+
+:derek a prov:Agent .
+
+:illustrationActivity
+   prov:qualifiedAssociation [       ## Qualify how the :illustrationActivity
+      a prov:Association;            ##   was associated with the Agent Derek.
+      prov:agent   :derek              
+
+      prov:hadRole :illustrationist; ## Qualification: The role that Derek served
+      prov:hadPlan :tutorial_blog;   ## Qualification: The plan (or instructions)
+                                     ##   that Derek followed when creating 
+   ].                                ##   the graphical chart.
+
+:tutorial_blog   a prov:Plan, prov:Entity .
+:illustrationist a prov:Role .
+\end{lstlisting}
+
+\prov will have a central role in the creation of DataID. Further reading on the key requirements, guiding principles, and design decisions which influenced the PROV Family of Documents\footnoteurl{https://www.w3.org/TR/2012/WD-prov-overview-20121211/} is advised (see \cite{MoreauProv2015}).
+
+\subsection{Open Digital Rights Language (ODRL)}
+\label{sec:odrl}
+The Open Digital Rights Language (\odrl)\footnoteurl{https://www.w3.org/ns/odrl/2/ODRL21} is an initiative of the W3C community group with the same name\footnoteurl{https://www.w3.org/community/odrl/}, aiming to develop an open standard for policy expressions. 
+The \odrl version 2.0 core model defines
 licensing policies in regard to their permissions
 granted, duties and constraints associated with these
 permissions as well as involved legal parties. Thus, an \odrl
 description allows to specify, in a machine-readable way, if
 data can be edited, integrated or redistributed.
-\fi%\todo{commented out part on odrl to save space!}
 
-Metadata models vary and most of them do not offer enough granularity to sufficiently describe complex datasets in a semantically rich way. 
-For example, \ckan{}\footnoteurl{http://ckan.org/}(Comprehensive Knowledge Archive Network), which is used as a metadata schema in data portals like datahub.io, partially implements the \dcat vocabulary, but only describes resources associated with a dataset superficially.
-%KM: Changed sentence from: Most additional properties described [...] paris linked by 
-Additional properties are simple key-value pairs which themselves are linked by \prop{dct:relation} properties. This data model is semantically poor and inadequate for most use cases wanting to automatically consume the data of a dataset. 
-
-While not implementing the \dcat vocabulary, \metashare \cite{mccrae_2015_OWLmetashare} does provide an almost complete mapping to \dcat, providing an extensive description of language resources, based on a XSD schema.
-In addition it offers an exemplary way of describing licenses and terms of reuse. Yet, \metashare is specialised on language resources, thus lacking generality and extensibility for other use cases.
-%almost exclusively applicable to language resources (as intended), making it hard to extend for other purposes. 
-%, and is therefore no choice for many use cases.
-%Therefore it is no choice for many use cases.
-
-Likewise the Asset Description Metadata Schema\footnoteurl{https://www.w3.org/TR/vocab-adms/} (\adms) is a profile of \dcat, which only describes a specialised class of datasets: so-called Semantic Assets. 
-%%\todo{SH: not clear what a semantic asset is, maybe reusable text snippets?, MF: This sentence is more or less the exect description of an asset from the W3C documentation... } 
-Highly reusable metadata (e.g. code lists, XML schemata, taxonomies, vocabularies etc.), which is comprised of relatively small text files.
-
-\dcatap (\dcat Application Profile for data portals in Europe\footnoteurl{https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11}) is a profile, extending \dcat with some \adms properties. It has been endorsed by the ISA Committee in January of 2016\footnoteurl{https://joinup.ec.europa.eu/community/semic/news/dcat-ap-v11-endorsed-isa-committee}.  Due to the stringent cardinality restrictions, extending \dcatap to serve more elaborate purposes will prove difficult. As remarked in section 7 the representation of different agent roles is lacking in the current version of \dcatap. 
-%In our opinion the second solution proposed, using \prov, is the most comprehensive way of resolving this issue. 
-Neither \dcatap nor \adms give any consideration to defining responsibilities of agents, extending provenance or providing thorough machine-readable licensing information.
-
-Similar problems afflicted the previous version of the DataID ontology\cite{dataID2014}. Rooted in the Linked Open Data world, it neglected important information or provided properties (e.g. \prop{dataid:graphName}) which are orphans outside this domain. While already importing the \prov ontology, it was lacking a specific management of rights and responsibilities.
+\subsection{Lexvo.org}
+\label{sec:lexvo}
+Lexvo.org\footnoteurl{http://www.lexvo.org} is a service publishing language related information as Linked Data on the Web. The data published is conform to the Lexvo Ontology, providing unique identifiers for human languages in the context of geography, language families, words and word senses, scripts and characters \cite{Lexvo2015DeMelo}. All in all, the Lexvo dataset consists of over 8000 languages with a broad spectrum of language-related information that is extensively used by many data publishers and communities.
 
 
-Aufführung anderer bzw. ähnlichen Arbeiten zum Thema. Hier stehen die meisten Zitate zu \emph{wissenschaftlichen} Publikationen. Dies müssen nicht nur aktuelle Paper sein, sondern können auch Publikationen älteren Datums sein. Die Prägnanz, die Generalisierung und der Vergleiche stehen hierbei im Vordergrund. Auch kann eine Diskussion enthalten sein.
+\subsection{DataCite Ontology}
+\label{sec:dcid}
+DataCite is a "global non-profit organisation that provides persistent identifiers (DOIs) for research data [with the goal] to help the research community locate, identify, and cite research data with confidence"\footnoteurl{https://www.datacite.org/mission.html}. \todo{revise citation}
 
-Das Kapitel sollte so viele Seiten wie nötig umfassen, um eine Einordnung des Sachverhalts gegenüber anderen Gebieten zu erreichen. Der Richtwert sind 5 bis max. 10 Seiten. 
+DataCite published an XML schema for describing and citing research data\footnoteurl{http://schema.datacite.org/meta/kernel-4.0/}, which is elaborate and at times novel approach for providing dataset metadata. Yet, due to its rigid XML structure with many cardinality restrictions, it does not feature in my collection of dataset metadata in this chapter. 
 
-\chapter{Entwurf}
-\label{chap:design}
-In diesem Kapitel wird der Entwurf des System beschrieben. Dies soll kein Lasten / Pflichtenheft sein oder die Anforderungen bis ins kleinste Details aufzählen. Vielmehr sollen wichtige Design Entscheidungen erklärt werden. Hierzu gehören das Design, Konzepte und Modelle. 
-
-Wichtig ist, dass die eigenen Ideen und Beiträge als solche hervorgehoben werden. In Bachelorarbeiten sollte hierbei das gelernte Wissen geschickt angewandt werden. In Master und Diplom sollten hierbei wissenschaftliche Innovationen oder die kreative Anwendung anklingen. In einer Dissertation muss hier klar der wissenschaftliche Fortschritt (eine Erfindung, eine Neuerung) sowie der Nutzen ersichtlich sein.
-
-Dies ist das Hauptkapitel der Arbeit und sollte so viele Seiten wie nötig enthalten.
+Of more interest, is the DataCite ontology which was published as an OWL ontology\footnoteurl{http://www.sparontologies.net/ontologies/datacite/source.html} and has a particular focus on representing identifiers (\cref{fig:dcid}). The Identifier class is divided into ResourceIdentifier and AgentIdentifier. In addition, an IdentifierScheme defines the format of the literal which represents the identifier. As opposed to an approach with data-types, this ontology allows for adding new schemes without altering the vocabulary itself and adding additional qualifications to the scheme entity \cite{Peroni2016}. Furthermore, the DataCite ontology contains a multitude of predefined IdentifierScheme instances, ready to be used. 
 
 
-\chapter{Implementierung}
-\label{cahp:impl}
+\begin{figure}[t]
+\centering
+  \includegraphics[width=\textwidth]{images/DataCiteIdentifiers.png}
+  \caption{DataCite Identifier and IdentifierScheme}
+  \label{fig:dcid}
+\end{figure}
 
-In diesem Kapitel werden Implementierungsdetails behandelt. Dabei wird der Aufbau des System, die eigentliche Umsetzung, Konfigurationen und die Handhabung betrachtet. Das Kapitel sollte sich nicht in Details verlieren aber dennoch die Anwendung behandeln. 
+\subsection{DBpedia}
+\label{sec:dbpedia}
 
-Das Kapitel sollte soviel wie nötige Seiten umfassen, dabei aber knapp gehalten werden!
+DBpedia is a community effort to extract structured information from Wikipedia and to make this information available on the Web, where it is used as a common point of reference for interlinking and enriching most of the structured data on the web today, establishing it as the center of the so called 'LOD cloud'. \todo{this section needs polishing and references!}
 
-\chapter{Auswertung}
-\label{chap:eval}
+The main focus of the DBpedia extraction lies in mapping of info boxes, templates and other easily identified structured data found in Wikipedia articles to properties of an ontology. The DBpedia ontology is reflecting the relations and classifications found within Wikipedia. Together with the mappings to the Wikipedia XML templates, this ontology is curated by a community of interested people around the world to update schematical changes in time for the bi-yearly DBpedia releases. 
+
+Each release consists of around one hundred datasets for each of its 130 (2016) language editions (reflecting most of the languages of Wikipedia). Datasets are often created around particular properties (such as \prop{rdf:type}) or other distinguishing features. To reflect this large corpus of structured data, the need for specific demands on its metadata are self-evident.
+
+\todo{probably gets another field on the data quality vocabulary...}
+
+\chapter{The DataID Ecosystem}
+\label{chap:ecosystem}
+
+\section{Problem Statement} 
+\label{sec:probstat}
+%Modularizing the original ontology into multiple layers, making DataID independent to the type of data in the process. By augmenting the core ontology with multiple existing extensions and use case specific additions we underline the capabilities in regard to
+
+The inadequacies of current metadata vocabularies are manifold and diverse (\cref{sec:dv}). As already introduced (\cref{sec:motivation}), there are some issues which protrude from the rest, due to their ubiquitousness in use cases or their import on aspects like interoperability, trustworthiness and governance of data.
+
+This list of important aspects of metadata reflects these issues and explains them in detail:
+
+\textbf{(A1)} \provenance: a crucial aspect of data, required to assess correctness and completeness of data conversion, as well as the basis for trustworthiness of the data source (no trust without provenance). 
+
+\textbf{(A2)} \licensing: machine-readable licensing information provides the possibility to automatically
+%process, integrate and publish 
+publish, distribute and consume only data that explicitly allows these actions. %%\todo{instead of "process, integrate and publish" could we use the same name as the permissions in \odrl to be consistent?, MF: not sure if these are the ones you meant..., process, integrate and publish  is directly from the first DataID paper and i think are more to the point}
+
+\textbf{(A3)} \access: publishing and maintaining
+this kind of metadata together with the data itself serves as
+documentation benefiting the potential user
+of the data as well as the creator by making it discoverable
+and crawlable. 
+
+\textbf{(A4)} \extensibility: extending a given core metadata model
+in an easy and reusable way, while leaving the original model uncompromised expands its application possibilities fitting many
+different use cases. 
+
+\textbf{(A5)} \interoperability: the interoperability with other metadata models is a hallmark for a widely usable and reusable dataset metadata model.
+
+When regarding aspects \textbf{(A4)} and \textbf{(A5)}, taking into account the intricate requirements of many use cases (such as in \Cref{requDmp})\todo{update ref}, \extensibility and \interoperability seem contradictory when leaving the more general levels of a domain description. A vocabulary capable of interacting with other metadata vocabularies might be too general to fit certain scenarios of use. Restrictive extensions to a vocabulary might encroach on its ability to translate into other useful metadata formats. This notion is corroborated by this document~\cite{ivse}. Note: I do not differentiate between \evolvability and \extensibility (as done in this source) in the context of this thesis. The discrepancies with \interoperability are true for both concepts. Letting features 'die out' over time does not impact, in my understanding, the aspect of \extensibility. 
+
+We conclude, not only is there a gap between existing dataset metadata vocabularies and requirements thereof, but it seems unlikely that we are able to solve all these diverse problems with just one, monolithic ontology.
+
+%We conclude, that a gap exists between existing dataset metadata vocabularies and what is required.
+%Hence it seems unlikely that we are able to solve all these diverse problems with just a single, monolithic ontology.
+%Extending a vocabulary for a certain use case will in most cases result in singular, non reusable solutions to a problem. Restrictive extensions of metadata 
+
+
+\section{The multi-layer ontology of DataID} % 2 pages
+\label{sec:multilayer}
+
+%KM: Added ", which" and "section,"
+While trying to solve the different aspects, which we discussed in the previous section, and tending to the needs of different usage scenarios, the DataID ontology grew in size and complexity.
+
+%To ,
+In order to keep the \dataid ontology reasonable in size and complexity as well as not to jeopardise \extensibility and \interoperability, we modularised \dataid in a core ontology and multiple extensions. The onion-like layer model (\cref{fig:onion}) illustrates the import dependencies between the ontologies: 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/DataIDonion.png}
+  \caption{The Metadata Ecosystem of DataID}
+  \label{fig:onion}
+\end{figure}
+
+The scaling approach used to modularize the original \dataid ontology adopts principles of the modular programming technique, separating concepts and properties of a large ontology into independent, interchangeable modules, specialised to fit common use cases, dependent only on \core. Thus, any vocabulary in this sphere must import \core, with the exception of \core itself. 
+The mid-layer (or common extensions) of this model is comprised of highly reusable ontologies, extending \core to cover additional aspects of dataset metadata. Non of these are mandatory imports for any ontology, yet, in many cases some or all of them will be useful contributions. While I will not (and can not) impose any restrictions as to which ontologies not to import, ideally, ontologies of this layer should only import \core, to minimize discrepancies between mid-layer ontologies of different authors with overlapping purposes. The outermost layer of this sphere represents all vocabularies importing \core and any number if mid-layer ontologies and adding additional semantics to portray domain or use case specific demands for metadata.
+
+The \ecosystem is a suite of ontologies comprised of \core and its extensions, which were created to satisfy different use cases in a reusable manner:
+
+\begin{description}
+\item[DataID core] provides the basic description of a dataset (cf. \Cref{dataidCore}) and serves as foundation for all extensions to DataID.
+\item[Linked Data] extends DataID core with the \void vocabulary\cite{void} and some additional properties specific to LOD datasets. Many \void and Linked Data references from the previous version of DataID were outsourced into this ontology\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/master/ld}.
+\item[Activities \& Plans] provides provenance information of activities which generated, changed or used datasets\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/DataManagementPlanExtension/acp}. The goal is to record all activities needed to replicate a dataset as described by a DataID. Plans can describe which steps (activities, precautionary measures) are put in place to reach a certain goal. This extension relies heavily on the \prov ontology\cite{prov}.
+\item[Statistics] will provide the necessary measures to publish multi-dimensional data, such as statistics about datasets, based on the Data Cube Vocabulary\cite{datacube}. 
+\item[Other common extensions] of similar general character as the ontologies of that layer, which could be useful in multiple use cases.
+\end{description}
+
+Ontologies under the DataID multilayer concept do not offer cardinality restrictions, making them easy to extend and adhere to OWL profiles. An application profile for the DataID service (cf. \Cref{lessons}) was declared using SHACL\footnoteurl{http://w3c.github.io/data-shapes/shacl/}.%\todo{maybe rephrase the last sentence}
+
+Extending this ecosystem of dataset metadata with domain-specific OWL ontologies adds further opportunities for applications clustered around datasets, as we will showcase in \Cref{dmps}.\todo{ref}
+
+
+\section{The interplay of ontologies} 
+\label{sec:interplay}\todo{title will be revised}
+Multiple requirements are planned to be enforced for the adoption of new ontologies in the common (or mid) layer of the DataID Ecosystem.
+They might contain (while not being restricted to):
+
+\begin{itemize}
+\item Authors must provide information about the reason for the new extension (and why the expected result is not achievable with existing extensions).
+\item Authors must document the Interoperability with other extensions of this layer (and where problems are to be expected).
+\item Authors must inform about conformity with OWL profiles.
+\end{itemize}
+
+Deciding on which combination of DataID ontologies to use for a Dataset description is a domain and problem dependent process. It may be necessary to add additional properties on top of the provided metadata properties.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=9cm]{images/DataIDonionSliced.png}
+  \caption{Example of combining multiple DataID ontologies}
+  \label{fig:onionslice}
+\end{figure}
+
+For example, a DataID based ontology for LOD Datasets dealing with multi-dimensional data, may look schematically like this:
+(importing DataID core and the extensions for Linked Data and Statistics, as well as some additional properties only used in the use case at hand.)
+
+\chapter{DataID core Ontology}
+\label{cahp:core}
+
+\section{Fundamentals} 
+\label{sec:coreintro}
+
+This section will provide an overview of the \core ontology and some background on basic design decisions made. Most of the vocabularies reused by this ontology have already been presented in \cref{chap:relatedwork} and need no further introduction.
+
+\core developed out of a previous version of \dataid by following the aspiration to modularise \dataid into a core-ontology, surrounded by its dependents. Many design decisions of \core were already introduced in its former version, which was designed to make \dcat, combined with the \void vocabulary, fit the requirements of the DBpedia use case for a hierarchy of Linked Data datasets (see also \cref{sec:dbpedia}):
+
+\begin{quote}
+"The DBpedia dataset, with
+its different versions and languages, multiple SPARQL endpoints
+and thousands of dump files with various content
+serves as one example of the complexity metadata models
+need to be able to express. We argue that the DCAT vocabulary
+as well as the established VoID vocabulary only
+provide a basic interoperability layer to discover data. In
+their current state, they still have to be expanded to fully
+describe datasets as complex as DBpedia [...]." \cite{dataID2014} 
+\end{quote}
+
+\core is founded on two pillars: the \dcat and \prov ontologies. To incorporate \dcat as the basis of \dataid, to further extend \dcat with \prov, introducing extensive provenance records in the process, and adding properties specific to the DBpedia use case was the original premise of this endeavour. In addition, the \void vocabulary was adopted to cover Linked Data specific semantics and provide more general properties, such as  \prop{void:subset} for establishing dataset hierarchies. The wide application of these vocabularies in the context of the Semantic Web was the rational behind these decisions, furthering our goal of \interoperability. 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/FoundationalConcept.png}
+  \caption{Foundations: Combining \dcat, \void and \prov}
+  \label{fig:foundations}
+\end{figure}
+
+As \dcat, \core is centred around the Dataset and Distribution concepts which were imported from \dcat. We introduced the class \prop{dataid:DataId} (see \cref{sec:coredataid}), merging both \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription} into one, and providing an additional level of abstraction between \prop{dataid:Dataset} and \prop{dcat:Catalog}. Instances of this class can be compared to root elements in the XML world, since all subsequent instances, describing a dataset, are hierarchicaly below a DataId instance. Though, this comparison is of course misleading, since a graph has no orientation. Yet, most of DataID documents\footnote{DataID graph serialised as a metadata document} will have structural similarities to XML documents.
+
+All dataset related classes of \core (\prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}) are sub classes of \prop{prov:Entity}, which is the interface needed to harness the possibilities of the Provenance Ontology. In the context of this description of \core, the word 'Entities' summarises all possible instances of \prop{prov:Entity} (ergo: instances of these three classes).
+
+With \prov, describing any provenance issue is possible (\cref{sec:prov}). Central to this, is the concept of qualification classes, providing qualifications for more general properties (e.g. for \prop{prov:wasAttributedTo}). Describing the interrelations between Entities (such as a particular dataset or just a single distribution of it) and Agents (e.a. a person or an organisation) are salient requirements in most environments of datasets and their metadata. Thus, \core has singled out these relations to further qualify them and provide much needed referential integrity.\todo{explain}
+
+The property \prop{dataid:associatedAgent} (which is a sub property of \prop{prov:wasAttributedTo}) is a universal relation between an Entity and an Agent. It can (and should) be qualified by an instance of \prop{dataid:Authorization}, a sub class of \prop{prov:Attribution}. An Authorization adds qualifications and restrictions to the original property, such as an agent role (defining the role the agent has in regard to the Entities involved - see \cref{sec:coreauthorization}). Furthermore, \core allows for assigning Actions to an Authorization, which specify what an Agent can do and for which tasks he/she/it is responsible for.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/FoundationalConseptProv.png}
+  \caption{Foundations: Using \prov to qualify properties}
+  \label{fig:foundations}
+\end{figure}
+
+In its current version 2.0.0, \core offers a general approach for describing dataset metadata, incorporating important ontologies to extend \dcat with \provenance, qualifying relations and their intended range classes (e.g. to refine \licensing), hierarchical dataset structures, management of rights and responsibilities of agents and exhaustive descriptions for data \access. 
+
+In general, \core waived the use of cardinality restrictions\footnote{this is the purpose of an application profile, not of an ontology}, helping us with our goal to adhere to the OWL 2 RL\footnoteurl{https://www.w3.org/TR/owl2-profiles/#OWL_2_RL} profile and maintaining the benefits of easy \extensibility and \interoperability of \dcat. In turn, \core restricts some of the very general property ranges of Dublin Core and \dcat properties (such as \prop{dct:license} or \prop{dcat:mediaType}), to reduce impreciseness and increase machine-readability.
+
+ loosing the ability to extend easily 
+This section provides a concise overview of the DataID-core ontology, highlighting important features and improvements to the previously presented version in 2014 \cite{dataID2014}. The current version (2.0.0) adheres to the OWL profile OWL2-RL\footnoteurl{https://www.w3.org/TR/owl2-profiles/}. 
+%A possible application profile containg such restrictions is provided as a shape definition with the Shapes Constraint Language\cite{shacl}.
+\Cref{fig:core} supplies a depiction of this ontology. \dct is used for most general metadata of any concept.
+
+DataID is founded on two pillars: the \dcat and \prov ontologies. The class \prop{dataid:DataId} subsumes \prop{dcat:CatalogRecord}, which describes a dataset entry in a \prop{dcat:Catalog}. It does not represent a dataset, but provenance information about dataset entries in a catalog. It is the root entity in any DataID description. 
+
+In addition the \void vocabulary plays a central role, as the dataset concept of both the \dcat and \void were merged into \prop{dataid:Dataset}, providing useful properties about the content of a dataset from both ontologies. In particular, the property \prop{void:subset} allows for the creation of dataset hierarchies, while \prop{dcat:distribution} points out the distributions of a dataset.
+
+The class \prop{dcat:Distribution} is the technical description of the data itself, as well as documentation of how to access the data described (\prop{dcat:accessURL} / \prop{dcat:downloadURL}). This concept is crucial to be able to automatically retrieve and use the data described in the DataID, simplifying, for example, data analysis. We introduced additional subclasses (e.g. \prop{dataid:ServiceEndpoint}), to further distinguish how the data is available on the Web.
+
+\begin{figure}
+\centering
+	\vspace*{-0.8cm}
+  \includegraphics[angle=90, width=\textwidth]{images/DataIdOntology.png}
+  \caption{DataID core}
+  \label{fig:core}
+  %\floatfoot{An exact description of all classes and properties can be found under the DataID namespace uri \url{http://dataid.dbpedia.org/ns/core} including this depiction. The ontology RDF document is also available there:
+  %\url{http://dataid.dbpedia.org/ns/core.ttl} (.owl)}
+\end{figure} 
+
+\dcat does not offer an intrinsic way of specifying the exact format of the content described by a distribution. While the property \prop{dcat:mediaType} does exist, its expected range \prop{dct:MediaTypeOrExtend} is an empty class (without any further definitions).
+%it has \prop{dct:MediaType} as range but \prop{dct:MediaType} has no further definitions. 
+Therefore, we created \prop{dataid:MediaType} to remedy this matter. With the property \prop{dataid:innerMediaType} we can even describe nested formats (e.g. .xml.bz2), useful in pipeline processing.
+
+The most important change to the previous version of DataID is the possible expression of which role an agent can take in regard to metadata entities (e.g. the whole DataID and all datasets, a single distribution etc.). 
+%RU: The most important change to the previous version of DataID is the ability to express which role an agent can have in regard to metadata entities (e.g. the whole DataID and all datasets, a single distribution etc.).
+This is achieved by the class \prop{dataid:Authorization}, which is a subclass of \prop{prov:Attribution}, a qualification of the property \prop{prov:wasAttributedTo}. Basically it states, which role(s) (\prop{dataid:authorityAgentRole}) an agent (\prop{dataid:authorizedAgent}) has regarding a certain collection of entities (\prop{dataid:authorizedFor}). This mediator is further qualified by an optional period of time for which it is valid and authoritative restrictions by the entities themselves, allowing only specific instances of \prop{dataid:Authorization} to exert influence over them (\prop{dataid:needsSpecialAuthorization}).%\todo{please prove read this section again, RU: minor/phrasing}
+
+
+The role an agent can take (\prop{dataid:AgentRole}) has only one property, pointing out actions it entails. A \prop{dataid:AuthorizedAction} shall either be a \prop{dataid:EntitledAction}, representing all actions an agent could take, as well as the actions an agent has to take (\prop{dataid:ResponsibleAction}). Actions and roles defined in this ontology (e.g. \prop{dataid:Publisher}) are only examples of possible implementations and can be replaced to fit a use case. 
+Hierarchical structures of agent roles or actions can provide additional semantics.
+
+\section{Classes} 
+\label{sec:coreclasses}
+
+\subsection{DataId} 
+\label{sec:coredataid}
+
+\subsection{Dataset} 
+\label{sec:coredataset}
+
+\subsection{Distribution} 
+\label{sec:coredist}
+
+\subsection{MediaType} 
+\label{sec:coremediatype}
+
+\subsection{Agent} 
+\label{sec:coreagent}
+
+\subsection{Authorization} 
+\label{sec:coreauthorization}
+
+\subsection{AuthorizedAction \& AgentRole} 
+\label{sec:coreaction}
+
+\subsection{DatasetRelationship} 
+\label{sec:corerelation}
+
+\subsection{Identifier} 
+\label{sec:coreidentifier}
+
+\subsection{SimpleStatement} 
+\label{sec:corestatement}
+
+\chapter{Publishing Data on the Web with DataID}
+\label{chap:bestprctice}
+
+\chapter{Application: Data Management Plans}
+\label{chap:pocdmp}
 
 In diesem Kapitel folgt die Auswertung der Arbeit. Hier werden Messerreihen wie z.B. die Latenzzeit, die Performanz, der Speicherverbrauch, die Erkennungsrate etc. aufgeführt. Ferner werden die Methoden erläutert, die Ergebnisse interpretiert und diskutiert.
 
 Auch hier gibt es keinen Richtwert, das Kapitel sollte umfassend wie nötig sein.
 
-\chapter{Zusammenfassung und Ausblick}
-\label{chap:conclusion}
+\chapter{DataID and the Component MetaData Infrastructure (CMDI)}
+\label{chap:pocmap}
 
+\chapter{Evaluation}
+\label{chap:evaluation}
+
+\chapter{Conclusion and Future Work}
+\label{chap:future}
 Am Ende der Arbeit steht die Zusammenfassung, die alle wichtigen Punkte und Ergebnisse der Arbeit in einfachen Worten wiedergibt. Anschließend folgt ein Ausblick auf anschließende Arbeiten und Themenvorschläge.
 
 Das Kapitel sollte zwischen einer und drei Seiten umfassen.
@@ -489,23 +1396,25 @@ Das Kapitel sollte zwischen einer und drei Seiten umfassen.
 %************************************************************************************************************************
 %* glossary, appendix, bibliography, etc.
 %************************************************************************************************************************
-\addchap{Glossar}
+\todo{add prefix table}
+
+\addchap{Glossar}   
 \begin{description}
 \item[Vocabulary] On the Semantic Web, vocabularies define the concepts and relationships (also referred to as "terms") used to describe and represent an area of concern. Vocabularies are used to classify the terms that can be used in a particular application, characterize possible relationships, and define possible constraints on using those terms. In practice, vocabularies can be very complex (with several thousands of terms) or very simple (describing one or two concepts only)\cite{W3CVOCONTO}.
 
 \item[Ontology] There is no clear division between what is referred to as "vocabularies" (see Vocabulary) and "ontologies". The trend is to use the word "ontology" for more complex, and possibly quite formal collection of terms, whereas "vocabulary" is used when such strict formalism is not necessarily used or only in a very loose sense. Vocabularies are the basic building blocks for inference techniques on the Semantic Web\cite{W3CVOCONTO}.
 \end{description}
 
-\addchap{Abkürzungsverzeichniss}
-<falls viele Abkürzungen vorkommen>
+\addchap{Prefix Gloassar}
 \begin{description}
-\item [TLA] Three Letter Acronym
-\item [TLB] Translation Lookaside Buffer
-\item [RTFM] ...
+\item [dcat] DCAT
+\item [prov] Provenance Ontology
+\item [dct]  Dublin Core Terms
 \end{description}
 
-\bibliographystyle{alpha}
-\bibliography{own.bib}
+%\bibliographystyle{alpha}
+%\bibliography{own.bib}
+\printbibliography[title=References]
 
 \addchap{Erklärung}
 \thispagestyle{empty}
@@ -515,5 +1424,4 @@ Das Kapitel sollte zwischen einer und drei Seiten umfassen.
 \begin{tabularx}{\linewidth}{X X X}
 Ort & Datum	& Unterschrift\\
 \end{tabularx}
-
 \end{document}

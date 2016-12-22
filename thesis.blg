@@ -1,15 +1,24 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
-The style file: alpha.bst
-I couldn't open database file own.bib.bib
----line 105 of file thesis.aux
- : \bibdata{own.bib
- :                 }
-I'm skipping whatever remains of this command
-I found no database files---while reading file thesis.aux
-Warning--I didn't find a database entry for "feeney2015linked"
-Warning--I didn't find a database entry for "ddcat"
-Warning--I didn't find a database entry for "MaaliCP10"
-Warning--I didn't find a database entry for "mccrae_2015_OWLmetashare"
-Warning--I didn't find a database entry for "dataID2014"
-Warning--I didn't find a database entry for "W3CVOCONTO"
-(There were 2 error messages)
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is 'thesis.blg'
+[39] biber-MSWIN32:303> INFO - === 
+[71] Biber.pm:359> INFO - Reading 'thesis.bcf'
+[186] Biber.pm:835> INFO - Found 46 citekeys in bib section 0
+[204] Biber.pm:3670> INFO - Processing section 0
+[230] Biber.pm:3840> INFO - Looking for bibtex format file 'own.bib' for section 0
+[238] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[253] bibtex.pm:1292> INFO - Found BibTeX data source 'own.bib'
+[258] Utils.pm:164> WARN - Duplicate entry key: 'dataID2014' in file 'own.bib', skipping ...
+[274] Utils.pm:164> WARN - month field 'December' in entry 'dwbpW3C2016' is not an integer - this will probably not sort properly.
+[337] Utils.pm:164> WARN - month field 'March' in entry 'elmasri06db' is not an integer - this will probably not sort properly.
+[340] Utils.pm:164> WARN - month field 'July, October' in entry 'shannon48' is not an integer - this will probably not sort properly.
+[396] Utils.pm:164> WARN - month field 'August' in entry 'Lexvo2015DeMelo' is not an integer - this will probably not sort properly.
+[405] Utils.pm:164> WARN - BibTeX subsystem: C:\Users\Chile\AppData\Local\Temp\csPhPrS9b2\own.bib_7928.utf8, line 503, warning: undefined macro "WS"
+[409] Utils.pm:164> WARN - I didn't find a database entry for crossref 'DBLP:conf/semweb/2016-2' in entry 'SolankiBFKDB16' - ignoring (section 0)
+[409] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/egov/2010ifip' in entry 'MaaliCP10' - ignoring (section 0)
+[451] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[452] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[452] Biber.pm:3499> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'de-DE'
+[452] Biber.pm:3505> INFO - No sort tailoring available for locale 'de-DE'
+[489] bbl.pm:608> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[500] bbl.pm:712> INFO - Output to thesis.bbl
+[501] Biber.pm:109> INFO - WARNINGS: 8
