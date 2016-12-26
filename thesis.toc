@@ -30,7 +30,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Web Ontology Language (OWL)}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Linked Data}{18}
+\contentsline {subsection}{\numberline {2.2.3}Linked Data}{17}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Related Work}{19}
 \defcounter {refsection}{0}\relax 
@@ -62,9 +62,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Lexvo.org}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}DataCite Ontology}{32}
+\contentsline {subsection}{\numberline {3.2.4}Friend of a Friend vocabulary (FOAF)}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}DBpedia}{33}
+\contentsline {subsection}{\numberline {3.2.5}DataCite Ontology}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.6}DBpedia}{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}The DataID Ecosystem}{35}
 \defcounter {refsection}{0}\relax 
@@ -76,42 +78,84 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}DataID core Ontology}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Fundamentals}{41}
+\contentsline {section}{\numberline {5.1}Overview}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Classes}{46}
+\contentsline {section}{\numberline {5.2}Classes}{45}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.1}DataId}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Dataset}{46}
+\contentsline {subsection}{\numberline {5.2.2}Dataset}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Distribution}{46}
+\contentsline {subsection}{\numberline {5.2.3}Distribution}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}MediaType}{46}
+\contentsline {subsection}{\numberline {5.2.4}MediaType}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Agent}{46}
+\contentsline {subsection}{\numberline {5.2.5}Agent}{57}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Authorization}{46}
+\contentsline {subsection}{\numberline {5.2.6}Authorization}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{46}
+\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{46}
+\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.9}Identifier}{46}
+\contentsline {subsection}{\numberline {5.2.9}Identifier}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{46}
+\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Publishing Data on the Web with DataID}{47}
+\contentsline {section}{\numberline {5.3}Complex Example on Authorizations}{67}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Application: Data Management Plans}{49}
+\contentsline {chapter}{\numberline {6}Publishing Data with DataID}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}DataID and the Component MetaData Infrastructure (CMDI)}{51}
+\contentsline {section}{\numberline {6.1}Best Practices}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Evaluation}{53}
+\contentsline {paragraph}{Workflows}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{55}
+\contentsline {paragraph}{Checklists}{75}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Glossar}{57}
+\contentsline {section}{\numberline {6.2}Composing DataID based Metadata}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Prefix Gloassar}{59}
+\contentsline {paragraph}{Specify use case requirements for metadata}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Erkl\IeC {\"a}rung}{67}
+\contentsline {paragraph}{Model a DataID ontology and application profile}{76}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Generate DataID documents}{76}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Publish DataIDs alongside the datasets}{76}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Exploitation of DataIDs - examples}{76}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Checklist for Publishing RDF Data}{76}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Documentation}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Sources}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Ontology \& Mappings}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Software}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Extraction \& Dataset Generation}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Validation}{78}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Enrichment}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Linking}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Publishing}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Application: Data Management Plans}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}DataID and the Component MetaData Infrastructure (CMDI)}{83}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Evaluation}{85}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{87}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Glossar}{89}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Prefix Gloassar}{91}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Appendix I}{99}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Erkl\IeC {\"a}rung}{107}

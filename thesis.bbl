@@ -42,8 +42,8 @@
       \strng{fullhash}{06361e9dd8b8615b29ea8fbf367d7926}
       \strng{authornamehash}{06361e9dd8b8615b29ea8fbf367d7926}
       \strng{authorfullhash}{06361e9dd8b8615b29ea8fbf367d7926}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Data Catalog Vocabulary ({DCAT})}
@@ -73,8 +73,8 @@
       \strng{fullhash}{5067888b33e3da6749ceb2f2b51cb9da}
       \strng{authornamehash}{5067888b33e3da6749ceb2f2b51cb9da}
       \strng{authorfullhash}{5067888b33e3da6749ceb2f2b51cb9da}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Smart Descriptions \& Smarter Vocabularies Report}
@@ -109,8 +109,8 @@
       \strng{fullhash}{8da7897e0fddf1d45afce64277dbabaa}
       \strng{authornamehash}{8da7897e0fddf1d45afce64277dbabaa}
       \strng{authorfullhash}{8da7897e0fddf1d45afce64277dbabaa}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
@@ -146,8 +146,8 @@
       \strng{fullhash}{473d7b72e3ed4110f524df86c35f2a35}
       \strng{authornamehash}{473d7b72e3ed4110f524df86c35f2a35}
       \strng{authorfullhash}{473d7b72e3ed4110f524df86c35f2a35}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The {PROV} Ontology}
@@ -177,8 +177,8 @@
       \strng{fullhash}{c4a007a35d63ecb5b9ddf1c9cf0e5e80}
       \strng{authornamehash}{c4a007a35d63ecb5b9ddf1c9cf0e5e80}
       \strng{authorfullhash}{c4a007a35d63ecb5b9ddf1c9cf0e5e80}
-      \field{sortinit}{7}
-      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{3}
@@ -212,8 +212,8 @@
       \strng{fullhash}{2ebefaab5306cde10e780b97df9a07dd}
       \strng{authornamehash}{2ebefaab5306cde10e780b97df9a07dd}
       \strng{authorfullhash}{2ebefaab5306cde10e780b97df9a07dd}
-      \field{sortinit}{8}
-      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Semantic Web Journal-Special Issue on Quality Management of Semantic Web Assets}
@@ -505,8 +505,8 @@
       \strng{fullhash}{4aa3d955a63c1b2fa753e18488816622}
       \strng{authornamehash}{5faf16d2abb8f888b46e2c84fde67cf9}
       \strng{authorfullhash}{4aa3d955a63c1b2fa753e18488816622}
-      \field{sortinit}{9}
-      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2052-4463}
@@ -929,8 +929,8 @@
       \strng{fullhash}{00e3b94cecc5ecb56866adf922f8b5c5}
       \strng{authornamehash}{00e3b94cecc5ecb56866adf922f8b5c5}
       \strng{authorfullhash}{00e3b94cecc5ecb56866adf922f8b5c5}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Functional Requirements for Bibliographic Records: Final Report}
@@ -1167,8 +1167,8 @@
       \strng{fullhash}{6436f75bb23af4a7c3ef760fdee3e7df}
       \strng{authornamehash}{6436f75bb23af4a7c3ef760fdee3e7df}
       \strng{authorfullhash}{6436f75bb23af4a7c3ef760fdee3e7df}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -1195,8 +1195,8 @@
       \strng{fullhash}{a8770684a44255ba32f8222b0fa6d36d}
       \strng{authornamehash}{a8770684a44255ba32f8222b0fa6d36d}
       \strng{authorfullhash}{a8770684a44255ba32f8222b0fa6d36d}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{{HANDBOOK} {OF} {MATHEMATICAL} {LOGIC}}
@@ -1394,6 +1394,34 @@
       \field{year}{2010}
       \keyw{dblp}
     \endentry
+    \entry{jefferyCerifW3C2016}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f4afe462694e6f5f822911c957dd2cc3}{%
+           family={Jeffery},
+           familyi={J\bibinitperiod},
+           given={Keith\bibnamedelima G},
+           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=80d2f53baa059c03c8d6dfb41a6dc316}{%
+           family={Asserson},
+           familyi={A\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0707971ccb84dd96fc9bada98e3cda8}
+      \strng{fullhash}{f0707971ccb84dd96fc9bada98e3cda8}
+      \strng{authornamehash}{f0707971ccb84dd96fc9bada98e3cda8}
+      \strng{authorfullhash}{f0707971ccb84dd96fc9bada98e3cda8}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{W3C Workshop: Smart Descriptions & Smarter Vocabularies (SDSVoc), Amsterdam, Netherlands, 30 November 2016}
+      \field{title}{Position Paper: Why CERIF?}
+      \field{year}{2016}
+      \verb{url}
+      \verb %5Curl%7Bhttps://www.w3.org/2016/11/sdsvoc/SDSVoc16_paper_15%7D
+      \endverb
+    \endentry
     \entry{Alexander09describinglinked}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=5a4e114ea010673d75a93750c86f30e1}{%
@@ -1411,8 +1439,8 @@
       \strng{fullhash}{8e5771fe01a90c166ff31c9f765cfd00}
       \strng{authornamehash}{8e5771fe01a90c166ff31c9f765cfd00}
       \strng{authorfullhash}{8e5771fe01a90c166ff31c9f765cfd00}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{In Linked Data on the Web Workshop (LDOW 09), in conjunction with 18th International World Wide Web Conference (WWW 09}
@@ -1441,8 +1469,8 @@
       \strng{fullhash}{69f0ca2211e8a2512066fe277853d207}
       \strng{authornamehash}{69f0ca2211e8a2512066fe277853d207}
       \strng{authorfullhash}{69f0ca2211e8a2512066fe277853d207}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J. Web Sem.}
@@ -1484,8 +1512,8 @@
       \strng{fullhash}{a397ad2e8142fad495bed14a32a86571}
       \strng{authornamehash}{a397ad2e8142fad495bed14a32a86571}
       \strng{authorfullhash}{a397ad2e8142fad495bed14a32a86571}
-      \field{sortinit}{4}
-      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This report describes our experiences using the mapping of the metadata in CKAN powered Open Data portals to the DCAT model. CKAN is the most prominent portal software framework used for publishing Open Data and used by several governmental portals including data.gov.uk and data.gov. We studied the actual usage of DCAT in 133 existing Open Data portals and report the key findings.}
@@ -1812,8 +1840,8 @@
       \strng{fullhash}{13d4003818f5f86cc4b58011de98569a}
       \strng{authornamehash}{bd3293f62227c8c17f53323d15363187}
       \strng{authorfullhash}{13d4003818f5f86cc4b58011de98569a}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{PeerJ}
@@ -1843,8 +1871,8 @@
       \strng{fullhash}{da7c28ae076718fae8e841b320041371}
       \strng{authornamehash}{da7c28ae076718fae8e841b320041371}
       \strng{authorfullhash}{da7c28ae076718fae8e841b320041371}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Data Science Journal}
@@ -1858,34 +1886,6 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.2481/dsj.CRIS1
-      \endverb
-    \endentry
-    \entry{jefferyCerifW3C2016}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=f4afe462694e6f5f822911c957dd2cc3}{%
-           family={Jeffery},
-           familyi={J\bibinitperiod},
-           given={Keith\bibnamedelima G},
-           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=80d2f53baa059c03c8d6dfb41a6dc316}{%
-           family={Asserson},
-           familyi={A\bibinitperiod},
-           given={Anne},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{f0707971ccb84dd96fc9bada98e3cda8}
-      \strng{fullhash}{f0707971ccb84dd96fc9bada98e3cda8}
-      \strng{authornamehash}{f0707971ccb84dd96fc9bada98e3cda8}
-      \strng{authorfullhash}{f0707971ccb84dd96fc9bada98e3cda8}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{W3C Workshop: Smart Descriptions & Smarter Vocabularies (SDSVoc), Amsterdam, Netherlands, 30 November 2016}
-      \field{title}{Position Paper: Why CERIF?}
-      \field{year}{2016}
-      \verb{url}
-      \verb %5Curl%7Bhttps://www.w3.org/2016/11/sdsvoc/SDSVoc16_paper_15%7D
       \endverb
     \endentry
     \entry{MoreauProvDM2013}{report}{}
@@ -1956,8 +1956,8 @@
       \strng{fullhash}{14c128ece0c7af5fd76be750698d6467}
       \strng{authornamehash}{8278322ad4628ca8a4491748e5ba354f}
       \strng{authorfullhash}{14c128ece0c7af5fd76be750698d6467}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1570-8268}
@@ -2006,6 +2006,36 @@
       \field{year}{2015}
       \field{pages}{393\bibrangedash 400}
       \range{pages}{8}
+    \endentry
+    \entry{Brickley-2014}{report}{}
+      \name{author}{2}{}{%
+        {{hash=e12edfe7ea67a8d960a85df6442dc2d3}{%
+           family={Brickley},
+           familyi={B\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7ae61c4884c38c4532748765bbd95f58}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Libby},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e62f6f01bbb3a14eb7b53a5df0f64da4}
+      \strng{fullhash}{e62f6f01bbb3a14eb7b53a5df0f64da4}
+      \strng{authornamehash}{e62f6f01bbb3a14eb7b53a5df0f64da4}
+      \strng{authorfullhash}{e62f6f01bbb3a14eb7b53a5df0f64da4}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{\url{http://xmlns.com/foaf/spec/20140114.html}}
+      \field{title}{{FOAF Vocabulary Specification 0.99}}
+      \field{type}{{Specification}}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://xmlns.com/foaf/spec/20140114.html
+      \endverb
     \endentry
     \entry{Peroni2016}{article}{}
       \name{author}{6}{}{%
@@ -2077,46 +2107,30 @@
       \field{howpublished}{\url{https://www.w3.org/Protocols/Design/Interevol.html}}
       \field{title}{{Interoperability and Evolvability}}
     \endentry
-    \entry{void}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=5a4e114ea010673d75a93750c86f30e1}{%
-           family={Alexander},
-           familyi={A\bibinitperiod},
-           given={Keith},
-           giveni={K\bibinitperiod}}}%
-        {{hash=ff065518eacac535eec041c322c21896}{%
-           family={Cyganiak},
-           familyi={C\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-        {{hash=5b13d06ab937ded9946b4e63303131d3}{%
-           family={Hausenblas},
-           familyi={H\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-        {{hash=3313b0fb30c52802abe615a883198713}{%
-           family={Zhao},
-           familyi={Z\bibinitperiod},
-           given={Jun},
-           giveni={J\bibinitperiod}}}%
+    \entry{sparqlsd}{report}{}
+      \name{author}{1}{}{%
+        {{hash=ca16612dad98cd5cbd5f4a304ef1f0dd}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
       }
       \list{institution}{1}{%
         {W3C}%
       }
-      \strng{namehash}{531c0688670c898cf7fbb61f022c069c}
-      \strng{fullhash}{ee632cd407344dc8b42465915e8dc3d7}
-      \strng{authornamehash}{531c0688670c898cf7fbb61f022c069c}
-      \strng{authorfullhash}{ee632cd407344dc8b42465915e8dc3d7}
+      \strng{namehash}{ca16612dad98cd5cbd5f4a304ef1f0dd}
+      \strng{fullhash}{ca16612dad98cd5cbd5f4a304ef1f0dd}
+      \strng{authornamehash}{ca16612dad98cd5cbd5f4a304ef1f0dd}
+      \strng{authorfullhash}{ca16612dad98cd5cbd5f4a304ef1f0dd}
       \field{sortinit}{7}
       \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Describing Linked Datasets with the {VoID} Vocabulary}
-      \field{type}{{W3C} Interest Group Note}
-      \verb{url}
-      \verb https://www.w3.org/TR/void/
-      \endverb
-      \keyw{ontologies semantic-web}
+      \field{month}{3}
+      \field{note}{http://www.w3.org/TR/2013/REC-sparql11-service-description-20130321/}
+      \field{title}{{SPARQL} 1.1 Service Description}
+      \field{type}{{W3C} Recommendation}
+      \field{year}{2013}
     \endentry
     \entry{datacube}{misc}{}
       \name{author}{4}{}{%
@@ -2157,6 +2171,336 @@
       \endverb
       \keyw{ontologies semantic-web}
     \endentry
+    \entry{shacl}{misc}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{howpublished}{\url{http://w3c.github.io/data-shapes/shacl/}}
+    \endentry
+    \entry{spdx}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f6f2776ec30d48d499fdfdb638c50e65}{%
+           family={Linux\bibnamedelimb Foundation\bibnamedelima Project},
+           familyi={L\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={SPDX\bibnamedelima Workgroup},
+           giveni={S\bibinitperiod\bibinitdelim W\bibinitperiod},
+           prefix={a},
+           prefixi={a\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Linux Foundation}%
+      }
+      \strng{namehash}{f6f2776ec30d48d499fdfdb638c50e65}
+      \strng{fullhash}{f6f2776ec30d48d499fdfdb638c50e65}
+      \strng{authornamehash}{f6f2776ec30d48d499fdfdb638c50e65}
+      \strng{authorfullhash}{f6f2776ec30d48d499fdfdb638c50e65}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SPDX Specifications}
+      \field{urlday}{15}
+      \field{urlmonth}{12}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://spdx.org/specifications
+      \endverb
+    \endentry
+    \entry{freed1996rfc2046}{standard}{}
+      \name{author}{2}{}{%
+        {{hash=9960378a12f863d83191a687b0f099f6}{%
+           family={Freed},
+           familyi={F\bibinitperiod},
+           given={Ned},
+           giveni={N\bibinitperiod}}}%
+        {{hash=df5ad51081cb555c79ed11d3813758de}{%
+           family={Borenstein},
+           familyi={B\bibinitperiod},
+           given={Nathaniel},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor, United States}%
+      }
+      \strng{namehash}{4582400d4f1eddb99dd16ff4e3a4b6e9}
+      \strng{fullhash}{4582400d4f1eddb99dd16ff4e3a4b6e9}
+      \strng{authornamehash}{4582400d4f1eddb99dd16ff4e3a4b6e9}
+      \strng{authorfullhash}{4582400d4f1eddb99dd16ff4e3a4b6e9}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{RFC Editor United States}
+      \field{title}{{RFC2046: Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types}}
+      \field{year}{1996}
+      \verb{url}
+      \verb http://tools.ietf.org/html/rfc2046
+      \endverb
+      \keyw{mime}
+    \endentry
+    \entry{Terrazas}{incollection}{}
+      \name{author}{4}{}{%
+        {{hash=3c1d8845d1637b008d15c5928ad90da3}{%
+           family={Villazón-Terrazas},
+           familyi={V\bibinithyphendelim T\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=074362423c399cd8a3736b2298c4617c}{%
+           family={Vilches-Blázquez},
+           familyi={V\bibinithyphendelim B\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ef8f2a27bd0ab7c70e370bbfc73f65e4}{%
+           family={Corcho},
+           familyi={C\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=28ce9eba3995ba8c729d40aa43e9d303}{%
+           family={Gómez-Pérez},
+           familyi={G\bibinithyphendelim P\bibinitperiod},
+           given={Asunción},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=ad0aae768a1174aba9738b6d2719985b}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{8a34904d0e3c311b8e2792990b0e6b14}
+      \strng{fullhash}{aebd56a30eb4d2ef7548b0568fa71bed}
+      \strng{authornamehash}{8a34904d0e3c311b8e2792990b0e6b14}
+      \strng{authorfullhash}{aebd56a30eb4d2ef7548b0568fa71bed}
+      \strng{editornamehash}{ad0aae768a1174aba9738b6d2719985b}
+      \strng{editorfullhash}{ad0aae768a1174aba9738b6d2719985b}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Linking Government Data}
+      \field{chapter}{2}
+      \field{isbn}{978-1-4614-1766-8}
+      \field{title}{{Methodological Guidelines for Publishing Government Linked Data Linking Government Data}}
+      \field{year}{2011}
+      \field{pages}{27\bibrangedash 49}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-1767-5\_2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-1-4614-1767-5%5C_2
+      \endverb
+    \endentry
+    \entry{Hyland:14:BPP}{report}{}
+      \name{author}{3}{}{%
+        {{hash=81ffea18325ce4eb5d4d946b20faa162}{%
+           family={Hyland},
+           familyi={H\bibinitperiod},
+           given={Bernadette},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c335fae4aefc333244c41b4108a8d28b}{%
+           family={Atemezing},
+           familyi={A\bibinitperiod},
+           given={Ghislain\bibnamedelima Auguste},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3c1d8845d1637b008d15c5928ad90da3}{%
+           family={Villazón-Terrazas},
+           familyi={V\bibinithyphendelim T\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {W3C}%
+      }
+      \strng{namehash}{8243352126bbb4f76a26a337228c7f66}
+      \strng{fullhash}{8243352126bbb4f76a26a337228c7f66}
+      \strng{authornamehash}{8243352126bbb4f76a26a337228c7f66}
+      \strng{authorfullhash}{8243352126bbb4f76a26a337228c7f66}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{http://www.w3.org/TR/2014/NOTE-ld-bp-20140109/}
+      \field{title}{Best Practices for Publishing Linked Data}
+      \field{type}{{W3C} Note}
+      \field{year}{2014}
+    \endentry
+    \entry{austin_2015_34542}{misc}{}
+      \name{author}{11}{}{%
+        {{hash=432be3df055ac8bf1c6452ce3465525b}{%
+           family={Austin},
+           familyi={A\bibinitperiod},
+           given={Claire\bibnamedelima C},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=f7af84e3290b1aa557abd335844bd333}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={Theodora},
+           giveni={T\bibinitperiod}}}%
+        {{hash=10c11f0b17dd8060a74a1ccf10b0514b}{%
+           family={Dallmeier-Tiessen},
+           familyi={D\bibinithyphendelim T\bibinitperiod},
+           given={Sunje},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dc0bc1fccf292500bc720a2a5fb7f150}{%
+           family={Khodiyar},
+           familyi={K\bibinitperiod},
+           given={Varsha},
+           giveni={V\bibinitperiod}}}%
+        {{hash=5fc3b646230417e7ab232dc22a86082d}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Fiona},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1631398480950d167cf2c7e12a2ff498}{%
+           family={Nurnberger},
+           familyi={N\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5e0b136a9d5422e0477683ff1dc64f60}{%
+           family={Raymond},
+           familyi={R\bibinitperiod},
+           given={Lisa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9b13a852f4c7626d90624924f4487e55}{%
+           family={Stockhause},
+           familyi={S\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c71a19f28a45e216049d71b1da3d3054}{%
+           family={Tedds},
+           familyi={T\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=688d6a07bf97117c62e76b4131f23d3c}{%
+           family={Vardigan},
+           familyi={V\bibinitperiod},
+           given={Mary},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fffa4ab04baeccfc0312c65958aa3fa9}{%
+           family={Whyte},
+           familyi={W\bibinitperiod},
+           given={Angus},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{61b8bd09c4f909362e4cde1d3b80ec0e}
+      \strng{fullhash}{f92da6e27d1542dd0091a1d96bc5154c}
+      \strng{authornamehash}{61b8bd09c4f909362e4cde1d3b80ec0e}
+      \strng{authorfullhash}{f92da6e27d1542dd0091a1d96bc5154c}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{{Key components of data publishing: Using current best practices to develop a reference model for data publishing}}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.5281/zenodo.34542
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5281/zenodo.34542
+      \endverb
+    \endentry
+    \entry{AuerBDEHILMMNSTW12}{inproceedings}{}
+      \name{author}{13}{}{%
+        {{hash=74de32830575f67e1479f58f47d2111d}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cd0cd9cd5488d7e1a1d8553008b2419e}{%
+           family={Bühmann},
+           familyi={B\bibinitperiod},
+           given={Lorenz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=60dfdde418dd97075fa21e28ce3bcbf9}{%
+           family={Dirschl},
+           familyi={D\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=aa19e2476cfb6cbfbc4b0978dc075cec}{%
+           family={Erling},
+           familyi={E\bibinitperiod},
+           given={Orri},
+           giveni={O\bibinitperiod}}}%
+        {{hash=5b13d06ab937ded9946b4e63303131d3}{%
+           family={Hausenblas},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8141c99e7d68accc3a51a99c8a6c672c}{%
+           family={Isele},
+           familyi={I\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=464aecd13bd177b8fc0240da4398b50b}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7876f26a5599f6f027a3195ff8462dba}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pablo\bibnamedelima N.},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=a76afc17c68aed022c4857594ca2a262}{%
+           family={Nuffelen},
+           familyi={N\bibinitperiod},
+           given={Bert\bibnamedelima Van},
+           giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=ac731a9ab40708bd9c8c684602791eda}{%
+           family={Stadler},
+           familyi={S\bibinitperiod},
+           given={Claus},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bbf3fe6d44f55d043fa4a59e4aa2c555}{%
+           family={Tramp},
+           familyi={T\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4a79680aa411b781af106b51d5d5df3d}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Hugh},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{91ba05e3a8053b5f3aafa47005decbda}
+      \strng{fullhash}{94ac9947ed307d8f219ee3b1bd1727ff}
+      \strng{authornamehash}{91ba05e3a8053b5f3aafa47005decbda}
+      \strng{authorfullhash}{94ac9947ed307d8f219ee3b1bd1727ff}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Semantic Web Conference (2)}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Managing the Life-Cycle of Linked Data with the LOD2 Stack.}
+      \field{volume}{7650}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 16}
+      \range{pages}{16}
+      \verb{url}
+      \verb http://dblp.uni-trier.de/db/conf/semweb/iswc2012-2.html#AuerBDEHILMMNSTW12
+      \endverb
+      \keyw{dblp}
+    \endentry
     \entry{W3CVOCONTO}{misc}{}
       \name{author}{1}{}{%
         {{hash=446a1ae6601a5c59360c7d591c3992da}{%
@@ -2167,8 +2511,8 @@
       \strng{fullhash}{446a1ae6601a5c59360c7d591c3992da}
       \strng{authornamehash}{446a1ae6601a5c59360c7d591c3992da}
       \strng{authorfullhash}{446a1ae6601a5c59360c7d591c3992da}
-      \field{sortinit}{7}
-      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.w3.org/standards/semanticweb/ontology}}

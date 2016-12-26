@@ -744,3 +744,113 @@ doi = "10.6084/m9.figshare.2075356.v1"
   biburl    = {http://dblp2.uni-trier.de/rec/bib/conf/semweb/SolankiBFKDB16},
   bibsource = {dblp computer science bibliography, http://dblp.org}
 }
+
+@TechReport{sparqlsd,
+  author =	"Gregory Williams",
+  title =	"{SPARQL} 1.1 Service Description",
+  month =	mar,
+  note = 	"http://www.w3.org/TR/2013/REC-sparql11-service-description-20130321/",
+  year = 	"2013",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  institution =  "W3C"
+}
+	
+@online{spdx,
+  author = {SPDX Workgroup a Linux Foundation Project},
+  publisher = {Linux Foundation},
+  title = {SPDX Specifications},
+  year = 2016,
+  url = {https://spdx.org/specifications},
+  urldate = {2016-12-15}
+}
+
+@standard{freed1996rfc2046,
+  author = {Freed, Ned and Borenstein, Nathaniel},
+  biburl = {https://www.bibsonomy.org/bibtex/202a2e5be39da87d6e3dfda007ef1cbd0/stroeh},
+  journal = {RFC Editor United States},
+  keywords = {mime},
+  publisher = {RFC Editor, United States},
+  timestamp = {2011-10-12T21:08:23.000+0200},
+  title = {{RFC2046: Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types}},
+  url = {http://tools.ietf.org/html/rfc2046},
+  year = 1996
+}
+
+@TechReport{Brickley-2014,
+  Title                    = {{FOAF Vocabulary Specification 0.99}},
+  Author                   = {Brickley, Dan and Miller, Libby},
+  Year                     = {2014},
+  Month                    = {August},
+  Note                     = {\url{http://xmlns.com/foaf/spec/20140114.html}},
+  Type                     = {{Specification}},
+
+  Url                      = {http://xmlns.com/foaf/spec/20140114.html}
+}
+
+@misc{austin_2015_34542,
+  author       = {Austin, Claire C and
+                  Bloom, Theodora and
+                  Dallmeier-Tiessen, Sunje and
+                  Khodiyar, Varsha and
+                  Murphy, Fiona and
+                  Nurnberger, Amy and
+                  Raymond, Lisa and
+                  Stockhause, Martina and
+                  Tedds, Jonathan and
+                  Vardigan, Mary and
+                  Whyte, Angus},
+  title        = {{Key components of data publishing: Using current 
+                   best practices to develop a reference model for
+                   data publishing}},
+  month        = dec,
+  year         = 2015,
+  doi          = {10.5281/zenodo.34542},
+  url          = {https://doi.org/10.5281/zenodo.34542}
+}
+
+@TechReport{Hyland:14:BPP,
+  author =	"Bernadette Hyland and Ghislain Auguste Atemezing and
+		 Boris Villaz\'{o}n-Terrazas",
+  title =	"Best Practices for Publishing Linked Data",
+  month =	jan,
+  note = 	"http://www.w3.org/TR/2014/NOTE-ld-bp-20140109/",
+  year = 	"2014",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Note",
+  institution =  "W3C",
+}
+
+@inproceedings{AuerBDEHILMMNSTW12,
+  added-at = {2012-10-29T00:00:00.000+0100},
+  author = {Auer, Sören and Bühmann, Lorenz and Dirschl, Christian and Erling, Orri and Hausenblas, Michael and Isele, Robert and Lehmann, Jens and Martin, Michael and Mendes, Pablo N. and Nuffelen, Bert Van and Stadler, Claus and Tramp, Sebastian and Williams, Hugh},
+  biburl = {https://www.bibsonomy.org/bibtex/2559c45a2796ce6f7c15617b760866368/dblp},
+  booktitle = {International Semantic Web Conference (2)},
+  crossref = {conf/semweb/2012-2},
+  ee = {http://dx.doi.org/10.1007/978-3-642-35173-0_1},
+  keywords = {dblp},
+  pages = {1-16},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  title = {Managing the Life-Cycle of Linked Data with the LOD2 Stack.},
+  url = {http://dblp.uni-trier.de/db/conf/semweb/iswc2012-2.html#AuerBDEHILMMNSTW12},
+  volume = 7650,
+  year = 2012
+}
+
+@incollection{Terrazas,
+    address = {New York, NY},
+    author = {Villaz\'{o}n-Terrazas, Boris and Vilches-Bl\'{a}zquez, Luis and Corcho, Oscar and G\'{o}mez-P\'{e}rez, Asunci\'{o}n},
+    booktitle = {Linking Government Data},
+    chapter = {2},
+    doi = {10.1007/978-1-4614-1767-5\_2},
+    editor = {Wood, David},
+    isbn = {978-1-4614-1766-8},
+    pages = {27--49},
+    posted-at = {2012-01-24 09:17:46},
+    priority = {2},
+    publisher = {Springer New York},
+    title = {{Methodological Guidelines for Publishing Government Linked Data Linking Government Data}},
+    url = {http://dx.doi.org/10.1007/978-1-4614-1767-5\_2},
+    year = {2011}
+}

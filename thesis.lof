@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces The Metadata Ecosystem of DataID\relax }}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Example of combining multiple DataID ontologies\relax }}{38}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Example of combining multiple DataID ontologies\relax }}{39}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -30,7 +30,35 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Foundations: Using {\scshape \bfseries prov-o}\xspace to qualify properties\relax }}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces DataID core\relax }}{45}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces {\ttfamily \bfseries DataID core}\xspace \relax }}{44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Class DataId\relax }}{47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Class Dataset\relax }}{48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Class Distribution\relax }}{53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.13}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{65}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.14}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{66}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces The LOD2 Lifecycle of Linked Data \cite {AuerBDEHILMMNSTW12}\relax }}{74}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces The Government Linked Data Lifecycle \cite {Terrazas}\relax }}{74}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

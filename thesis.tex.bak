@@ -108,7 +108,8 @@ language=english
 \newcommand{\cerif}{{\scshape\bfseries cerif}\xspace}
 \newcommand{\foaf}{{\scshape\bfseries foaf}\xspace}
 \newcommand{\metashare}{{\scshape\bfseries meta-share}\xspace}
-
+\newcommand{\dbpedia}{{\ttfamily\bfseries DBpedia}\xspace}
+\newcommand{\wikipedia}{{\ttfamily\bfseries Wikipedia}\xspace}
 
 \newcommand{\prop}[1]{{{\texttt{#1}}}}
 
@@ -182,7 +183,7 @@ language=english
 }
 
 \lstdefinelanguage{ttl}{
-basicstyle=\ttfamily\footnotesize,
+basicstyle=\ttfamily\scriptsize,
 sensitive=true,
 breaklines=true, % wrap lines if they don't fit
 frame=trbl, % draw a frame at the top, right, left and bottom of the listing
@@ -193,7 +194,7 @@ abovecaptionskip=10pt,
 belowcaptionskip=10pt,
 morestring=[b][\color{blue}]\",
 keywordstyle=\color{purple},
-morekeywords={dbp,dct,dc,void,guo,pro,repo,prv,version,owl,prov,rdf,rdfs,foaf,xml,xsd,dbo,str,sso,scms,ld, fise, dcterms, itsrdf, wiktionary, nif,rlno,rlnr,olia,nif,nerd,opencalais,semitags,saple,zemanta,extractiv,yahoo,alchemyapi,wikimeta}
+morekeywords={dbp,dct,dc,void,prv,owl,prov,rdf,rdfs,foaf,xml,xsd,dbo,str,sso,scms,ld, dcterms, itsrdf,sd,ex, wiktionary,dcat,nif,rlno,rlnr,olia,nif,nerd,opencalais,semitags,saple,zemanta,extractiv,yahoo,alchemyapi,wikimeta,dataid,dataid-ld,dataid-mt}
 }
 
 \def\emph{\textit}
@@ -280,6 +281,46 @@ Betreuender Hochschullehrer: 	& \small Dr.-Ing. Sebastian Hellmann and\\
 %\sloppy{}
 \listoffigures
 %\fussy{}
+
+\newpage
+\thispagestyle{empty}
+
+\section*{Namespaces}
+
+A list of namespaces and their prefixes used throughout this work:
+
+\begin{center}
+\begin{tabular}{ |l|l| } 
+ \hline
+Prefix & Namespace\\
+ \hline
+dataid & \url{ http://dataid.dbpedia.org/ns/core#}\\
+dataid-ld & \url{ http://dataid.dbpedia.org/ns/ld#}\\
+datacite & \url{ http://purl.org/spar/datacite/}\\
+dcat & \url{ http://www.w3.org/ns/dcat#}\\
+dct & \url{ http://purl.org/dc/terms/}\\
+foaf & \url{ http://xmlns.com/foaf/0.1/}\\
+lvont & \url{ http://lexvo.org/ontology#}\\
+odrl & \url{ http://www.w3.org/ns/odrl/2/}\\
+owl & \url{ http://www.w3.org/2002/07/owl#}\\
+prov & \url{ http://www.w3.org/ns/prov#}\\
+rdf & \url{ http://www.w3.org/1999/02/22-rdf-syntax-ns#}\\
+rdfs & \url{ http://www.w3.org/2000/01/rdf-schema#}\\
+sd & \url{ http://www.w3.org/ns/sparql-service-description#}\\
+skos & \url{ http://www.w3.org/2004/02/skos/core#}\\
+spdx & \url{ http://spdx.org/rdf/terms/#}\\
+time & \url{ http://www.w3.org/2006/time#}\\
+void & \url{ http://rdfs.org/ns/void#}\\
+xsd & \url{ http://www.w3.org/2001/XMLSchema#}\\
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Disambiguation}
+There are multiple interpretations of the word/acronym \dataid depending on the context. It can refer to a \dataid metadata document, the serialisation of a \dataid RDF graph. Such a graph is the result of the appliance of \dataid ontologies to one or more datasets, resulting in a collection of RDF statements based on these ontologies. Or it is used to name an instance of the concept \prop{dataid:DataId}, meaning the entry into a \prop{dcat:Catalog}, the most abstract entity in every \dataid. I will be explicit and use the terms \dataid document, \dataid graph or \dataid resource (or instance, entity) in the remainder of this thesis.
+
+
+\todo{add blank pages}
 
 \frenchspacing
 %\lefthyphenmin=3
@@ -1132,6 +1173,9 @@ data can be edited, integrated or redistributed.
 \label{sec:lexvo}
 Lexvo.org\footnoteurl{http://www.lexvo.org} is a service publishing language related information as Linked Data on the Web. The data published is conform to the Lexvo Ontology, providing unique identifiers for human languages in the context of geography, language families, words and word senses, scripts and characters \cite{Lexvo2015DeMelo}. All in all, the Lexvo dataset consists of over 8000 languages with a broad spectrum of language-related information that is extensively used by many data publishers and communities.
 
+\subsection{Friend of a Friend vocabulary (FOAF)}
+\label{sec:foaf}
+\cite{Brickley-2014} \todo{add foaf!}
 
 \subsection{DataCite Ontology}
 \label{sec:dcid}
@@ -1217,17 +1261,17 @@ In order to keep the \dataid ontology reasonable in size and complexity as well 
 The scaling approach used to modularize the original \dataid ontology adopts principles of the modular programming technique, separating concepts and properties of a large ontology into independent, interchangeable modules, specialised to fit common use cases, dependent only on \core. Thus, any vocabulary in this sphere must import \core, with the exception of \core itself. 
 The mid-layer (or common extensions) of this model is comprised of highly reusable ontologies, extending \core to cover additional aspects of dataset metadata. Non of these are mandatory imports for any ontology, yet, in many cases some or all of them will be useful contributions. While I will not (and can not) impose any restrictions as to which ontologies not to import, ideally, ontologies of this layer should only import \core, to minimize discrepancies between mid-layer ontologies of different authors with overlapping purposes. The outermost layer of this sphere represents all vocabularies importing \core and any number if mid-layer ontologies and adding additional semantics to portray domain or use case specific demands for metadata.
 
-The \ecosystem is a suite of ontologies comprised of \core and its extensions, which were created to satisfy different use cases in a reusable manner:
+The \ecosystem is a suite of ontologies comprised of \core and its extensions, which were created to satisfy different use cases in a reusable manner. The brackets enclosed namespace prefixes are recommended and used throughout this work:
 
 \begin{description}
-\item[DataID core] provides the basic description of a dataset (cf. \Cref{dataidCore}) and serves as foundation for all extensions to DataID.
-\item[Linked Data] extends DataID core with the \void vocabulary\cite{void} and some additional properties specific to LOD datasets. Many \void and Linked Data references from the previous version of DataID were outsourced into this ontology\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/master/ld}.
-\item[Activities \& Plans] provides provenance information of activities which generated, changed or used datasets\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/DataManagementPlanExtension/acp}. The goal is to record all activities needed to replicate a dataset as described by a DataID. Plans can describe which steps (activities, precautionary measures) are put in place to reach a certain goal. This extension relies heavily on the \prov ontology\cite{prov}.
-\item[Statistics] will provide the necessary measures to publish multi-dimensional data, such as statistics about datasets, based on the Data Cube Vocabulary\cite{datacube}. 
+\item[DataID core (dataid)] provides the basic description of a dataset (cf. \Cref{sec:coreintro}) and serves as foundation for all extensions to DataID.
+\item[Linked Data (dataid-ld)] extends DataID core with an interface for the Sparql Service Description vocabulary \cite{sparqlsd}, which not only allows to specify SPARQL endpoints, but offers properties useful for Linked Data datasets as well (such as \prop{sd:defaultGraph})\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/master/ld}. While the \void vocabulary is already imported in \core (see \cref{sec:coreintro}), many \void and properties only become useful in this context (e.g. \prop{void:triples}). I introduced a specialised sub classes (\prop{dataid-ld:LinkedDataDataset}) to better distinguish datasets of this focus. 
+\item[Activities \& Plans (dataid-acp)] provides provenance information of activities which generated, changed or used datasets\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/DataManagementPlanExtension/acp}. The goal is to record all activities needed to replicate a dataset as described by a DataID. Plans can describe which steps (activities, precautionary measures) are put in place to reach a certain goal. This extension relies heavily on the \prov ontology\cite{prov}.
+\item[Statistics (dataid-md)] will provide the necessary measures to publish multi-dimensional data, such as statistics about datasets, based on the Data Cube Vocabulary\cite{datacube}. 
 \item[Other common extensions] of similar general character as the ontologies of that layer, which could be useful in multiple use cases.
 \end{description}
 
-Ontologies under the DataID multilayer concept do not offer cardinality restrictions, making them easy to extend and adhere to OWL profiles. An application profile for the DataID service (cf. \Cref{lessons}) was declared using SHACL\footnoteurl{http://w3c.github.io/data-shapes/shacl/}.%\todo{maybe rephrase the last sentence}
+Ontologies under the DataID multilayer concept do not offer cardinality restrictions, making them easy to extend and adhere to OWL profiles. An application profile for \core (cf. \Cref{lessons}) was declared using SHACL \cite{shacl}.
 
 Extending this ecosystem of dataset metadata with domain-specific OWL ontologies adds further opportunities for applications clustered around datasets, as we will showcase in \Cref{dmps}.\todo{ref}
 
@@ -1258,7 +1302,7 @@ For example, a DataID based ontology for LOD Datasets dealing with multi-dimensi
 \chapter{DataID core Ontology}
 \label{cahp:core}
 
-\section{Fundamentals} 
+\section{Overview} 
 \label{sec:coreintro}
 
 This section will provide an overview of the \core ontology and some background on basic design decisions made. Most of the vocabularies reused by this ontology have already been presented in \cref{chap:relatedwork} and need no further introduction.
@@ -1288,11 +1332,11 @@ describe datasets as complex as DBpedia [...]." \cite{dataID2014}
 
 As \dcat, \core is centred around the Dataset and Distribution concepts which were imported from \dcat. We introduced the class \prop{dataid:DataId} (see \cref{sec:coredataid}), merging both \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription} into one, and providing an additional level of abstraction between \prop{dataid:Dataset} and \prop{dcat:Catalog}. Instances of this class can be compared to root elements in the XML world, since all subsequent instances, describing a dataset, are hierarchicaly below a DataId instance. Though, this comparison is of course misleading, since a graph has no orientation. Yet, most of DataID documents\footnote{DataID graph serialised as a metadata document} will have structural similarities to XML documents.
 
-All dataset related classes of \core (\prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}) are sub classes of \prop{prov:Entity}, which is the interface needed to harness the possibilities of the Provenance Ontology. In the context of this description of \core, the word 'Entities' summarises all possible instances of \prop{prov:Entity} (ergo: instances of these three classes).
+All dataset related classes of \core (\prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}) are sub classes of \prop{prov:Entity}, which is the interface needed to harness the possibilities of the Provenance Ontology (\prov). In the context of this description of \core, the word 'Entity' is used to refer to instances of \prop{prov:Entity} (ergo: instances of these three classes).
 
-With \prov, describing any provenance issue is possible (\cref{sec:prov}). Central to this, is the concept of qualification classes, providing qualifications for more general properties (e.g. for \prop{prov:wasAttributedTo}). Describing the interrelations between Entities (such as a particular dataset or just a single distribution of it) and Agents (e.a. a person or an organisation) are salient requirements in most environments of datasets and their metadata. Thus, \core has singled out these relations to further qualify them and provide much needed referential integrity.\todo{explain}
+With \prov, describing the circumstance of provenance for any domain is possible (\cref{sec:prov}). Central to this, is the concept of qualification classes, providing qualifications for more general properties (e.g. for \prop{prov:wasAttributedTo}). Describing the interrelations between Entities (such as a particular dataset or just a single distribution of it) and Agents (e.a. a person or an organisation) are salient requirements in most environments for datasets and their metadata. Thus, \core has singled out these relations to further qualify them and provide much needed referential integrity.\todo{explain}
 
-The property \prop{dataid:associatedAgent} (which is a sub property of \prop{prov:wasAttributedTo}) is a universal relation between an Entity and an Agent. It can (and should) be qualified by an instance of \prop{dataid:Authorization}, a sub class of \prop{prov:Attribution}. An Authorization adds qualifications and restrictions to the original property, such as an agent role (defining the role the agent has in regard to the Entities involved - see \cref{sec:coreauthorization}). Furthermore, \core allows for assigning Actions to an Authorization, which specify what an Agent can do and for which tasks he/she/it is responsible for.
+For example, the property \prop{dataid:associatedAgent} (which is a sub property of \prop{prov:wasAttributedTo}) is a universal relation between an Entity and an Agent. It can (and should) be qualified by an instance of \prop{dataid:Authorization}, a sub class of \prop{prov:Attribution}. An Authorization adds qualifications and restrictions to the original property, such as an agent role (defining the role the agent has in regard to the Entities involved - see \cref{sec:coreauthorization}). core allows for assigning Actions to an Authorization, which specify what an Agent can do and for which tasks he/she/it is responsible for.
 
 \begin{figure}[!htbp]
 \centering
@@ -1301,81 +1345,955 @@ The property \prop{dataid:associatedAgent} (which is a sub property of \prop{pro
   \label{fig:foundations}
 \end{figure}
 
-In its current version 2.0.0, \core offers a general approach for describing dataset metadata, incorporating important ontologies to extend \dcat with \provenance, qualifying relations and their intended range classes (e.g. to refine \licensing), hierarchical dataset structures, management of rights and responsibilities of agents and exhaustive descriptions for data \access. 
+In its current version 2.0.0, \core offers a general approach for describing dataset metadata, incorporating important ontologies to extend \dcat with \provenance, qualifying relations and their intended range classes, hierarchical dataset structures, management of rights and responsibilities of agents and exhaustive descriptions for data \access. 
 
-In general, \core waived the use of cardinality restrictions\footnote{this is the purpose of an application profile, not of an ontology}, helping us with our goal to adhere to the OWL 2 RL\footnoteurl{https://www.w3.org/TR/owl2-profiles/#OWL_2_RL} profile and maintaining the benefits of easy \extensibility and \interoperability prevalent with \dcat. In turn, \core restricts some of the very general property ranges of Dublin Core and \dcat properties (such as \prop{dct:license} or \prop{dcat:mediaType}), to reduce impreciseness and increase machine-readability.
+In general, \core waived the use of cardinality restrictions\footnote{this is the purpose of an application profile, not of an ontology}, making it easier to adhere to the OWL 2 RL\footnoteurl{https://www.w3.org/TR/owl2-profiles/#OWL_2_RL} profile and maintaining the benefits of easy \extensibility and \interoperability prevalent with \dcat. In turn, \core restricts some of the very general property ranges of Dublin Core and \dcat properties (such as \prop{dct:license} or \prop{dcat:mediaType}), to reduce impreciseness and increase machine-readability.
 
- loosing the ability to extend easily 
-This section provides a concise overview of the DataID-core ontology, highlighting important features and improvements to the previously presented version in 2014 \cite{dataID2014}. The current version (2.0.0) adheres to the OWL profile OWL2-RL\footnoteurl{https://www.w3.org/TR/owl2-profiles/}. 
-%A possible application profile containg such restrictions is provided as a shape definition with the Shapes Constraint Language\cite{shacl}.
-\Cref{fig:core} supplies a depiction of this ontology. \dct is used for most general metadata of any concept.
+\core is making use of the following namespace:
+\begin{lstlisting}[language=ttl, label=lst:graph,linewidth=\columnwidth,breaklines=true,basicstyle=\ttfamily\footnotesize]
+http://dataid.dbpedia.org/ns/core#
+\end{lstlisting}
+At this URI, an extended description of each class and property, introduced by this ontology, can be found as well as the complete ontology specification in Turtle\footnoteurl{http://dataid.dbpedia.org/ns/core.ttl} or OWL\footnoteurl{http://dataid.dbpedia.org/ns/core.owl} serialization.\todo{should i put the whole specification in the appendix? would be about 20 pages...}
 
-DataID is founded on two pillars: the \dcat and \prov ontologies. The class \prop{dataid:DataId} subsumes \prop{dcat:CatalogRecord}, which describes a dataset entry in a \prop{dcat:Catalog}. It does not represent a dataset, but provenance information about dataset entries in a catalog. It is the root entity in any DataID description. 
-
-In addition the \void vocabulary plays a central role, as the dataset concept of both the \dcat and \void were merged into \prop{dataid:Dataset}, providing useful properties about the content of a dataset from both ontologies. In particular, the property \prop{void:subset} allows for the creation of dataset hierarchies, while \prop{dcat:distribution} points out the distributions of a dataset.
-
-The class \prop{dcat:Distribution} is the technical description of the data itself, as well as documentation of how to access the data described (\prop{dcat:accessURL} / \prop{dcat:downloadURL}). This concept is crucial to be able to automatically retrieve and use the data described in the DataID, simplifying, for example, data analysis. We introduced additional subclasses (e.g. \prop{dataid:ServiceEndpoint}), to further distinguish how the data is available on the Web.
+For a better understanding of the imported concepts and properties, which are reused by \core, I would advise to read up on \dcat \cite{ddcat} and \prov \cite{prov} (since these are used most commonly), to gain a more complete picture of the underlying structure and rational of these ontologies. While I gave a concise introduction to both in \cref{sec:dcat} and \cref{sec:prov} respectively, this work is not the space to repeat this in more detail.
 
 \begin{figure}
 \centering
 	\vspace*{-0.8cm}
   \includegraphics[angle=90, width=\textwidth]{images/DataIdOntology.png}
-  \caption{DataID core}
+  \caption{\core}
   \label{fig:core}
   %\floatfoot{An exact description of all classes and properties can be found under the DataID namespace uri \url{http://dataid.dbpedia.org/ns/core} including this depiction. The ontology RDF document is also available there:
   %\url{http://dataid.dbpedia.org/ns/core.ttl} (.owl)}
 \end{figure} 
 
-\dcat does not offer an intrinsic way of specifying the exact format of the content described by a distribution. While the property \prop{dcat:mediaType} does exist, its expected range \prop{dct:MediaTypeOrExtend} is an empty class (without any further definitions).
-%it has \prop{dct:MediaType} as range but \prop{dct:MediaType} has no further definitions. 
-Therefore, we created \prop{dataid:MediaType} to remedy this matter. With the property \prop{dataid:innerMediaType} we can even describe nested formats (e.g. .xml.bz2), useful in pipeline processing.
-
-The most important change to the previous version of DataID is the possible expression of which role an agent can take in regard to metadata entities (e.g. the whole DataID and all datasets, a single distribution etc.). 
-%RU: The most important change to the previous version of DataID is the ability to express which role an agent can have in regard to metadata entities (e.g. the whole DataID and all datasets, a single distribution etc.).
-This is achieved by the class \prop{dataid:Authorization}, which is a subclass of \prop{prov:Attribution}, a qualification of the property \prop{prov:wasAttributedTo}. Basically it states, which role(s) (\prop{dataid:authorityAgentRole}) an agent (\prop{dataid:authorizedAgent}) has regarding a certain collection of entities (\prop{dataid:authorizedFor}). This mediator is further qualified by an optional period of time for which it is valid and authoritative restrictions by the entities themselves, allowing only specific instances of \prop{dataid:Authorization} to exert influence over them (\prop{dataid:needsSpecialAuthorization}).%\todo{please prove read this section again, RU: minor/phrasing}
-
-
-The role an agent can take (\prop{dataid:AgentRole}) has only one property, pointing out actions it entails. A \prop{dataid:AuthorizedAction} shall either be a \prop{dataid:EntitledAction}, representing all actions an agent could take, as well as the actions an agent has to take (\prop{dataid:ResponsibleAction}). Actions and roles defined in this ontology (e.g. \prop{dataid:Publisher}) are only examples of possible implementations and can be replaced to fit a use case. 
-Hierarchical structures of agent roles or actions can provide additional semantics.
-
+\pagebreak
 \section{Classes} 
 \label{sec:coreclasses}
 
+This section is partitioned by concepts to introduce the \core ontology. Each class is presented with an item of written comment about the general reasoning behind its existence and its intended use.
+For illustration purposes, a running example was woven into the descriptions of concepts and properties. This example is a reduced version of an original \dataid document of the Arabic DBpedia (release: 2015-10\footnoteurl{http://}). Under the main dataset, only two sub-datasets are shown (as opposed to over 50 in the real world example from which this is drawn). It was chosen to cover many aspects of \core and to provide an easy use case which could arise in a similar fashion outside the DBpedia domain. The full example is available in Turtle serialisation\footnoteurl{http://} in Appendix I. The basic structure of its \dataid document is outlined below (\Cref{fig:example}).
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=13cm]{images/ExampleStructure.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+For the purpose of this running example the following base URI was used to shorten all subsequent URIs of this:
+\begin{lstlisting}[language=ttl,label=lst:graph,linewidth=\columnwidth,breaklines=true,basicstyle=\ttfamily\footnotesize]
+@base <http://downloads.dbpedia.org/2015-10/core-i18n/ar/2015-10_>
+\end{lstlisting}
+
+Some instances referenced in the example were left out to reduce redundancy.\todo{true?} The example omits the more common properties of Dublin Core\footnoteurl{http://} and RDFS\footnoteurl{http://} such as \prop{dct:title}, \prop{dct:description}, \prop{dct:modified}, \prop{dct:issued} and \prop{rdfs:label} to make this example more easy to read. 
+
+In addition, this running example does not only use \core, it also introduces a first \dataid extension from the common layer of the \ecosystem (\cref{sec:multilayer}) for Linked Data datasets. The Linked Data extension\footnoteurl{https://github.com/dbpedia/DataId-Ontology/tree/master/ld} (prefix: dataid-ld) is used to describe dataset attributes, specific to Linked Data.
+
+The remainder of this section features each subsection with a short summary, stating the purpose of each concept, a list of properties commonly used to describe instances of this concept, a schematic depiction of the concept, followed by at least one example instance of this class (taken from the running example of DBpedia). The list of properties features a rating for each property to advise whether an application profile based on \core should declare a property to be: mandatory \textbf{(M)}, recommended \textbf{(R)} or optional \textbf{(O)}.
+
+
 \subsection{DataId} 
 \label{sec:coredataid}
+The class \prop{dataid:DataId} inherits from \prop{dcat:CatalogRecord}, which does not represent a dataset, but metadata about a dataset's entry in a catalogue. Additionally, in the context of \core, it represents metadata about a \dataid document (graph), such as version pointers, modification dates and relations to its context (such as Agents, Catalogues, Repositories). This DataId resource is the most abstract Entity in any \dataid graph. 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassDataId.png}
+  \caption{Class DataId}
+  \label{fig:example}
+\end{figure}
+
+Properties specifically used with \prop{dataid:DataId}:
+\begin{description}
+\item[\prop{dataid:inCatalog}:] the inverse of \prop{dcat:record} references the \dcat catalogue a \dataid is entered in. \textbf{(R)}
+\item[\prop{foaf:primaryTopic}:] this functional property is used to point out the dataset resource this \dataid represents. \textbf{(M)}
+\end{description}
+
+In addition, the following list contains properties which can be used with any Entity and are presented here for convenience:
+\begin{description}
+\item[\prop{dataid:associatedAgent}:] points out all agents which have some (unspecified) influence (or authority) over this Entity. \textbf{(O)}
+\item[\prop{dataid:underAuthorization}:] refers an instance of \prop{dataid:Authorization} which qualifies the generic \prop{dataid:underAuthorization} relation (see \cref{sec:coreauthorization}). \textbf{(R)}
+\item[\prop{dct:publisher}:] While the \prov based way to declare associated agents and their roles in regard to this Entity is in place, using established properties to point out agents (such as \prop{dct:publisher}) is not redundant and should be kept as best practice. \textbf{(R)}
+\item[\prop{dataid:nextVersion}:] is used to identify instances of the same type (in this case \prop{dataid:DataId}), which are next in the chain of different versions of this resource. \textbf{(O)}
+\item[\prop{dataid:previousVersion}:] points out the previous version of this instance. \textbf{(R)}
+\item[\prop{dataid:latestVersion}:] points out the latest version of this instance. \textbf{(R)}
+\end{description}
+
+The example below illustrates the use of this concept. It provides a pertaining dataset catalogue (via \prop{dataid:inCatalog}), uses version pointers to define its position in a branch of a versioning system, points out agents and authorizations and the dataset about which this \dataid is about (\prop{foaf:primaryTopic}).
+
+\pagebreak
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Instance of a DataId,label=lst:coredataid,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl>
+        a                          dataid:DataId ;
+        dataid:associatedAgent     <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:inCatalog           <http://downloads.dbpedia.org/2015-10/2015-10_dataid_catalog.ttl> ;            
+        dataid:latestVersion       <http://downloads.dbpedia.org/2016-04/core-i18n/ar/2016-04_dataid_ar.ttl> ;
+        dataid:nextVersion         <http://downloads.dbpedia.org/2016-04/core-i18n/ar/2016-04_dataid_ar.ttl> ;    
+        dataid:previousVersion     <http://downloads.dbpedia.org/2015-04/core-i18n/ar/2015-04_dataid_ar.ttl> ;
+        dataid:underAuthorization  <dataid_ar.ttl?auth=creatorAuthorization> ;                                    
+        dct:hasVersion              <dataid_ar.ttl?version=1.0.0> ;
+        dct:publisher               <http://wiki.dbpedia.org/dbpedia-association> ;                                
+        dct:title                   "DataID metadata for the Arabic DBpedia"@en ;
+        foaf:primaryTopic          <dataid_ar.ttl?set=maindataset>
+\end{lstlisting}
 
 \subsection{Dataset} 
 \label{sec:coredataset}
+This is the central concept of the \core ontology and offers a multitude of useful properties to describe a dataset comprehensively.
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/ClassDataset.png}
+  \caption{Class Dataset}
+  \label{fig:example}
+\end{figure}
 
+The dataset concept of both the \dcat and \void were merged into \prop{dataid:Dataset}, providing useful properties about the content of a dataset from both ontologies. In particular, the property \prop{void:subset} allows for the creation of dataset hierarchies, while \prop{dcat:distribution} points out the distributions of a dataset. The \prop{dataid:Superset} as a subclass of \prop{dataid:Dataset} shall be used to represent multiple sub-dataset entities, portraying dataset collections or hierarchical dataset structures in general. Opposed to a conventional Dataset, a Superset is prohibited from possessing Distributions (referred to with \prop{dcat:distribution}). It is strongly recommended that each Dataset shall either have at least one Distribution or one Sub-Dataset. 
+
+In the running example, the main dataset (an instance of \prop{dataid:Superset}), is used as a hierarchical root, representing all Sub-Datasets clustered around a common topic. In the case of DBpedia, all Datasets were arranged under a Superset representing a DBpedia language edition.
+
+Properties commonly used with instances of this class are:
+\begin{description}
+\item[\prop{dcat:distribution}] provides the distributions of a dataset and should be used distinct from \prop{void:subset}. \textbf{(M for non Supersets)}
+\item[\prop{void:subset}] is the property used to reference sub datasets which are part of a superset. Its use is limited to \todo{void subset only for superste???}the sub class \prop{dataid:Superset}. \textbf{(M if Superset)}
+\item[\prop{dct:license}] as already stated (\cref{ddd}), this property is restricted in the context of \dataid to instances of the class \prop{odrl:Policy} of the \odrl ontology, providing machine-readable licensing information. \textbf{(M)}
+\item[\prop{dct:language}:] This property from the Dublin Core vocabulary is used to point out the predominant language used within a dataset. Since a \prop{rdfs:range} statement is not provided, even literals could be used with this predicate. \core restricts the range of this property to instances of  lvont:Language, a class from the Lexvo ontology (see \cref{sec:lexvo}), describing human languages in a machine readable way. \textbf{(R)}
+\item[\prop{void:vocabulary}] in the \void vocabulary, this property is used to point out the associated ontology used to create a dataset. \core broadens its use case so that any schema document (e.g. XSLT or database schemata) can be pointed out, depending on the type of data. \textbf{(R)}
+\item[\prop{foaf:page}] is commonly used to point out web pages which have the function of a manual or documentation for the resource at hand. \textbf{(R)}
+\item[\prop{dct:rights}] this property is used to provide a statement or resource about issues like copy rights or legal notes. To avoid unqualifiable literal statements, this property is reduced to \prop{dataid:SimpleStatement}. \textbf{(O)}
+\item[\prop{foaf:isPrimaryTopicOf}] is the inverse property of \prop{foaf:primaryTopic} (see \cref{sec:coredataid}). \textbf{(O)}
+\item[\prop{dataid:relatedDataset}:] generic pointer to related datasets (sub property of \prop{dct:relation}), qualifiable by \prop{dataid:qualifiedDatasetRelation}. Refer to \cref{sec:coredatasetrelationship} for more. \textbf{(O)}
+\item[\prop{dataid:qualifiedDatasetRelation}] provides an instance of concept \prop{dataid:DatasetRelationship} which is a qualification class for the generic property \prop{dataid:relatedDataset} \textbf{(O)}
+\item[\prop{dataid:identifierScheme}:] provides a resource describing the identifiers used within the dataset to uniquely identify a record (data point, datum). Refer to \cref{sec:coreidentifier} to learn more about Identifiers. \textbf{(O)}
+\item[\prop{dcat:keyword}:] a simple keyword or tag associated with this dataset \textbf{(O)}
+\item[\prop{dcat:landingpage}:] references a web page of general character (such as the homepage of an organisation) \textbf{(O)}
+\end{description}
+
+Multiple properties for textual statements on different aspects of a Dataset were created. All of which provide publishers, maintainers and other agents a way to convey statements of general character on such subjects as described below. This information will be useful in many scenarios related to dissemination tasks, for example, those described by the Horizon 2020\footnoteurl{https://ec.europa.eu/programmes/horizon2020/} data management plan guidelines\footnoteurl{https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf} (more on this in \cref{chap:dmp}).
+
+All of these properties are listed below have the common \prop{rdfs:range} of \prop{dataid:SimpleStatement}, which allows to either provide a literal or reference a web page containing the textual information about the resource (see \cref{sec:corestatement}). 
+
+\begin{description}
+\item[\prop{dataid:dataDescription}:] provides a detailed textual description of the data represented by this Dataset. \textbf{(O)}
+\item[\prop{dataid:growth}:] indication of what size the approximated end volume of the Dataset is. \textbf{(O)}
+\item[\prop{dataid:usefulness}:] is used to state to whom the Dataset could be useful, and whether it underpins a scientific publication. \textbf{(O)}
+\item[\prop{dataid:similarData}:] a statement on the existence (or absence) of similar data (see also \prop{dataid:relatedDataset}). \textbf{(O)}
+\item[\prop{dataid:reuseAndIntegration}:] information on the possibilities for integration and reuse of the Dataset. \textbf{(O)}
+\item[\prop{dataid:openness}:] General description of how data will be shared. For example embargo periods (if any), outlines of technical mechanisms for dissemination or a definition of whether access will be widely open or restricted to specific groups. In case the Dataset cannot be shared, the reasons for this should be mentioned (e.g. ethical, rules of personal data, intellectual property, commercial, privacy-related, security-related). \textbf{(O)}
+\end{description}
+
+The running example is structured in a shallow hierarchy with an instance of \prop{dataid:Superset} representing all dataset of a Arabic DBpedia language edition:
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Instance of a Superset,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?set=maindataset>
+        a                           dataid:Superset ;
+        dataid:associatedAgent      <http://wiki.dbpedia.org/dbpedia-association>  ;
+        dataid:growth               <dataid_ar.ttl?stmt=growth> ;                                                 
+        dataid:openness             <dataid_ar.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <dataid_ar.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <dataid_ar.ttl?stmt=similarData> ;
+        dataid:usefulness           <dataid_ar.ttl?stmt=usefulness> ;
+        dct:hasVersion               <dataid_ar.ttl?version=1.0.0> ;
+        dct:language                 <http://lexvo.org/id/iso639-3/ara> ;                                          
+        dct:license                  <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;  
+        dct:publisher                <http://wiki.dbpedia.org/dbpedia-association> ;
+        dct:rights                   <dataid_ar.ttl?rights=dbpedia-rights> ;
+        void:subset                 <dataid_ar.ttl?set=long_abstracts_en_uris>, 
+        <dataid_ar.ttl?set=interlanguage_links> ;
+        void:vocabulary             <http://downloads.dbpedia.org/2015-04/dbpedia_2015-10.owl> ;                  
+        dcat:keyword                "maindataset"@en , "DBpedia"@en ;
+        dcat:landingPage            <http://dbpedia.org/> ;                                                       
+        foaf:isPrimaryTopicOf       <dataid_ar.ttl> ;                                                             
+        foaf:page                   <http://wiki.dbpedia.org/Downloads2015-10> .  
+\end{lstlisting}
+
+This dataset has no distributions, the data it represents is referred to via its sub datasets. As an example for one of its sub datasets, the following listing exemplifies this difference:
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=A Dataset,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?set=long_abstracts_en_uris>
+        a                       dataid:Dataset, dataid-ld:LinkedDataDataset ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:qualifiedDatasetRelation   <dataid_ar.ttl?relation=source&target=pages_articles> ;                 
+        dataid:relatedDataset   <dataid_ar.ttl?set=pages_articles> ;
+        dct:hasVersion           <dataid_ar.ttl?version=1.0.0> ;
+        dct:isPartOf             <dataid_ar.ttl?set=maindataset> ;                                                 
+        dct:language             <http://lexvo.org/id/iso639-3/ara> ;
+        dct:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dct:title                "long abstracts en uris"@en ;
+        void:rootResource       <dataid_ar.ttl?set=maindataset> ;
+        void:triples            232801 ;                                                                          
+        void:sparqlEndpoint      <http://dbpedia.org/sparql> ;                                                    
+        dcat:distribution       <dataid_ar.ttl?sparql=DBpediaSparqlEndpoint> ,                                    
+            <dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2> ,
+            <dataid_ar.ttl?file=long_abstracts_en_uris_ar.tql.bz2> ;
+        dcat:keyword            "long_abstracts_en_uris"@en , "DBpedia"@en ;
+        dcat:landingPage        <http://dbpedia.org/> ;
+        sd:defaultGraph         <http://ar.dbpedia.org> ;                                                         
+        foaf:page               <http://wiki.dbpedia.org/Downloads2015-10> . 
+\end{lstlisting}
+
+An instance of \prop{dataid-ld:LinkedDataDataset} with three distributions, representing two different RDF serialisations (Turtle - .ttl and Quad-Turtle - .tql) as well as an SPARQL endpoint. Furthermore, a source dataset (out of which this dataset was created) is referenced directly with \prop{dataid:relatedDataset}. The actual type of this relation (it being a \prop{dataid:SourceRelation}) will be evident by the qualified version described with the object of \prop{dataid:qualifiedDatasetRelation}. As a Linked Data dataset, properties such as \prop{void:triples} or \prop{sd:defaultGraph} can be applied.
+ 
 \subsection{Distribution} 
 \label{sec:coredist}
 
+The class \prop{dataid:Distribution} provides the technical description of the data, the 'manifestation' of a dataset. In addition, it serves as documentation of how to access the data described (e.g. \prop{dcat:accessURL}), and which conditions apply (e.g. \prop{dataid:accessProcedure}). Every Distribution of a Dataset must contain all data of the Dataset in the format and location described. It may contain additional data exceeding the defined Dataset, for example when describing a service endpoint. Two Distributions of the same Dataset, therefore, must either contain the exact same data (for example in two different serialisations), or one Distribution must completely subsume the other. The Distribution concept, introduced by the \dcat vocabulary, is crucial to be able to automatically retrieve and use the data described in a \dataid document, simplifying, for example, data analysis. Additional sub classes, to further distinguish how the data is available on the Web, were introduced:
+
+\begin{description}
+\item[\prop{dataid:SingleFile}:] all data of a Dataset is available in a single file.
+\item[\prop{dataid:Directory}:] the data of a Dataset is represented by the files in a single Directory on a file system.
+\item[\prop{dataid:FileCollection}:] an arbitrary collection of (different files, not restricted to one file system), which in their accumulation represent the data of a Dataset.
+\item[\prop{dataid:ServiceEndpoint}:] is a superclass for all service/api endpoints which could provide datasets. For example, REST APIs for databases\footnoteurl{https://docs.oracle.com/cloud/latest/mysql-cloud/CSMCS/index.html} or SPARQL endpoints for Triplestores.\todo{what is this?}
+\end{description}
+
+Except for \prop{dataid:SingleFile}, all of these subclasses may need additional semantics to describe them in a useful manner. This is not an objective of \core, further extensions of this ontology will address these issues.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassDistribution.png}
+  \caption{Class Distribution}
+  \label{fig:example}
+\end{figure}
+
+Properties used with \prop{dataid:Distribution}:
+\begin{description}
+\item[\prop{dcat:mediaType}:] is restricted to a range of \prop{dataid:MediaType} (see next \cref{sec:coremediatype}). This property is absolutely necessary to automatically digest the content of a Distribution. \textbf{(M)}
+\item[\prop{dcat:downloadURL}:] this property supplies a URL under which the described Distribution can be downloaded directly (without any access procedure or intermediate steps) and completely. \textbf{(M if no \prop{dcat:accessURL})}
+\item[\prop{dcat:accessURL}:] when additional steps are necessary to achieve access to the data of this Distribution (such as authorization, querying or selecting data from a repository), \prop{dcat:accessURL} is used to provide the initial URL. If the process necessary to retrieve the data is not evident by the content of the web page referred, publishers should make use of property. \prop{dataid:accessProcedure}. \textbf{(M if no \prop{dcat:downloadURL})}
+\item[\prop{dataid:accessProcedure}:] is used to convey a description of necessary steps, needed to retrieve the data of this Distribution from the \prop{dcat:accessURL}. This property should not be used in connection with \prop{dcat:downloadURL}. \textbf{(R if no \prop{dcat:downloadURL})}
+\item[\prop{dataid:checksum}:] the range of this property is restricted to \prop{spdx:Checksum} \cite{spdx}, providing \prop{spdx:checksumValue} and \prop{spdx:algorithm} properties for an exact definition of a checksum. Checksums can be used to validate the correctness of downloaded files, directories and API endpoint responses. \textbf{(R)}
+\item[\prop{dcat:byteSize}:] The exact size of a distribution in bytes. \textbf{(R)}
+\item[\prop{dataid:softwareRequirement}:] Some data formats/serialisations are only useful with a particular software product. This statement offers the possibility to name such circumstance. \textbf{(O)}
+\item[\prop{dataid:uncompressedByteSize}:] Often, files and media streams are compressed to reduce the amount of bytes to be transferred. This optional property provides the means to specify the size of the Distribution in its uncompressed extension. \textbf{(O)}
+\item[\prop{dataid:preview}:] While the exact format and serialisation of the Distribution is defined by \prop{dataid:MediaType}, it is often beneficial for publishers and consumers to have a look at the actual format of the (uncompressed) data. This property points out a web resource providing such a preview. \textbf{(O)}
+\item[\prop{dataid:distributionOf}:] the inverse property of \prop{dcat:distribution}, pointing back to the Dataset instance this Distribution belongs to. \textbf{(O)}
+\item[\prop{dct:license}:] see \cref{sec:coredataset} for a detailed description. Often, the license used for the Distribution is the same as for the pertaining Dataset. For those cases where this is not true, the use of this property in the context of a Distribution is advised. \textbf{(O)}
+\end{description}
+
+The first example is an instance of \prop{dataid:SingleFile}, describing a single RDF file (which contains the whole Dataset) in Turtle syntax, compressed with the bzip2 compression. It can be downloaded directly (without any intermediate steps), hence the property \prop{dcat:downloadURL} is used to point out the resource on the Web. Since it is a compressed file, the byte size in its compressed and uncompressed state is provided. An instance of \prop{spdx:Checksum} was included, providing the checksum value for this Distribution.
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=A single file Distribution,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2>
+        a                        dataid:SingleFile ;
+        dct:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;                              
+        dct:publisher            <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:associatedAgent   <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:checksum          <dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2&checksum=md5> ;            
+        dataid:isDistributionOf  <dataid_ar.ttl?set=long_abstracts_en_uris> ;                                     
+        dataid:preview           <http://downloads.dbpedia.org/preview.php?file=2015-10_sl_core-i18n_sl_ar_sl_long_abstracts_en_uris_ar.ttl.bz2> ;.
+        dataid:uncompressedByteSize      186573907 ;                                                              
+        dcat:byteSize                    33428372 ;                                                               
+        dcat:downloadURL         <long_abstracts_en_uris_ar.ttl.bz2> ;                                            
+        dcat:mediaType           dataid:MediaType_turtle_x-bzip2                                                  
+
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2&checksum=md5>                                               
+        a                   spdx:Checksum ;
+        spdx:algorithm      spdx:checksumAlgorithm_md5 ;                                                          
+        spdx:checksumValue  "2503179cd96452d33becd1e974d6a163"^^xsd:hexBinary .  
+\end{lstlisting}
+
+The second example is an instance of \prop{dataid-ld:SparqlEndpoint}, a sub class of \prop{dataid:ServiceEndpoint} and \prop{sd:Service} which was introduced with the DataID extension for Linked Data (dataid-ld). Additional properties from the SPARQL 1.1 Service Description language are used to further describe the endpoint. As opposed to the previous example, this SPARQL endpoint provides multiple Datasets at once in the context of the original \dataid from DBpedia.
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Distribution of a SPARQL endpoint,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?sparql=DBpediaSparqlEndpoint>
+        a                        dataid-ld:SparqlEndpoint ;
+        dataid:associatedAgent   <http://support.openlinksw.com/> ;                                               
+        dataid:accessProcedure   <dataid_ar.ttl?stmt=sparqlaccproc> ;                                             
+        dct:hasVersion           <dataid_ar.ttl?version=1.0> ;
+        dct:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dcat:accessURL           <http://dbpedia.org/sparql> ;                                                    
+        dcat:mediaType           <http://dataid.dbpedia.org/ns/mt
+        sd:endpoint              <http://dbpedia.org/sparql> ;                                                    
+        sd:supportedLanguage     sd:SPARQL11Query ;                                                               
+        sd:resultFormat          <http://www.w3.org/ns/formats/RDF_XML>,                                          
+            <http://www.w3.org/ns/formats/Turtle> .  
+\end{lstlisting}
+
 \subsection{MediaType} 
 \label{sec:coremediatype}
+\dcat does not offer an intrinsic way of specifying the exact format of the content described by a Distribution. While the property \prop{dcat:mediaType} does exist, its expected range \prop{dct:MediaTypeOrExtend} is an empty concept, not extended by \dcat. Therefore, the \prop{dataid:MediaType} was introduced to better qualify this crucial piece of information. The following properties are of interest:
+
+\begin{description}
+\item[\prop{dataid:typeTemplate}:] the IANA media type\footnoteurl{http://www.iana.org/assignments/media-types/media-types.xhtml} - also named mime type \cite{freed1996rfc2046}. This property is of utmost importance for the automatic processing of content. Through its registration with the IANA\footnoteurl{http://www.iana.org}, each type is unambiguously defined and the format of data content can be interpreted in automated processes. \textbf{(M)}
+\item[\prop{dataid:typeName}:] name of the described format or serialisation. \textbf{(R)}
+\item[\prop{dataid:typeExtension}:] a common file extension for the type described (e.g. '.ttl'). \textbf{(O)}
+\item[\prop{dataid:typeReference}:] in some instances, a reference to a useful resource about a type is advisable, to further aid the apprehension of consumer agents (person or software). \textbf{(O)}
+\item[\prop{dataid:innerMediaType}:] with this property, descriptions of nested formats become possible (such as a compressed XML file - '.xml.bz2'), useful in pipeline processing. \textbf{(O)}
+\end{description}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=7cm]{images/ClassMediaType.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+The following extract exemplifies the use of these properties:
+\footnote{note: the namespace \url{http://dataid.dbpedia.org/ns/mt#} for common MediaTypes is used on a preliminary basis)}
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of a complex media type,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<http://dataid.dbpedia.org/ns/mt#MediaType_turtle_x-bzip2>
+        a                      dataid:MediaType ;
+        dataid:innerMediaType  <http://dataid.dbpedia.org/ns/mt#MediaType_turtle> ;  
+        dataid:typeName        "Turtle Bzip2" ;
+        dataid:typeExtension   ".bz2" ;  
+        dataid:typeTemplate    "application/x-bzip2" 
+
+<http://dataid.dbpedia.org/ns/mt#MediaType_turtle>
+        a                     dataid:MediaType ;
+        dataid:typeName       "Turtle" ;
+        dataid:typeExtension  ".ttl" ;
+        dataid:typeTemplate   "application/x-turtle" ;   
+        dataid:typeTemplate   "text/turtle" .
+\end{lstlisting}
 
 \subsection{Agent} 
 \label{sec:coreagent}
+An Agent is something or someone that bears some form of responsibility for an Entity or activities which create, transform or manage Entities in some way. Agents are real or legal persons, groups of persons, programs, organisations etc. The class \prop{dataid:Agent} subsumes both agent concepts of \prov and \foaf ontologies, to further incorporate \prov into the context of \dcat (which uses \prop{foaf:Agent} to portray this concept). 
+
+The attributes of the \foaf vocabulary\footnoteurl{http://xmlns.com/foaf/spec/} are used to describe aspects such as name and e-mail address of a person. In addition, the following properties were introduced in \core:
+
+\begin{description}
+\item[\prop{dataid:hasAuthorization}:] the inverse property of \prop{dataid:authorizedAgent}, pointing out an Authorization which grants an Agent some kind some authority over Entities. This is explained in detail in the example on Authorizations in the next \cref{sec:coreauthorization}. \textbf{(R)}
+\item[\prop{dataid:identifier}:] often, Agents have already unique identifiers somewhere on the Web (in addition to the URI used in the context of a \dataid document, such as URI, ORCID\footnoteurl{http://orcid.org} or researcherId\footnoteurl{http://www.researcherid.com}). This property points out additional identifiers (see \cref{sec:coreidentifier}). \textbf{(O)}
+\end{description}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassAgent.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+This example of an Agent portrays the DBpedia association\footnoteurl{http://wiki.dbpedia.org/dbpedia-association}:
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<http://wiki.dbpedia.org/dbpedia-association>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dataid_ar.ttl?auth=creatorAuthorization> ; 
+        foaf:homepage            <http://dbpedia.org> ;
+        foaf:mbox                "dbpedia@infai.org" ;                                                        
+        foaf:name                "DBpedia Association" .
+\end{lstlisting}
 
 \subsection{Authorization} 
 \label{sec:coreauthorization}
+One objective of \core is the detailed expression of the relations between Agents and Entities. To qualify these relations (summarised under the property \prop{dataid:associatedAgent}) AgentRoles have to be assigned to the involved Agents (such as Maintainer, Publisher etc.). This is achieved by the class \prop{dataid:Authorization}, which is a sub class of \prop{prov:Attribution}, a qualification of the property \prop{prov:wasAttributedTo}. It basically states, which AgentRole(s) (pointed out with \prop{dataid:authorityAgentRole}) an Agent (via \prop{dataid:authorizedAgent}) has, regarding a certain collection of Entities (\prop{dataid:authorizedFor}). This mediator is further qualified by an optional period of time for which it is valid and access restrictions by the Entities themselves, allowing only specific Authorizations to exert influence over them (see \prop{dataid:needsSpecialAuthorization}). 
+
+\Cref{chap:bestprctice} contains a detailed example on Authorizations, to deepen the understanding of this concept as well as to provide suitable use cases.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/ClassAuthorization.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+\begin{description}
+\item[\prop{dataid:authorizedAgent}:] each Authorization shall have at least on associated Agent, which are pointed out via this property (sub property of \prop{prov:agent}). \textbf{(M)}
+\item[\prop{dataid:authorityAgentRole}:] provides the AgentRole the Agent(s) of this Authorization are assigned with (sub property of \prop{prov:hadRole}). \textbf{(M)}
+\item[\prop{dataid:authorizedFor}:] this property points out those Entities for which this Authorization is valid (sub property of \prop{dataid:authorizationScope}). \textbf{(M)}
+\item[\prop{dataid:authorizedAction}:] an AgentRole entails the right (or responsibility) for Agents to execute a collection of defined AuthorizedAction(s). This property can be inferred by a chain of properties (OWL property chain axiom): \prop{dataid:authorityAgentRole} / \prop{dataid:allowsFor}. \textbf{(O)}
+\item[\prop{dataid:isInheritable}:] indicates whether an Authorization is transferable when changing versions of a \dataid. Thus, keeping Agent, AgentRole and Actions in place for the updated versions of all involved Entities. \textbf{(O)}
+\item[\prop{dataid:validFrom}:] defining the temporal beginning (inclusive) of an Authorization (the time from which on out the axioms of an Authorization are valid). \textbf{(O)}
+\item[\prop{dataid:validUntil}:] defining the temporal ending (exclusive) of an Authorization (the time from which on out the axioms of an Authorization are no longer valid). \textbf{(O)}
+\end{description}
+
+The property \prop{dataid:authorizationScope} is an abstract super property of \prop{dataid:authorizedFor}, pointing to all referred and inferred Entities which are under a certain Authorization. Triples with this predicate are inferred by its sub properties \prop{dataid:authorizedFor} and the virtual properties \prop{dataid:authorizationChain1} to \prop{dataid:authorizationChain9}. An exact explanation of Authorizations and all involved properties is accompanying the extended example on Authorizations at the end of this chapter (see \cref{sec:exauthorization}).
+
+Furthermore, property \prop{dataid:underAuthorization} is the inverse of \prop{dataid:authorizationScope} and a sub property of \prop{prov:wasAttributedTo}, pointing out the qualification instance which qualifies the relation \prop{dataid:associatedAgent}. Its sub property \prop{dataid:needsSpecialAuthorization} was introduced to restrict the reach of Authorizations, to the exclusion of those Authorizations, not referenced via this property (or simply: if an Entity has a \prop{dataid:needsSpecialAuthorization} instance, all Authorizations without this referral are impotent).
+
+The following snippet provides a simple example of two AgentRoles being assigned to two Agents for a DataId instance (and thereby for every Entity involved in this \dataid  - see \cref{chap:bestprctice} for more).
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg>
+        a                        dataid:Agent ;                                               
+        dataid:hasAuthorization  <dataid_ar.ttl?auth=maintainerAuthorization> ;
+        foaf:mbox                "freudenberg@informatik.uni-leipzig.de" ;
+        foaf:name                "Markus Freudenberg"                     ;
+        dataid:identifier        <http://www.researcherid.com/rid/L-2180-2016> .              
+
+<dataid_ar.ttl?auth=maintainerAuthorization>
+        a                          dataid:Authorization ;                                     
+        dataid:authorityAgentRole  dataid:Maintainer ;                                        
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:authorizedFor       <dataid_ar.ttl> .                                          
+
+<http://wiki.dbpedia.org/dbpedia-association>
+        a                        dataid:Agent ;                                               
+        dataid:hasAuthorization  <dataid_ar.ttl?auth=creatorAuthorization> ;
+        foaf:homepage            <http://dbpedia.org> ;
+        foaf:mbox                "dbpedia@infai.org" ;
+        foaf:name                "DBpedia Association" .
+
+<dataid_ar.ttl?auth=creatorAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Creator ;                                           
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:authorizedFor       <dataid_ar.ttl> .
+\end{lstlisting}
 
 \subsection{AuthorizedAction \& AgentRole} 
 \label{sec:coreaction}
+The AgentRole assigned to an Agent in the context of an \prop{dataid:Authorization} is defined only by the property \prop{dataid:allowsFor}, pointing out AuthorizedActions it entails. A \prop{dataid:AuthorizedAction} shall either be a dataid:EntitledAction, representing all AuthorizedActions an Agent could take, or the AuthorizedActions an Agent has to take (\prop{dataid:ResponsibleAction}). 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=9cm]{images/ClassAuthorizedAction.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+AuthorizedActions and AgentRoles defined in this ontology are only examples of possible implementations, reflecting a common environment of a File or Document Management System. They can be replaced to fit the use case at hand. Implementing them as a \prop{skos:ConceptScheme}\footnoteurl{https://www.w3.org/TR/skos-reference/#ConceptScheme} offers additional semantics, for example in determining which AgentRole can override AuthorizedActions initiated by Agents with other AgentRoles for the same Entity. The following descriptions will shortly introduce each individual, predefined in the \core ontology.
+
+{\large\textbf{Agent Roles:}}
+\begin{description}
+\item[Creator:] Creator of the resource. An AgentRole that is credited with the main part in the initial creation of the resource.
+\item[Contact:] An Agent that can be contacted for general requests about the resource.
+\item[Contributor:] Contributor to the resource. An Agent that was involved in creating or maintaining the resource but does not have the main part in this activity.
+\item[Guest:] A visitor or anonymous Agent has only read rights on public documents.
+\item[Maintainer:] Maintainer of the Dataset. An Agent that ensures the technical correctness, accessibility and up-to-dateness of a Dataset.
+\item[Publisher:] Publisher of the Dataset. An Agent that makes the Dataset accessible online on a server or repository without necessarily being involved in its creation.\\
+\end{description}
+
+{\large\textbf{Responsible Actions:}}
+\begin{description}
+\item[ResponseToContact:] The responsibility to respond to contact attempts by external Agents. A contact point for the Entity.
+\item[ResponseToLifeCycleEvent:] The responsibility to manage changes and react to bugs and issues that are reported concerning a Dataset.
+\item[PublishingDecision:] The responsibility to decide if an Entity should be published.
+\item[UpdateDataId:] The responsibility to update dataset metadata.
+\item[AgentSupervision:] The responsibility to supervise other Agents.\\
+\end{description}
+
+{\large\textbf{Entitled Actions:}}
+\begin{description}
+\item[ReadDataId:] read the DataID dataset metadata.
+\item[ReadContent:] read the content of an Entity.
+\item[ModifyContent:] modify the content of an Entity.
+\item[DeleteContent:] delete some content of an entity.
+\item[ModifyAuthorizedAgents:] modify which Agents are authorized on certain Entities.
+\item[ModifyAuthorization:] modify an Authorization.
+\item[ModifyAgentRoles:] modify the role of Agents on certain Entities.
+\end{description}
+
+This example is not part of the running example, but has been lent from the \core ontology document itself. Here the AgentRole 'Contact' is defined in the context of a \prop{skos:ConceptScheme}.
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+dataid:Contact
+	a owl:NamedIndividual, dataid:AgentRole;
+	rdfs:isDefinedBy <http://dataid.dbpedia.org/ns/core#> ;
+	dataid:allowsFor dataid:ReadDataId; 
+	dataid:allowsFor dataid:ModifyContent;
+	dataid:allowsFor dataid:ReadContent;
+	dataid:allowsFor dataid:ResponseToContact;
+        rdfs:comment "Contact agent. An agent that can be contacted for general requests about the resource."@en ;
+        skos:prefLabel "contact"@en ;
+	skos:inScheme dataid:AgentRoleScheme ; 
+	skos:broader dataid:Publisher, dataid:Maintainer .   
+\end{lstlisting}
 
 \subsection{DatasetRelationship} 
 \label{sec:corerelation}
+A DatasetRelationship is a qualification of the generic property \prop{dataid:relatedDataset} (which is a sub-property of \prop{dct:relation}). The \prop{dataid:DatasetRelationship} is a subclass of \prop{prov:EntityInfluence} and is defined by three properties:
+
+\begin{description}
+\item[\prop{dataid:datasetRelationRole}:] specifying the role (or type) of this relationship, defining the exact role the 'target' Dataset takes in regard to the 'origin' dataset of this relationship.
+\item[\prop{dataid:qualifiedRelationOf}:] the inverse property of \prop{qualifiedDatasetRelation} is pointing out the origin Dataset of this qualification.
+\item[\prop{dataid:qualifiedRelationTo}:] the target Dataset of this qualification.
+\end{description}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassDatasetRelationship.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+The class \prop{dataid:DatasetRelationRole} is not further qualified in the context of \core, which could be done in an extension to \core, similar to \prop{dataid:AgentRole}. Some instances of this class are already provided:
+
+\begin{description}
+\item[GenericRelation:] specifies a \prop{dataid:DatasetRelationship} between two datasets which have a relation of a unknown quality (such a relation is equivalent to direct \prop{dct:relation} property).
+\item[DerivatRole:] specifies a \prop{dataid:DatasetRelationship} where one dataset points out a second dataset, which is a derivat of the first.
+\item[SourceRole:] specifies a \prop{dataid:DatasetRelationship} where the origin dataset is created by transforming/collecting data from the target dataset.
+\item[CopyRole:] specifies a \prop{dataid:DatasetRelationship} where the origin dataset is an exact copy of the target dataset (e.g. when republished under a different domain).
+\item[SimilarityRole:] specifies a \prop{dataid:DatasetRelationship} where the origin dataset has a significant similarity to the target dataset (without any assertion as to dimension of similarity).
+\end{description}
+
+In the example, the Wikipedia source dataset (named 'pages\_articles') of a given DBpedia dataset is referred to with the help of this concept:
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?relation=source&target=pages_articles>
+        a                           dataid:DatasetRelationship ;
+        dataid:datasetRelationRole  dataid:SourceRole ;
+        dataid:qualifiedRelationOf  <dataid_ar.ttl?set=long_abstracts_en_uris> ;
+        dataid:qualifiedRelationTo  <dataid_ar.ttl?set=pages_articles> .  
+\end{lstlisting}
 
 \subsection{Identifier} 
 \label{sec:coreidentifier}
+The class \prop{dataid:Identifier} uniquely identifies any resource (incl. Entities and Agents), given an identifier as a literal and a corresponding \prop{datacite:IdentifierScheme} (e.g. ORCID, ResearcherID etc.). Typically an organisation is responsible for issuing and managing Identifiers described with this concept, which can be referred to with \prop{dct:creator}. \core adopted this approach from Datacite ontology (see \cref{sec:datacite}) to provide a schematic way of adding additional, existing identifiers to Entities and Agents referenced in a \dataid document.
+\todo{add something about refining the datacite ontology}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassIdentifier.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+\begin{description}
+\item[\prop{dataid:literal}:] the identifier as literal (e.g. a URI as literal). \textbf{(M)}
+\item[\prop{datacite:usesIdentifierScheme}:] an IdentifierScheme defines (among other attributes) a pattern against which the literal of an identifier is validated. Thereby the validity of an identifier is tested. \textbf{(M)}
+\item[\prop{dct:references}:] often identifier agencies have web presentations for their identifiers (e.g. ORCID\footnoteurl{http://orcid.org/0000-0002-1825-0097}). Such a website can be referenced with this property. \textbf{(O)}
+\item[\prop{dct:creator}:] can be used to identify the identifier agency, responsible for an identifier and pertaining scheme. \textbf{(O)}
+\end{description}
+
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<http://www.researcherid.com/rid/L-2180-2016>
+        a                              dataid:Identifier ;
+        dataid:literal                 "L-2180-2016" ;                                        
+        dct:issued                     "2016-08-01"^^xsd:date ;
+        dct:references                 <http://www.researcherid.com/rid/L-2180-2016> ;        
+        datacite:usesIdentifierScheme  datacite:researcherid .  
+\end{lstlisting}
 
 \subsection{SimpleStatement} 
 \label{sec:corestatement}
+The concept dataid:SimpleStatement is intended as a tool for conveying a statement, definition or point of view about a certain topic. Using either a simple literal (using \prop{dataid:literal}) to provide a quotation or by a referencing a web resource providing or representing the statement in any medium (picture, text, video etc.). This class is a sub class of \prop{prov:Entity} and implements in addition the following Dublin Core classes: \prop{dct:ProvenanceStatement}, 
+\prop{dct:RightsStatement},
+\prop{dct:Standard}
+. With this measure, it is possible to attach provenance information onto instances of this concept and to use \prop{dataid:SimpleStatement} as range of \prop{dct:rights} and its sub-properties, \prop{dct:provenance}, \prop{dct:conformsTo} and others.
 
-\chapter{Publishing Data on the Web with DataID}
+This reification approach with an intermediate resource was chosen to cover as many scenarios as possible including many edge cases which do not have to be modelled explicitly. To provide a minimum of structure for textual statements, as well as providing an resource onto which provenance information could be it easy to attach provenance information to a statement. 
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/ClassSimpleStatement.png}
+  \caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:example}
+\end{figure}
+
+\begin{description}
+\item[\prop{dataid:literal}:] a textual statement 'from humans for humans'. \textbf{(R)}
+\item[\prop{dct:references}:] the alternative reference to a web resource containing the human readable statement. \textbf{(O)}
+\end{description}
+
+Two instances from the running example demonstrating the different usage scenarios of this concept. The first is the official rights statement of the DBpedia association, while the second is the access procedure for the DBpedia SPARQL endpoint, where \prop{dct:reference} is pointing out the SPARQL 1.1 specification (as a web page specifying the means of querying the endpoint).\todo{define SPARQL somewhere}
+\\
+\begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an organisation,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+<dataid_ar.ttl?rights=dbpedia-rights>
+        a                 dataid:SimpleStatement ;                                            
+        dataid:literal  """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4. Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License."""@en .
+
+<dataid_ar.ttl?stmt=sparqlaccproc>
+        a                 dataid:SimpleStatement ;                                            
+        dct:references    <https://www.w3.org/TR/sparql11-overview/> ;                        
+        dataid:literal  "An endpoint for sparql queries: provide valid queries."@en .
+\end{lstlisting}
+
+\section{Complex Example on Authorizations} 
+\label{sec:exauthorization}
+
+I decided to provide a more prolific example on the subject of Authorizations, since this concept is of more complex nature. In particular, the impact of \prop{dataid:authorizationScope} with its sub-properties is difficult to understand at first sight.
+
+The property \prop{dataid:authorizationScope} has the role of an abstract super property, pointing out all referred and inferred Entities under a given Authorization and is usually not instantiated in a \dataid graph. It can be inferred directly by the existence of  \prop{dataid:authorizedFor}, which is used to reference Entities to which an Authorization applies and all its rules and restrictions are tailored for.
+
+The following axioms for the transitive property \prop{dataid:authorizationScope} would be desirable to extend the influence of an Authorization along any property path combined of \prop{foaf:primaryTopic}, \prop{void:subset} and \prop{dcat:distribution}, initiated by an instance of \prop{dataid:authorizedFor}.
+
+{\footnotesize
+\vspace*{-0.5cm}
+\begin{align*}
+foaf:primaryTopic \sqsubseteq dataid:authorizationScope\\
+void:subset \sqsubseteq dataid:authorizationScope\\
+dcat:distribution \sqsubseteq dataid:authorizationScope\\
+dataid:authorizedFor \sqsubseteq dataid:authorizationScope
+\end{align*}
+}%
+To not hijack foreign ontologies \cite{feeney2015linked} (e.a. \dcat, \void or \foaf), a series of properties (\prop{dataid:authorisationChain1} - \prop{dataid:authorisationChain9}) were introduced to simulate this behaviour with the help of the OWL property chain axiom\todo{needs link}. 
+
+Properties \prop{dataid:authorisationChain1} to \prop{dataid:authorisationChain6}:
+
+{\footnotesize
+\vspace*{-0.5cm}
+\begin{align*}
+foaf:primaryTopic \circ dcat:distribution \sqsubseteq dataid:authorizationScope\\
+foaf:primaryTopic \circ void:subset \sqsubseteq dataid:authorizationScope\\
+void:subset \circ dcat:distribution \sqsubseteq dataid:authorizationScope\\
+void:subset \circ void:subset \sqsubseteq dataid:authorizationScope\\
+void:subset \circ void:subset \circ dcat:distribution \sqsubseteq dataid:authorizationScope\\
+foaf:primaryTopic \circ void:subset \circ dcat:distribution \sqsubseteq dataid:authorizationScope
+\end{align*}
+}%
+With these properties all subsequent Entities connected to the origin Entity (the Entity referenced from an Authorization with \prop{dataid:authorizedFor}), are under the influence of this Authorization, connected with it via the transitive \prop{dataid:authorizationScope}. One exception remains: those Entities second in line after the origin Entity are skipped in this progression.
+Properties \prop{dataid:authorisationChain7} to \prop{dataid:authorisationChain9} are solving this issue:
+
+{\footnotesize
+\vspace*{-0.5cm}
+\begin{align*}
+dataid:authorizedFor \circ foaf:primaryTopic \sqsubseteq dataid:authorizationScope\\
+dataid:authorizedFor \circ void:subset \sqsubseteq dataid:authorizationScope\\
+dataid:authorizedFor \circ dcat:distribution \sqsubseteq dataid:authorizationScope
+\end{align*}
+}%
+For example: if a knowledge base (KB) holds some statements, such as:
+\begin{lstlisting}[language=ttl, captionpos=b,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+ex:someAuthorization	dataid:authorizedFor		ex:DataId .
+ex:DataId		foaf:primaryTopic		ex:RootDataset .
+ex:RootDataset		void:subset			ex:DatasetC . 
+\end{lstlisting}
+
+we can infer the following statements:
+\begin{lstlisting}[language=ttl, captionpos=b,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+ex:someAuthorization 	dataid:authorizationScope 	ex:DataId .
+ex:someAuthorization 	dataid:authorizationScope 	ex:RootDataset .
+ex:someAuthorization 	dataid:authorizationScope 	ex:DatasetC . 
+\end{lstlisting}
+
+by inferring these statements first:	
+\begin{lstlisting}[language=ttl, captionpos=b,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
+ex:DataId 		dataid:authorizationChain2 	ex:DatasetC .
+ex:DataId	 	dataid:authorizationChain6 	ex:DistributionC1 .
+ex:someAuthorization 	dataid:authorizationChain7 	ex:RootDataset .
+\end{lstlisting}
+
+With these auxiliary properties the inference of \prop{dataid:authorizationScope} along the depicted property paths becomes feasible:
+
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=12cm]{images/AuthorizationExample.png}
+  %\caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:dlaxioms}
+\end{figure}
+
+Here the Authorization for Agent Yellow is not only valid for the \dataid entity, referred to via \prop{dataid:authorizedFor}. By inferring additional statements of this kind, the scope of this Authorization is extended to every Dataset and Distribution connected via \prop{foaf:primaryTopic}, \prop{dcat:distribution} and \prop{void:subset}. By this means, extending the influence (or scope) of an Authorization over multiple Entities without having to point out all of them with \prop{dataid:authorizedFor} is realised, without changing the definitions of the external properties involved, or an inclusion of rule-based axioms (such as SWRL\footnoteurl{https://www.w3.org/Submission/SWRL/}).
+
+The automatic extension of an Authorization has also its drawbacks. By introducing multiple Authorizations in the context of a \dataid document, providing the same AgentRole for an Entity, the author can encounter unintended behaviours. In this example the previous context is enriched by introducing an additional Agent Blue:
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=10cm]{images/AuthorizationExample2.png}
+  %\caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:dlaxioms}
+\end{figure}
+
+DatasetC (and all its Distributions) has two Maintainers, both equally permitted to wield AuthorizedActions as defined by the definition of \prop{dataid:Maintainer}. This behaviour may or may not be intended by the author. To provide the means for restricting Entities to specific Authorizations, the property \prop{dataid:needsSpecialAuthorization} was introduced. This sub-property of \prop{dataid:underAuthorization} (the inverse of \prop{dataid:authorizationScope}) allows to point out those Authorizations with sufficient importance to exert their authority over an Entity, to the exclusion of other Authorizations referenced via \prop{dataid:authorizationScope}.
+
+The following example again expands the already known scenario, by introducing a third Authorization for Agent Green:
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/AuthorizationExample5.png}
+  %\caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:dlaxioms}
+\end{figure}
+
+While DatasetA and DistributionsA1 and A2 are under the Authorizations of Agent Yellow and Agent Green, only DistributionA2 will be maintained by both Agents. DatasetA and DistributionA1 require specifically the Authorization of Agent Green for the purpose of providing the AgentRole of Maintainer.
+
+This mechanism is useful when introducing different levels of privacy into the domain of, for example, a Document Management System (DMS). Two groups of users are specified: The first group (yellow group) should only be able to read the content of a given collection of documents, while the second group (blue group) is also allowed to modify these documents. Therefore, defining two new AgentRoles is advisable. AgentRole 'Reader' can only read the content of Entities available to it, while the 'Editor' allows also for modifying the content. These AgentRoles are linked to via \prop{dataid:authorityAgentRole} from the respective Authorizations of the two groups (\prop{dataid:authorizedAgent} points out the members of a group).
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{images/DmsExample.png}
+  %\caption{Schematic view: A shallow hierarchy of Datasets.}
+  \label{fig:dlaxioms}
+\end{figure}
+
+Both Authorizations are authorised for the same document collection (Dataset) and its Distributions as PDF and MS\_Word versions of the same content in the DMS. Since the MS\_Word version of the documents is used for editing the content, while its PDF counterpart is the publishing version, it is sensible to allow only the Editors (blue group) access to the MS\_Word Distribution by using \prop{dataid:needsSpecialAuthorization}. 
+
+\chapter{Publishing Data with DataID}
 \label{chap:bestprctice}
 
+\section{Best Practices} 
+\label{sec:bestprctice}
+Best practices on any kind of methodology or problem have become a ubiquitous companion in our daily life. Be it a Ted Talk\footnoteurl{https://www.ted.com} on how to live to be 100\footnoteurl{https://www.ted.com/talks/dan_buettner_how_to_live_to_be_100} or how to use the Heisenberg Uncertainty Principle in relation to position and momentum\footnoteurl{http://www.dummies.com/education/science/quantum-physics/how-to-use-the-heisenberg-uncertainty-principle-in-relation-to-position-and-momentum/}.
+
+Astonishingly, when it comes to publishing data in a widely accepted manner, only a hand full of comprehensive best practices exist. Most of these best practices, workflows or checklists are further constricted to a certain filed of research, methodology or data type. For example;
+
+\begin{description}
+\item[Methodological Guidelines for Publishing
+Government Linked Data] "[...] a preliminary set of methodological guidelines for generating, publishing and exploiting Linked Government Data" \cite{Terrazas}
+\item[Best Practices for Publishing Linked Data] "[...] a series of best practices designed to facilitate development and delivery of open government data as Linked Open Data." \cite{Hyland:14:BPP}
+\item[Key components of data publishing] "From an assessment of the current data-publishing landscape, we highlight important gaps and challenges to consider, especially when dealing with more complex workflows and their integration into wider community frameworks." \cite{austin_2015_34542}
+\item[] \todo{add one more}
+\end{description}
+
+There are two not quiet distinct categories of best practices on data publishing. 
+
+\paragraph{Workflows} introduce a specific order of activities, the flow of artefacts between them as well as agents and their roles in these processes. Workflows are often summarised in so called Data Lifecycles (or Data Engineering Lifecycle).
+
+The LOD2 Lifeycle of Linked Data \cite{AuerBDEHILMMNSTW12} - used by the ALIGNED project (see \cref{fig:aligned}) - is an portrayal of such a workflow in a domain specific environment.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=12cm]{images/lod2lifecycle.png}
+  \caption{The LOD2 Lifecycle of Linked Data \cite{AuerBDEHILMMNSTW12}}
+  \label{fig:lod2lifecycle}
+\end{figure}
+
+Many depiction of Data Engineering Lifecycles have domain-independent similarities.
+Villaz\'{o}n-Terrazas et al. presented a more generalized version of such a cycle, which I am going to adopt in the context of this work.
+
+ \begin{figure}[!htbp]
+\centering
+  \includegraphics[width=9cm]{images/Villazon-terrazas.png}
+  \caption{The Government Linked Data Lifecycle \cite{Terrazas}}
+  \label{fig:gldlifecycle}
+\end{figure}
+
+A concise summary, tracing the bubble graph above:
+
+\begin{itemize}
+\item Specify
+\begin{itemize}
+\item analysis of data sources (which data (slices) are useful) or previous version of the dataset
+\item Select/Design Identifier scheme user to identify records
+\end{itemize}
+\item Model
+\begin{itemize}
+\item search/create suitable schema/vocabulary on which to base the datasets
+\end{itemize}
+\item Generate
+\begin{itemize}
+\item transform the data sources
+\item clean (and validate) the result
+\end{itemize}
+\item Publish
+\begin{itemize}
+\item improve discoverability (choose suitable data portal, announce release at different venues)
+\item publish the created datasets
+\item publish the pertaining metadata
+\end{itemize}
+\item Exploit
+\begin{itemize}
+\item different consumer side activities (browsing, integrating, analysing etc.)
+\item collect feedback from consumers, improve data
+\end{itemize}
+\end{itemize}
+
+\paragraph{Checklists} are collections of general advises, how-tos and precautions on publishing data without a particular ordering of items. 
+
+The most comprehensive collection of best practices about publishing data has emerged with the establishment  
+of the 'Data on the Web' W3C Working Group\footnoteurl{https://www.w3.org/2013/dwbp/wiki/Main_Page} and their best practices document \cite{dwbpW3C2016} (released as recommendation candidate by the time of writing). 
+
+%Besides the set of best practices, a list of benefits for publishing data on the Web is presented in this document
+
+This set of recommendations touches upon most of the crucial issues when publishing data (with the noted exception of dissemination tasks). I endorse these 35 best practices to their full extend and recommend following all of the suggestions made. Datasets published with adhering to the suggestions made would reap all benefits towards which these best practices were aimed: \textit{Reuse, Comprehention, Linkability, Discoverabilty, Trust, Access, Interoperability and Processability}.\todo{check phrasing}
+
+In this chapter I want to build on this foundation, by expanding on metadata composition and deployment with \dataid (\cref{sec:composingmetadata}). In addition, I want to contribute to the discussion on publishing data, with a specialised checklist \todo{specialised?} for publishing Linked Data datasets (\cref{sec:checklist}), based on the experiences I have accumulated when publishing official DBpedia releases.
+
+\iffalse
+\begin{description}
+\item[1. Provide metadata] Provide metadata for both human users and computer applications.
+\item[2. Provide descriptive metadata] Provide metadata that describes the overall features of datasets and distributions.
+\item[3. Provide structural metadata] Provide metadata that describes the schema and internal structure of a distribution.
+\item[4. Provide data license information] Provide a link to or copy of the license agreement that controls use of the data.
+\item[5. Provide data provenance information] Provide complete information about the origins of the data and any changes you have made.
+\item[6. Provide data quality information] Provide information about data quality and fitness for particular purposes.
+\item[7. Provide a version indicator] Assign and indicate a version number or date for each dataset.
+\item[8. Provide version history] Provide a complete version history that explains the changes made in each version.
+\item[9. Use persistent URIs as identifiers of datasets] Identify each dataset by a carefully chosen, persistent URI. 
+\item[10. Use persistent URIs as identifiers within datasets] Reuse other people's URIs as identifiers within datasets where possible.
+\item[11. Assign URIs to dataset versions and series] Assign URIs to individual versions of datasets as well as to the overall series.
+\item[12. Use machine-readable standardized data formats] Make data available in a machine-readable, standardized data format that is well suited to its intended or potential use.
+\item[13. Use locale-neutral data representations] Use locale-neutral data structures and values, or, where that is not possible, provide metadata about the locale used by data values.
+\item[14. Provide data in multiple formats] Make data available in multiple formats when more than one format suits its intended or potential use.
+\item[15. Reuse vocabularies, preferably standardized ones] Use terms from shared vocabularies, preferably standardized ones, to encode data and metadata.
+\item[16. Choose the right formalization level] Opt for a level of formal semantics that fits both data and the most likely applications.
+\item[17. Provide bulk download] Enable consumers to retrieve the full dataset with a single request.
+\item[18. Provide Subsets for Large Datasets] If your dataset is large, enable users and applications to readily work with useful subsets of your data.
+\item[19. Use content negotiation for serving data available in multiple formats] Use content negotiation in addition to file extensions for serving data available in multiple formats.
+\item[20. Provide real-time access] When data is produced in real time, make it available on the Web in real time or near real-time.
+\item[21. Provide data up to date] Make data available in an up-to-date manner, and make the update frequency explicit.
+\item[22. Provide an explanation for data that is not available] For data that is not available, provide an explanation about how the data can be accessed and who can access it.
+\item[23. Make data available through an API] Offer an API to serve data if you have the resources to do so.
+\item[24. Use Web Standards as the foundation of APIs] When designing APIs, use an architectural style that is founded on the technologies of the Web itself. 
+\item[25. Provide complete documentation for your API] Provide complete information on the Web about your API. Update documentation as you add features or make changes.
+\item[26. Avoid Breaking Changes to Your API] Avoid changes to your API that break client code, and communicate any changes in your API to your developers when evolution happens.
+\item[27. Preserve identifiers] When removing data from the Web, preserve the identifier and provide information about the archived resource.
+\item[28. Assess dataset coverage] Assess the coverage of a dataset prior to its preservation.
+\item[29. Gather feedback from data consumers] Provide a readily discoverable means for consumers to offer feedback.
+\item[30. Make feedback available] Make consumer feedback about datasets and distributions publicly available.
+\item[31. Enrich data by generating new data] Enrich your data by generating new data when doing so will enhance its value.
+\item[32. Provide Complementary Presentations] Enrich data by presenting it in complementary, immediately informative ways, such as visualizations, tables, Web applications, or summaries.
+\item[33. Provide Feedback to the Original Publisher] Let the original publisher know when you are reusing their data. If you find an error or have suggestions or compliments, let them know.
+\item[34. Follow Licensing Terms] Find and follow the licensing requirements from the original publisher of the dataset.
+\item[35. Cite the Original Publication] Acknowledge the source of your data in metadata. If you provide a user interface, include the citation visibly in the interface.
+\end{description}
+\fi
+
+\section{Composing DataID based Metadata} 
+\label{sec:composingmetadata}
+The Data Engineering Lifecycle depicted in \Cref{fig:gldlifecycle} does not only apply to the data being generated and published. It is also a valid depiction of a lifecycle for metadata which is co-evolving parallel to the data it is portraying.
+
+In the case of \dataid metadata, the tasks necessary to eventually publish a metadata document are outlined in this best practice. I will reuse the five stages of the 
+Data Engineering Lifecycle to separate between independent steps in creating \dataid documents.
+
+\paragraph{Specify use case requirements for metadata}
+\label{sec:wfspecify}
+
+Based on the analysis of data sources and external requests and advise collected in the run up to this effort, specify a set of requirements for dataset metadata. A list of probable requirements exemplify the result of this step.
+
+\begin{itemize}
+\item bla bla bla \todo {todo}
+\end{itemize}
+
+\paragraph{Model a DataID ontology and application profile}
+\label{sec:wfmodel}
+\todo{shacl}
+
+\paragraph{Generate DataID documents}
+\label{sec:wfgenerate}
+
+\paragraph{Publish DataIDs alongside the datasets}
+\label{sec:wfmodel}
+
+\paragraph{Exploitation of DataIDs - examples}
+\label{sec:wfexploit}
+
+\section{Checklist for Publishing RDF Data} 
+\label{sec:checklist}
+
+The considerable experience members of \dbpedia have gathered in regard to creation and dissemination of RDF data,allows us to create a generalization of important steps necessary for releasing an RDF dataset.  Drawing from the example  of  releasing  \dbpedia,  we  carved  out  a comprehensive checklist, offering guidance when producing and releasing RDF data.\todo{make it fit}
+
+\paragraph{Documentation}
+When publishing Linked Open Data, a comprehensive documentation about data sources, ontology, versioning and other important context needs to be presented in an easy and accessible manner. 
+\begin{itemize}
+\itemsep0em 
+%\item{Decide early which form your documentation will take (online documentation, text files...), depending on size or impact of a dataset. }
+%\item .%, especially when preparing a new version of an existing dataset. List the coming changes to the dataset, as well as a release date.}
+\item Documentation is an iterative and never ending process. Therefore, improve documentation as early as possible to cover every aspect from the outset.
+\item Facilitate means to gather feedback from dataset consumers (mailing list, issue tracker, etc.).%. Don't neglect feedback from consumers and provide support if needed.}
+%\item{Discuss the extraction or generation process you employed to create RDF data. It might be useful for consumers to understand the steps involved. Procedural mistakes may come to light in the process.}
+\item Record your plans on maintenance and versioning. A well maintained and regularly updated dataset will attract more consumers.%, regardless of the relevant information.}
+%\item{Ask for support from your data consumers.}
+\end{itemize}
+
+\vspace{-1.5em}
+\paragraph{Sources}
+Basing the generation of data on specific data sources is key for a coherent dataset release. 
+A comprehensive documentation of the original sources should be one of the first steps in any data release.
+\begin{itemize}
+\itemsep0em 
+\item Record the exact origin, version and evolution of your datasources. 
+\item Source metadata (i.e. size, location, temporal information, etc.) is also desirable% on Supplying consumers with additional information about the size of a probe, location, conditions, temporal information, dataset creator or publisher will further their understanding and acceptance of the data.
+%\item Name the exact version your release is based on. Do not divert from the selected version in the middle of your extraction.
+\item Provide links to source files or host them yourself. Access to original data is vital for reproducibility.
+\item Refer to external vocabularies \& ontologies utilized by your source data.% Point to information about the schema the source data is based upon.
+\item Discuss quirks and unexpected issues you discovered about the source data.
+\end{itemize}
+
+\vspace{-1.5em}
+\paragraph{Ontology \& Mappings}
+\label{sec:less.onto}
+Deciding on an ontology for the chosen domain is deciding on conceptual entities and relationships that will represent your datasource. The appropriate level of abstraction is as vital as creating the mapping between both datasets. Note that all types of data extraction processes use mappings. Some mappings are obvious like \dbpedia mappings wiki or R2RML, while others not so obvious (i.e. hidden in software code).
+
+\begin{itemize}
+\itemsep0em 
+\item If no existing ontology can represent your data, engineer your own. %Try using as many concepts of existing vocabularies as possible.
+\item Document any schema or mapping components. 
+\item Before starting an extraction enrich and align your schema and mappings.
+\item During an extraction use a static snapshot of used ontologies and mappings. These versions are the schematical foundation of your upcoming release and are not to be changed in the extraction and publishing process.
+
+%\item Keep your consumers in the loop in this matter will enhance their experience with the data and offers the possibility to delegate the task creating and curating the ontology to an interested group of users (same for schema mappings). 
+%\item When publishing a new dataset version, concentrate your curation efforts on weak spots in your ontology and mappings, which have emerged in previous versions.
+\item Use a version control system to maintain your ontology and mappings.%, especially for large systems.% Especially large ontologies should be maintained by using a version control system like Git \footnote{\url{http://github.com}}.}
+\end{itemize}
+
+
+\vspace{-1.5em}
+\paragraph{Software}
+Document exactly what kind of software, in what version is used for every step of the pre-processing, extraction and post-processing cycles.
+
+\begin{itemize}
+\itemsep0em 
+\item When using custom software, use a version control system.
+\item Provide sufficient information about the environment you are working with.
+\item Provide additional information about deployment steps and configuration if necessary for the extraction process.
+\item Create software snapshots to enable reproducibility of an extraction process.
+\end{itemize}
+
+\vspace{-1.5em}
+\paragraph{Extraction \& Dataset Generation}
+While the generation process of an RDF dataset is a publisher-dependent process, there are some significant points to consider.
+
+\begin{itemize}
+\itemsep0em 
+\item Prefer generating resulting datasets in different syntax formats. 
+\item One triple per line is a preferred approach to enable easier procession of the RDF files with non-RDF tools.
+\item Group RDF datasets by category or context.%Break up large files, grouping triples by property. This way, subsets of properties, which are of no interest, can be left out of future tasks.}
+\item Use a consistent and precise naming strategy.% when creating files. File names should reflect exactly those triples stored inside (e.g. naming files by property and extraction step).}
+\item Store provenance information. Provenance information can also be achieved using the context field in quads.%  alongside files or triples. Additional information about the origin or extraction steps leading to the triple will be useful at following tasks.}
+\end{itemize}
+
+%\subsection{Post-Processing Steps}
+%\emph{After the generation of RDF data some further steps are often necessary to straighten out minor issues[...?]. The main focus concerning this step is the validation and linking of the extracted data.}
+
+\vspace{-1.5em}
+\paragraph{Validation}
+Validating extraction results to confirm their syntactic and semantic correctness is a necessary step every publisher needs to take.% will in turn confirm the correctness of ontology, mappings and the selected extraction process.
+%While validation should also be part of the extraction process itself (e.g. enforcing datatype conformance), most validation is done after the completion of an extraction step. An unsuccessful validation will trigger the cycle of 1) finding the fault, 2) fixing the problem and 3) rerunning the last extraction step(s).\\\\
+%Possible validation procedures include:
+
+\begin{itemize}
+\itemsep0em 
+\item Try to integrate validation directly in the extraction \& generation process to redude post-validation steps.
+\item Dataset size is an obvious indication of a release status. %Finding obvious errors by comparing the size of a file with the size of previous versions. Unexpected in- or decreases will require intensive manual inspections. }
+\item A manual inspection of triples with sampling can identify errors early in the release process. % confirm the expected syntax. Comparing them with the origin source files provides a rough semantic validation.}
+\item Statistical metrics is a good means to provide an overview about quality, especially in big RDF datasets% information about both the source and the result data can provide a clear picture on how accurate an extraction performed. If a stark difference of equal types can not be explained by ontology or mappings, a bug in the extraction process is the probable answer. }
+\item Create your own validation tools and use external, general purpose RDF validation tools.
+\item Use a staging SPARQL endpoint and/or linked data interface for browsing the data
+%Loading the extraction results into a triple store and validating by browsing the data is a similar option.
+%\item{Other statistical metrics include: the total number of resources, triples per resource, type coverage and type distribution.}
+%\item{\emph{RDFUnit} \cite{databugger_demo} performs ontology conformance tests and should be used for a thorough validation of your data (compare \autoref{sec:extract.validation}).}
+\end{itemize}
+
+\vspace{-1.5em}
+\paragraph{Enrichment}
+Dataset enrichment with information from other data sources is a useful step to increase the precision and/or coverage of a knowledge base.
+However, Enrichment is a step that is closely coupled to a dataset and is therefore no specific advice in this regard.
+%While structured source data rarely demand for enrichment, un- or semistructured sources might. There is no precise guide to be given concerning this point. Possible enrichment has to be identified with the help of ontology and mappings.
+
+\begin{itemize}
+\itemsep0em 
+\item RDFS or OWL inferencing using the main or external schemata is definitely a means to add missing knowledge
+\item Dataset-dependant heuristics can be employed
+\item Different types of enrichment can be performed before and after the \emph{linking} step but in most case must be done prior to validation.
+\end{itemize}
+
+
+\vspace{-1.5em}
+\paragraph{Linking}
+As a basic principle of Linked Open Data% \cite{bernerslee-t-2006-1},
+, linking is one of the most important steps in the process of creating RDF datasets.
+As described in \cref{sec:extract.linking} there are different ways to accomplish linking a dataset:
+
+\begin{itemize}
+\itemsep0em 
+\item{Performing a manual linking over time. (tends to be a very limited solution)}
+\item{Copying existing link sets from other datasets to previous versions of the extracted dataset (which will be outdated).}
+\item{Detecting identifiers pertaining to entities of the source or result datasets in different datasets. Generating owl:sameAs triples would complete this method.}
+\item By using the transitive trait of owl:sameAs.% [Finding a link pointing from set1:e1 -> set2:f1 and set2:f1 -> set2:k3 is equivalent to  set1:e1 -> set2:k3.]}
+\item{Provide interlinks between same resources in a dataset (e.g. in different language editions)}
+\end{itemize}
+
+\vspace{-1.5em}
+\paragraph{Publishing}
+Publishing a dataset is a complex task, which can be done in many ways. 
+Providing raw RDF data alone is not enough to disseminate Linked Open Data.
+
+\begin{itemize}
+\itemsep0em 
+\item Update user documentation.
+\item Announce the release at different venues. 
+\item Publish/update machine readable metadata (i.e. VOID, DataID, etc.) as well as online data catalogues (i.e. datahub.io).
+%\item Create a DataId \cite{dataID2014} to publish a comprehensive dataset description. Providing a DataId will increase the visibility of your data and automatically create link sets to other datasets. } 
+\item Upload your dump files to an accessible location with consistent serialization formats.
+\item If possible, make the data available through a SPARQL Endpoint and/or a Linked Data interface.
+\end{itemize}
+
+
 \chapter{Application: Data Management Plans}
-\label{chap:pocdmp}
+\label{chap:dmp}
 
 In diesem Kapitel folgt die Auswertung der Arbeit. Hier werden Messerreihen wie z.B. die Latenzzeit, die Performanz, der Speicherverbrauch, die Erkennungsrate etc. aufgeführt. Ferner werden die Methoden erläutert, die Ergebnisse interpretiert und diskutiert.
 
@@ -1415,6 +2333,379 @@ Das Kapitel sollte zwischen einer und drei Seiten umfassen.
 %\bibliographystyle{alpha}
 %\bibliography{own.bib}
 \printbibliography[title=References]
+
+\addchap{Appendix I}
+\label{chap:appendix1}
+\begin{lstlisting}[language=ttl, captionpos=b, label=lst:dcex,linewidth=\columnwidth,breaklines=true,basicstyle=\ttfamily\scriptsize]
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dataid-ld: <http://dataid.dbpedia.org/ns/ld#> .
+@prefix dataid-mt: <http://dataid.dbpedia.org/ns/mt#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix spdx:  <http://spdx.org/rdf/terms#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+@prefix sd:    <http://www.w3.org/ns/sparql-service-description#> .
+
+@base <http://downloads.dbpedia.org/2015-10/core-i18n/ar/2015-10_> .
+
+<dataid_ar.ttl>
+        a                          dataid:DataId ;
+        dataid:associatedAgent     <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:inCatalog           <http://downloads.dbpedia.org/2015-10/2015-10_dataid_catalog.ttl> ;
+        dataid:latestVersion       <http://downloads.dbpedia.org/2016-04/core-i18n/ar/2016-04_dataid_ar.ttl> ;
+        dataid:nextVersion         <http://downloads.dbpedia.org/2016-04/core-i18n/ar/2016-04_dataid_ar.ttl> ;
+    	dataid:previousVersion     <http://downloads.dbpedia.org/2015-04/core-i18n/ar/2015-04_dataid_ar.ttl> ;
+        dataid:underAuthorization  <dataid_ar.ttl?auth=maintainerAuthorization> , <dataid_ar.ttl?auth=creatorAuthorization> ;
+        dc:hasVersion              <dataid_ar.ttl?version=1.0.0> ;
+        dc:issued                  "2016-08-02"^^xsd:date ;
+        dc:modified                "2016-10-13"^^xsd:date ;
+        dc:publisher               <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                   "DataID metadata for the Arabic DBpedia"@en ;
+        foaf:primaryTopic          <dataid_ar.ttl?set=maindataset> .
+
+#### Agents & Authorizations ####
+
+<http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dataid_ar.ttl?auth=maintainerAuthorization> ;
+        dataid:identifier        <http://www.researcherid.com/rid/L-2180-2016> ;
+        foaf:mbox                "freudenberg@informatik.uni-leipzig.de" ;
+        foaf:name                "Markus Freudenberg" .
+        
+<dataid_ar.ttl?auth=maintainerAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:authorizedFor       <dataid_ar.ttl> ;
+        dataid:isInheritable       true .
+
+<http://www.researcherid.com/rid/L-2180-2016>
+        a                              dataid:Identifier ;
+        dataid:literal                  "L-2180-2016" ;
+        dc:issued                      "2016-08-01"^^xsd:date ;
+        dc:references                  <http://www.researcherid.com/rid/L-2180-2016> ;
+        datacite:usesIdentifierScheme  datacite:researcherid .
+
+<http://wiki.dbpedia.org/dbpedia-association>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dataid_ar.ttl?auth=creatorAuthorization> ;
+        foaf:homepage            <http://dbpedia.org> ;
+        foaf:mbox                "dbpedia@infai.org" ;
+        foaf:name                "DBpedia Association" .
+
+<dataid_ar.ttl?auth=creatorAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:authorizedFor       <dataid_ar.ttl> ;
+        dataid:isInheritable       true .
+        
+<https://wikimediafoundation.org>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <http://dbpedia.org/dataset/pages_articles?lang=ar&dbpv=2016-04&file=pages_articles_ar.xml.bz2&auth=publisherAuthorization> , <http://dbpedia.org/dataset/pages_articles?lang=ar&dbpv=2016-04&auth=publisherAuthorization> ;
+        foaf:mbox                "info@wikimedia.org" ;
+        foaf:name                "Wikimedia Foundation, Inc." .
+        
+<dataid_ar.ttl?auth=publisherAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Creator, dataid:Publisher ;
+        dataid:authorizedAgent     <https://wikimediafoundation.org> ;
+        dataid:authorizedFor       <dataid_ar.ttl?set=pages_articles> ;
+        dataid:isInheritable       true .
+        
+########## Main Dataset ##########
+
+<dataid_ar.ttl?set=maindataset>
+        a                       dataid:Superset ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg>  ;
+        dataid:growth               <dataid_ar.ttl?stmt=growth> ;
+        dataid:openness             <dataid_ar.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <dataid_ar.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <dataid_ar.ttl?stmt=similarData> ;
+        dataid:usefulness           <dataid_ar.ttl?stmt=usefulness> ;
+        dc:description          """DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself."""@en ;
+        dc:hasVersion           <dataid_ar.ttl?version=1.0.0> ;
+        dc:issued               "2016-07-02"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/ara> ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2016-08-01"^^xsd:date ;
+        dc:publisher            <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:rights               <dataid_ar.ttl?rights=dbpedia-rights> ;
+        dc:title                "DBpedia root dataset for Arabic, version 2015-10"@en ;
+        void:subset             <dataid_ar.ttl?set=long_abstracts_en_uris>, <dataid_ar.ttl?set=interlanguage_links> ;
+        void:vocabulary         <http://downloads.dbpedia.org/2015-04/dbpedia_2015-10.owl> ;
+        dcat:keyword            "maindataset"@en , "DBpedia"@en ;
+        dcat:landingPage        <http://dbpedia.org/> ;
+        foaf:isPrimaryTopicOf   <dataid_ar.ttl> ;
+        foaf:page               <http://wiki.dbpedia.org/Downloads2015-10> .
+
+############ Datasets #############
+     
+<dataid_ar.ttl?set=interlanguage_links>
+        a                       dataid:Dataset, dataid-ld:LinkedDataDataset ;
+        rdfs:label              "interlanguage links"@en ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dc:description          "Dataset linking a DBpedia resource to the same resource in other languages and in Wikidata."@en ;
+        dc:hasVersion           <dataid_ar.ttl?version=1.0> ;
+        dc:isPartOf             <dataid_ar.ttl?set=maindataset> ;
+        dc:issued               "2016-07-02"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/ara> ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2016-08-02"^^xsd:date ;
+        dc:publisher            <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                "interlanguage links"@en ;
+        void:rootResource       <dataid_ar.ttl?set=maindataset> ;
+        void:triples            7480764 ;
+        dcat:distribution       <dataid_ar.ttl?file=interlanguage_links_ar.ttl.bz2> , <dataid_ar.ttl?file=interlanguage_links_ar.tql.bz2> ;
+        dcat:keyword            "DBpedia"@en , "interlanguage_links"@en ;
+        dcat:landingPage        <http://dbpedia.org/> ;
+        sd:defaultGraph         <http://ar.dbpedia.org> ;
+        foaf:page               <http://wiki.dbpedia.org/Downloads2015-10> .
+        
+<dataid_ar.ttl?set=long_abstracts_en_uris>
+        a                       dataid:Dataset, dataid-ld:LinkedDataDataset ;
+        rdfs:label              "long abstracts en uris"@en ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:qualifiedDatasetRelation   <dataid_ar.ttl?relation=source&target=pages_articles> ;
+        dataid:relatedDataset   <dataid_ar.ttl?set=pages_articles> ;
+        dc:description          "Full abstracts of Wikipedia articles, usually the first section. Normalized resources matching English DBpedia."@en ;
+        dc:hasVersion           <dataid_ar.ttl?version=1.0.0> ;
+        dc:isPartOf             <dataid_ar.ttl?set=maindataset> ;
+        dc:issued               "2016-07-02"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/ara> ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2016-08-02"^^xsd:date ;
+        dc:publisher            <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                "long abstracts en uris"@en ;
+        void:rootResource       <dataid_ar.ttl?set=maindataset> ;
+        void:triples            232801 ;
+        void:sparqlEndpoint      <http://dbpedia.org/sparql> ;
+        dcat:distribution       <dataid_ar.ttl?sparql=DBpediaSparqlEndpoint> , <dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2> , <dataid_ar.ttl?file=long_abstracts_en_uris_ar.tql.bz2> ;
+        dcat:keyword            "long_abstracts_en_uris"@en , "DBpedia"@en ;
+        dcat:landingPage        <http://dbpedia.org/> ;
+        sd:defaultGraph         <http://ar.dbpedia.org> ;
+        foaf:page               <http://wiki.dbpedia.org/Downloads2015-10> .
+        
+<dataid_ar.ttl?set=pages_articles>
+        a                          dataid:Dataset ;
+        rdfs:label                 "Wikipedia XML source dump file"@en ;
+        dataid:associatedAgent     <https://wikimediafoundation.org> ;
+        dataid:needsSpecialAuthorization  <dataid_ar.ttl?auth=publisherAuthorization> ;
+        dc:description             "The Wikipedia dump file, which is the source for all other extracted datasets."@en ;
+        dc:hasVersion              "20160305" ;
+        dc:issued                  "2016-03-05"^^xsd:date ;
+        dc:language                <http://lexvo.org/id/iso639-3/ara> ;
+        dc:license                 <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:publisher               <https://wikimediafoundation.org> ;
+        dc:title                   "Wikipedia XML source dump file"@en ;
+        dcat:distribution          <http://dbpedia.org/dataset/pages_articles?lang=ar&dbpv=2016-04&file=pages_articles_ar.xml.bz2> ;
+        dcat:keyword               "Wikipedia"@en , "XML dump file"@en ;
+        dcat:landingPage           <https://meta.wikimedia.org/wiki/Data_dumps> .
+        
+########## Distributions ###########
+
+<dataid_ar.ttl?file=interlanguage_links_ar.ttl.bz2>
+        a                            dataid:SingleFile ;
+        rdfs:label                   "interlanguage_links_ar.ttl.bz2" ;
+        dataid:associatedAgent       <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:checksum              <dataid_ar.ttl?file=interlanguage_links_ar.ttl.bz2&checksum=md5> ;
+        dataid:isDistributionOf      <dataid_ar.ttl?set=interlanguage_links> ;
+        dataid:preview               <http://downloads.dbpedia.org/preview.php?file=2015-10_sl_core-i18n_sl_ar_sl_interlanguage_links_ar.ttl.bz2> ;
+        dataid:uncompressedByteSize  1184687767 ;
+        dc:description               "Dataset linking a DBpedia resource to the same resource in other languages and in Wikidata."@en ;
+        dc:hasVersion                <dataid_ar.ttl?version=1.0> ;
+        dc:issued                   "2016-07-02"^^xsd:date ;
+        dc:license                   <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified                  "2016-08-02"^^xsd:date ;
+        dc:publisher                 <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                     "interlanguage links"@en ;
+        dcat:byteSize                62761863 ;
+        dcat:downloadURL             <http://downloads.dbpedia.org/2015-10/core-i18n/core-i18n/ar/interlanguage_links_ar.ttl.bz2> ;
+        dcat:mediaType               dataid-mt:MediaType_turtle_x-bzip2 .
+
+<dataid_ar.ttl?file=interlanguage_links_ar.tql.bz2>
+        a                            dataid:SingleFile ;
+        rdfs:label                   "interlanguage_links_ar.tql.bz2" ;
+        dataid:associatedAgent       <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:checksum              <dataid_ar.ttl?file=interlanguage_links_ar.tql.bz2&checksum=md5> ;
+        dataid:isDistributionOf      <dataid_ar.ttl?set=interlanguage_links> ;
+        dataid:preview               <http://downloads.dbpedia.org/preview.php?file=2015-10_sl_core-i18n_sl_ar_sl_interlanguage_links_ar.tql.bz2> ;
+        dataid:uncompressedByteSize  1598056873 ;
+        dc:description               "Dataset linking a DBpedia resource to the same resource in other languages and in Wikidata."@en ;
+        dc:hasVersion                <dataid_ar.ttl?version=1.0> ;
+        dc:issued                   "2016-07-02"^^xsd:date ;
+        dc:license                   <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified                  "2016-08-02"^^xsd:date ;
+        dc:publisher                 <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                     "interlanguage links"@en ;
+        dcat:byteSize                71946917 ;
+        dcat:downloadURL             <http://downloads.dbpedia.org/2015-10/core-i18n/core-i18n/ar/interlanguage_links_ar.tql.bz2> ;
+        dcat:mediaType               dataid-mt:MediaType_n-quads_x-bzip2 .
+
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2>
+        a                            dataid:SingleFile ;
+        rdfs:label                   "long_abstracts_en_uris_ar.ttl.bz2" ;
+        dataid:associatedAgent       <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:checksum              <dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2&checksum=md5> ;
+        dataid:isDistributionOf      <dataid_ar.ttl?set=long_abstracts_en_uris> ;
+        dataid:preview               <http://downloads.dbpedia.org/preview.php?file=2015-10_sl_core-i18n_sl_ar_sl_long_abstracts_en_uris_ar.ttl.bz2> ;
+        dataid:uncompressedByteSize  186573907 ;
+        dc:description               "Full abstracts of Wikipedia articles, usually the first section. Normalized resources matching English DBpedia."@en ;
+        dc:hasVersion                <dataid_ar.ttl?version=1.0> ;
+        dc:issued                   "2016-07-02"^^xsd:date ;
+        dc:license                   <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified                  "2016-08-02"^^xsd:date ;
+        dc:publisher                 <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                     "long abstracts en uris"@en ;
+        dcat:byteSize                33428372 ;
+        dcat:downloadURL             <http://downloads.dbpedia.org/2015-10/core-i18n/core-i18n/ar/long_abstracts_en_uris_ar.ttl.bz2> ;
+        dcat:mediaType               dataid-mt:MediaType_turtle_x-bzip2 .
+        
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.tql.bz2>
+        a                            dataid:SingleFile ;
+        rdfs:label                   "long_abstracts_en_uris_ar.tql.bz2" ;
+        dataid:associatedAgent       <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:checksum              <dataid_ar.ttl?file=long_abstracts_en_uris_ar.tql.bz2&checksum=md5> ;
+        dataid:isDistributionOf      <dataid_ar.ttl?set=long_abstracts_en_uris> ;
+        dataid:preview               <http://downloads.dbpedia.org/preview.php?file=2015-10_sl_core-i18n_sl_ar_sl_long_abstracts_en_uris_ar.tql.bz2> ;
+        dataid:uncompressedByteSize  204174726 ;
+        dc:description               "Full abstracts of Wikipedia articles, usually the first section. Normalized resources matching English DBpedia."@en ;
+        dc:hasVersion                <dataid_ar.ttl?version=1.0> ;
+        dc:issued                   "2016-07-02"^^xsd:date ;
+        dc:license                   <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified                  "2016-08-02"^^xsd:date ;
+        dc:publisher                 <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                     "long abstracts en uris"@en ;
+        dcat:byteSize                36026709 ;
+        dcat:downloadURL             <http://downloads.dbpedia.org/2015-10/core-i18n/core-i18n/ar/long_abstracts_en_uris_ar.tql.bz2> ;
+        dcat:mediaType               dataid-mt:MediaType_n-quads_x-bzip2 .
+        
+<dataid_ar.ttl?sparql=DBpediaSparqlEndpoint>
+        a                        dataid-ld:SparqlEndpoint ;
+        rdfs:label               "The official DBpedia sparql endpoint"@en ;
+        dataid:accessProcedure   <dataid_ar.ttl?stmt=sparqlaccproc> ;
+        dataid:associatedAgent   <http://support.openlinksw.com/> ;
+        dataid:isDistributionOf  <dataid_ar.ttl?set=long_abstracts_en_uris> ;
+        dc:description           "The official sparql endpoint of DBpedia, hosted graciously by OpenLink Software (http://virtuoso.openlinksw.com/), containing all datasets of the /core directory."@en ;
+        dc:hasVersion            <dataid_ar.ttl?version=1.0> ;
+        dc:issued                "2016-07-02"^^xsd:date ;
+        dc:license               <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified              "2016-08-02"^^xsd:date ;
+        dc:title                 "The official DBpedia sparql endpoint"@en ;
+        sd:endpoint				 <http://dbpedia.org/sparql> ;
+        sd:supportedLanguage	 sd:SPARQL11Query ;
+        sd:resultFormat			 <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
+        dcat:accessURL           <http://dbpedia.org/sparql> ;
+        dcat:mediaType           <http://dataid.dbpedia.org/ns/mt#MediaType_sparql-results+xml> .
+        
+########### Relations ############
+
+<dataid_ar.ttl?relation=source&target=pages_articles>
+        a                           dataid:DatasetRelationship ;
+        dataid:datasetRelationRole  dataid:SourceRole ;
+        dataid:qualifiedRelationOf  <dataid_ar.ttl?set=long_abstracts_en_uris> ;
+        dataid:qualifiedRelationTo  <dataid_ar.ttl?set=pages_articles> .
+
+########### Checksums ############
+
+<dataid_ar.ttl?file=interlanguage_links_ar.ttl.bz2&checksum=md5>
+        a                   spdx:Checksum ;
+        spdx:algorithm      spdx:checksumAlgorithm_md5 ;
+        spdx:checksumValue  "b1a6885fba528b08c53b0ad800a94f7a"^^xsd:hexBinary .
+
+
+<dataid_ar.ttl?file=interlanguage_links_ar.tql.bz2&checksum=md5>
+        a                   spdx:Checksum ;
+        spdx:algorithm      spdx:checksumAlgorithm_md5 ;
+        spdx:checksumValue  "d34de153e77570f118b7425e5cf1ca0b"^^xsd:hexBinary .
+
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2&checksum=md5>
+        a                   spdx:Checksum ;
+        spdx:algorithm      spdx:checksumAlgorithm_md5 ;
+        spdx:checksumValue  "2503179cd96452d33becd1e974d6a163"^^xsd:hexBinary .
+
+<dataid_ar.ttl?file=long_abstracts_en_uris_ar.tql.bz2&checksum=md5>
+        a                   spdx:Checksum ;
+        spdx:algorithm      spdx:checksumAlgorithm_md5 ;
+        spdx:checksumValue  "ffdf034c2477d81b5aaeced0312984d4"^^xsd:hexBinary .
+        
+########### Statements ###########
+
+<dataid_ar.ttl?rights=dbpedia-rights>
+        a                 dataid:SimpleStatement ;
+        dataid:literal  """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4. Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License."""@en .
+
+<dataid_ar.ttl?version=1.0.0>
+        a                 dataid:SimpleStatement ;
+        dataid:literal  "1.0.0" .
+
+<dataid_ar.ttl?stmt=sparqlaccproc>
+        a                 dataid:SimpleStatement ;
+        dc:references    <https://www.w3.org/TR/sparql11-overview/> ;  
+        dataid:literal  "An endpoint for sparql queries: provide valid queries." .
+        
+<dataid_ar.ttl?stmt=openness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia is an open dataset, licensed under CC-BY-SA 3.0."@en .
+        
+<dataid_ar.ttl?stmt=growth>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia is an ongoing open-source project. Goal of the project is the extraction of the Wikipedia, as complete as possible. Currently, 126 languages are being extracted. In the future, DBpedia will try to increase its importance as the center of the LOD cloud by adding further external datasets"@en .
+        
+<dataid_ar.ttl?stmt=similarData>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "Similar data can be found in datasets like Freebase (https://freebase.com), Wikidata (https://www.wikidata.org), Yago (http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago//) or OpenCyc (http://opencyc.org)."@en .
+
+<dataid_ar.ttl?stmt=usefulness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia is a useful resource for interlinking general datasets with encyclopedic knowledge. Users profitting from DBpedia are open data developers, SMEs and researchers in data science and NLP"@en .
+
+<dataid_ar.ttl?stmt=reuseAndIntegration>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia data can be integrated into other datasets and reused for data enrichment or mashup purposes"@en .
+
+
+########### MediaTypes ###########
+
+<http://dataid.dbpedia.org/ns/mt#MediaType_sparql-results+xml>
+        a                    dataid:MediaType ;
+        dataid:typeTemplate  "application/sparql-results+xml" ;
+        dc:conformsTo        <http://dataid.dbpedia.org/ns/core> .
+
+dataid-mt:MediaType_turtle_x-bzip2
+        a                      dataid:MediaType ;
+        dataid:innerMediaType  dataid:MediaType_turtle ;
+        dataid:typeExtension   ".bz2" ;
+        dataid:typeTemplate    "application/x-bzip2" ;
+        dc:conformsTo          <http://dataid.dbpedia.org/ns/core> .
+
+dataid-mt:MediaType_n-quads_x-bzip2
+        a                      dataid:MediaType ;
+        dataid:innerMediaType  dataid:MediaType_n-quads ;
+        dataid:typeExtension   ".bz2" ;
+        dataid:typeTemplate    "application/x-bzip2" ;
+        dc:conformsTo          <http://dataid.dbpedia.org/ns/core> .
+
+dataid:MediaType_n-quads
+        a                     dataid:MediaType ;
+        dataid:typeExtension  ".nq", ".tql" ;
+        dataid:typeTemplate   "application/n-quads" ;
+        dc:conformsTo         <http://dataid.dbpedia.org/ns/core> .
+
+dataid:MediaType_turtle
+        a                     dataid:MediaType ;
+        dataid:typeExtension  ".ttl" ;
+        dataid:typeTemplate   "text/turtle" ;
+        dc:conformsTo         <http://dataid.dbpedia.org/ns/core> .
+\end{lstlisting}
 
 \addchap{Erklärung}
 \thispagestyle{empty}
