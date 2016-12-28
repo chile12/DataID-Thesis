@@ -2171,10 +2171,18 @@
       \endverb
       \keyw{ontologies semantic-web}
     \endentry
-    \entry{shacl}{misc}{}
+    \entry{shacl}{report}{}
+      \list{institution}{1}{%
+        {W3C}%
+      }
       \field{sortinit}{8}
       \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
-      \field{howpublished}{\url{http://w3c.github.io/data-shapes/shacl/}}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{https://www.w3.org/TR/2016/WD-shacl-20160814/}
+      \field{title}{Shapes Constraint Language ({SHACL})}
+      \field{type}{{W3C} Working Draft}
+      \field{year}{2016}
     \endentry
     \entry{spdx}{online}{}
       \name{author}{1}{}{%
@@ -2501,6 +2509,160 @@
       \endverb
       \keyw{dblp}
     \endentry
+    \entry{KnapKMSTV14}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=189d8ab7ac5eb12c43c2b33185390c62}{%
+           family={Knap},
+           familyi={K\bibinitperiod},
+           given={Tomás},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1360c78dcd2a12ec0c9c95c43a3c12b1}{%
+           family={Kukhar},
+           familyi={K\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+        {{hash=804204952b046aac8016c878c95875d2}{%
+           family={Machác},
+           familyi={M\bibinitperiod},
+           given={Bohuslav},
+           giveni={B\bibinitperiod}}}%
+        {{hash=41921963eb98a200b31f82f76705db02}{%
+           family={Skoda},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e8966bdb92122538e844f5dd8223813b}{%
+           family={Tomes},
+           familyi={T\bibinitperiod},
+           given={Jirı́},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5dae15eddc619001713e84b8ba9e324e}{%
+           family={Vojt},
+           familyi={V\bibinitperiod},
+           given={Ján},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d44470aff62f861ca53e515cb822aeb2}
+      \strng{fullhash}{af7e79d34c2770b93a1396d8dc0a5e7f}
+      \strng{authornamehash}{d44470aff62f861ca53e515cb822aeb2}
+      \strng{authorfullhash}{af7e79d34c2770b93a1396d8dc0a5e7f}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ESWC (Satellite Events)}
+      \field{isbn}{978-3-319-11954-0}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{UnifiedViews: An ETL Framework for Sustainable RDF Data Processing.}
+      \field{volume}{8798}
+      \field{year}{2014}
+      \field{pages}{379\bibrangedash 383}
+      \range{pages}{5}
+      \verb{url}
+      \verb http://dblp.uni-trier.de/db/conf/esws/eswc2014s.html#KnapKMSTV14
+      \endverb
+      \keyw{dblp}
+    \endentry
+    \entry{rdfunit}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=aad97cc17257a23ec41f28e1b3fa68b3}{%
+           family={Kontokostas},
+           familyi={K\bibinitperiod},
+           given={Dimitris},
+           giveni={D\bibinitperiod}}}%
+        {{hash=dd346152e1d0079477c08c43e70f3ae6}{%
+           family={Westphal},
+           familyi={W\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=74de32830575f67e1479f58f47d2111d}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+        {{hash=aaa7f45375892594264f2815449fc349}{%
+           family={Hellmann},
+           familyi={H\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6236d74e9bb9aa27122db8ebfe700f02}{%
+           family={Cornelissen},
+           familyi={C\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Seoul, Korea}%
+      }
+      \list{publisher}{1}{%
+        {International World Wide Web Conferences Steering Committee}%
+      }
+      \strng{namehash}{57d8f5fb02ce96ab125468bbd68448cf}
+      \strng{fullhash}{1a3487f8615fdb36ad1a04d25ac0574b}
+      \strng{authornamehash}{57d8f5fb02ce96ab125468bbd68448cf}
+      \strng{authorfullhash}{1a3487f8615fdb36ad1a04d25ac0574b}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Companion Publication of the 23rd International Conference on World Wide Web Companion}
+      \field{isbn}{978-1-4503-2745-9}
+      \field{series}{WWW Companion '14}
+      \field{title}{Databugger: A Test-driven Framework for Debugging the Web of Data}
+      \field{year}{2014}
+      \field{pages}{115\bibrangedash 118}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/2567948.2577017
+      \endverb
+      \verb{url}
+      \verb http://jens-lehmann.org/files/2014/www_demo_databugger.pdf
+      \endverb
+      \keyw{2014 MOLE dllearner group_aksw kontokostas lehmann lod2page rdfunit topic_EvolutionRepair}
+    \endentry
+    \entry{r2rml}{report}{}
+      \name{author}{3}{}{%
+        {{hash=8edf27e4f9447cf1316707c307bf8170}{%
+           family={Sundara},
+           familyi={S\bibinitperiod},
+           given={Seema},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ff065518eacac535eec041c322c21896}{%
+           family={Cyganiak},
+           familyi={C\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=dbbd12787f57ae5996546418b9c2b749}{%
+           family={Das},
+           familyi={D\bibinitperiod},
+           given={Souripriya},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {W3C}%
+      }
+      \strng{namehash}{147cd2fea05a0775230453945cba0c8e}
+      \strng{fullhash}{147cd2fea05a0775230453945cba0c8e}
+      \strng{authornamehash}{147cd2fea05a0775230453945cba0c8e}
+      \strng{authorfullhash}{147cd2fea05a0775230453945cba0c8e}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{http://www.w3.org/TR/2012/REC-r2rml-20120927/}
+      \field{title}{{R2RML}: {RDB} to {RDF} Mapping Language}
+      \field{type}{{W3C} Recommendation}
+      \field{year}{2012}
+    \endentry
     \entry{W3CVOCONTO}{misc}{}
       \name{author}{1}{}{%
         {{hash=446a1ae6601a5c59360c7d591c3992da}{%
@@ -2511,8 +2673,8 @@
       \strng{fullhash}{446a1ae6601a5c59360c7d591c3992da}
       \strng{authornamehash}{446a1ae6601a5c59360c7d591c3992da}
       \strng{authorfullhash}{446a1ae6601a5c59360c7d591c3992da}
-      \field{sortinit}{9}
-      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.w3.org/standards/semanticweb/ontology}}
@@ -2521,6 +2683,7 @@
       \field{year}{2015}
     \endentry
   \endsortlist
+  \missing{todo}
 \endrefsection
 \endinput
 

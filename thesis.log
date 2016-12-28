@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.14)  26 DEC 2016 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100) (preloaded format=pdflatex 2016.12.14)  28 DEC 2016 11:48
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1891,12 +1891,6 @@ LaTeX Warning: Label `fig:dlaxioms' multiply defined.
 LaTeX Warning: Label `fig:dlaxioms@cref' multiply defined.
 
 
-LaTeX Warning: Label `sec:wfmodel' multiply defined.
-
-
-LaTeX Warning: Label `sec:wfmodel@cref' multiply defined.
-
-
 LaTeX Warning: Label `lst:dcex' multiply defined.
 
 
@@ -1905,26 +1899,26 @@ LaTeX Warning: Label `lst:dcex@cref' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 229.
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 229.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 229.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 230.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 230.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 230.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 229.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 229.
+LaTeX Font Info:    ... okay on input line 230.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 230.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ppl.fd"
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1976,7 +1970,7 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \c@lstlisting=\count363
 
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 229.
+LaTeX Info: Redefining \microtypecontext on input line 230.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -2003,26 +1997,34 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
 
-(thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 229.
-Package biblatex Info: Reference segment=0 on input line 229.
+(thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                todo
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 230.
+Package biblatex Info: Reference segment=0 on input line 230.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 239.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 239.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 240.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 240.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 239.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 240.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 242.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 243.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 242.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 255.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 243.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 256.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
@@ -2032,31 +2034,31 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 255.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 256.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 255
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 256
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 255
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 256
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 255.
+(Font)              <14.4> on input line 256.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 255.
+(Font)              <10> on input line 256.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 255.
-LaTeX Font Info:    Try loading font information for U+msa on input line 255.
+(Font)              <7> on input line 256.
+LaTeX Font Info:    Try loading font information for U+msa on input line 256.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -2064,7 +2066,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 255.
+LaTeX Font Info:    Try loading font information for U+msb on input line 256.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2073,13 +2075,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 262.
+(Font)              <12> on input line 263.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 262.
+(Font)              <8> on input line 263.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 262.
+(Font)              <6> on input line 263.
 
-Overfull \hbox (42.54633pt too wide) in paragraph at lines 262--270
+Overfull \hbox (42.54633pt too wide) in paragraph at lines 263--271
 [][] 
  []
 
@@ -2087,12 +2089,12 @@ Overfull \hbox (42.54633pt too wide) in paragraph at lines 262--270
 
 {C:/Users/Chile/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 275.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 276.
  [2]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 279.
-Package tocbasic Info: character protrusion at toc deactivated on input line 27
-9.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 280.
+Package tocbasic Info: character protrusion at toc deactivated on input line 28
+0.
 
 (thesis.toc
 Package cleveref Info: loaded `english' language definitions on input line 3.
@@ -2100,46 +2102,59 @@ Package cleveref Info: loaded `english' language definitions on input line 3.
 
 
 ]
-Overfull \hbox (1.41573pt too wide) detected at line 161
- []\T1/phv/b/n/12 107
+Overfull \hbox (1.41573pt too wide) detected at line 167
+ []\T1/phv/b/n/12 101
+ []
+
+
+Overfull \hbox (1.41573pt too wide) detected at line 169
+ []\T1/phv/b/n/12 109
+ []
+
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 171.
+Package cleveref Info: loaded `english' language definitions on input line 171.
+
+[4]
+Overfull \hbox (1.41573pt too wide) detected at line 171
+ []\T1/phv/b/n/12 117
  []
 
 )
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 282.
-Package cleveref Info: loaded `english' language definitions on input line 282.
+Package cleveref Info: loaded `english' language definitions on input line 283.
 
- [4]
+ [5] [6
+
+]
 Package tocbasic Info: character protrusion at lof deactivated on input line 28
-2.
+3.
  (thesis.lof
 Package cleveref Info: loaded `english' language definitions on input line 3.
 LaTeX Font Info:    Font shape `T1/ppl/bx/sc' in size <12> not available
 (Font)              Font shape `T1/ppl/b/sc' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 33.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bera\t1fvm.fd"
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 31.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 33.
+(Font)              scaled to size 10.20007pt on input line 31.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <12> not available
-(Font)              Font shape `T1/fvm/b/n' tried instead on input line 33.
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
-(Font)              scaled to size 10.20007pt on input line 33.
+(Font)              scaled to size 10.20007pt on input line 31.
 )
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- [5
-
-] [6]
+ [7] [8]
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -2157,10 +2172,10 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface .
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 340.
+(Font)              <5> on input line 344.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 340.
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 344.
+(Font)              scaled to size 6.80005pt on input line 344.
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 348.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1ppl.fd"
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
@@ -2169,172 +2184,178 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 
 
 ]
-Package cleveref Info: loaded `english' language definitions on input line 369.
+Package cleveref Info: loaded `english' language definitions on input line 373.
 
  [2]
-Package cleveref Info: loaded `english' language definitions on input line 397.
+Package cleveref Info: loaded `english' language definitions on input line 401.
 
 
 [3]
 
 LaTeX Font Warning: Font shape `T1/fvm/m/sc' undefined
-(Font)              using `T1/fvm/m/n' instead on input line 401.
+(Font)              using `T1/fvm/m/n' instead on input line 405.
 
 
 LaTeX Font Warning: Font shape `T1/fvm/bx/sc' undefined
-(Font)              using `T1/fvm/bx/n' instead on input line 401.
+(Font)              using `T1/fvm/bx/n' instead on input line 405.
 
 LaTeX Font Info:    Font shape `T1/fvm/m/sc' will be
-(Font)              scaled to size 10.20007pt on input line 401.
+(Font)              scaled to size 10.20007pt on input line 405.
 LaTeX Font Info:    Font shape `T1/fvm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/fvm/b/n' tried instead on input line 401.
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 405.
 LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
-(Font)              scaled to size 10.20007pt on input line 401.
-Package cleveref Info: loaded `english' language definitions on input line 415.
+(Font)              scaled to size 10.20007pt on input line 405.
+Package cleveref Info: loaded `english' language definitions on input line 419.
 
-[4] <images/AlignedCircles.png, id=43, 941.76843pt x 577.40718pt>
+[4] <images/AlignedCircles.png, id=49, 941.76843pt x 577.40718pt>
 File: images/AlignedCircles.png Graphic file (type png)
 
 <use images/AlignedCircles.png>
-Package pdftex.def Info: images/AlignedCircles.png used on input line 430.
+Package pdftex.def Info: images/AlignedCircles.png used on input line 434.
 (pdftex.def)             Requested size: 416.12161pt x 255.12602pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 431.
-Package cleveref Info: loaded `english' language definitions on input line 440.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 435.
+Package cleveref Info: loaded `english' language definitions on input line 444.
 
  [5 <./images/AlignedCircles.png>]
-Package cleveref Info: loaded `english' language definitions on input line 463.
+Package cleveref Info: loaded `english' language definitions on input line 467.
 
  [6]
 chapter 2.
 [7
 
-] <images/kidsPyramid.png, id=54, 602.25pt x 451.6875pt>
+] <images/kidsPyramid.png, id=60, 602.25pt x 451.6875pt>
 File: images/kidsPyramid.png Graphic file (type png)
 
 <use images/kidsPyramid.png>
-Package pdftex.def Info: images/kidsPyramid.png used on input line 529.
+Package pdftex.def Info: images/kidsPyramid.png used on input line 533.
 (pdftex.def)             Requested size: 416.12161pt x 312.1058pt.
-Package cleveref Info: loaded `english' language definitions on input line 548.
+Package cleveref Info: loaded `english' language definitions on input line 552.
 
  [8]
-Package cleveref Info: loaded `english' language definitions on input line 558.
+Package cleveref Info: loaded `english' language definitions on input line 562.
 
  [9 <./images/kidsPyramid.png>]
-Package cleveref Info: loaded `english' language definitions on input line 587.
+Package cleveref Info: loaded `english' language definitions on input line 591.
 
  [10]
-Package cleveref Info: loaded `english' language definitions on input line 626.
+Package cleveref Info: loaded `english' language definitions on input line 630.
 
  [11]
-Package cleveref Info: loaded `english' language definitions on input line 644.
+Package cleveref Info: loaded `english' language definitions on input line 648.
 
 
 [12]
-Package cleveref Info: loaded `english' language definitions on input line 693.
+Package cleveref Info: loaded `english' language definitions on input line 697.
 
  [13]
-Package cleveref Info: loaded `english' language definitions on input line 707.
+Package cleveref Info: loaded `english' language definitions on input line 711.
 
  [14]
-Package cleveref Info: loaded `english' language definitions on input line 726.
+Package cleveref Info: loaded `english' language definitions on input line 730.
 
  [15]
-Package cleveref Info: loaded `english' language definitions on input line 758.
+Package cleveref Info: loaded `english' language definitions on input line 762.
 
  [16]
-Package cleveref Info: loaded `english' language definitions on input line 773.
+Package cleveref Info: loaded `english' language definitions on input line 777.
 
  [17]
-Package cleveref Info: loaded `english' language definitions on input line 794.
+Package cleveref Info: loaded `english' language definitions on input line 798.
 
  [18]
 chapter 3.
 [19
 
 ]
-Package cleveref Info: loaded `english' language definitions on input line 830.
+Package cleveref Info: loaded `english' language definitions on input line 834.
 
- [20] <images/DcatIdea.png, id=97, 925.20656pt x 172.39406pt>
+ [20] <images/DcatIdea.png, id=103, 925.20656pt x 172.39406pt>
 File: images/DcatIdea.png Graphic file (type png)
 
 <use images/DcatIdea.png>
-Package pdftex.def Info: images/DcatIdea.png used on input line 833.
+Package pdftex.def Info: images/DcatIdea.png used on input line 837.
 (pdftex.def)             Requested size: 416.12161pt x 77.53714pt.
 LaTeX Font Info:    Font shape `T1/ppl/bx/sc' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/sc' tried instead on input line 834.
-Package cleveref Info: loaded `english' language definitions on input line 855.
+(Font)              Font shape `T1/ppl/b/sc' tried instead on input line 838.
+Package cleveref Info: loaded `english' language definitions on input line 859.
 
  [21 <./images/DcatIdea.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 877--878
 []\T1/ppl/m/n/12 (+10) Insufficient spe-ci-fi-city of pro-perty ran-ges (e.g.: 
 \T1/fvm/m/sc/12 dct:license\T1/ppl/m/n/12 (+10) ,
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 899.
+Package cleveref Info: loaded `english' language definitions on input line 903.
 
 [22]
-Package cleveref Info: loaded `english' language definitions on input line 919.
+Package cleveref Info: loaded `english' language definitions on input line 923.
 
  [23]
-Package cleveref Info: loaded `english' language definitions on input line 942.
+Package cleveref Info: loaded `english' language definitions on input line 946.
 
  [24]
-Package cleveref Info: loaded `english' language definitions on input line 978.
+Package cleveref Info: loaded `english' language definitions on input line 982.
 
  [25]
-Package cleveref Info: loaded `english' language definitions on input line 1008
+Package cleveref Info: loaded `english' language definitions on input line 1012
 .
  [26]
-Package cleveref Info: loaded `english' language definitions on input line 1039
+Package cleveref Info: loaded `english' language definitions on input line 1043
 .
  [27]
-Package cleveref Info: loaded `english' language definitions on input line 1062
+Package cleveref Info: loaded `english' language definitions on input line 1066
 .
  [28]
-Package cleveref Info: loaded `english' language definitions on input line 1106
+Package cleveref Info: loaded `english' language definitions on input line 1110
 .
  [29]
-<images/ProvLinchpin.png, id=126, 904.88063pt x 517.18219pt>
+<images/ProvLinchpin.png, id=133, 904.88063pt x 517.18219pt>
 File: images/ProvLinchpin.png Graphic file (type png)
 
 <use images/ProvLinchpin.png>
-Package pdftex.def Info: images/ProvLinchpin.png used on input line 1123.
+Package pdftex.def Info: images/ProvLinchpin.png used on input line 1127.
 (pdftex.def)             Requested size: 416.12161pt x 237.82777pt.
-Package cleveref Info: loaded `english' language definitions on input line 1130
+Package cleveref Info: loaded `english' language definitions on input line 1134
 .
  [30 <./images/ProvLinchpin.png>]
-Overfull \hbox (3.85986pt too wide) in paragraph at lines 1131--1132
+Overfull \hbox (3.85986pt too wide) in paragraph at lines 1135--1136
 \T1/ppl/m/n/12 (-10) red from the qua-li-fied pro-perty path (\T1/fvm/m/sc/12 p
 rov:qualifiedAssociation\T1/ppl/m/n/12 (-10) /\T1/fvm/m/sc/12 prov:agent\T1/ppl
 /m/n/12 (-10) ).
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1171
+Package cleveref Info: loaded `english' language definitions on input line 1175
 .
 [31]
-Package cleveref Info: loaded `english' language definitions on input line 1187
+Package cleveref Info: loaded `english' language definitions on input line 1191
 .
- [32] <images/DataCiteIdentifiers.png, id=137, 1020.06094pt x 444.91219pt>
+ [32] <images/DataCiteIdentifiers.png, id=143, 1020.06094pt x 444.91219pt>
 File: images/DataCiteIdentifiers.png Graphic file (type png)
 
 <use images/DataCiteIdentifiers.png>
-Package pdftex.def Info: images/DataCiteIdentifiers.png used on input line 1191
+Package pdftex.def Info: images/DataCiteIdentifiers.png used on input line 1195
 .
 (pdftex.def)             Requested size: 416.12161pt x 181.49867pt.
-Package cleveref Info: loaded `english' language definitions on input line 1204
-.
- [33 <./images/DataCiteIdentifiers.png>]
-Package cleveref Info: loaded `english' language definitions on input line 1207
-.
 
+
+LaTeX Warning: Citation 'PAMPLE2013' on page 33 undefined on input line 1203.
+
+Package cleveref Info: loaded `english' language definitions on input line 1206
+.
+[33 <./images/DataCiteIdentifiers.png>]
+
+LaTeX Warning: Citation 'r3dSchema' on page 34 undefined on input line 1207.
+
+Package cleveref Info: loaded `english' language definitions on input line 1221
+.
 [34]
 chapter 4.
 
-LaTeX Warning: Reference `requDmp' on page 1 undefined on input line 1236.
+LaTeX Warning: Reference `requDmp' on page 1 undefined on input line 1250.
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 1236--1237
+Underfull \hbox (badness 2913) in paragraph at lines 1250--1251
 []\T1/ppl/m/n/12 (+10) When re-gar-ding as-pects \T1/ppl/b/n/12 (A4) \T1/ppl/m/
 n/12 (+10) and \T1/ppl/b/n/12 (A5)\T1/ppl/m/n/12 (+10) , ta-king into ac-count 
 the in-tri-
@@ -2342,541 +2363,655 @@ the in-tri-
 
 [35
 
-] <images/DataIDonion.png, id=147, 768.62157pt x 503.63156pt>
+] <images/DataIDonion.png, id=154, 768.62157pt x 503.63156pt>
 File: images/DataIDonion.png Graphic file (type png)
 
 <use images/DataIDonion.png>
-Package pdftex.def Info: images/DataIDonion.png used on input line 1256.
+Package pdftex.def Info: images/DataIDonion.png used on input line 1268.
 (pdftex.def)             Requested size: 416.12161pt x 272.66399pt.
-Package cleveref Info: loaded `english' language definitions on input line 1263
+Package cleveref Info: loaded `english' language definitions on input line 1275
 .
  [36 <./images/DataIDonion.png>]
-Package cleveref Info: loaded `english' language definitions on input line 1271
+Package cleveref Info: loaded `english' language definitions on input line 1284
 .
  [37]
-
-LaTeX Warning: Reference `lessons' on page 1 undefined on input line 1274.
-
-
-LaTeX Warning: Reference `dmps' on page 1 undefined on input line 1276.
-
-<images/DataIDonionSliced.png, id=157, 423.83344pt x 292.09125pt>
-File: images/DataIDonionSliced.png Graphic file (type png)
-
-<use images/DataIDonionSliced.png>
-Package pdftex.def Info: images/DataIDonionSliced.png used on input line 1294.
-(pdftex.def)             Requested size: 256.0748pt x 176.48175pt.
-Package cleveref Info: loaded `english' language definitions on input line 1302
+Package cleveref Info: loaded `english' language definitions on input line 1300
 .
- [38] [39 <./images/DataIDonionSliced.png>]
-[40
-
-]
+ [38]
 chapter 5.
-<images/FoundationalConcept.png, id=168, 866.23625pt x 286.06876pt>
+<images/FoundationalConcept.png, id=166, 866.23625pt x 286.06876pt>
 File: images/FoundationalConcept.png Graphic file (type png)
 
 <use images/FoundationalConcept.png>
-Package pdftex.def Info: images/FoundationalConcept.png used on input line 1328
+Package pdftex.def Info: images/FoundationalConcept.png used on input line 1326
 .
 (pdftex.def)             Requested size: 416.12161pt x 137.42056pt.
- [41]
-<images/FoundationalConseptProv.png, id=172, 710.655pt x 183.68625pt>
+
+Underfull \hbox (badness 5431) in paragraph at lines 1331--1332
+[]\T1/ppl/m/n/12 (+10) As \T1/ppl/bx/sc/12/100ls dcat\T1/ppl/m/n/12 (+10) , \T1
+/fvm/b/n/12 DataID core \T1/ppl/m/n/12 (+10) is cen-tred around the Da-ta-set a
+nd Dis-tri-bu-
+ []
+
+[39
+
+]
+Package cleveref Info: loaded `english' language definitions on input line 1338
+.
+ [40 <./images/FoundationalConcept.png (PNG copy)>]
+<images/FoundationalConseptProv.png, id=173, 710.655pt x 183.68625pt>
 File: images/FoundationalConseptProv.png Graphic file (type png)
 
 <use images/FoundationalConseptProv.png>
 Package pdftex.def Info: images/FoundationalConseptProv.png used on input line 
-1343.
+1341.
 (pdftex.def)             Requested size: 416.12161pt x 107.56111pt.
-Package cleveref Info: loaded `english' language definitions on input line 1346
-.
- [42 <./images/FoundationalConcept.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 1353.
- <images/DataIdOntology.png, id=176, 1323.94624pt x 858.20625pt>
+(Font)              scaled to size 8.50006pt on input line 1351.
+
+<images/DataIdOntology.png, id=174, 1323.94624pt x 858.20625pt>
 File: images/DataIdOntology.png Graphic file (type png)
 
 <use images/DataIdOntology.png>
-Package pdftex.def Info: images/DataIdOntology.png used on input line 1363.
+Package pdftex.def Info: images/DataIdOntology.png used on input line 1361.
 (pdftex.def)             Requested size: 1323.94302pt x 858.20416pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 1364.
+(Font)              scaled to size 9.30756pt on input line 1362.
 LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/fvm/b/n' tried instead on input line 1364.
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 1362.
 LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
-(Font)              scaled to size 9.30756pt on input line 1364.
+(Font)              scaled to size 9.30756pt on input line 1362.
 
 
-LaTeX Warning: Float too large for page by 36.28926pt on input line 1368.
+LaTeX Warning: Float too large for page by 36.28926pt on input line 1366.
 
-Package cleveref Info: loaded `english' language definitions on input line 1371
+Package cleveref Info: loaded `english' language definitions on input line 1369
 .
-[43 <./images/FoundationalConseptProv.png (PNG copy)>] [44 <./images/DataIdOnto
+[41 <./images/FoundationalConseptProv.png (PNG copy)>] [42 <./images/DataIdOnto
 logy.png (PNG copy)>]
-<images/ExampleStructure.png, id=184, 860.21375pt x 756.8275pt>
+<images/ExampleStructure.png, id=182, 860.21375pt x 756.8275pt>
 File: images/ExampleStructure.png Graphic file (type png)
 
 <use images/ExampleStructure.png>
-Package pdftex.def Info: images/ExampleStructure.png used on input line 1379.
+Package pdftex.def Info: images/ExampleStructure.png used on input line 1377.
 (pdftex.def)             Requested size: 369.88582pt x 325.42947pt.
-Package cleveref Info: loaded `english' language definitions on input line 1385
+Package cleveref Info: loaded `english' language definitions on input line 1383
 .
- [45 <./images/ExampleStructure.png (PNG copy)>] <images/ClassDataId.png, id=18
-8, 524.96124pt x 329.23pt>
+ [43 <./images/ExampleStructure.png (PNG copy)>] <images/ClassDataId.png, id=18
+6, 524.96124pt x 329.23pt>
 File: images/ClassDataId.png Graphic file (type png)
 
 <use images/ClassDataId.png>
-Package pdftex.def Info: images/ClassDataId.png used on input line 1402.
+Package pdftex.def Info: images/ClassDataId.png used on input line 1400.
 (pdftex.def)             Requested size: 284.52756pt x 178.44466pt.
 
 Overfull \vbox (0.47621pt too high) has occurred while \output is active []
 
-Package cleveref Info: loaded `english' language definitions on input line 1416
+Package cleveref Info: loaded `english' language definitions on input line 1414
 .
 
-[46]
-Underfull \hbox (badness 2418) in paragraph at lines 1416--1417
+[44]
+Underfull \hbox (badness 2418) in paragraph at lines 1414--1415
 []\T1/ppl/m/n/12 (+10) refers an in-stance of \T1/fvm/m/sc/12 dataid:Authorizat
 ion
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1426
+Package cleveref Info: loaded `english' language definitions on input line 1424
 .
-[47 <./images/ClassDataId.png (PNG copy)>]
-<images/ClassDataset.png, id=195, 734.745pt x 468.75125pt>
+[45 <./images/ClassDataId.png (PNG copy)>]
+<images/ClassDataset.png, id=193, 734.745pt x 468.75125pt>
 File: images/ClassDataset.png Graphic file (type png)
 
 <use images/ClassDataset.png>
-Package pdftex.def Info: images/ClassDataset.png used on input line 1446.
+Package pdftex.def Info: images/ClassDataset.png used on input line 1444.
 (pdftex.def)             Requested size: 416.12161pt x 265.48152pt.
-Package cleveref Info: loaded `english' language definitions on input line 1452
+Package cleveref Info: loaded `english' language definitions on input line 1450
 .
- [48 <./images/ClassDataset.png (PNG copy)>]
+ [46 <./images/ClassDataset.png (PNG copy)>]
 
-LaTeX Warning: Reference `ddd' on page 1 undefined on input line 1459.
+LaTeX Warning: Reference `ddd' on page 1 undefined on input line 1457.
 
-Package cleveref Info: loaded `english' language definitions on input line 1464
+Package cleveref Info: loaded `english' language definitions on input line 1462
 .
-[49]
+[47]
 
 LaTeX Warning: Reference `sec:coredatasetrelationship' on page 1 undefined on i
-nput line 1465.
+nput line 1463.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
+Underfull \hbox (badness 10000) in paragraph at lines 1464--1465
 []\T1/ppl/m/n/12 (+10) provides an in-stance of con-cept
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1472--1472
+Underfull \hbox (badness 10000) in paragraph at lines 1470--1470
 [][]$\T1/fvm/m/n/8 https : / / ec . europa . eu / research / participants / dat
 a / ref / h2020 / grants _ manual / hi / oa _ pilot /
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1481
+Package cleveref Info: loaded `english' language definitions on input line 1479
 .
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1487
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1483--1485
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1510--1512
+Underfull \hbox (badness 10000) in paragraph at lines 1508--1510
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1523
+Package cleveref Info: loaded `english' language definitions on input line 1521
 .
-[51]
-Underfull \hbox (badness 3449) in paragraph at lines 1535--1536
+[49]
+Underfull \hbox (badness 3449) in paragraph at lines 1533--1534
 \T1/fvm/m/sc/12 dataid:relatedDataset\T1/ppl/m/n/12 (+10) . The ac-tual type of
  this re-la-tion (it being a
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1546
+Package cleveref Info: loaded `english' language definitions on input line 1544
 .
-[52] <images/ClassDistribution.png, id=212, 492.84125pt x 501.875pt>
+[50] <images/ClassDistribution.png, id=210, 492.84125pt x 501.875pt>
 File: images/ClassDistribution.png Graphic file (type png)
 
 <use images/ClassDistribution.png>
-Package pdftex.def Info: images/ClassDistribution.png used on input line 1553.
+Package pdftex.def Info: images/ClassDistribution.png used on input line 1551.
 (pdftex.def)             Requested size: 284.52756pt x 289.7552pt.
-Package cleveref Info: loaded `english' language definitions on input line 1562
+Package cleveref Info: loaded `english' language definitions on input line 1560
 .
- [53 <./images/ClassDistribution.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1573--1575
+ [51 <./images/ClassDistribution.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1571--1573
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1575
+Package cleveref Info: loaded `english' language definitions on input line 1573
 .
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 1595--1597
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1593--1595
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1615
+Package cleveref Info: loaded `english' language definitions on input line 1613
 .
-[55] <images/ClassMediaType.png, id=223, 290.08376pt x 264.99pt>
+[53] <images/ClassMediaType.png, id=221, 290.08376pt x 264.99pt>
 File: images/ClassMediaType.png Graphic file (type png)
 
 <use images/ClassMediaType.png>
-Package pdftex.def Info: images/ClassMediaType.png used on input line 1626.
+Package pdftex.def Info: images/ClassMediaType.png used on input line 1624.
 (pdftex.def)             Requested size: 199.16928pt x 181.9416pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1631--1634
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1632
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1634
+Package cleveref Info: loaded `english' language definitions on input line 1632
 .
-[56 <./images/ClassMediaType.png (PNG copy)>]
-<images/ClassAgent.png, id=227, 497.86pt x 251.94125pt>
+[54 <./images/ClassMediaType.png (PNG copy)>]
+<images/ClassAgent.png, id=225, 497.86pt x 251.94125pt>
 File: images/ClassAgent.png Graphic file (type png)
 
 <use images/ClassAgent.png>
-Package pdftex.def Info: images/ClassAgent.png used on input line 1663.
+Package pdftex.def Info: images/ClassAgent.png used on input line 1661.
 (pdftex.def)             Requested size: 284.52756pt x 143.98859pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1668--1670
+Underfull \hbox (badness 10000) in paragraph at lines 1666--1668
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1670
+Package cleveref Info: loaded `english' language definitions on input line 1668
 .
-[57] <images/ClassAuthorization.png, id=231, 680.5425pt x 371.3875pt>
+[55] <images/ClassAuthorization.png, id=229, 680.5425pt x 371.3875pt>
 File: images/ClassAuthorization.png Graphic file (type png)
 
 <use images/ClassAuthorization.png>
-Package pdftex.def Info: images/ClassAuthorization.png used on input line 1687.
+Package pdftex.def Info: images/ClassAuthorization.png used on input line 1685.
 
 (pdftex.def)             Requested size: 416.12161pt x 227.09006pt.
-Package cleveref Info: loaded `english' language definitions on input line 1694
+Package cleveref Info: loaded `english' language definitions on input line 1692
 .
- [58 <./images/ClassAgent.png (PNG copy)>]
-Package cleveref Info: loaded `english' language definitions on input line 1703
+ [56 <./images/ClassAgent.png (PNG copy)>]
+Package cleveref Info: loaded `english' language definitions on input line 1701
 .
 
-[59 <./images/ClassAuthorization.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
+[57 <./images/ClassAuthorization.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1703
 []\T1/ppl/m/n/12 (+10) Furthermore, pro-perty \T1/fvm/m/sc/12 dataid:underAutho
 rization \T1/ppl/m/n/12 (+10) is the in-verse of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1703
 \T1/ppl/m/n/12 (+10) poin-ting out the qua-li-fi-ca-tion in-stance which qua-li
 -fies the re-la-tion
  []
 
 
-Overfull \hbox (6.32335pt too wide) in paragraph at lines 1704--1705
+Overfull \hbox (6.32335pt too wide) in paragraph at lines 1702--1703
 \T1/fvm/m/sc/12 dataid:associatedAgent\T1/ppl/m/n/12 (-10) . Its sub pro-perty 
 \T1/fvm/m/sc/12 dataid:needsSpecialAuthorization
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1706--1708
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1706
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1739
+Package cleveref Info: loaded `english' language definitions on input line 1737
 .
-[60] <images/ClassAuthorizedAction.png, id=241, 454.69875pt x 425.59pt>
+[58] <images/ClassAuthorizedAction.png, id=239, 454.69875pt x 425.59pt>
 File: images/ClassAuthorizedAction.png Graphic file (type png)
 
 <use images/ClassAuthorizedAction.png>
 Package pdftex.def Info: images/ClassAuthorizedAction.png used on input line 17
-42.
+40.
 (pdftex.def)             Requested size: 256.0748pt x 239.686pt.
-Package cleveref Info: loaded `english' language definitions on input line 1753
+Package cleveref Info: loaded `english' language definitions on input line 1751
 .
- [61 <./images/ClassAuthorizedAction.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1756--1757
+ [59 <./images/ClassAuthorizedAction.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1754--1755
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
+Underfull \hbox (badness 10000) in paragraph at lines 1763--1764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1779--1781
+Underfull \hbox (badness 10000) in paragraph at lines 1777--1779
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1781
+Package cleveref Info: loaded `english' language definitions on input line 1779
 .
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1798
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 1795--1796
 \T1/ppl/m/n/12 (+10) A Da-ta-se-tRe-la-ti-ons-hip is a qua-li-fi-ca-tion of the
  ge-ne-ric pro-perty
  []
 
 
-Overfull \hbox (20.89226pt too wide) in paragraph at lines 1801--1802
+Overfull \hbox (20.89226pt too wide) in paragraph at lines 1799--1800
 []\T1/ppl/m/n/12 (-10) the in-verse pro-perty of \T1/fvm/m/sc/12 qualifiedDatas
 etRelation
  []
 
-<images/ClassDatasetRelationship.png, id=249, 515.9275pt x 201.75375pt>
+<images/ClassDatasetRelationship.png, id=247, 515.9275pt x 201.75375pt>
 File: images/ClassDatasetRelationship.png Graphic file (type png)
 
 <use images/ClassDatasetRelationship.png>
 Package pdftex.def Info: images/ClassDatasetRelationship.png used on input line
- 1807.
+ 1805.
 (pdftex.def)             Requested size: 284.52756pt x 111.26659pt.
-Package cleveref Info: loaded `english' language definitions on input line 1815
+Package cleveref Info: loaded `english' language definitions on input line 1813
 .
- [63 <./images/ClassDatasetRelationship.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1822--1824
+ [61 <./images/ClassDatasetRelationship.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1822
 
  []
 
 
-LaTeX Warning: Reference `sec:datacite' on page 1 undefined on input line 1834.
+LaTeX Warning: Reference `sec:datacite' on page 1 undefined on input line 1832.
 
 
-<images/ClassIdentifier.png, id=253, 542.025pt x 256.96pt>
+<images/ClassIdentifier.png, id=251, 542.025pt x 256.96pt>
 File: images/ClassIdentifier.png Graphic file (type png)
 
 <use images/ClassIdentifier.png>
-Package pdftex.def Info: images/ClassIdentifier.png used on input line 1838.
+Package pdftex.def Info: images/ClassIdentifier.png used on input line 1836.
 (pdftex.def)             Requested size: 284.52756pt x 134.89034pt.
-Package cleveref Info: loaded `english' language definitions on input line 1845
+Package cleveref Info: loaded `english' language definitions on input line 1843
 .
- [64]
-Package cleveref Info: loaded `english' language definitions on input line 1865
+ [62]
+Package cleveref Info: loaded `english' language definitions on input line 1863
 .
- [65 <./images/ClassIdentifier.png (PNG copy)>] <images/ClassSimpleStatement.pn
-g, id=260, 565.11125pt x 212.795pt>
+ [63 <./images/ClassIdentifier.png (PNG copy)>] <images/ClassSimpleStatement.pn
+g, id=258, 565.11125pt x 212.795pt>
 File: images/ClassSimpleStatement.png Graphic file (type png)
 
 <use images/ClassSimpleStatement.png>
-Package pdftex.def Info: images/ClassSimpleStatement.png used on input line 187
-0.
+Package pdftex.def Info: images/ClassSimpleStatement.png used on input line 186
+8.
 (pdftex.def)             Requested size: 284.52756pt x 107.14078pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1880--1882
+Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
 
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1891
+Package cleveref Info: loaded `english' language definitions on input line 1889
 .
-[66 <./images/ClassSimpleStatement.png (PNG copy)>]
-Underfull \hbox (badness 5652) in paragraph at lines 1900--1901
+[64 <./images/ClassSimpleStatement.png (PNG copy)>]
+Underfull \hbox (badness 5652) in paragraph at lines 1898--1899
 \T1/ppl/m/n/12 (+10) any pro-perty path com-bi-ned of \T1/fvm/m/sc/12 foaf:prim
 aryTopic\T1/ppl/m/n/12 (+10) , \T1/fvm/m/sc/12 void:subset \T1/ppl/m/n/12 (+10)
  and
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 1935
+Package cleveref Info: loaded `english' language definitions on input line 1933
 .
-[67] <images/AuthorizationExample.png, id=271, 641.39626pt x 472.76625pt>
+[65] <images/AuthorizationExample.png, id=269, 641.39626pt x 472.76625pt>
 File: images/AuthorizationExample.png Graphic file (type png)
 
 <use images/AuthorizationExample.png>
 Package pdftex.def Info: images/AuthorizationExample.png used on input line 196
-3.
+1.
 (pdftex.def)             Requested size: 341.43306pt x 251.66862pt.
-Package cleveref Info: loaded `english' language definitions on input line 1969
+Package cleveref Info: loaded `english' language definitions on input line 1967
 .
- [68 <./images/AuthorizationExample.png (PNG copy)>] <images/AuthorizationExamp
-le2.png, id=275, 542.025pt x 514.92375pt>
+ [66 <./images/AuthorizationExample.png (PNG copy)>] <images/AuthorizationExamp
+le2.png, id=273, 542.025pt x 514.92375pt>
 File: images/AuthorizationExample2.png Graphic file (type png)
 
 <use images/AuthorizationExample2.png>
 Package pdftex.def Info: images/AuthorizationExample2.png used on input line 19
-74.
+72.
 (pdftex.def)             Requested size: 284.52756pt x 270.30759pt.
-Package cleveref Info: loaded `english' language definitions on input line 1981
+Package cleveref Info: loaded `english' language definitions on input line 1979
 .
- [69 <./images/AuthorizationExample2.png (PNG copy)>]
-<images/AuthorizationExample5.png, id=279, 881.2925pt x 515.9275pt>
+ [67 <./images/AuthorizationExample2.png (PNG copy)>]
+<images/AuthorizationExample5.png, id=277, 881.2925pt x 515.9275pt>
 File: images/AuthorizationExample5.png Graphic file (type png)
 
 <use images/AuthorizationExample5.png>
 Package pdftex.def Info: images/AuthorizationExample5.png used on input line 19
-85.
+83.
 (pdftex.def)             Requested size: 416.12161pt x 243.60384pt.
 
-<images/DmsExample.png, id=280, 859.21pt x 556.0775pt>
+<images/DmsExample.png, id=278, 859.21pt x 556.0775pt>
 File: images/DmsExample.png Graphic file (type png)
 
 <use images/DmsExample.png>
-Package pdftex.def Info: images/DmsExample.png used on input line 1996.
+Package pdftex.def Info: images/DmsExample.png used on input line 1994.
 (pdftex.def)             Requested size: 416.12161pt x 269.31543pt.
-Package cleveref Info: loaded `english' language definitions on input line 2002
+Package cleveref Info: loaded `english' language definitions on input line 2000
 .
- [70 <./images/AuthorizationExample5.png (PNG copy)>]
-Package cleveref Info: loaded `english' language definitions on input line 2003
+ [68 <./images/AuthorizationExample5.png (PNG copy)>]
+Package cleveref Info: loaded `english' language definitions on input line 2001
 .
- [71 <./images/DmsExample.png (PNG copy)>] [72
+ [69 <./images/DmsExample.png (PNG copy)>] [70
 
 ]
 chapter 6.
 
-Overfull \hbox (181.67355pt too wide) in paragraph at lines 2008--2008
-[][]$\T1/fvm/m/n/8 http : / / www . dummies . com / education / science / quant
-um-[]physics / how-[]to-[]use-[]the-[]heisenberg-[]uncertainty-[]principle-[]in
--[]relation-[]to-[]position-[]and-[]momentum/$| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2015
+Underfull \hbox (badness 10000) in paragraph at lines 2012--2013
 []\T1/ppl/m/n/12 (+10) "[...]
  []
 
-<images/lod2lifecycle.png, id=290, 722.7pt x 542.025pt>
+<images/lod2lifecycle.png, id=288, 722.7pt x 542.025pt>
 File: images/lod2lifecycle.png Graphic file (type png)
 
 <use images/lod2lifecycle.png>
-Package pdftex.def Info: images/lod2lifecycle.png used on input line 2028.
+Package pdftex.def Info: images/lod2lifecycle.png used on input line 2026.
 (pdftex.def)             Requested size: 341.43306pt x 256.07507pt.
- [73]
-<images/Villazon-terrazas.png, id=295, 1052.93375pt x 630.355pt>
+ [71]
+<images/Villazon-terrazas.png, id=293, 1052.93375pt x 630.355pt>
 File: images/Villazon-terrazas.png Graphic file (type png)
 
 <use images/Villazon-terrazas.png>
-Package pdftex.def Info: images/Villazon-terrazas.png used on input line 2038.
+Package pdftex.def Info: images/Villazon-terrazas.png used on input line 2036.
 (pdftex.def)             Requested size: 256.0748pt x 153.29854pt.
-Package cleveref Info: loaded `english' language definitions on input line 2049
+Package cleveref Info: loaded `english' language definitions on input line 2047
 .
- [74 <./images/lod2lifecycle.png> <./images/Villazon-terrazas.png>]
-Overfull \hbox (2.18883pt too wide) in paragraph at lines 2082--2082
+ [72 <./images/lod2lifecycle.png> <./images/Villazon-terrazas.png>]
+Overfull \hbox (2.18883pt too wide) in paragraph at lines 2080--2080
 [][][][]\T1/ppl/m/n/12 (-10) specialised?  
  []
 
 
-Overfull \hbox (2.18883pt too wide) in paragraph at lines 2082--2082
+Overfull \hbox (2.18883pt too wide) in paragraph at lines 2080--2080
 [][][][]\T1/ppl/m/n/12 (-10) specialised?  
  []
 
 
-Overfull \hbox (2.18883pt too wide) in paragraph at lines 2082--2082
+Overfull \hbox (2.18883pt too wide) in paragraph at lines 2080--2080
 [][][][]\T1/ppl/m/n/12 (-10) specialised?  
  []
 
 
-Overfull \hbox (2.18883pt too wide) in paragraph at lines 2082--2082
+Overfull \hbox (2.18883pt too wide) in paragraph at lines 2080--2080
 [][][][]\T1/ppl/m/n/12 (-10) specialised?  
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 2083
+Package cleveref Info: loaded `english' language definitions on input line 2081
 .
-[75]
-Package cleveref Info: loaded `english' language definitions on input line 2157
+[73]
+Package cleveref Info: loaded `english' language definitions on input line 2152
 .
- [76]
-Package cleveref Info: loaded `english' language definitions on input line 2199
+ [74] <images/DataIDonionSliced.png, id=304, 423.83344pt x 292.09125pt>
+File: images/DataIDonionSliced.png Graphic file (type png)
+
+<use images/DataIDonionSliced.png>
+Package pdftex.def Info: images/DataIDonionSliced.png used on input line 2158.
+(pdftex.def)             Requested size: 256.0748pt x 176.48175pt.
+Package cleveref Info: loaded `english' language definitions on input line 2172
+.
+ [75 <./images/DataIDonionSliced.png>]
+Package cleveref Info: loaded `english' language definitions on input line 2200
+.
+
+[76]
+Package cleveref Info: loaded `english' language definitions on input line 2233
 .
  [77]
-Package cleveref Info: loaded `english' language definitions on input line 2244
+Package cleveref Info: loaded `english' language definitions on input line 2265
 .
  [78]
-
-LaTeX Warning: Reference `sec:extract.linking' on page 1 undefined on input lin
-e 2268.
-
-Package cleveref Info: loaded `english' language definitions on input line 2291
+Package cleveref Info: loaded `english' language definitions on input line 2316
 .
-[79]
-Package cleveref Info: loaded `english' language definitions on input line 2295
+ [79]
+Package cleveref Info: loaded `english' language definitions on input line 2362
 .
  [80]
+Package cleveref Info: loaded `english' language definitions on input line 2371
+.
+ [81] [82
+
+]
 chapter 7.
-[81
+[83]
+Underfull \hbox (badness 10000) in paragraph at lines 2401--2401
+[][]$\T1/fvm/m/n/8 https : / / ec . europa . eu / research / participants / dat
+a / ref / h2020 / grants _ manual / hi / oa _ pilot /
+ []
 
-] [82
+Package cleveref Info: loaded `english' language definitions on input line 2406
+.
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 2407--2407
+[][]$\T1/fvm/m/n/8 http : / / www . dfg . de / en / research _ funding / propos
+al _ review _ decision / applicants / submitting _ proposal /
+ []
 
-]
+Package cleveref Info: loaded `english' language definitions on input line 2427
+.
+[85]
+
+LaTeX Warning: Citation 'ReynoldsOrg' on page 86 undefined on input line 2435.
+
+<images/ActivityPlansExt.png, id=341, 1161.33875pt x 731.73375pt>
+File: images/ActivityPlansExt.png Graphic file (type png)
+
+<use images/ActivityPlansExt.png>
+Package pdftex.def Info: images/ActivityPlansExt.png used on input line 2440.
+(pdftex.def)             Requested size: 1161.33592pt x 731.73196pt.
+
+
+LaTeX Warning: Float too large for page by 34.84915pt on input line 2444.
+
+LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <10> not available
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 2445.
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 8.50006pt on input line 2445.
+
+LaTeX Warning: Marginpar on page 86 moved.
+
+Package cleveref Info: loaded `english' language definitions on input line 2446
+.
+[86] [87 <./images/ActivityPlansExt.png (PNG copy)>]
+<images/r3dOntologyReduced.png, id=348, 1089.06876pt x 861.2175pt>
+File: images/r3dOntologyReduced.png Graphic file (type png)
+
+<use images/r3dOntologyReduced.png>
+Package pdftex.def Info: images/r3dOntologyReduced.png used on input line 2454.
+
+(pdftex.def)             Requested size: 1089.0661pt x 861.2154pt.
+Package cleveref Info: loaded `english' language definitions on input line 2471
+.
+ [88] [89 <./images/r3dOntologyReduced.png (PNG copy)>]
+
+LaTeX Warning: Reference `dmprequ' on page 1 undefined on input line 2478.
+
+<images/DmpOntologyExt.png, id=356, 1394.20876pt x 940.51375pt>
+File: images/DmpOntologyExt.png Graphic file (type png)
+
+<use images/DmpOntologyExt.png>
+Package pdftex.def Info: images/DmpOntologyExt.png used on input line 2486.
+(pdftex.def)             Requested size: 1394.20535pt x 940.51146pt.
+
+
+LaTeX Warning: Float too large for page by 11.19528pt on input line 2490.
+
+
+LaTeX Warning: Reference `lessons' on page 1 undefined on input line 2499.
+
+Package cleveref Info: loaded `english' language definitions on input line 2503
+.
+[90] [91 <./images/DmpOntologyExt.png (PNG copy)>]
+
+LaTeX Warning: Reference `requDmp' on page 1 undefined on input line 2509.
+
+Package cleveref Info: loaded `english' language definitions on input line 2519
+.
+[92]
 chapter 8.
-[83] [84
+
+LaTeX Warning: Citation 'BROEDER10.163' on page 93 undefined on input line 2522
+.
+
+
+LaTeX Warning: Citation 'Hinrichs2014' on page 93 undefined on input line 2522.
+
+
+
+LaTeX Warning: Reference `requDmp' on page 1 undefined on input line 2527.
+
+
+LaTeX Warning: Citation 'DW2014' on page 93 undefined on input line 2531.
+
+[93
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 2541--2541
+[]|\T1/ppl/m/n/12 (+10) Supported
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2541--2541
+\T1/ppl/m/n/12 (+10) pro-per-ties of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2541--2542
+[]|\T1/ppl/m/n/12 (+10) Supported da-
+ []
+
+Package cleveref Info: loaded `english' language definitions on input line 2553
+.
+[94]
 chapter 9.
-[85] [86
+[95
+
+] [96
 
 ]
 chapter 10.
-[87] [88
+[97] [98
 
 ]
 chapter without number
-[89] [90
+[99] [100
 
 ]
 chapter without number
-[91] [92
+[101] [102
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2583
 []\T1/ppl/m/n/12 (+10) Mo McRo-berts and Vic-tor Ro-dri-guez Don-cel. \T1/ppl/m
 /it/12 (+10) ODRL Ver-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2583
 \T1/ppl/m/it/12 (+10) sion 2.1 On-to-logy\T1/ppl/m/n/12 (+10) . W3C Com-mu-nity
  Group Spe-ci-fi-ca-tion.
  []
 
-[93]
-Underfull \hbox (badness 4156) in paragraph at lines 2335--2335
+[103]
+Underfull \hbox (badness 4156) in paragraph at lines 2583--2583
 []\T1/ppl/m/n/12 (+10) Markus Lant-ha-ler, Da-vid Wood, and Ri-chard Cy-ga-niak
 . \T1/ppl/m/it/12 (+10) RDF
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2335--2335
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2583
 \T1/ppl/m/it/12 (+10) 1.1 Con-cepts and Ab-stract Syn-tax\T1/ppl/m/n/12 (+10) .
  W3C Re-com-men-da-tion.
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 2335
+Package cleveref Info: loaded `english' language definitions on input line 2583
 .
-[94]
-Package cleveref Info: loaded `english' language definitions on input line 2335
+[104]
+Package cleveref Info: loaded `english' language definitions on input line 2583
 .
- [95]
-Package cleveref Info: loaded `english' language definitions on input line 2335
+ [105]
+Package cleveref Info: loaded `english' language definitions on input line 2583
 .
- [96]
+ [106]
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2583
+[]\T1/ppl/m/it/12 (+10) Shapes Con-straint Lan-guage (SHACL)\T1/ppl/m/n/12 (+10
+) . W3C Wor-king Draft.
+ []
+
 
 Package biblatex Warning: No driver for entry type 'standard'.
-(biblatex)                Using fallback driver on input line 2335.
+(biblatex)                Using fallback driver on input line 2583.
 
 
-Underfull \hbox (badness 3271) in paragraph at lines 2335--2335
+Underfull \hbox (badness 3271) in paragraph at lines 2583--2583
 \T1/ppl/m/n/12 (+10) Terrazas. \T1/ppl/m/it/12 (+10) Best Practi-ces for Pu-bli
 s-hing Lin-ked Data\T1/ppl/m/n/12 (+10) . W3C Note.
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 2335
+Package cleveref Info: loaded `english' language definitions on input line 2583
 .
-[97]
-Package cleveref Info: loaded `english' language definitions on input line 2337
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2583
+\T1/ppl/m/it/12 (+10) RDB to RDF Map-ping Lan-guage\T1/ppl/m/n/12 (+10) . W3C R
+e-com-men-da-tion.
+ []
+
+Package cleveref Info: loaded `english' language definitions on input line 2585
 .
- [98]
+[108]
 chapter without number
-[99
+[109
 
 ]
-Package cleveref Info: loaded `english' language definitions on input line 2440
+Package cleveref Info: loaded `english' language definitions on input line 2688
 .
- [100] [101]
-Package cleveref Info: loaded `english' language definitions on input line 2547
+ [110] [111]
+Package cleveref Info: loaded `english' language definitions on input line 2795
 .
- [102] [103]
-Package cleveref Info: loaded `english' language definitions on input line 2652
+ [112] [113]
+Package cleveref Info: loaded `english' language definitions on input line 2900
 .
- [104] [105]
-Package cleveref Info: loaded `english' language definitions on input line 2710
+ [114] [115]
+Package cleveref Info: loaded `english' language definitions on input line 2958
 .
- [106]
+ [116]
 chapter without number
-[107
+[117
 
 ] (thesis.aux
 Package cleveref Info: loaded `english' language definitions on input line 8.
@@ -2890,18 +3025,23 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33186 strings out of 493366
- 614247 string characters out of 3137305
- 1473063 words of memory out of 3000000
- 35861 multiletter control sequences out of 15000+200000
- 97410 words of font info for 238 fonts, out of 3000000 for 9000
+ 33261 strings out of 493366
+ 615849 string characters out of 3137305
+ 1474954 words of memory out of 3000000
+ 35920 multiletter control sequences out of 15000+200000
+ 98750 words of font info for 249 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 73i,12n,79p,8846b,3656s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,12n,79p,8846b,3925s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/
@@ -2915,9 +3055,9 @@ ts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 atino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/up
 lr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pf
 b>
-Output written on thesis.pdf (113 pages, 2708163 bytes).
+Output written on thesis.pdf (125 pages, 3326516 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
+ 485 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 55444 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 55971 words of extra memory for PDF output out of 61914 (max. 10000000)
 

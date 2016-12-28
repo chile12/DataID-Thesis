@@ -66,7 +66,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.5}DataCite Ontology}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}DBpedia}{33}
+\contentsline {subsection}{\numberline {3.2.6}re3data.org}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.7}DBpedia}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}The DataID Ecosystem}{35}
 \defcounter {refsection}{0}\relax 
@@ -74,88 +76,96 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}The multi-layer ontology of DataID}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}The interplay of ontologies}{38}
+\contentsline {chapter}{\numberline {5}DataID core Ontology}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}DataID core Ontology}{41}
+\contentsline {section}{\numberline {5.1}Overview}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Overview}{41}
+\contentsline {section}{\numberline {5.2}Classes}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Classes}{45}
+\contentsline {subsection}{\numberline {5.2.1}DataId}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}DataId}{46}
+\contentsline {subsection}{\numberline {5.2.2}Dataset}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Dataset}{48}
+\contentsline {subsection}{\numberline {5.2.3}Distribution}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Distribution}{52}
+\contentsline {subsection}{\numberline {5.2.4}MediaType}{54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}MediaType}{56}
+\contentsline {subsection}{\numberline {5.2.5}Agent}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Agent}{57}
+\contentsline {subsection}{\numberline {5.2.6}Authorization}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Authorization}{58}
+\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{61}
+\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{63}
+\contentsline {subsection}{\numberline {5.2.9}Identifier}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.9}Identifier}{64}
+\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{65}
+\contentsline {section}{\numberline {5.3}Complex Example on Authorizations}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Complex Example on Authorizations}{67}
+\contentsline {chapter}{\numberline {6}Publishing Data with DataID}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Publishing Data with DataID}{73}
+\contentsline {section}{\numberline {6.1}Best Practices}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Best Practices}{73}
+\contentsline {paragraph}{Workflows}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Workflows}{73}
+\contentsline {paragraph}{Checklists}{73}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Checklists}{75}
+\contentsline {section}{\numberline {6.2}Composing and Publishing DataID based Metadata}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Composing DataID based Metadata}{76}
+\contentsline {paragraph}{Specify use case requirements for metadata}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Specify use case requirements for metadata}{76}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Model a DataID ontology and application profile}{76}
+\contentsline {paragraph}{Model a DataID ontology and application profile}{74}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Generate DataID documents}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Publish DataIDs alongside the datasets}{76}
+\contentsline {paragraph}{Publish DataIDs alongside the datasets}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Exploitation of DataIDs - examples}{76}
+\contentsline {paragraph}{Exploitation of DataIDs}{77}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Checklist for Publishing RDF Data}{76}
+\contentsline {section}{\numberline {6.3}Checklist for Publishing RDF Data}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Documentation}{77}
+\contentsline {paragraph}{Documentation}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Sources}{77}
+\contentsline {paragraph}{Sources}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Ontology \& Mappings}{77}
+\contentsline {paragraph}{Ontology \& Mappings}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Software}{78}
+\contentsline {paragraph}{Software}{79}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extraction \& Dataset Generation}{78}
+\contentsline {paragraph}{Extraction \& Dataset Generation}{79}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Validation}{78}
+\contentsline {paragraph}{Validation}{79}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Enrichment}{79}
+\contentsline {paragraph}{Enrichment}{80}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Linking}{79}
+\contentsline {paragraph}{Linking}{80}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Publishing}{79}
+\contentsline {paragraph}{Publishing}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Application: Data Management Plans}{81}
+\contentsline {chapter}{\numberline {7}Application: Data Management Plans (DMP)}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}DataID and the Component MetaData Infrastructure (CMDI)}{83}
+\contentsline {section}{\numberline {7.1}Specifying requirements of a DMP}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Evaluation}{85}
+\contentsline {section}{\numberline {7.2}Modelling the DataID approach}{86}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{87}
+\contentsline {paragraph}{Activities \& Plans}{86}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Glossar}{89}
+\contentsline {paragraph}{The re3data.org ontology}{88}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Prefix Gloassar}{91}
+\contentsline {section}{\numberline {7.3}Evaluating of the DMP solution}{92}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Appendix I}{99}
+\contentsline {chapter}{\numberline {8}DataID and the Component MetaData Infrastructure (CMDI)}{93}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Erkl\IeC {\"a}rung}{107}
+\contentsline {chapter}{\numberline {9}Evaluation}{95}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{97}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Glossar}{99}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Prefix Gloassar}{101}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Appendix I}{109}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Erkl\IeC {\"a}rung}{117}

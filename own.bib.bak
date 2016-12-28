@@ -30,16 +30,28 @@ annote = {Imported from http://ictlogy.net/bibliography/reports/projects.php?idp
     year = {2015}
 }
 
-@misc{owl2rl,
-  author = {},
-  title = {},
-  howpublished = "\url{https://www.w3.org/TR/owl2-profiles/}"
+@TechReport{owl2rl,
+  author =	"Achille Fokoue and Bernardo Cuenca Grau and Boris
+		 Motik and Zhe Wu and Ian Horrocks",
+  title =	"{OWL} 2 Web Ontology Language Profiles (Second
+		 Edition)",
+  month =	dec,
+  note = 	"https://www.w3.org/TR/2012/REC-owl2-profiles-20121211/#OWL_2_RL",
+  year = 	"2012",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  url={https://www.w3.org/TR/2012/REC-owl2-profiles-20121211/#OWL_2_RL},
+  institution =  "W3C",
 }
 
-@misc{shacl,
-  author = {},
-  title = {},
-  howpublished = "\url{http://w3c.github.io/data-shapes/shacl/}"
+@TechReport{shacl,
+  title =	"Shapes Constraint Language ({SHACL})",
+  month =	aug,
+  note = 	"https://www.w3.org/TR/2016/WD-shacl-20160814/",
+  year = 	"2016",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Working Draft",
+  institution =  "W3C",
 }
 
 @inproceedings{r3dSchema,
@@ -823,7 +835,7 @@ doi = "10.6084/m9.figshare.2075356.v1"
 
 @inproceedings{AuerBDEHILMMNSTW12,
   added-at = {2012-10-29T00:00:00.000+0100},
-  author = {Auer, Sören and Bühmann, Lorenz and Dirschl, Christian and Erling, Orri and Hausenblas, Michael and Isele, Robert and Lehmann, Jens and Martin, Michael and Mendes, Pablo N. and Nuffelen, Bert Van and Stadler, Claus and Tramp, Sebastian and Williams, Hugh},
+  author = {Auer, S{\"o}ren and B{\"u}hmann, Lorenz and Dirschl, Christian and Erling, Orri and Hausenblas, Michael and Isele, Robert and Lehmann, Jens and Martin, Michael and Mendes, Pablo N. and Nuffelen, Bert Van and Stadler, Claus and Tramp, Sebastian and Williams, Hugh},
   biburl = {https://www.bibsonomy.org/bibtex/2559c45a2796ce6f7c15617b760866368/dblp},
   booktitle = {International Semantic Web Conference (2)},
   crossref = {conf/semweb/2012-2},
@@ -853,4 +865,84 @@ doi = "10.6084/m9.figshare.2075356.v1"
     title = {{Methodological Guidelines for Publishing Government Linked Data Linking Government Data}},
     url = {http://dx.doi.org/10.1007/978-1-4614-1767-5\_2},
     year = {2011}
+}
+
+@inproceedings{KnapKMSTV14,
+  added-at = {2016-10-20T00:00:00.000+0200},
+  author = {Knap, Tom\'{a}s and Kukhar, Maria and Mach\'{a}c, Bohuslav and Skoda, Petr and Tomes, Jir\'{\i} and Vojt, J\'{a}n},
+  biburl = {https://www.bibsonomy.org/bibtex/22b48a1c462f3c618ee29a275050691f8/dblp},
+  booktitle = {ESWC (Satellite Events)},
+  crossref = {conf/esws/2014s},
+  ee = {http://dx.doi.org/10.1007/978-3-319-11955-7_52},
+  interhash = {eae22cbcfd72285c75e5281870924373},
+  intrahash = {2b48a1c462f3c618ee29a275050691f8},
+  isbn = {978-3-319-11954-0},
+  keywords = {dblp},
+  pages = {379-383},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  timestamp = {2016-10-21T11:34:13.000+0200},
+  title = {UnifiedViews: An ETL Framework for Sustainable RDF Data Processing.},
+  url = {http://dblp.uni-trier.de/db/conf/esws/eswc2014s.html#KnapKMSTV14},
+  volume = 8798,
+  year = 2014
+}
+
+@inproceedings{rdfunit,
+  acmid = {2577017},
+  added-at = {2016-12-22T13:03:54.000+0100},
+  address = {Republic and Canton of Geneva, Switzerland},
+  author = {Kontokostas, Dimitris and Westphal, Patrick and Auer, S\"{o}ren and Hellmann, Sebastian and Lehmann, Jens and Cornelissen, Roland},
+  biburl = {https://www.bibsonomy.org/bibtex/2c20a805b339de9ea8c0bc54865ba4be6/aksw},
+  booktitle = {Proceedings of the Companion Publication of the 23rd International Conference on World Wide Web Companion},
+  doi = {10.1145/2567948.2577017},
+  isbn = {978-1-4503-2745-9},
+  keywords = {2014 MOLE dllearner group_aksw kontokostas lehmann lod2page rdfunit topic_EvolutionRepair},
+  location = {Seoul, Korea},
+  numpages = {4},
+  pages = {115--118},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  series = {WWW Companion '14},
+  timestamp = {2016-12-22T13:03:54.000+0100},
+  title = {Databugger: A Test-driven Framework for Debugging the Web of Data},
+  url = {http://jens-lehmann.org/files/2014/www_demo_databugger.pdf},
+  year = 2014
+}
+
+@TechReport{r2rml,
+  author =	"Seema Sundara and Richard Cyganiak and Souripriya
+		 Das",
+  title =	"{R2RML}: {RDB} to {RDF} Mapping Language",
+  month =	sep,
+  note = 	"http://www.w3.org/TR/2012/REC-r2rml-20120927/",
+  year = 	"2012",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  institution =  "W3C",
+}
+
+@article{PAMPLE2013,
+    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-Jürgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
+    title =        "{Making Research Data Repositories Visible: The re3data.org Registry}",
+    journal =      "PLoS ONE",
+    volume =       "8(11)",
+    number =       "e78080",
+    year =         "2013"
+}
+
+@inproceedings{r3dSchema,
+  author = {R\"{u}cknagel, Jessika and Vierkant, Paul and Ulrich, Robert and Kloska, Gabriele and Schnepf, Edeltraud },
+  publisher = {GFZ Germans Research Center for Geosciences},
+  title = {Metadata Schema for the Description of Research Data Repositories}
+}
+
+@TechReport{ReynoldsOrg,
+  author =	"Dave Reynolds",
+  title =	"The Organization Ontology",
+  month =	jan,
+  note = 	"http://www.w3.org/TR/2014/REC-vocab-org-20140116/",
+  year = 	"2014",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  institution =  "W3C",
 }
