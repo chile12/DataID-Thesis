@@ -728,12 +728,19 @@ doi = "10.6084/m9.figshare.2075356.v1"
   year = 2006
 }
 
-@online{5starData,
+@article{5starData,
+  added-at = {2012-04-24T14:54:33.000+0200},
   author = {Berners-Lee, Tim},
-  title = {Linked Data},
-  year = 2006,
-  url = {https://www.w3.org/DesignIssues/LinkedData.html},
-  urldate = {2016-12-15}
+  biburl = {http://www.bibsonomy.org/bibtex/2a06df8915f4848f3bb9071106411702f/mgns},
+  interhash = {f4efaf3d90ad029c133e57db9cafa399},
+  intrahash = {a06df8915f4848f3bb9071106411702f},
+  journal = {W3C},
+  keywords = {},
+  number = {09/20},
+  publisher = {ACM Press},
+  timestamp = {2012-04-24T14:54:33.000+0200},
+  title = {Linked Data - Design Issues},
+  year = 2006
 }
 
 @inproceedings{SolankiBFKDB16,
@@ -796,7 +803,6 @@ doi = "10.6084/m9.figshare.2075356.v1"
   Month                    = {August},
   Note                     = {\url{http://xmlns.com/foaf/spec/20140114.html}},
   Type                     = {{Specification}},
-
   Url                      = {http://xmlns.com/foaf/spec/20140114.html}
 }
 
@@ -946,3 +952,237 @@ doi = "10.6084/m9.figshare.2075356.v1"
   type = 	"{W3C} Recommendation",
   institution =  "W3C",
 }
+
+
+@inproceedings{Hinrichs2014,
+author = {Hinrichs, Erhard and Krauwer, Steven},
+booktitle = {Proceedings of LREC 2014},
+publisher = {European Language Resources Association (ELRA)},
+title = {{The CLARIN Research Infrastructure: Resources and Tools for e-Humanities Scholars}},
+year = {2014}
+}
+
+@inproceedings{DW2014,
+author = {Durco, Matej and Windhouwer, Menzo},
+booktitle = {LDL 2014, LREC Workshop},
+keywords = {Linked Open Data,RDF,component metadata},
+title = {{From CLARIN Component Metadata to Linked Open Data}},
+year = {2014}
+}
+	
+@online{alcts,
+  author = {SCommittee on Cataloging: Description \& Access},
+  publisher = {Association for Library Collections \& Technical Services},
+  title = {Task Force on Metadata - Summary Report},
+  year = 1999,
+  url = {https://www.libraries.psu.edu/tas/jca/ccda/tf-meta3.html},
+  urldate = {2016-12-15}
+}
+
+@Book{taylor,
+author = { Taylor, Arlene G. },
+title = { The organization of information},
+isbn = { 1563084988 1563084937 },
+publisher = { Libraries Unlimited Englewood, Colo },
+pages = { xx, 280 p. ; },
+year = { 1999 },
+type = { Book },
+language = { English },
+subjects = { Information science -- United States.; Information science.; Information organization.; Metadata. },
+life-dates = { 1999 -  },
+catalogue-url = { http://nla.gov.au/nla.cat-vn1306978 },
+}
+
+@inproceedings{3dchinauslibraryconference,
+    author = {Lois Mai Chan},
+    booktitle = {Proceedings of The 3rd China-United States Library Conference. 22-25 March. Shanghai, China},
+    title = {Metadata Interoperability: A Study of Methodology},
+    year = {2005}
+}
+
+@article{MetadataPrinciples,
+    author = {Duval, Erik and Hodgins, Wayne and Sutton, S. and Weibel, S. L.},
+    citeulike-article-id = {6608676},
+    citeulike-linkout-0 = {https://lirias.kuleuven.be/handle/123456789/133275},
+    journal = {D-lib Magazine},
+    keywords = {file-import-10-01-31, mypubs},
+    month = apr,
+    number = {4},
+    pages = {1--16},
+    posted-at = {2010-01-31 16:53:41},
+    priority = {2},
+    title = {{Metadata principles and practicalities}},
+    url = {https://lirias.kuleuven.be/handle/123456789/133275},
+    volume = {8},
+    year = {2002}
+}
+
+@TechReport{SimplicityComplexity,
+    author = {Lagoze, Carl},
+    title = {Accommodating Simplicity and Complexity in Metadata:
+Lessons from the Dublin Core Experience},
+    url = {https://ecommons.cornell.edu/bitstream/handle/1813/5792/2000-1801.pdf},
+    year = {2000},
+    publisher = {Cornell University},
+    type = {Technical Report}
+}
+
+@inproceedings{interoperability,
+    author = {Turnitsa, C.},
+    citeulike-article-id = {6172818},
+    keywords = {interoperability},
+    organization = {Proceedings IEEE 2005 Summer Computer Simulation Conference},
+    posted-at = {2009-11-20 10:56:57},
+    priority = {2},
+    publisher = {IEEE CS Press},
+    title = {{Extending the Levels of Conceptual Interoperability Model}},
+    year = {2005}
+}
+
+@article{Haslhofer2010,
+ author = {Haslhofer, Bernhard and Klas, Wolfgang},
+ title = {A Survey of Techniques for Achieving Metadata Interoperability},
+ journal = {ACM Comput. Surv.},
+ issue_date = {February 2010},
+ volume = {42},
+ number = {2},
+ month = mar,
+ year = {2010},
+ issn = {0360-0300},
+ pages = {7:1--7:37},
+ articleno = {7},
+ numpages = {37},
+ url = {http://doi.acm.org/10.1145/1667062.1667064},
+ doi = {10.1145/1667062.1667064},
+ acmid = {1667064},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Metadata standards, interoperability, mapping}
+} 
+
+@inproceedings{Tolk,
+ author = {Tolk, Andreas},
+ title = {What Comes After the Semantic Web - PADS Implications for the Dynamic Web},
+ booktitle = {Proceedings of the 20th Workshop on Principles of Advanced and Distributed Simulation},
+ series = {PADS '06},
+ year = {2006},
+ isbn = {0-7695-2587-3},
+ pages = {55--},
+ url = {http://dx.doi.org/10.1109/PADS.2006.39},
+ doi = {10.1109/PADS.2006.39},
+ acmid = {1136857},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA}
+} 
+
+@inproceedings{Feeney16,
+  author    = {Kevin Feeney},
+  title     = {The Dacura Data Curation System},
+  booktitle = {Computational History and Data-Driven Humanities - Second {IFIP} 12.7 International Workshop, {CHDDH} 2016, Dublin, Ireland, May 25, 2016, Revised Selected Papers},
+  pages     = {15--20},
+  year      = {2016},
+  crossref  = {DBLP:conf/chddh/2016},
+  url       = {http://dx.doi.org/10.1007/978-3-319-46224-0_2},
+  doi       = {10.1007/978-3-319-46224-0_2},
+  timestamp = {Wed, 09 Nov 2016 15:24:18 +0100},
+  biburl    = {http://dblp2.uni-trier.de/rec/bib/conf/chddh/Feeney16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@TechReport{xsd,
+  author =	"Henry Thompson and Sandy Gao and David Beech and Noah
+		 Mendelsohn and Murray Maloney and Michael
+		 Sperberg-McQueen",
+  title =	"{W3C} {XML} Schema Definition Language 1.1 ({XSD}) 		 Part 1: Structures",
+  month =	apr,
+  note = 	"http://www.w3.org/TR/2012/REC-xmlschema11-1-20120405/",
+  year = 	"2012",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  institution =  "W3C",
+}
+
+@inproceedings{Palmer,
+  author    = {Kevin Palmer and Pete Richardson},
+  title     = {Learning Object Reusability - Motivation, Production and Use},
+  booktitle = {11th International Conference of the Association for Learning Technology (ALT). University of Exeter, Devon, England, 14-16 September 2004.},
+  year      = {2004}
+}
+
+@online{force11,
+  author = {FORCE11},
+  title = {Guiding Principles for Findable, Accessible, Interoperable and Re-usable Data Publishing version b1.0},
+  year = 2016,
+  url = {https://www.force11.org/fairprinciples},
+  urldate = {2016-12-15}
+}
+
+@article{dbpedia,
+  added-at = {2016-12-22T13:03:57.000+0100},
+  author = {Lehmann, Jens and Isele, Robert and Jakob, Max and Jentzsch, Anja and Kontokostas, Dimitris and Mendes, Pablo N. and Hellmann, Sebastian and Morsey, Mohamed and van Kleef, Patrick and Auer, S{\"o}ren and Bizer, Christian},
+  bdsk-url-1 = {http://jens-lehmann.org/files/2014/swj_dbpedia.pdf},
+  biburl = {https://www.bibsonomy.org/bibtex/2a5edc5b0d8c72ddba61890eac0a5c57b/aksw},
+  interhash = {200216bdff758e6806b60acb04b5eea7},
+  intrahash = {a5edc5b0d8c72ddba61890eac0a5c57b},
+  journal = {Semantic Web Journal},
+  keywords = {2014 MOLE dllearner geoknow group_aksw kontokostas lehmann lod2page topic_Classification},
+  number = 2,
+  pages = {167--195},
+  timestamp = {2016-12-22T13:03:57.000+0100},
+  title = {{DBpedia} - A Large-scale, Multilingual Knowledge Base Extracted from Wikipedia},
+  url = {http://jens-lehmann.org/files/2014/swj_dbpedia.pdf},
+  volume = 6,
+  year = 2015
+}
+
+@article{Gruber,
+ author = {Gruber, Thomas R.},
+ title = {Toward Principles for the Design of Ontologies Used for Knowledge Sharing},
+ journal = {Int. J. Hum.-Comput. Stud.},
+ issue_date = {Nov./Dec. 1995},
+ volume = {43},
+ number = {5-6},
+ month = dec,
+ year = {1995},
+ issn = {1071-5819},
+ pages = {907--928},
+ numpages = {22},
+ url = {http://dx.doi.org/10.1006/ijhc.1995.1081},
+ doi = {10.1006/ijhc.1995.1081},
+ acmid = {219701},
+ publisher = {Academic Press, Inc.},
+ address = {Duluth, MN, USA}
+} 
+
+@book{GomezPerez,
+  author    = {Asunci{\'{o}}n G{\'{o}}mez{-}P{\'{e}}rez and
+               Mariano Fern{\'{a}}ndez{-}L{\'{o}}pez and
+               {\'{O}}scar Corcho},
+  title     = {Ontological Engineering: With Examples from the Areas of Knowledge
+               Management, e-Commerce and the Semantic Web},
+  series    = {Advanced Information and Knowledge Processing},
+  publisher = {Springer},
+  year      = {2004},
+  url       = {http://dx.doi.org/10.1007/b97353},
+  doi       = {10.1007/b97353},
+  isbn      = {978-1-85233-551-9},
+  timestamp = {Tue, 04 Nov 2014 13:04:57 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/series/aikp/Gomez-PerezFC04},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Keet,
+ author = {Keet, C. Maria},
+ title = {The Use of Foundational Ontologies in Ontology Development: An Empirical Assessment},
+ booktitle = {Proceedings of the 8th Extended Semantic Web Conference on The Semantic Web: Research and Applications - Volume Part I},
+ series = {ESWC'11},
+ year = {2011},
+ isbn = {978-3-642-21033-4},
+ location = {Heraklion, Crete, Greece},
+ pages = {321--335},
+ numpages = {15},
+ url = {http://dl.acm.org/citation.cfm?id=2008892.2008920},
+ acmid = {2008920},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+} 
