@@ -40,7 +40,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}Vocabulary of Interlinked Datasets (VoID)}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Comprehensive Kerbal Archive Network (CKAN)}{25}
+\contentsline {subsection}{\numberline {3.1.3}Comprehensive Knowledge Archive Network (CKAN)}{25}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.4}Metashare}{26}
 \defcounter {refsection}{0}\relax 
@@ -52,166 +52,186 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.8}CERIF}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.9}DataID version 1.0.0}{31}
+\contentsline {subsection}{\numberline {3.1.9}Component MetaData Infrastructure (CMDI)}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Secondary Literature}{32}
+\contentsline {subsection}{\numberline {3.1.10}DataID version 1.0.0}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}The Provenance Ontology (PROV-O)}{32}
+\contentsline {section}{\numberline {3.2}Secondary Literature}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Open Digital Rights Language (ODRL)}{34}
+\contentsline {subsection}{\numberline {3.2.1}The Provenance Ontology (PROV-O)}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Lexvo.org}{34}
+\contentsline {subsection}{\numberline {3.2.2}Open Digital Rights Language (ODRL)}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Friend of a Friend vocabulary (FOAF)}{34}
+\contentsline {subsection}{\numberline {3.2.3}Lexvo.org}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}DataCite Ontology}{35}
+\contentsline {subsection}{\numberline {3.2.4}Friend of a Friend vocabulary (FOAF)}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}re3data.org}{36}
+\contentsline {subsection}{\numberline {3.2.5}DataCite Ontology}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}DBpedia}{36}
+\contentsline {subsection}{\numberline {3.2.6}re3data.org}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Extensibility and Interoperability}{37}
+\contentsline {subsection}{\numberline {3.2.7}Data Lifecycle Ontology (DLO)}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Extensibility}{37}
+\contentsline {subsection}{\numberline {3.2.8}The Organization Ontology (ORG)}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Interoperability}{38}
+\contentsline {subsection}{\numberline {3.2.9}DBpedia}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Extensibility vs. Interoperability}{39}
+\contentsline {section}{\numberline {3.3}Extensibility and Interoperability}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}The DataID Ecosystem}{41}
+\contentsline {subsection}{\numberline {3.3.1}Extensibility}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Problem Statement}{41}
+\contentsline {subsection}{\numberline {3.3.2}Interoperability}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}The multi-layer ontology of DataID}{42}
+\contentsline {subsection}{\numberline {3.3.3}Extensibility vs. Interoperability}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}DataID core Ontology}{47}
+\contentsline {chapter}{\numberline {4}The DataID Ecosystem}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Overview}{47}
+\contentsline {section}{\numberline {4.1}Problem Statement}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Classes}{51}
+\contentsline {section}{\numberline {4.2}The multi-layer ontology of DataID}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}DataId}{52}
+\contentsline {section}{\numberline {4.3}DataID Extensions of the Common Layer}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Dataset}{54}
+\contentsline {subsection}{\numberline {4.3.1}Linked Data}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Distribution}{58}
+\contentsline {subsection}{\numberline {4.3.2}Activities \& Plans}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}MediaType}{62}
+\contentsline {subsection}{\numberline {4.3.3}Other DataID ontologies}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Agent}{63}
+\contentsline {section}{\numberline {4.4}The landscaping approach of the DataID Ecosystem}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Authorization}{64}
+\contentsline {chapter}{\numberline {5}DataID core Ontology}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{67}
+\contentsline {section}{\numberline {5.1}Overview}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{69}
+\contentsline {section}{\numberline {5.2}Classes}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.9}Identifier}{70}
+\contentsline {subsection}{\numberline {5.2.1}DataId}{57}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{71}
+\contentsline {subsection}{\numberline {5.2.2}Dataset}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Complex Example on Authorizations}{73}
+\contentsline {subsection}{\numberline {5.2.3}Distribution}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Publishing Datasets with DataID}{79}
+\contentsline {subsection}{\numberline {5.2.4}MediaType}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Best Practices}{79}
+\contentsline {subsection}{\numberline {5.2.5}Agent}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Workflows}{79}
+\contentsline {subsection}{\numberline {5.2.6}Authorization}{69}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Checklists}{81}
+\contentsline {subsection}{\numberline {5.2.7}AuthorizedAction \& AgentRole}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Composing and Publishing DataID based Metadata}{82}
+\contentsline {subsection}{\numberline {5.2.8}DatasetRelationship}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Specify use case requirements for metadata}{82}
+\contentsline {subsection}{\numberline {5.2.9}Identifier}{75}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Model a DataID ontology and application profile}{83}
+\contentsline {subsection}{\numberline {5.2.10}SimpleStatement}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Generate DataID documents}{84}
+\contentsline {section}{\numberline {5.3}Complex Example on Authorizations}{78}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Publish DataIDs alongside the datasets}{85}
+\contentsline {chapter}{\numberline {6}Publishing Datasets with DataID}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Exploitation of DataIDs}{86}
+\contentsline {section}{\numberline {6.1}Best Practices}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Checklist for Publishing RDF Data}{86}
+\contentsline {paragraph}{Workflows}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Documentation}{86}
+\contentsline {paragraph}{Checklists}{85}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Sources}{87}
+\contentsline {section}{\numberline {6.2}Composing and Publishing DataID based Metadata}{86}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Ontology \& Mappings}{87}
+\contentsline {paragraph}{Specify use case requirements for metadata}{86}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Software}{88}
+\contentsline {paragraph}{Model a DataID ontology and application profile}{87}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extraction \& Dataset Generation}{88}
+\contentsline {paragraph}{Generate DataID documents}{88}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Validation}{88}
+\contentsline {paragraph}{Publish DataIDs alongside the datasets}{89}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Enrichment}{89}
+\contentsline {paragraph}{Exploitation of DataIDs}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Linking}{89}
+\contentsline {section}{\numberline {6.3}Checklist for Publishing RDF Data}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Publishing}{90}
+\contentsline {paragraph}{Documentation}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Application: Data Management Plans (DMP)}{91}
+\contentsline {paragraph}{Sources}{91}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Specifying requirements of a DMP}{91}
+\contentsline {paragraph}{Ontology \& Mappings}{91}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Modelling the DataID approach}{94}
+\contentsline {paragraph}{Software}{92}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Activities \& Plans}{94}
+\contentsline {paragraph}{Extraction \& Dataset Generation}{92}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{The re3data.org ontology}{96}
+\contentsline {paragraph}{Validation}{93}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{The DMP use case Extension}{98}
+\contentsline {paragraph}{Enrichment}{93}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Summary}{101}
+\contentsline {paragraph}{Linking}{94}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}The Interoperability of DataID}{103}
+\contentsline {paragraph}{Publishing}{94}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}DCAT Application Profile}{103}
+\contentsline {chapter}{\numberline {7}Application: Data Management Plans (DMP)}{95}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Component MetaData Infrastructure}{105}
+\contentsline {section}{\numberline {7.1}Specifying requirements of a DMP}{95}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Evaluation}{107}
+\contentsline {section}{\numberline {7.2}Modelling the DataID approach}{98}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.1}Publishing DBpedia datasets with DataID metadata}{107}
+\contentsline {paragraph}{Activities \& Plans}{98}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1.1}Data on the Web Best Practices}{107}
+\contentsline {paragraph}{The re3data.org ontology}{100}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1.2}The FAIR Data Principles}{114}
+\contentsline {paragraph}{The DMP use case Extension}{102}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.2}Evaluating DataID as dataset metadata}{116}
+\contentsline {section}{\numberline {7.3}Summary}{105}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2.1}Comparison of DataID core and DCAT}{116}
+\contentsline {chapter}{\numberline {8}The Interoperability of DataID}{107}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2.2}Comparing DataID to a host of vocabularies}{118}
+\contentsline {section}{\numberline {8.1}DCAT Application Profile}{107}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2.3}Implementation of Objectives}{120}
+\contentsline {section}{\numberline {8.2}Component MetaData Infrastructure (CMDI)}{109}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 1.}{120}
+\contentsline {chapter}{\numberline {9}Evaluation}{111}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 2.}{121}
+\contentsline {section}{\numberline {9.1}Publishing DBpedia datasets with DataID metadata}{111}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 3.}{122}
+\contentsline {subsection}{\numberline {9.1.1}Data on the Web Best Practices}{111}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 4.}{122}
+\contentsline {subsection}{\numberline {9.1.2}The FAIR Data Principles}{117}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 5.}{122}
+\contentsline {section}{\numberline {9.2}Evaluating DataID as dataset metadata}{119}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Objective 6.}{123}
+\contentsline {subsection}{\numberline {9.2.1}Comparison of DataID core and DCAT}{119}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2.4}Conformity to the ALIGNED principles}{124}
+\contentsline {subsection}{\numberline {9.2.2}Comparing DataID to a host of vocabularies}{121}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{to be part of a unified software and data engineering process}{124}
+\contentsline {subsection}{\numberline {9.2.3}Implementation of Objectives}{123}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{describing the complete data lifecycle and domain model}{124}
+\contentsline {paragraph}{Objective 1.}{123}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{with an emphasis on quality, productivity and agility}{124}
+\contentsline {paragraph}{Objective 2.}{124}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{125}
+\contentsline {paragraph}{Objective 3.}{125}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Glossar}{127}
+\contentsline {paragraph}{Objective 4.}{125}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Appendix I}{137}
+\contentsline {paragraph}{Objective 5.}{125}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Erkl\IeC {\"a}rung}{145}
+\contentsline {paragraph}{Objective 6.}{126}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2.4}Conformity to the ALIGNED principles}{127}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{To be part of a unified software and data engineering process;}{127}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{describing the complete data lifecycle and domain model;}{127}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{with an emphasis on quality, productivity and agility.}{127}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{129}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Glossary}{131}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Appendix I}{141}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{DataID core specification}{141}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Appendix II}{143}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Declaration}{151}

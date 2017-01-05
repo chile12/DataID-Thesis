@@ -10,75 +10,85 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces The KIDS Pyramid \cite {bodendorf2003daten}\relax }}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Data Objects with Different 'levels of FAIRness'\relax }}{16}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Data Objects with different 'levels of FAIRness' \cite {force11}\relax }}{16}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces The basic idea of {\scshape \bfseries dcat}\xspace \relax }}{23}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces The basic idea of {\ttfamily DCAT}\xspace \relax }}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Linchpin of the Provenance Ontology: Entities, Agents, Activities \cite {prov}\relax }}{32}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Linchpin of the Provenance Ontology: Entities, Agents, Activities \cite {prov}\relax }}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces DataCite Identifier and IdentifierScheme\relax }}{35}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces The Metadata Ecosystem of DataID\relax }}{42}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces DataCite Identifier and IdentifierScheme \cite {Peroni2016}\relax }}{36}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Foundations: Combining {\scshape \bfseries dcat}\xspace , {\scshape \bfseries void}\xspace and {\scshape \bfseries prov-o}\xspace \relax }}{48}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Foundations: Using {\scshape \bfseries prov-o}\xspace to qualify properties\relax }}{49}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces {\ttfamily \bfseries DataID core}\xspace \relax }}{50}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces A shallow dataset hierarchy of the Arabic DBpedia language edition.\relax }}{51}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Class DataId\relax }}{53}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Class Dataset\relax }}{54}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Class Distribution\relax }}{59}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Schematic view: A shallow hierarchy of \textbf {\textit {Datasets}}.\relax }}{63}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{64}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{65}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{67}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{69}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.13}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{71}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 5.14}{\ignorespaces Schematic view: A shallow hierarchy of Datasets.\relax }}{72}
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces The Metadata Ecosystem of DataID\relax }}{46}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces The LOD2 Lifecycle of Linked Data \cite {AuerBDEHILMMNSTW12}\relax }}{80}
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Foundations: Combining {\ttfamily DCAT}\xspace , {\ttfamily VoID}\xspace and {\ttfamily PROV-O}\xspace \relax }}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces The Government Linked Data Lifecycle \cite {Terrazas}\relax }}{80}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Foundations: Using {\ttfamily PROV-O}\xspace to qualify properties\relax }}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Example of combining multiple {\ttfamily \bfseries DataID}\xspace ontologies\relax }}{83}
+\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces {\ttfamily DataID core}\xspace \relax }}{54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces A shallow dataset hierarchy of the Arabic DBpedia language edition.\relax }}{56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces The DataId concept\relax }}{57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces The Dataset concept\relax }}{59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces The Distribution concept\relax }}{63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces The MediaType concept.\relax }}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces The Agent concept\relax }}{68}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces The Authorization concept\relax }}{70}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces The AuthorizedAction and AgentRole concepts\relax }}{72}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces The DatasetRelationship and DatasetRelationRole concept\relax }}{74}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.13}{\ignorespaces The Identifier concept\relax }}{75}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.14}{\ignorespaces The SimpleStatement concept\relax }}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.15}{\ignorespaces Inferences of {{\texttt {dataid:authorizationScope}}}\relax }}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.16}{\ignorespaces Two Agents sharing responsibilities of a Maintainer\relax }}{80}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.17}{\ignorespaces Restricting the influence of Authorizations\relax }}{81}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.18}{\ignorespaces Example: Document Management System\relax }}{82}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Activities \& Plans extension\relax }}{95}
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces The LOD2 Lifecycle of Linked Data \cite {AuerBDEHILMMNSTW12}\relax }}{84}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces re3data.org ontology\relax }}{97}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces The Government Linked Data Lifecycle \cite {Terrazas}\relax }}{84}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces {\scshape \bfseries dmp}\xspace use case\relax }}{99}
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Example of combining multiple {\ttfamily DataID}\xspace ontologies\relax }}{87}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces {\scshape \bfseries dmp}\xspace use case extension\relax }}{100}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Activities \& Plans extension\relax }}{99}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces re3data.org ontology\relax }}{101}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces {\ttfamily DMP}\xspace use case\relax }}{103}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces {\ttfamily DMP}\xspace use case extension\relax }}{104}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 9.1}{\ignorespaces DWBP Evidence\relax }}{113}
+\contentsline {figure}{\numberline {\relax 9.1}{\ignorespaces DWBP Evidence: Number of candidates implementing a given best practice. \cite {dwbpimplrep}\relax }}{116}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 9.2}{\ignorespaces DWBP Implementation Report Summary\relax }}{113}
+\contentsline {figure}{\numberline {\relax 9.2}{\ignorespaces DWBP Implementation Report Summary: Candidates with number of practices implemented.\relax }}{116}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

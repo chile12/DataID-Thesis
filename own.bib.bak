@@ -1,5 +1,5 @@
 @article{ICT4DBibliography2639,
-author = {Beñat Bilbao-Osorio and Soumitra Dutta and Bruno Lanvin},
+author = {Benat Bilbao-Osorio and Soumitra Dutta and Bruno Lanvin},
 title = {Global Information Technology Report 2014. Rewards and Risks of Big Data},
 journal = {},
 year = {2014},
@@ -221,7 +221,7 @@ year = {2010}
 }
 
 @article{PAMPLE2013,
-    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-Jürgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
+    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-J\"{u}rgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
     title =        "{Making Research Data Repositories Visible: The re3data.org Registry}",
     journal =      "PLoS ONE",
     volume =       "8(11)",
@@ -341,7 +341,7 @@ year = {2010}
 }
 
 @article{fair2016,
-    author = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg, IJsbrand J. and Appleton, Gabrielle and Axton, Myles and Baak, Arie and Blomberg, Niklas and Boiten, Jan-Willem and Luiz Bonino da Silva Santos and Bourne, Philip E. and Bouwman, Jildau and Brookes, Anthony J. and Clark, Tim and Crosas, Merc\~{A}¨ and Dillo, Ingrid and Dumon, Olivier and Edmunds, Scott and Evelo, Chris T. and Finkers, Richard and Gonzalez-Beltran, Alejandra and Gray, Alasdair J. G. and Groth, Paul and Goble, Carole and Grethe, Jeffrey S. and Heringa, Jaap and \^{a}€™t Hoen, Peter A. C. and Hooft, Rob and Kuhn, Tobias and Kok, Ruben and Kok, Joost and Lusher, Scott J. and Martone, Maryann E. and Mons, Albert and Packer, Abel L. and Persson, Bengt and Rocca-Serra, Philippe and Roos, Marco and van Schaik, Rene and Sansone, Susanna-Assunta and Schultes, Erik and Sengstag, Thierry and Slater, Ted and Strawn, George and Swertz, Morris A. and Thompson, Mark and van der Lei, Johan and van Mulligen, Erik and Velterop, Jan and Waagmeester, Andra and Wittenburg, Peter and Wolstencroft, Katherine and Zhao, Jun and Mons, Barend},
+    author = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg, IJsbrand J. and Appleton, Gabrielle and Axton, Myles and Baak, Arie and Blomberg, Niklas and Boiten, Jan-Willem and Luiz Bonino da Silva Santos and Bourne, Philip E. and Bouwman, Jildau and Brookes, Anthony J. and Clark, Tim and Dillo, Ingrid and Dumon, Olivier and Edmunds, Scott and Evelo, Chris T. and Finkers, Richard and Gonzalez-Beltran, Alejandra and Gray, Alasdair J. G. and Groth, Paul and Goble, Carole and Grethe, Jeffrey S. and Heringa, Jaap and \^{a}t Hoen, Peter A. C. and Hooft, Rob and Kuhn, Tobias and Kok, Ruben and Kok, Joost and Lusher, Scott J. and Martone, Maryann E. and Mons, Albert and Packer, Abel L. and Persson, Bengt and Rocca-Serra, Philippe and Roos, Marco and van Schaik, Rene and Sansone, Susanna-Assunta and Schultes, Erik and Sengstag, Thierry and Slater, Ted and Strawn, George and Swertz, Morris A. and Thompson, Mark and van der Lei, Johan and van Mulligen, Erik and Velterop, Jan and Waagmeester, Andra and Wittenburg, Peter and Wolstencroft, Katherine and Zhao, Jun and Mons, Barend},
     day = {15},
     doi = {10.1038/sdata.2016.18},
     issn = {2052-4463},
@@ -519,7 +519,8 @@ the actual usage of DCAT in 133 existing Open Data  portals and  report the key 
 @online{dcatap11,
 	author = {DCAT Application profile working group},
   publisher = {The ISA Programme},
-  title = {DCAT-AP v1.1},
+  title = {DCAT Application Profile for data portals in Europe
+Version 1.1},
   year = 2016,
   url = {https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11},
   urldate = {2016-12-15}
@@ -551,7 +552,7 @@ the actual usage of DCAT in 133 existing Open Data  portals and  report the key 
 }
 
 @article{HCLSCP2016,
-  author    = {Dumontier, Michel and Gray, Alasdair JG and Marshall, M Scott and Alexiev, Vladimir and Ansell, Peter and Bader, Gary and Baran, Joachim and Bolleman, Jerven T and Callahan, Alison and Cruz-Toledo, José and Gaudet, Pascale and Gombocz, Erich A and Gonzalez-Beltran, Alejandra N and Groth, Paul and Haendel, Melissa and Ito, Maori and Jupp, Simon and Juty, Nick and Katayama, Toshiaki and Kobayashi, Norio and Krishnaswami, Kalpana and Laibe, Camille and Le Novère, Nicolas and Lin, Simon and Malone, James and Miller, Michael and Mungall, Christopher J and Rietveld, Laurens and Wimalaratne, Sarala M and Yamaguchi, Atsuko},
+  author    = {Dumontier, Michel and Gray, Alasdair JG and Marshall, M Scott and Alexiev, Vladimir and Ansell, Peter and Bader, Gary and Baran, Joachim and Bolleman, Jerven T and Callahan, Alison and Cruz-Toledo, Jose and Gaudet, Pascale and Gombocz, Erich A and Gonzalez-Beltran, Alejandra N and Groth, Paul and Haendel, Melissa and Ito, Maori and Jupp, Simon and Juty, Nick and Katayama, Toshiaki and Kobayashi, Norio and Krishnaswami, Kalpana and Laibe, Camille and Le Novere, Nicolas and Lin, Simon and Malone, James and Miller, Michael and Mungall, Christopher J and Rietveld, Laurens and Wimalaratne, Sarala M and Yamaguchi, Atsuko},
   title     = {The health care and life sciences community profile for dataset descriptions},
   journal   =  {PeerJ},
   year      = {2016},
@@ -648,12 +649,12 @@ doi = "10.6084/m9.figshare.2075356.v1"
 }
 
 @incollection{HPMW07,
-  author = {Ian Horrocks and Peter F.~Patel-Schneider and Deborah L.~McGuinness and Christopher A.~Welty},
+  author = {Ian Horrocks and Peter F. Patel-Schneider and Deborah L. McGuinness and Christopher A. Welty},
   booktitle = {The Description Logic Handbook: Theory, Implementation, and Applications (2nd Edition)},
   chapter = {14},
   date-added = {2007-12-21 12:12:20 +0000},
   date-modified = {2007-12-21 12:20:58 +0000},
-  editor = {Franz Baader and Diego Calvanese and Deborah McGuinness and Daniele Nardi and Peter F.~Patel-Schneider},
+  editor = {Franz Baader and Diego Calvanese and Deborah McGuinness and Daniele Nardi and Peter F. Patel-Schneider},
   publisher = {Cambridge University Press},
   title = {{OWL: a Description Logic Based Ontology Language for the Semantic Web}},
   url = {download/2003/HPMW07.pdf},
@@ -928,7 +929,7 @@ doi = "10.6084/m9.figshare.2075356.v1"
 }
 
 @article{PAMPLE2013,
-    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-Jürgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
+    author = {Pampel, Heinz and Vierkant, Paul and Scholze, Frank and Bertelmann, Roland and Kindling, Maxi and Klump, Jens and Goebelbecker, Hans-J\"{u}rgen and Gundlach Jens and Schirmbacher, Peter and Dierolf, Uwe},
     title =        "{Making Research Data Repositories Visible: The re3data.org Registry}",
     journal =      "PLoS ONE",
     volume =       "8(11)",
@@ -1184,5 +1185,26 @@ Lessons from the Dublin Core Experience},
  url = {http://dl.acm.org/citation.cfm?id=2008892.2008920},
  acmid = {2008920},
  publisher = {Springer-Verlag},
- address = {Berlin, Heidelberg},
+ address = {Berlin, Heidelberg}
 } 
+
+@TechReport{dqv,
+  author      = "Antoine Isaac and Riccardo Albertoni",
+  title       = "Data on the Web Best Practices: Data Quality Vocabulary",
+  month       = dec,
+  note        = "https://www.w3.org/TR/2016/NOTE-vocab-dqv-20161215/",
+  year        = "2016",
+  bibsource   = "http://w2.syronex.com/jmr/w3c-biblio",
+  type        = "{W3C} Note",
+  institution = "W3C"
+}
+
+@TechReport{dwbpimplrep,
+  author      = "Newton Calegari and Caroline Burle and Bernadette Farias Loscio",
+  title       = "DWBP Implementation Report",
+  month       = dec,
+  url        = "https://www.w3.org/2013/dwbp/wiki/BP_Implementation_Report",
+  year        = "2016",
+  type        = "{W3C} Implementation Report",
+  institution = "W3C"
+}
