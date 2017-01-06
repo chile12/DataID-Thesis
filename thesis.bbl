@@ -2303,6 +2303,36 @@
       \field{pages}{393\bibrangedash 400}
       \range{pages}{8}
     \endentry
+    \entry{MoreauProvDM2013}{report}{}
+      \name{author}{2}{}{%
+        {{hash=b9c7dbd9d974324bb1a8c49b21988261}{%
+           family={Moreau},
+           familyi={M\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod}}}%
+        {{hash=34b80dd705e1164aa991c836caea15e9}{%
+           family={Missier},
+           familyi={M\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {W3C}%
+      }
+      \strng{namehash}{1095d9eaaef36d5e8d849af77cf61970}
+      \strng{fullhash}{1095d9eaaef36d5e8d849af77cf61970}
+      \strng{authornamehash}{1095d9eaaef36d5e8d849af77cf61970}
+      \strng{authorfullhash}{1095d9eaaef36d5e8d849af77cf61970}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{http://www.w3.org/TR/2013/REC-prov-dm-20130430/}
+      \field{title}{{PROV}-{DM}: The {PROV} Data Model}
+      \field{type}{{W3C} Recommendation}
+      \field{year}{2013}
+    \endentry
     \entry{MoreauProv2015}{article}{}
       \name{author}{5}{}{%
         {{hash=b9c7dbd9d974324bb1a8c49b21988261}{%
@@ -2361,36 +2391,6 @@
       \verb http://dx.doi.org/10.1016/j.websem.2015.04.001
       \endverb
       \keyw{Design decision,Provenance,Rationale,Requirement,Standardization,prov}
-    \endentry
-    \entry{MoreauProvDM2013}{report}{}
-      \name{author}{2}{}{%
-        {{hash=b9c7dbd9d974324bb1a8c49b21988261}{%
-           family={Moreau},
-           familyi={M\bibinitperiod},
-           given={Luc},
-           giveni={L\bibinitperiod}}}%
-        {{hash=34b80dd705e1164aa991c836caea15e9}{%
-           family={Missier},
-           familyi={M\bibinitperiod},
-           given={Paolo},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {W3C}%
-      }
-      \strng{namehash}{1095d9eaaef36d5e8d849af77cf61970}
-      \strng{fullhash}{1095d9eaaef36d5e8d849af77cf61970}
-      \strng{authornamehash}{1095d9eaaef36d5e8d849af77cf61970}
-      \strng{authorfullhash}{1095d9eaaef36d5e8d849af77cf61970}
-      \field{sortinit}{M}
-      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{4}
-      \field{note}{http://www.w3.org/TR/2013/REC-prov-dm-20130430/}
-      \field{title}{{PROV}-{DM}: The {PROV} Data Model}
-      \field{type}{{W3C} Recommendation}
-      \field{year}{2013}
     \endentry
     \entry{neum-etal-2016w3c}{inproceedings}{}
       \name{author}{3}{}{%
@@ -3077,25 +3077,6 @@
       \verb{url}
       \verb http://dx.doi.org/10.1007/978-1-4614-1767-5%5C_2
       \endverb
-    \endentry
-    \entry{W3CVOCONTO}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=446a1ae6601a5c59360c7d591c3992da}{%
-           family={W3C},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{446a1ae6601a5c59360c7d591c3992da}
-      \strng{fullhash}{446a1ae6601a5c59360c7d591c3992da}
-      \strng{authornamehash}{446a1ae6601a5c59360c7d591c3992da}
-      \strng{authorfullhash}{446a1ae6601a5c59360c7d591c3992da}
-      \field{sortinit}{W}
-      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.w3.org/standards/semanticweb/ontology}}
-      \field{note}{[Online; accessed 01-December-2016]}
-      \field{title}{{VOCABULARIES}}
-      \field{year}{2015}
     \endentry
     \entry{fair2016}{article}{}
       \name{author}{52}{}{%

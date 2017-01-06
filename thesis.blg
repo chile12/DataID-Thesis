@@ -1,33 +1,33 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'thesis.blg'
-[41] biber-MSWIN32:303> INFO - === 
-[72] Biber.pm:359> INFO - Reading 'thesis.bcf'
-[196] Biber.pm:835> INFO - Found 79 citekeys in bib section 0
-[216] Biber.pm:3670> INFO - Processing section 0
-[242] Biber.pm:3840> INFO - Looking for bibtex format file 'own.bib' for section 0
-[254] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[275] bibtex.pm:1292> INFO - Found BibTeX data source 'own.bib'
-[280] Utils.pm:164> WARN - Duplicate entry key: 'dataID2014' in file 'own.bib', skipping ...
-[286] Utils.pm:164> WARN - Duplicate entry key: 'PAMPLE2013' in file 'own.bib', skipping ...
-[286] Utils.pm:164> WARN - Duplicate entry key: 'r3dSchema' in file 'own.bib', skipping ...
-[286] Utils.pm:164> WARN - Duplicate entry key: 'Hinrichs2014' in file 'own.bib', skipping ...
-[287] Utils.pm:164> WARN - Duplicate entry key: 'DW2014' in file 'own.bib', skipping ...
-[302] Utils.pm:164> WARN - month field 'December' in entry 'dwbpW3C2016' is not an integer - this will probably not sort properly.
-[369] Utils.pm:164> WARN - month field 'March' in entry 'elmasri06db' is not an integer - this will probably not sort properly.
-[373] Utils.pm:164> WARN - month field 'July, October' in entry 'shannon48' is not an integer - this will probably not sort properly.
-[450] Utils.pm:164> WARN - month field 'August' in entry 'Lexvo2015DeMelo' is not an integer - this will probably not sort properly.
-[452] Utils.pm:164> WARN - month field 'August' in entry 'Brickley-2014' is not an integer - this will probably not sort properly.
-[474] Utils.pm:164> WARN - ISBN '1563084988 1563084937' in entry 'taylor' is invalid - run biber with '--validate_datamodel' for details.
-[512] Utils.pm:164> WARN - BibTeX subsystem: C:\Users\Chile\AppData\Local\Temp\Z655Rd2sZ9\own.bib_19932.utf8, line 515, warning: undefined macro "WS"
-[517] Utils.pm:164> WARN - I didn't find a database entry for crossref 'DBLP:conf/semweb/2016-2' in entry 'SolankiBFKDB16' - ignoring (section 0)
-[517] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/egov/2010ifip' in entry 'MaaliCP10' - ignoring (section 0)
-[517] Utils.pm:164> WARN - I didn't find a database entry for crossref 'DBLP:conf/chddh/2016' in entry 'Feeney16' - ignoring (section 0)
-[517] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/semweb/2012-2' in entry 'AuerBDEHILMMNSTW12' - ignoring (section 0)
-[517] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/esws/2014s' in entry 'KnapKMSTV14' - ignoring (section 0)
-[624] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[624] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[624] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[624] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
-[732] bbl.pm:608> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[753] bbl.pm:712> INFO - Output to thesis.bbl
-[753] Biber.pm:109> INFO - WARNINGS: 17
+[47] biber-MSWIN32:303> INFO - === 
+[81] Biber.pm:359> INFO - Reading 'thesis.bcf'
+[218] Biber.pm:835> INFO - Found 78 citekeys in bib section 0
+[240] Biber.pm:3670> INFO - Processing section 0
+[265] Biber.pm:3840> INFO - Looking for bibtex format file 'own.bib' for section 0
+[277] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[296] bibtex.pm:1292> INFO - Found BibTeX data source 'own.bib'
+[302] Utils.pm:164> WARN - Duplicate entry key: 'dataID2014' in file 'own.bib', skipping ...
+[311] Utils.pm:164> WARN - Duplicate entry key: 'PAMPLE2013' in file 'own.bib', skipping ...
+[312] Utils.pm:164> WARN - Duplicate entry key: 'r3dSchema' in file 'own.bib', skipping ...
+[312] Utils.pm:164> WARN - Duplicate entry key: 'Hinrichs2014' in file 'own.bib', skipping ...
+[313] Utils.pm:164> WARN - Duplicate entry key: 'DW2014' in file 'own.bib', skipping ...
+[330] Utils.pm:164> WARN - month field 'December' in entry 'dwbpW3C2016' is not an integer - this will probably not sort properly.
+[391] Utils.pm:164> WARN - month field 'March' in entry 'elmasri06db' is not an integer - this will probably not sort properly.
+[394] Utils.pm:164> WARN - month field 'July, October' in entry 'shannon48' is not an integer - this will probably not sort properly.
+[464] Utils.pm:164> WARN - month field 'August' in entry 'Lexvo2015DeMelo' is not an integer - this will probably not sort properly.
+[465] Utils.pm:164> WARN - month field 'August' in entry 'Brickley-2014' is not an integer - this will probably not sort properly.
+[484] Utils.pm:164> WARN - ISBN '1563084988 1563084937' in entry 'taylor' is invalid - run biber with '--validate_datamodel' for details.
+[527] Utils.pm:164> WARN - BibTeX subsystem: C:\Users\Chile\AppData\Local\Temp\YscCRGMrAS\own.bib_18888.utf8, line 515, warning: undefined macro "WS"
+[532] Utils.pm:164> WARN - I didn't find a database entry for crossref 'DBLP:conf/semweb/2016-2' in entry 'SolankiBFKDB16' - ignoring (section 0)
+[532] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/egov/2010ifip' in entry 'MaaliCP10' - ignoring (section 0)
+[532] Utils.pm:164> WARN - I didn't find a database entry for crossref 'DBLP:conf/chddh/2016' in entry 'Feeney16' - ignoring (section 0)
+[533] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/semweb/2012-2' in entry 'AuerBDEHILMMNSTW12' - ignoring (section 0)
+[533] Utils.pm:164> WARN - I didn't find a database entry for crossref 'conf/esws/2014s' in entry 'KnapKMSTV14' - ignoring (section 0)
+[631] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[631] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[631] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[631] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[744] bbl.pm:608> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[765] bbl.pm:712> INFO - Output to thesis.bbl
+[766] Biber.pm:109> INFO - WARNINGS: 17

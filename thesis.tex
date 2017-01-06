@@ -48,6 +48,7 @@
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{rotating}
+\usepackage{titlecaps}
 \usepackage{enumerate}
 \usepackage{cleveref}
 \usepackage{xspace}
@@ -116,7 +117,7 @@ language=english
 \newcommand{\redata}{{\ttfamily  re3data}\xspace}
 
 \newcommand{\prop}[1]{{{\texttt{#1}}}}
-\newcommand{\keyword}[1]{\textsf{\textbf{#1}}}
+\newcommand{\keyword}[1]{\textrm{\titlecap{#1}}}
 \newcommand{\important}[1]{\textbf{\textit{#1}}}
 
 \newcommand\footnoteurl[1]{\footnote{\scriptsize\url{#1}}}
@@ -247,9 +248,9 @@ morekeywords={dbp,dct,dc,void,prv,owl,prov,rdf,rdfs,foaf,xml,xsd,dbo,str,sso,scm
 \vspace{3cm}
 {\Large\textbf{\sffamily Master Thesis }}
 
-
+\vspace{1cm}
 \large
-\textbf{DataID}\\ Semantically Rich Metadata for Complex Datasets
+\textbf{\Large DataID}\\ Semantically Rich Metadata for Complex Datasets
 \vspace{1cm}
 \end{center}
 
@@ -291,11 +292,9 @@ I would like to thank my supervisors Sebastian Hellmann and Dimitris Konokostas 
 \cleardoublepage{}
 \tableofcontents{}
 
-%\sloppy{}
-\listoffigures
-%\fussy{}
-
 \newpage
+\thispagestyle{empty}
+\cleardoublepage{}
 \thispagestyle{empty}
 
 \section*{Namespaces}
@@ -336,7 +335,7 @@ xsd & \url{ http://www.w3.org/2001/XMLSchema#}\\
  \label{tab:namespaces}
 \end{table}
 
-\newpage\thispagestyle{empty}\null
+\cleardoublepage{}
 \frenchspacing
 %\lefthyphenmin=3
 %\righthyphenmin=3
@@ -445,7 +444,6 @@ In the context of ALIGNED, \dataid is part of a shared model of software and dat
   \caption{ALIGNED Software and Data Engineering Processes}
   \label{fig:aligned}
 \end{figure}
-\todo{add a last sentence?}
 
 \section{Structure}
 \label{sec:structure}
@@ -476,7 +474,7 @@ Chapter 8 provides mappings between \dataid and multiple \cmd profiles of the Co
 
 \section{Data}
 \label{sec:data}
-\important{Data} is an almost intangible term. It is highly ambiguous and touches many fields of interest, stretching from philosophy to digital signal processing. Even in the context of Information Science, \important{Data} has multiple possible definitions. Here are some of them:
+\important{Data} is an almost intangible term. It is highly ambiguous and touches many fields of interest, stretching from philosophy to digital signal processing. Even in the context of Information Science, Data has multiple possible definitions. Here are some of them:
 
 \begin{quote}
 "Data is a symbol set that is quantified and/or qualified." (Prof. Aldo de Albuquerque Barreto, Brazilian Institute for Information in Science
@@ -509,7 +507,7 @@ without context, they are devoid of information."
 (Dr. Quentin L. Burrell, Isle of Man International Business School, Isle of Man \cite{Zins2007})
 \end{quote}
 
-Information and \important{Data} seem to be closely linked and are often used interchangeably, yet they are not the same thing:
+Information and Data seem to be closely linked and are often used interchangeably, yet they are not the same thing:
 
 %Data has become the crude oil of the information age, to the extent where we can no longer speak of ours as an "information society". The call of new, vast, untapped data lakes representing limitless potential value has driven businesses, researchers and governments into an frenzied activities to produce, collect and spy out new data. The "data society" seems to be the appropriate branding of these new surroundings.
 
@@ -528,12 +526,12 @@ arouse information and knowledge in our mind." (Prof. Maria Teresa Biagetti, Uni
 1958 \cite{Zins2007})
 \end{quote}
 
-I will take a broader look at the term \important{Data}, delineating it from the concepts of Information and Knowledge.
+I will take a broader look at the term Data, delineating it from the concepts of Information and Knowledge.
 
 \subsection{Data, Information, Knowledge}
 \label{sec:kids}
 
-\important{Data} is the result of the application of syntactical rules against a set (sequence, string, etc.) of signs or signals, out of which a message between a sender and recipient is constructed \cite{bodendorf2003daten}. Additional schematics might apply, adding structural data. \important{Information} can be gleaned from \important{Data} if one can find meaning in it. The result of this semantic expansion (or interpretation) of \important{Data} can be weighted by its novelty value or exceptionalness in the context of existing \important{Information}, using Shannon's entropy \cite{shannon48}. \important{Data} becomes tokens of perceptions, or more commonly used in Information Science: instances of concepts, capable of changing the understanding of a context for the recipient of the original message. Linking \important{Information} in a context to determine their interrelations and inferring additional \important{Information} under the presumption of an intellectual goal, are the processes (\textit{Pragmatics}) turning \important{Information} into \important{Knowledge}.
+\important{Data} is the result of the application of syntactical rules against a set (sequence, string, etc.) of signs or signals, out of which a message between a sender and recipient is constructed \cite{bodendorf2003daten}. Additional schematics might apply, adding structural data. \important{Information} can be gleaned from Data if one can find meaning in it. The result of this semantic expansion (or interpretation) of Data can be weighted by its novelty value or exceptionalness in the context of existing Information, using Shannon's entropy \cite{shannon48}. Data becomes tokens of perceptions, or more commonly used in Information Science: instances of concepts, capable of changing the understanding of a context for the recipient of the original message. Linking Information in a context to determine their interrelations and inferring additional Information under the presumption of an intellectual goal, are the processes (\textit{Pragmatics}) turning Information into \important{Knowledge}.
 
 \begin{figure}[t]
 \centering
@@ -542,32 +540,32 @@ I will take a broader look at the term \important{Data}, delineating it from the
   \label{fig:kids}
 \end{figure}
 
-The pyramidal structure depicted (\Cref{fig:kids}) is often crowned by an additional field called "Wisdom" \cite{Rowley2007}. Wisdom could be described as a form of evaluated \important{Knowledge} or understanding, as the pinnacle of human endeavour or enlightenment. But in the era of fake news, pathological mistrust and truthiness\footnoteurl{https://en.wikipedia.org/wiki/Truthiness}, this last step does not seem to follow naturally.
+The pyramidal structure depicted (\Cref{fig:kids}) is often crowned by an additional field called "Wisdom" \cite{Rowley2007}. Wisdom could be described as a form of evaluated Knowledge or understanding, as the pinnacle of human endeavour or enlightenment. But in the era of fake news, pathological mistrust and truthiness\footnoteurl{https://en.wikipedia.org/wiki/Truthiness}, this last step does not seem to follow naturally.
 
 Many authors describe this hierarchy or derivations of it. The following common aspects are presented throughout this literature \cite{Rowley2007}: 
 
 \begin{itemize}
-\item the key elements are \important{Data}, \important{Information} and \important{Knowledge},
+\item the key elements are Data, Information and Knowledge,
 \item these key elements are virtually always arranged in the same order, some models offer additional stages, such as wisdom, or enlightenment,
 \item the higher elements in the hierarchy can be explained in terms of the lower elements by identifying an appropriate transformation process,
-\item the implicit challenge is to understand and explain how \important{Data} is transformed into \important{Information} and information is transformed into \important{Knowledge}.
+\item the implicit challenge is to understand and explain how Data is transformed into Information and information is transformed into Knowledge.
 \end{itemize}
 
 \subsection{Digital Data}
 \label{sec:digital}
 \important{Digital Data} is represented using the binary number system of ones (1) and zeros (0). Typically, these are combined into eight of their kind - named Byte. Bytes are used to identify characters of a given alphabet, which, in turn, provide the building stones for any operation, program or data point (datum).
 
-In general, the term \important{Digital Data} is used to describes a collection of bytes, representing a digital mapping of an analogue counterpart (e.g. sound waves), or characters of an alphabet understood by humans or machines.
+In general, the term Digital Data is used to describes a collection of bytes, representing a digital mapping of an analogue counterpart (e.g. sound waves), or characters of an alphabet understood by humans or machines.
 
-\important{Digital Data} is often categorised in structured and unstructured data. Unstructured data does not follow any predefined model and has to be interpreted by the recipient (reader) by its own merit (usually free text). Structured data is strictly adherent to a given data model, facilitating the interpretation of data by machines and humans alike (e.g. Schema Definition Language - XSD \cite{xsd}). 
+Digital Data is often categorised in structured and unstructured data. Unstructured data does not follow any predefined model and has to be interpreted by the recipient (reader) by its own merit (usually free text). Structured data is strictly adherent to a given data model, facilitating the interpretation of data by machines and humans alike (e.g. Schema Definition Language - XSD \cite{xsd}). 
 %Semi structured data allows for unstructured parts in a structured context (e.g. XML [needs link]).
 
 \subsection{Dataset}
 \label{sec:dataset}
 
-A \important{Dataset}\footnote{or 'data set', though this spelling seems to be replaced more and more} is a bundle of data points, which have at least one common dimension of distinction. For example, a music album of an artist can be viewed as a \important{Dataset}, where a single song represents a unit of data. Multiple songs are collected in an album with the common feature (among others) - the artist. Most commonly a \important{Dataset} corresponds to a collection of structured (digital) data in a single location (e.g. a database table, XML document etc.).
+A \important{Dataset}\footnote{or 'data set', though this spelling seems to be replaced more and more} is a bundle of data points, which have at least one common dimension of distinction. For example, a music album of an artist can be viewed as a Dataset, where a single song represents a unit of data. Multiple songs are collected in an album with the common feature (among others) - the artist. Most commonly a Dataset corresponds to a collection of structured (digital) data in a single location (e.g. a database table, XML document etc.).
 
-\important{Datasets} can manifest in different formats (e.g. in different file types). Therefore, the distinction between \important{Dataset} as a container for collecting data points of similar content or structure, and its final manifestation on a file system (database, service endpoint, etc.) is advisable.
+Datasets can manifest in different formats (e.g. in different file types). Therefore, the distinction between Dataset as a container for collecting data points of similar content or structure, and its final manifestation on a file system (database, service endpoint, etc.) is advisable.
 
 
 \subsection{Metadata}
@@ -585,11 +583,11 @@ is often called data about data or
 information about information." \cite{NISO2004}
 \end{quote}
 
-\important{Metadata} does not contribute additional content to the original message, but it can ease its transmission, processing and understanding.
-The meaning of the term \important{Metadata}, and for what kind of data it applies, is different, depending on context, disciplines and communities.
-For example, library catalogue information about a certain book might be understood as \important{Metadata} in regard to the book itself, while in the context of a Library Management System this type of \important{Metadata} is considered data.
+Metadata does not contribute additional content to the original message, but it can ease its transmission, processing and understanding.
+The meaning of the term Metadata, and for what kind of data it applies, is different, depending on context, disciplines and communities.
+For example, library catalogue information about a certain book might be understood as Metadata in regard to the book itself, while in the context of a Library Management System this type of Metadata is considered data.
 
-Specialised types of \important{Metadata} can be broadly separated into three types \cite{NISO2004}:
+Specialised types of Metadata can be broadly separated into three types \cite{NISO2004}:
 
 \begin{itemize}
 \item \important{Descriptive Metadata} describes a resource for purposes such as discovery and identification. It can include elements such as title, abstract, author, and keywords. 
@@ -601,7 +599,7 @@ Specialised types of \important{Metadata} can be broadly separated into three ty
 \end{itemize}
 \end{itemize}
 
-A \important{Metadata} record conforms to a given schema since the use of unstructured data to qualify a different data resource is an exercise in futility. Various \important{Metadata} schemata or ontologies are available, often describing similar types of data. The most commonly used \important{Metadata} vocabulary is Dublin Core\footnoteurl{http://dublincore.org/documents/dces/} (DC) by the Dublin Core Metadata Initiative (DCMI):
+A Metadata record conforms to a given schema since the use of unstructured data to qualify a different data resource is an exercise in futility. Various Metadata schemata or ontologies are available, often describing similar types of data. The most commonly used Metadata vocabulary is Dublin Core\footnoteurl{http://dublincore.org/documents/dces/} (DC) by the Dublin Core Metadata Initiative (DCMI):
 
 \begin{quote}
 "The original objective of the
@@ -615,7 +613,7 @@ noncatalogers [sic]." \cite{NISO2004}
 \end{quote}
 
 The following example illustrates the use of Dublin Core attributes (e.g. \prop{dc:description}) to describe a publication released as a PDF file:
-
+\\
 \begin{lstlisting}[language=ttl, captionpos=b, caption=Dublin Core example, label=lst:dcex,linewidth=\columnwidth,breaklines=true]
 dc:title="Metadata Demystified"
 dc:creator="Brand, Amy"
@@ -636,41 +634,41 @@ All Dublin Core attributes are optional, repeatable (non-functional) and present
 %Controlled vocabularies\footnote{a set of predefined values, controlled by an institution or a body of experts} are recommended to be used in connection with some fields (such as \prop{dc:subject}).
 Since its introduction in 1995, the initial list of 15 attributes has been revised and extended, forming the so-called DCMI Metadata Terms\footnoteurl{http://dublincore.org/documents/dcmi-terms/} (DCT). The very general character of this vocabulary provides a useful foundation for more complex schemata reusing DC (e.g. the Data Catalog Vocabulary).
 
-\important{Metadata} can describe any resource in any state or aggregation (single resource, collections, a part of a resource), at any abstraction level of a domain model.
+Metadata can describe any resource in any state or aggregation (single resource, collections, a part of a resource), at any abstraction level of a domain model.
 The International Federation of Library Associations and Institutions\footnoteurl{http://www.ifla.org} (IFLA) defined the "Functional Requirements for Bibliographic Records" \cite{IFLA-Functional-1998}, a conceptual model for retrieval and access in online library catalogues and bibliographic databases: \textbf{Item} is an example of a \textbf{Manifestation}, which embodies an \textbf{Expression}, realising a \textbf{Work} of an author.
 
-"For example, a \important{Metadata} record could describe a report, a particular edition of the report, or a specific copy of that edition of the report." \cite{NISO2004}
+"For example, a metadata record could describe a report, a particular edition of the report, or a specific copy of that edition of the report." \cite{NISO2004}
 
-\important{Metadata} can be embedded in the described digital object, alongside the object (e.g. in the same directory) or stored separately. HTML documents often keep \important{Metadata} in the HTML header or completely emerged in the document (cf. RDFa \cite{McCarronRDFaW3C2015}). While a close coupling between data and \important{Metadata} is useful when updating them together, a separate approach often simplifies the management of large numbers of records.
+Metadata can be embedded in the described digital object, alongside the object (e.g. in the same directory) or stored separately. HTML documents often keep \important{Metadata} in the HTML header or completely emerged in the document (cf. RDFa \cite{McCarronRDFaW3C2015}). While a close coupling between data and Metadata is useful when updating them together, a separate approach often simplifies the management of large numbers of records.
 
-The advantages of reliable \important{Metadata} for digital objects are manifold. These are the more noteworthy attributions of \important{Metadata}:
+The advantages of reliable Metadata for digital objects are manifold. These are the more noteworthy attributions of Metadata:
 
 \begin{description}
-\item [Resource Discovery:] \important{Metadata} is the foremost source of information which aids agents (persons, software, etc.) to discover wanted data.
-\item [Organising Electronic Resources:] Entities (e.g. books in a library) are organised in catalogues with the help of their digital \important{Metadata} records.
-\item [Interoperability:] The interoperability of two digital resources can be determined by comparing their \important{Metadata} entries, on a syntactical as well as on a semantic level.
-\item [Digital Identification:] Digital identifiers (such as URIs \Cref{sec:semweb}) are stored with \important{Metadata} records.
+\item [Resource Discovery:] Metadata is the foremost source of information which aids agents (persons, software, etc.) to discover wanted data.
+\item [Organising Electronic Resources:] Entities (e.g. books in a library) are organised in catalogues with the help of their digital Metadata records.
+\item [Interoperability:] The interoperability of two digital resources can be determined by comparing their Metadata entries, on a syntactical as well as on a semantic level.
+\item [Digital Identification:] Digital identifiers (such as URIs \Cref{sec:semweb}) are stored with Metadata records.
 \item [Provenance:] An extensive record on provenance is a key for trustworthiness, detailing facts like source data, responsible agents or origin activities.
-\item [Quality:] The quality of a data source can be enhanced significantly by rich \important{Metadata} records.
+\item [Quality:] The quality of a data source can be enhanced significantly by rich Metadata records.
 \item [Reusability:] Increasing discoverability, interoperability, provenance and quality are instrumental requirements for increasing reusability. 
 \item [Preservation:] "Metadata is key to ensuring that resources will survive and continue to be accessible into the future." \cite{NISO2004}
 \end{description}
 
-In the chain of processes transforming Signals, Data, Information into Knowledge (\Cref{sec:kids}), \important{Metadata} can help with all transformation steps:
+In the chain of processes transforming Signals, Data, Information into Knowledge (\Cref{sec:kids}), Metadata can help with all transformation steps:
 
 \begin{itemize}
 \item To provide information about schemata to which a set of structured data adheres or the syntax description needed to understand the signs transmitted.
 \item To advance the interpretation of data by providing context information (e.g. geographical or temporal).
-\item To point out related (web-) resources to broaden the context of information (e.g. links to similar \important{Datasets} or related website).
+\item To point out related (web-) resources to broaden the context of information (e.g. links to similar Datasets or related website).
 \end{itemize}
 
-Based on the observations of \cite{NISO2004}, as well as the concepts common to all domains of \important{Metadata} (discussed in \cite{MetadataPrinciples}), \important{Good Metadata} follows these principles:
+Based on the observations of \cite{NISO2004}, as well as the concepts common to all domains of Metadata (discussed in \cite{MetadataPrinciples}), \important{Good Metadata} follows these principles:
 
 \begin{description}
-\item[Simplicity] "Key to the simplicity of [a language] is both limited vocabulary and simple structure." \cite{SimplicityComplexity} In the context of \important{Metadata} vocabularies:
+\item[Simplicity] "Key to the simplicity of [a language] is both limited vocabulary and simple structure." \cite{SimplicityComplexity} In the context of metadata vocabularies:
 A few general metadata terms which are applicable to any domain or use case and are understood by anyone.
 \item[Modularity] "It allows designers of metadata schemas to create new assemblies based [...]." \cite{MetadataPrinciples}
-on established \important{Metadata} schemas and benefit from observed best practice.
+on established metadata schemas and benefit from observed best practice.
 \item[Reusability] "Reuse is the extent to which [an object] can operate effectively for a variety of users in a variety of [...] contexts over time to achieve the same or a different objective from that envisaged by its supplier." \cite{Palmer}
 \item[Extensibility] A set of core elements can be extended with further elements to describe the specific data of particular relevance to a community.
 \item[Interoperability] "[...] is the ability of multiple systems with different hardware and software platforms, data structures, and interfaces to exchange data with minimal loss of content and functionality." \cite{NISO2004}
@@ -761,7 +759,7 @@ Additionally, a scale for reflecting the 'FAIRness' of a repository or its conta
 
 I presented the common understanding of how data can herald information and knowledge in \Cref{sec:kids}. I refrained from specifying which step or state might be restricted to humans or machines. None of those restrictions would probably be correct. While I don't want to elaborate on the question of: "Can machines have Knowledge?", I do state that machines can glean information from data. To interpret a message and derive meaning is not limited to the human mind. All that is needed is context and an understanding of the concepts and relations constituting a domain (semantics).
 
-In 2001, Tim Berners-Lee, Hendler, and Lassila laid out their expectation of how the World Wide Web will eventually extend to become a Semantic Web \cite{Semweb1}. The simple extension of web resources with structured, well-defined data (or metadata) would give meaning to resources, previously only decipherable by humans. To identify these data resources uniquely by Universal Resource Identifiers (URI) and provide links to other resources, would be the first steps in the direction towards a "web of data" \cite{Semweb1} that can be processed directly by machines.
+In 2001, Tim Berners-Lee, Hendler, and Lassila laid out their expectation of how the World Wide Web will eventually extend to become a \important{Semantic Web} \cite{Semweb1}. The simple extension of web resources with structured, well-defined data (or metadata) would give meaning to resources, previously only decipherable by humans. To identify these data resources uniquely by Universal Resource Identifiers (URI) and provide links to other resources, would be the first steps in the direction towards a "web of data" \cite{Semweb1} that can be processed directly by machines.
 
 \begin{quote}
 "The Semantic Web is not a separate Web but an extension of the current one, in which information is given well-defined meaning, better enabling
@@ -774,7 +772,7 @@ Tim Berners-Lee is the director of the World Wide Web Consortium\footnoteurl{htt
 \label{sec:rdf}
 
 This foundational technology of the Semantic Web and recommendation of the W3C \cite{RDF11} is used to describe any resource, using URIs as identifiers. Resources are defined by a set of characteristics which are expressed as attributes or relations to other resources. Statements in the form of "subject, predicate, object" (named "triples") are used to convey such characteristics. The resource described is uniquely identified by the URI of the subject. The object corresponds to the content or reference of the statement. Literals (strings) are used to serialise content (or values), URIs of resources provide the target of a reference. The predicate is the semantic link between the subject and the object and defines the meaning of this statement.
-This simple linguistic construct makes RDF data understandable for humans and machines alike:
+This simple linguistic construct makes \important{RDF} data understandable for humans and machines alike:
 
 \begin{lstlisting}[language=ttl, label=lst:triple,linewidth=\columnwidth,breaklines=true]
 <http://dbpedia.org> -> publisher -> "DBpedia Association"
@@ -810,7 +808,7 @@ Sets of properties can be defined and documented by institutions (such as the DC
 \subsection{Web Ontology Language (OWL)}
 \label{sec:owl}
 
-The Web Ontology Language is a W3C standard \cite{OWL2} based on the RDF data model, which could be summarised as an ontology for defining ontologies. 
+The \important{Web Ontology Language} is a W3C standard \cite{OWL2} based on the RDF data model, which could be summarised as an ontology for defining ontologies. 
 According to Gruber,
 \begin{quote}
 "An ontology is an explicit specification of a conceptualization." \cite{Gruber}
@@ -820,14 +818,14 @@ I delineate an ontology as a set of concepts, properties and logical axioms, wit
 
 Concepts are classes under which all objects of a domain can be classified, dividing up the domain in abstract objects. Properties provide meaning for the links to instances of concepts or literal objects (values), which, in turn, lends meaning to the concepts themselves. Additionally, subclass relations and restrictions on properties (e.g. domain and range definitions) help to specify more complex relations of a domain. This semantic layer between the domain knowledge on one side and its representation in RDF on the other is free of restrictions imposed by underlying technologies, distinguishing it from other data models (e.g. database schemata). A wide range of ontologies is available for any domain. Upper ontologies are general use vocabularies (such as Dublin Core \Cref{sec:metadata}) which can be reused together with other ontologies. High reusability is a desirable feature of any ontology.
 OWL is based (with some restrictions) on the RDF Schema (RDFS \cite{RDFS11}), which provides basic elements for the description of ontologies (allowing for class hierarchies and basic relations).
-Multiple profiles are available \cite{OWLPROFILES}, introducing different logical regimes to OWL, such as Description Logic (OWL-DL) or based on Rule Languages (OWL2-RL). Profiles allow for reasoning over RDF data, adhering to ontologies under such regimes. 
+Multiple profiles are available \cite{OWLPROFILES}, introducing different logical regimes to OWL, such as Description Logic (OWL DL) or based on Rule Languages (OWL2 RL). Profiles allow for reasoning over RDF data, adhering to ontologies under such regimes. 
 
-Description Logic is a fragment of first-order predicate logic \cite{Barwise1977} and a formalism for representing knowledge under an \textit{Open World Assumption}. OWL is heavily influenced by Description Logic (projects like DAML+OIL \cite{HPMW07}) to achieve a beneficial trade-off between language expressiveness and computational complexity of reasoning.
+Description Logic is a fragment of first-order predicate logic \cite{Barwise1977} and a formalism for representing knowledge under an \textit{Open World Assumption}\footnote{the veracity of a statement is always assumed as long as it is not known to be false}. OWL is heavily influenced by Description Logic (projects like DAML+OIL \cite{HPMW07}) to achieve a beneficial trade-off between language expressiveness and computational complexity of reasoning.
 
 
 \subsection{Linked Data}
 \label{sec:ld}
-Linked Data is the idea of how data is freed from islands of unconnected data, so it can be reused all over the World Wide Web referencing simply its URIs. Links between data objects from different sources are not bound to restrictions, authorisation procedures, licensing or any technical obstacles, they simply state that: 'There is a data object (published in a well-defined manner - e.g. RDF) which is related and it is identifiable on the Web with this URI.' Machines and humans can follow up these links and explore the 'Web of Data', expanding the contextual information.
+\important{Linked Data} is the idea of how data is freed from islands of unconnected data, so it can be reused all over the World Wide Web referencing simply its URIs. Links between data objects from different sources are not bound to restrictions, authorisation procedures, licensing or any technical obstacles, they simply state that: 'There is a data object (published in a well-defined manner - e.g. RDF) which is related and it is identifiable on the Web with this URI.' Machines and humans can follow up these links and explore the 'Web of Data', expanding the contextual information.
 
 \begin{quote}
 "Technically, Linked Data refers to data published on the Web in such a way that it is
@@ -877,7 +875,7 @@ While this list is helpful for evaluation and comparison purposes, the quality o
 
 \subsection{The Data Catalog Vocabulary (DCAT)}
 \label{sec:dcat}
-In \cite{MaaliCP10} the authors introduce a standardised interchange format for machine-readable representations of government data catalogues. The Data Catalog Vocabulary (\dcat) is a W3C recommendation \cite{ddcat} and serves as a foundation for many available dataset vocabularies and application profiles.
+In \cite{MaaliCP10} the authors introduce a standardised interchange format for machine-readable representations of government data catalogues. The \important{Data Catalog Vocabulary} (\dcat) is a W3C recommendation \cite{ddcat} and serves as a foundation for many available dataset vocabularies and application profiles.
 Vocabulary terms for \dcat are inferred from the survey on seven data catalogues from Europe, US, New Zealand and Australia.
 
 \begin{quote}
@@ -929,7 +927,7 @@ A downside to this approach is the possible unspecificity of resources, especial
 \textbf{The general lack of specificity, inviting non-machine-readable expressions of resources:}
 \begin{itemize}
 \item Insufficient specificity of property ranges (e.g.: \prop{dct:license}, \prop{dct:temporal}, \prop{dct:spatial}, \prop{dct:language}, \prop{dcat:mediaType}), thereby neglecting exactness of relevant metadata resources, such as licenses.
-\item A lack of referential and functional integrity due to missing role-based qualifications of properties (such as \prop{dct:maintainer}) \cite{jefferyCerifW3C2016}.
+\item A lack of referential and functional integrity due to missing qualifications of properties (such as \prop{dct:maintainer}) \cite{jefferyCerifW3C2016}.
 \end{itemize}
 
 While this seems to be an extensive list of shortcomings, most of the points listed above are due to the general approach of \dcat. The list merely indicates that portraying dataset metadata with \dcat alone, might not be sufficient for most domains and use cases.
@@ -951,7 +949,7 @@ In turn, extending \dcat as upper ontology provides a sufficient basis for any m
 \subsection{Vocabulary of Interlinked Datasets (VoID)}
 \label{sec:void}
 
-The Vocabulary of Interlinked Datasets (\void) \cite{Alexander09describinglinked} is widely accepted and used within the Semantic Web community, for instance in projects such as OpenLink Virtuoso\footnoteurl{http://virtuoso.openlinksw.com/} , LODStats\footnoteurl{http://stats.lod2.eu/} , World Bank\footnoteurl{http://worldbank.270a.info/} and others. \void can be used to express general metadata, statistical metadata, structural metadata and links between Linked Data datasets. Tools to create \void metadata are described in \cite{DBLP:BohmLN11} where authors also present techniques of reduction to create descriptions for Web-scale datasets. In the same paper, the importance of \void is well established but there is still a lack of important metadata which is not described, for example for, Licensing and Provenance. For simple datasets, \void performs well, which is supported by the vocabularies wide acceptance amongst many applications in research and industry.
+The \important{Vocabulary of Interlinked Datasets} (\void) \cite{Alexander09describinglinked} is widely accepted and used within the Semantic Web community, for instance in projects such as OpenLink Virtuoso\footnoteurl{http://virtuoso.openlinksw.com/} , LODStats\footnoteurl{http://stats.lod2.eu/} , World Bank\footnoteurl{http://worldbank.270a.info/} and others. \void can be used to express general metadata, statistical metadata, structural metadata and links between Linked Data datasets. Tools to create \void metadata are described in \cite{DBLP:BohmLN11} where authors also present techniques of reduction to create descriptions for Web-scale datasets. In the same paper, the importance of \void is well established but there is still a lack of important metadata which is not described, for example for, Licensing and Provenance. For simple datasets, \void performs well, which is supported by the vocabularies wide acceptance amongst many applications in research and industry.
 However, in a case of complex datasets \void is not expressive enough. In particular, the access metadata property \prop{void:dataDump}, which points to the data files of the particular dataset, is questionable. This property should link directly to dump files as described in W3C Interest Group Note: Describing Linked Datasets with the \void Vocabulary\footnoteurl{http://www.w3.org/TR/void/}. Thus, additional semantic information about the data files and the structure of the dataset can not be expressed using \void. This lack of a distribution concept is depriving the vocabulary of an important level of abstraction. Nevertheless, this ontology is useful especially for Linked Data datasets, offering many useful statistical properties (such as \prop{void:triples}) and the very handy concept of \prop{void:LinkSet} describing the particular relation between datasets, where one holds links to instances of the other.
 
 \begin{table}[!htbp]
@@ -970,7 +968,7 @@ However, in a case of complex datasets \void is not expressive enough. In partic
 \label{sec:ckan}
 
 Metadata models vary, and most of them do not offer enough granularity to describe complex datasets sufficiently in a semantically rich way. 
-For example, \ckan{}\footnoteurl{http://ckan.org/} (Comprehensive Knowledge Archive Network), a data management system used widely in (open) data portals (such as datahub.io\footnoteurl{http://datahub.io/}) to provide web representations for datasets, operates on a JSON-based schema\footnoteurl{https://github.com/KSP-CKAN/CKAN/blob/master/CKAN.schema} developed by the Open Knowledge Foundation\footnoteurl{https://okfn.org}.
+For example, \ckan{}\footnoteurl{http://ckan.org/} (\important{Comprehensive Knowledge Archive Network}), a data management system used widely in (open) data portals (such as datahub.io\footnoteurl{http://datahub.io/}) to provide web representations for datasets, operates on a JSON-based schema\footnoteurl{https://github.com/KSP-CKAN/CKAN/blob/master/CKAN.schema} developed by the Open Knowledge Foundation\footnoteurl{https://okfn.org}.
 \ckan allows simple access to a whole range of functions related to the management of datasets (such as search and faceting of data-sources) accessible via a REST interface.
 Its metadata schema has some similarities with \dcat: Datasets are collected under organisation objects, which are used as s primitive stand in for catalogues. Datasets have 'Resources' which assume a similar role as a distribution in the \dcat vocabulary. 
 
@@ -993,7 +991,7 @@ This data model is semantically poor and inadequate for most applications consum
 
 \subsection{Metashare}
 \label{sec:metashare}
-The \metashare ontology\cite{mccrae_2015_OWLmetashare} is the offspring of a prior, XSD-based \cite{xsd} "metadata schema that allows aspects of [language resources] accounting for their whole lifecycle from their production to their usage to be described"\cite{mccrae_2015_OWLmetashare}.
+The \important{Metashare} ontology\cite{mccrae_2015_OWLmetashare} is the offspring of a prior, XSD-based \cite{xsd} "metadata schema that allows aspects of [language resources] accounting for their whole lifecycle from their production to their usage to be described"\cite{mccrae_2015_OWLmetashare}.
 \metashare differentiates between language resources (basically datasets with a language related purpose - text, audio etc.), technologies (e.g., tools, services) used for their processing and additional entities like reference documents, agents, projects or licenses. This allows for the portrayal of provenance in the domain of Natural Language Processing.
 Also, it offers an exemplary way of describing licenses and terms of reuse\footnoteurl{http://www.cosasbuenas.es/static/ms-rights/}. However, \metashare is highly specialised for language resources, thus lacking generality and extensibility for other use cases. While not implementing the \dcat vocabulary, \metashare does provide an almost complete mapping to \dcat. Mappings to other ontologies might prove difficult, due to the large size of the vocabulary and the often employed (and ample) controlled vocabularies. The related \metashare XSD schema has been implemented in the \metashare web portal\footnoteurl{http://www.meta-share.org}, providing many NLP related datasets for download.
 
@@ -1011,7 +1009,7 @@ Also, it offers an exemplary way of describing licenses and terms of reuse\footn
 
 \subsection{Asset Description Metadata Schema (ADMS)}
 \label{sec:adms}
-The Asset Description Metadata Schema\footnoteurl{https://www.w3.org/TR/vocab-adms/} (\adms) is a profile of \dcat, which is specialised to describe "Semantic Assets".
+The \important{Asset Description Metadata Schema}\footnoteurl{https://www.w3.org/TR/vocab-adms/} (\adms) is a profile of \dcat, which is specialised to describe "Semantic Assets".
 Assets (as subclass of \prop{dcat:Dataset}) are highly reusable metadata (e.g. code lists, XML schemata, taxonomies, vocabularies, etc.) expressing the intellectual content of the data, which is represented (in most cases) in relatively small files. 
 
 \adms adopts the \dcat structure and provides a well-defined way of versioning between entities. Its specialised nature makes it unsuited for a broader approach of portraying datasets (as intended by the authors), but it can still contribute useful properties to \dcat based vocabularies (e.g. \Cref{sec:dcatap}). Since \adms does not impose any restrictions, it can be extended to \dcat without any consequences for \dcat based metadata documents. The evaluation below therefore does not differ from \dcat.
@@ -1031,7 +1029,7 @@ Assets (as subclass of \prop{dcat:Dataset}) are highly reusable metadata (e.g. c
 \subsection{DCAT Application Profile for data portals in Europe (DCAT-AP)}
 \label{sec:dcatap}
 
-The DCAT Application Profile for data portals in Europe\footnoteurl{https://joinup.ec.europa.eu/asset/dcat_application_profile/home} (\dcatap) is a specification based on \dcat (extended with \adms properties) for describing public sector datasets in Europe. It was developed by a working group under the auspices of the European Commission. Its basic use case is "to enable cross-data portal search for datasets and to make public sector data better searchable across borders and sectors" \cite{dcatap11}. This can be achieved by the exchange of descriptions of datasets among data portals.
+The \important{DCAT Application Profile for data portals in Europe}\footnoteurl{https://joinup.ec.europa.eu/asset/dcat_application_profile/home} (\dcatap) is a specification based on \dcat (extended with \adms properties) for describing public sector datasets in Europe. It was developed by a working group under the auspices of the European Commission. Its basic use case is "to enable cross-data portal search for datasets and to make public sector data better searchable across borders and sectors" \cite{dcatap11}. This can be achieved by the exchange of descriptions of datasets among data portals.
 
 Traits of the resulting profile\footnoteurl{https://joinup.ec.europa.eu/catalogue/distribution/dcat-ap-version-11} (version 1.1) released in October 2015 \cite{dekkersDcatApW3C2016}:
 
@@ -1061,7 +1059,7 @@ In general, while some recommendations are in place (e.g. using \odrl license do
 
 \subsection{The HCLS Community Profile}
 \label{sec:hcls}
-The W3C interest group Semantic Web for Health Care and Life Sciences (HCLS)  represents many stakeholders of the Life Sciences, seeking to "develop, advocate for, and support the use of Semantic Web technologies across health care, life sciences, clinical research and translational medicine" \cite{hclsig}. 
+The W3C interest group Semantic Web for Health Care and Life Sciences (HCLS) represents many stakeholders of the Life Sciences, seeking to "develop, advocate for, and support the use of Semantic Web technologies across health care, life sciences, clinical research and translational medicine" \cite{hclsig}. 
 
 Their community profile (an ongoing effort by this W3C interest group\footnoteurl{https://www.w3.org/blog/hcls/}), extends \dcat with versioning and detailed summary statistics, through a three-component model. This model introduces an additional abstraction level between dataset and distribution, the so-called 'Version Level Description', which contains version specific properties (e.g. \prop{dct:isVersionOf}). The profile is structured in multiple modules, dealing with different levels of specificity \cite{HCLSCP2016}:
 
@@ -1097,10 +1095,10 @@ A specific problem is the use of the property \prop{dcat:accessURL}, which, acco
 
 \subsection{CERIF}
 \label{sec:cerif}
-The metadata format \cerif\footnoteurl{http://www.eurocris.org/cerif/main-features-cerif} (Common European Research Information Format) is a metadata development, which began in the early 1990s. The shortcomings of its first approach were addressed by CERIF2000, which became an EU recommendation for its member states for research data. Since 2002 \cerif is further developed by the Current Research Information Systems organisation\footnoteurl{http://www.eurocris.org}.
+The metadata format \cerif\footnoteurl{http://www.eurocris.org/cerif/main-features-cerif} (\important{Common European Research Information Format}) is a metadata development, which began in the early 1990s. The shortcomings of its first approach were addressed by CERIF2000, which became an EU recommendation for its member states for research data. Since 2002 \cerif is further developed by the Current Research Information Systems organisation\footnoteurl{http://www.eurocris.org}.
 
 \cerif provides generalised base concepts and relations between them, based on an entity-relationship approach \cite{CerifJefferyA10}. Relations (or 'linking entities') are qualified with roles, temporal and spatial statements, supplemented with provenance and versioning information.
-In contrast to Dublin Core based metadata standards (i.e. \dcat), \cerif was developed with a particular focus on referential and functional integrity of resources, avoiding ambiguity in interpretation \cite{jefferyCerifW3C2016}. 
+In contrast to Dublin Core based metadata standards (i.e. \dcat), \cerif was developed with a particular focus on referential and functional integrity of properties, avoiding ambiguity in interpretation \cite{jefferyCerifW3C2016}. 
 \cerif provides much more than just metadata for datasets, it addresses metadata needs for the whole science community, describing projects, funding, facilities, organisations and other.
 
 This paper lines out the main characteristics of \cerif metadata \cite{jefferyCerifW3C2016}:,
@@ -1142,7 +1140,7 @@ Furthermore, the ontology proves to be not specific enough when dealing with inf
 \subsection{Component MetaData Infrastructure (CMDI)}
 \label{sec:cmdi}
 
-The Component MetaData Infrastructure is a component-based framework for the creation and utilisation of metadata schemata\cite{BROEDER10.163}. It allows the distributed development of metadata components (defined as sets of related elements) and their combination to profiles in any level of detail, forming the basis for the creation of resource-specific XML Schemata and around one million publicly available metadata files. \cmdi is a flexible metadata framework, which can be applied to resources from any scientific field of interest. It is especially relevant in the context of the European research infrastructure CLARIN\cite{Hinrichs2014} where it is used to describe resources with a focus on the humanities and social sciences.
+The \important{Component MetaData Infrastructure} is a component-based framework for the creation and utilisation of metadata schemata\cite{BROEDER10.163}. It allows the distributed development of metadata components (defined as sets of related elements) and their combination to profiles in any level of detail, forming the basis for the creation of resource-specific XML Schemata and around one million publicly available metadata files. \cmdi is a flexible metadata framework, which can be applied to resources from any scientific field of interest. It is especially relevant in the context of the European research infrastructure CLARIN\cite{Hinrichs2014} where it is used to describe resources with a focus on the humanities and social sciences.
 
 The very flexible and open approach of the \cmdi which allows for its wide applicability, may lead in parts to problems regarding consistency and Interoperability.
 Despite being rich in descriptive metadata, some \cmd profiles lack consistent information of the kind stated in \Cref{sec:dmprequ}. This includes the explicit specification of involved persons, descriptions of authoritative structures as well as technical details and actual download locations.
@@ -1194,7 +1192,7 @@ This section proffers a collection of associated literature, not directly touchi
 \end{quote}
 
 
-The Provenance Ontology\cite{prov} (\prov) is a widely adopted W3C recommended standard and serves as a lightweight way to express the provenance and interactions between activities, agents and entities (e.g. datasets). 
+The \important{Provenance Ontology}\cite{prov} (\prov) is a widely adopted W3C recommended standard and serves as a lightweight way to express the provenance and interactions between activities, agents and entities (e.g. datasets). 
 
 \begin{figure}[!htbp]
 \centering
@@ -1239,7 +1237,7 @@ In this example (from the official specification of \prov \cite{prov}), an assoc
 
 \subsection{Open Digital Rights Language (ODRL)}
 \label{sec:odrl}
-The Open Digital Rights Language (\odrl)\footnoteurl{https://www.w3.org/ns/odrl/2/ODRL21} is an initiative of the W3C community group with the same name\footnoteurl{https://www.w3.org/community/odrl/}, aiming to develop an open standard for policy expressions. 
+The \important{Open Digital Rights Language} (\odrl)\footnoteurl{https://www.w3.org/ns/odrl/2/ODRL21} is an initiative of the W3C community group with the same name\footnoteurl{https://www.w3.org/community/odrl/}, aiming to develop an open standard for policy expressions. 
 The \odrl Version 2.1 core model defines
 licensing policies regarding their permissions
 granted, duties and constraints associated with these
@@ -1249,17 +1247,17 @@ data can be edited, integrated or redistributed.
 
 \subsection{Lexvo.org}
 \label{sec:lexvo}
-Lexvo.org\footnoteurl{http://www.lexvo.org} is a service publishing language related information as Linked Data on the Web. The data published is conform to the Lexvo Ontology, providing unique identifiers for human languages in the context of geography, language families, words and word senses, scripts and characters \cite{Lexvo2015DeMelo}. All in all, the Lexvo dataset consists of over 8000 languages with a broad spectrum of language-related information that is extensively used by many data publishers and communities.
+\important{Lexvo.org}\footnoteurl{http://www.lexvo.org} is a service publishing language related information as Linked Data on the Web. The data published is conform to the Lexvo Ontology, providing unique identifiers for human languages in the context of geography, language families, words and word senses, scripts and characters \cite{Lexvo2015DeMelo}. All in all, the Lexvo dataset consists of over 8000 languages with a broad spectrum of language-related information that is extensively used by many data publishers and communities.
 
 \subsection{Friend of a Friend vocabulary (FOAF)}
 \label{sec:foaf}
-The 'Friend of a Friend' ontology (FOAF), provides a way to create machine-readable resources, portraying agents (such as people, companies, organisations) together with their interests and relationships. FOAF can describe three kind of networks: "social networks of human collaboration, friendship and association; representational networks that describe a simplified view of a cartoon universe in factual terms, and information networks that use Web-based linking to share independently published descriptions of this inter-connected world." \cite{Brickley-2014}
+The \important{Friend of a Friend} ontology (FOAF), provides a way to create machine-readable resources, portraying agents (such as people, companies, organisations) together with their interests and relationships. FOAF can describe three kind of networks: "social networks of human collaboration, friendship and association; representational networks that describe a simplified view of a cartoon universe in factual terms, and information networks that use Web-based linking to share independently published descriptions of this inter-connected world." \cite{Brickley-2014}
 Over time, FOAF has become a fundamental ontology of the Semantic Web, used mostly to describe basic properties of agents in the context of the World Wide Web (e.g. name, e-mail addresses, etc.). This vocabulary for basic structured information on agents is a community driven effort, available in version 0.99.
 
 
 \subsection{DataCite Ontology}
 \label{sec:datacite}
-DataCite is a "global non-profit organisation that provides persistent identifiers (DOIs) for research data [with the goal] to help the research community locate, identify, and cite research data with confidence"\footnoteurl{https://www.datacite.org/mission.html}.
+\important{DataCite} is a "global non-profit organisation that provides persistent identifiers (DOIs) for research data [with the goal] to help the research community locate, identify, and cite research data with confidence"\footnoteurl{https://www.datacite.org/mission.html}.
 
 DataCite published an XML schema for describing and citing research data\footnoteurl{http://schema.datacite.org/meta/kernel-4.0/}, which is elaborate and at times novel approach for providing dataset metadata. Due to its rigid XML structure with many cardinality restrictions, it does not feature in my collection of dataset metadata in this chapter. 
 
@@ -1276,7 +1274,7 @@ Of more interest, is the DataCite ontology which was published as an OWL ontolog
 \subsection{re3data.org}
 \label{sec:re3data}
 
-The re3data\footnoteurl{http://www.re3data.org/} registry currently lists over 1.600 research repositories, making it the largest and most comprehensive registry of data repositories available on the web. By providing a detailed metadata description of repositories, the registry helps researchers, funding bodies, publishers and research organisations to find an appropriate data repository for different purposes\cite{PAMPLE2013}. Initiated by multiple German research organisations, funded by the German Research Foundation\footnoteurl{http://www.dfg.de/} from 2012 until 2015, re3data is now a service of DataCite\footnoteurl{https://www.datacite.org/}. 
+The \important{re3data.org}\footnoteurl{http://www.re3data.org/} registry currently lists over 1.600 research repositories, making it the largest and most comprehensive registry of data repositories available on the web. By providing a detailed metadata description of repositories, the registry helps researchers, funding bodies, publishers and research organisations to find an appropriate data repository for different purposes\cite{PAMPLE2013}. Initiated by multiple German research organisations, funded by the German Research Foundation\footnoteurl{http://www.dfg.de/} from 2012 until 2015, re3data is now a service of DataCite\footnoteurl{https://www.datacite.org/}. 
 In 2014 re3data merged with the DataBib registry for research data repositories into one service\footnoteurl{http://www.re3data.org/tag/databib/}. 
 The re3data project was initiated by the Library and Information Services section (LIS) of the German Research Centre for Geosciences (GFZ), the library of the Karlsruhe Institute of Technology (KIT) and the Berlin School of Library and Information Science (BSLIS) at Humboldt-Universität zu Berlin.
 
@@ -1284,13 +1282,13 @@ One central goal of re3data is to enhance the visibility of existing research da
 
 \subsection{Data Lifecycle Ontology (DLO)}
 \label{sec:dlo}
-The Data Lifecycle Ontology\footnoteurl{https://w3id.org/dlo} provides a set of conceptual entities, agents, activities, and roles to represent the general data engineering process. Furthermore, it is the basis
+The \important{Data Lifecycle Ontology}\footnoteurl{https://w3id.org/dlo} provides a set of conceptual entities, agents, activities, and roles to represent the general data engineering process. Furthermore, it is the basis
 for deriving specific domain ontologies which represent life-cycles of
 data engineering projects such as \dbpedia. With the incorporation of DLO into the \ecosystem, \textit{Activities \& Plans} facilitates a basis for the information exchange needed of combined software and (big) data engineering \cite{SolankiBFKDB16}.
 
 \subsection{The Organization Ontology (ORG)}
 \label{sec:org}
-The Organization Ontology\footnoteurl{https://www.w3.org/TR/vocab-org/} "[...] describes a core ontology for organizational structures, aimed at supporting linked data publishing of organizational information across a number of domains. It is designed to allow domain-specific extensions to add classification of organizations and roles, as well as extensions to support neighbouring information such as organizational activities." \cite{ReynoldsOrg} \org is a W3C recommendation and provides the backdrop of organisational structures to any given domain.
+The \important{Organization Ontology}\footnoteurl{https://www.w3.org/TR/vocab-org/} "[...] describes a core ontology for organizational structures, aimed at supporting linked data publishing of organizational information across a number of domains. It is designed to allow domain-specific extensions to add classification of organizations and roles, as well as extensions to support neighbouring information such as organizational activities." \cite{ReynoldsOrg} \org is a W3C recommendation and provides the backdrop of organisational structures to any given domain.
 
 \subsection{DBpedia}
 \label{sec:dbpedia}
@@ -1305,7 +1303,7 @@ Each release consists of around one hundred datasets for each of its 130 (2016) 
 \section{Extensibility and Interoperability} 
 \label{sec:extensinter}
 
-This section is dedicated to a discussion on Extensibility and Interoperability. Both concepts are of significant import to this thesis and are therefore discussed here in detail. In the context of metadata schemata, both tend to influence the respective other concept eminently.
+This section is dedicated to a discussion on \important{Extensibility} and \important{Interoperability}. Both concepts are of significant import to this thesis and are therefore discussed here in detail. In the context of metadata schemata, both tend to influence the respective other concept eminently.
 
 \subsection{Extensibility}
 \label{sec:extensibility}
@@ -1405,7 +1403,7 @@ I will be explicit and use the terms \dataid document, \dataid graph or \dataid 
 \\\\
 The following naming regime for keywords is adopted:
 
-Keywords such as \important{MediaType} (and their plural form) refer to instances of concepts with the same name, or named individuals in the \dataid ontologies. This is only true for concepts of ontologies from the \ecosystem. When referring to a \important{Dataset}, an instance of \prop{dataid:Dataset} is addressed and not, for example, the concept with the same name in the \dcat vocabulary. There is one exception: Entity refers to an instance of the concept \prop{prov:Entity} (of the \prov ontology). It is generally used in the context of this document to summarise all instances of concepts in the \core ontology which are subclasses of \prop{prov:Entity}: \prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}.
+Keywords such as \keyword{mediaType} (and their plural form) refer to instances of concepts with the same name, or named individuals in the \dataid ontologies. This is only true for concepts of ontologies from the \ecosystem. When referring to a \keyword{Dataset}, an instance of \prop{dataid:Dataset} is addressed and not, for example, the concept with the same name in the \dcat vocabulary. There is one exception: Entity refers to an instance of the concept \prop{prov:Entity} (of the \prov ontology). It is generally used in the context of this document to summarise all instances of concepts in the \core ontology which are subclasses of \prop{prov:Entity}: \prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}.
 
 This measure provides specificity about the subject at hand, without having to define each occurrence anew.
 
@@ -1552,14 +1550,13 @@ describe datasets as complex as DBpedia [...]." \cite{dataID2014}
   \label{fig:foundations}
 \end{figure}
 
-\core is centred around the dataset and distribution concepts which were imported from \dcat. I introduced the class \prop{dataid:DataId} (cf. \Cref{sec:coredataid}), merging both \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription} into one, providing an additional level of abstraction between the conscepts of dataset and catalogue. Instances of this class can be compared to root elements in the XML documents, since all subsequent instances, describing a \important{Dataset}, are hierarchically below a \important{DataId} instance. Though, this comparison is of course misleading, since a graph has no orientation. Nevertheless, most of DataID documents\footnote{a DataID graph serialised as a metadata document} will have structural similarities to XML documents.
+\core is centred around the dataset and distribution concepts which were imported from \dcat. I introduced the class \prop{dataid:DataId} (cf. \Cref{sec:coredataid}), merging both \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription} into one, providing an additional level of abstraction between the conscepts of dataset and catalogue. Instances of this class can be compared to root elements in the XML documents, since all subsequent instances, describing a \keyword{Dataset}, are hierarchically below a \keyword{DataId} instance. Though, this comparison is of course misleading, since a graph has no orientation. Nevertheless, most of DataID documents\footnote{a DataID graph serialised as a metadata document} will have structural similarities to XML documents.
 
 All dataset related classes of \core (\prop{dataid:DataId}, \prop{dataid:Dataset} and \prop{dataid:Distribution}) are sub-classes of \prop{prov:Entity}, which is the interface needed to harness the possibilities of the Provenance Ontology (\prov). In the context of this description of \core, the word 'Entity' is used to refer to instances of \prop{prov:Entity} (ergo: instances of these three classes).
 
-With \prov, describing the circumstance of provenance for any domain is possible (\Cref{sec:prov}). Central to this, is the concept of qualification classes, providing qualifications for more general properties (e.g. for \prop{prov:wasAttributedTo}). Describing the interrelations between \important{Entities} (such as a particular \important{Dataset} or just a single \important{Distribution} of it) and \important{Agents} (e.g. a person or an organisation) are salient requirements in most environments for datasets and their metadata. Thus, \core has singled out these relations to further qualify them and provide much needed referential integrity.
-\todo{explain}
+With \prov, describing the circumstance of provenance for any domain is possible (\Cref{sec:prov}). Central to this, is the concept of qualification classes, providing qualifications for more general properties (e.g. for \prop{prov:wasAttributedTo}). Describing the interrelations between \keyword{Entities} (such as a particular \keyword{Dataset} or just a single \keyword{Distribution} of it) and \keyword{Agents} (e.g. a person or an organisation) are salient requirements in most environments for datasets and their metadata. Thus, \core has singled out these relations to further qualify them and provide referential and functional integrity \cite{jefferyCerifW3C2016}.
 
-For example, the property \prop{dataid:associatedAgent} (which is a sub-property of \prop{prov:wasAttributedTo}) is a universal relation between an \important{Entity} and an \important{Agent}. It can (and should) be qualified by an instance of \prop{dataid:Authorization}, a sub-class of \prop{prov:Attribution}. An \important{Authorization} adds qualifications and restrictions to the original property, such as an agent role (defining the role the \important{Agent} has in regard to the \important{Entities} involved - see \Cref{sec:coreauthorization}). \core allows for assigning Actions to an \important{Authorization}, which specify what an \important{Agent} can do and for which tasks an \important{Agent} is responsible.
+For example, the property \prop{dataid:associatedAgent} (which is a sub-property of \prop{prov:wasAttributedTo}) is a universal relation between an \keyword{Entity} and an \keyword{Agent}. It can (and should) be qualified by an instance of \prop{dataid:Authorization}, a sub-class of \prop{prov:Attribution}. An \keyword{Authorization} adds qualifications and restrictions to the original property, such as an agent role (defining the role the \keyword{Agent} has in regard to the \keyword{Entities} involved - see \Cref{sec:coreauthorization}). \core allows for assigning Actions to an \keyword{Authorization}, which specify what an \keyword{Agent} can do and for which tasks an \keyword{Agent} is responsible.
 
 \begin{figure}[!htbp]
 \centering
@@ -1568,9 +1565,9 @@ For example, the property \prop{dataid:associatedAgent} (which is a sub-property
   \label{fig:foundations}
 \end{figure}
 
-In its current version 2.0.0, \core offers a general approach for describing dataset metadata, incorporating important ontologies to extend \dcat with Provenance, qualifying relations and their intended range classes, hierarchical dataset structures, management of rights and responsibilities of \important{Agents} and exhaustive descriptions for data Access. 
+In its current version 2.0.0, \core offers a general approach for describing dataset metadata, incorporating important ontologies to extend \dcat with Provenance, qualifying relations and their intended range classes, hierarchical dataset structures, management of rights and responsibilities of \keyword{Agents} and exhaustive descriptions for data Access. 
 
-In general, \core forbore the use of cardinality restrictions\footnote{this is the purpose of an application profile, not of an ontology}, making it easier to adhere to the OWL 2 RL (cf. \Cref{sec:owl}) profile and maintaining the benefits of easy Extensibility and Interoperability prevalent with \dcat. In turn, \core restricts some of the very general property ranges of Dublin Core and \dcat properties (such as \prop{dct:license} or \prop{dcat:mediaType}), to reduce impreciseness and increase machine-readability.
+In general, \core forbore the use of cardinality restrictions\footnote{this is the purpose of an application profile, not of an ontology}, making it easier to adhere to the OWL2 RL profile\footnote{with the exception of the five axioms of the \prov ontology pointed out in the \prov specification: \url{https://www.w3.org/TR/prov-o/#owl-profile}} (cf. \Cref{sec:owl}) and maintaining the benefits of easy Extensibility and Interoperability prevalent with \dcat. In turn, \core restricts some of the very general property ranges of Dublin Core and \dcat properties (such as \prop{dct:license} or \prop{dcat:mediaType}), to reduce impreciseness and increase machine-readability.
 
 \core is making use of the following namespace:
 \begin{lstlisting}[language=ttl, label=lst:graph,linewidth=\columnwidth,breaklines=true,basicstyle=\ttfamily\footnotesize]
@@ -1595,7 +1592,7 @@ For a better understanding of the imported concepts and properties, which are re
 \label{sec:coreclasses}
 
 This section is partitioned by concepts to introduce the \core ontology. Each class is presented with an item of written comment about the general reasoning behind its existence and its intended use.
-For illustration purposes, a running example was woven into the descriptions of concepts and properties. This example is a reduced version of an original \dataid document of the Arabic \dbpedia (release: 2015-10\footnoteurl{http://vmdbpedia.informatik.uni-leipzig.de/dataid-w3c-submission/html/2015-10_dataid_ar.ttl}). Under the main \important{Dataset}, only two \important{Sub-Datasets} are shown (as opposed to over 50 in the real world example from which this is drawn). Each Dataset has two distributions for two different RDF serialisations (Turtle '.ttl' and Quad-Turtle '.tql'). One is also represented by the official \dbpedia SPARQL endpoint.
+For illustration purposes, a running example was woven into the descriptions of concepts and properties. This example is a reduced version of an original \dataid document of the Arabic \dbpedia (release: 2015-10\footnoteurl{http://vmdbpedia.informatik.uni-leipzig.de/dataid-w3c-submission/html/2015-10_dataid_ar.ttl}). Under the main \keyword{Dataset}, only two \keyword{Sub-Datasets} are shown (as opposed to over 50 in the real world example from which this is drawn). Each Dataset has two distributions for two different RDF serialisations (Turtle '.ttl' and Quad-Turtle '.tql'). One is also represented by the official \dbpedia SPARQL endpoint.
 This example was chosen to cover many aspects of \core and to provide an easy use case which could arise in a similar fashion outside the \dbpedia domain. The full example is available in \textit{Turtle} serialisation\footnoteurl{https://www.w3.org/TeamSubmission/turtle/} in Appendix II. The basic structure of its \dataid document is outlined below (\Cref{fig:example}).
 
 \begin{figure}[!htbp]
@@ -1619,7 +1616,7 @@ The remainder of this section features each subsection with a summary, stating t
 
 \subsection{DataId} 
 \label{sec:coredataid}
-The class \prop{dataid:DataId} inherits from \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription}, which does not represent a dataset, but metadata about a dataset's entry in a catalogue. Additionally, in the context of \core, it represents metadata about a \dataid document (or the graph serialised in it), such as version pointers, modification dates and relations to contextual \important{Entities} (agents, catalogues, repositories). This \dataid resource is the most abstract \important{Entity} in any \dataid graph. 
+The class \prop{dataid:DataId} inherits from \prop{dcat:CatalogRecord} and \prop{void:DatasetDescription}, which does not represent a dataset, but metadata about a dataset's entry in a catalogue. Additionally, in the context of \core, it represents metadata about a \dataid document (or the graph serialised in it), such as version pointers, modification dates and relations to contextual \keyword{Entities} (agents, catalogues, repositories). This \dataid resource is the most abstract \keyword{Entity} in any \dataid graph. 
 
 \begin{figure}[!htbp]
 \centering
@@ -1631,21 +1628,21 @@ The class \prop{dataid:DataId} inherits from \prop{dcat:CatalogRecord} and \prop
 Properties specifically used with \prop{dataid:DataId}:
 \begin{description}
 \item[\prop{dataid:inCatalog}:] the inverse of \prop{dcat:record} references the \dcat catalogue a \dataid is entered in. \hfill\textbf{(R)}
-\item[\prop{foaf:primaryTopic}:] this functional property is used to point out the \important{Dataset} resource this \dataid represents. \hfill\textbf{(M)}
+\item[\prop{foaf:primaryTopic}:] this functional property is used to point out the \keyword{Dataset} resource this \dataid represents. \hfill\textbf{(M)}
 \end{description}
 
 Additionally, the following list contains properties which can be used with any sub-class of \prop{prov:Entity}, presented only for this concept out of convenience:
 \begin{description}
-\item[\prop{dataid:associatedAgent}:] points out all \important{Agents} which have some (unspecified) influence (or authority) over this \important{Entity}. \hfill\textbf{(O)}
+\item[\prop{dataid:associatedAgent}:] points out all \keyword{Agents} which have some (unspecified) influence (or authority) over this \keyword{Entity}. \hfill\textbf{(O)}
 \item[\prop{dataid:underAuthorization}:] refers to an instance of \prop{dataid:Authorization} which qualifies the generic \prop{dataid:associatedAgent} relation (cf. \Cref{sec:coreauthorization}). \hfill\textbf{(R)}
-\item[\prop{dct:publisher}:] While the \prov based way to declare associated \important{Agents} and their roles in regard to an \important{Entity} is in place, using established properties to point out \important{Agents} (such as \prop{dct:publisher} of \prop{dcat:contactPoint}) is not redundant and should be kept as best practice. \hfill\textbf{(R)}
-\item[\prop{dataid:identifier}:] similar to \important{Agents}, \important{Entities} often have unique identifiers defined for them in a different context (in addition to the URI used in the context of a \dataid document). This property points out additional identifiers (cf. \Cref{sec:coreidentifier}). \hfill\textbf{(O)}
+\item[\prop{dct:publisher}:] While the \prov based way to declare associated \keyword{Agents} and their roles in regard to an \keyword{Entity} is in place, using established properties to point out \keyword{Agents} (such as \prop{dct:publisher} of \prop{dcat:contactPoint}) is not redundant and should be kept as best practice. \hfill\textbf{(R)}
+\item[\prop{dataid:identifier}:] similar to \keyword{Agents}, \keyword{Entities} often have unique identifiers defined for them in a different context (in addition to the URI used in the context of a \dataid document). This property points out additional identifiers (cf. \Cref{sec:coreidentifier}). \hfill\textbf{(O)}
 \item[\prop{dataid:nextVersion}:] is used to identify instances of the same type (in this case \prop{dataid:DataId}), which are next in the chain of different versions of this resource. \hfill\textbf{(O)}
 \item[\prop{dataid:previousVersion}:] points out the previous version of this instance. \hfill\textbf{(R)}
 \item[\prop{dataid:latestVersion}:] points out the latest version of this instance. \hfill\textbf{(R)}
 \end{description}
 
-The example below illustrates the use of this concept. It provides a pertaining dataset catalogue (via \prop{dataid:inCatalog}), uses version pointers to define its position in a branch of a versioning system, points out \important{Agents} and \important{Authorizations}, and the \important{Dataset} this \dataid is about (\prop{foaf:primaryTopic}).
+The example below illustrates the use of this concept. It provides a pertaining dataset catalogue (via \prop{dataid:inCatalog}), uses version pointers to define its position in a branch of a versioning system, points out \keyword{Agents} and \keyword{Authorizations}, and the \keyword{Dataset} this \dataid is about (\prop{foaf:primaryTopic}).
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Instance of a DataId,label=lst:coredataid,linewidth=\columnwidth,breaklines=true]
 <dataid_ar.ttl>
@@ -1673,42 +1670,42 @@ This is the central concept of the \core ontology and offers a multitude of usef
   \label{fig:example}
 \end{figure}
 
-The dataset concept of both the \dcat and \void vocabularies were merged into \prop{dataid:Dataset}, providing useful properties about the content of a \important{Dataset} from both ontologies. In particular, the property \prop{void:subset} allows for the creation of dataset hierarchies, while \prop{dcat:distribution} points out the \important{Distributions} of a \important{Dataset}. The \prop{dataid:Superset} as a subclass of \prop{dataid:Dataset} shall be used to represent multiple \important{Sub-Dataset}, representing dataset collections or hierarchical dataset structures in general. Opposed to a conventional \important{Dataset}, a \important{Superset} is prohibited from possessing \important{Distributions} (referred to with \prop{dcat:distribution}). It is strongly recommended that each \important{Dataset} shall either have at least one \important{Distribution} or one \important{Sub-Dataset}. 
+The dataset concept of both the \dcat and \void vocabularies were merged into \prop{dataid:Dataset}, providing useful properties about the content of a \keyword{Dataset} from both ontologies. In particular, the property \prop{void:subset} allows for the creation of dataset hierarchies, while \prop{dcat:distribution} points out the \keyword{Distributions} of a \keyword{Dataset}. The \prop{dataid:Superset} as a subclass of \prop{dataid:Dataset} shall be used to represent multiple \keyword{Sub-Dataset}, representing dataset collections or hierarchical dataset structures in general. Opposed to a conventional \keyword{Dataset}, a \keyword{Superset} is prohibited from possessing \keyword{Distributions} (referred to with \prop{dcat:distribution}). It is strongly recommended that each \keyword{Dataset} shall either have at least one \keyword{Distribution} or one \keyword{Sub-Dataset}. 
 
-In the running example, the main \important{Dataset} (an instance of \prop{dataid:Superset}), is used as a hierarchical top entity, representing all \important{Sub-Datasets} clustered around a common topic. In the case of \dbpedia, all \important{Datasets} were arranged under a \important{Superset} representing a \dbpedia language edition.
+In the running example, the main \keyword{Dataset} (an instance of \prop{dataid:Superset}), is used as a hierarchical top entity, representing all \keyword{Sub-Datasets} clustered around a common topic. In the case of \dbpedia, all \keyword{Datasets} were arranged under a \keyword{Superset} representing a \dbpedia language edition.
 
 Properties commonly used with instances of this class are:
 \begin{description}
-\item[\prop{dcat:distribution}] provides the \important{Distributions} of a \important{Dataset} and should be used distinct from \prop{void:subset}. \hfill\textbf{(M for non Supersets)}
-\item[\prop{void:subset}] is the property used to reference \important{Sub-Datasets} which are part of a \important{Superset}. Its use is limited to \prop{dataid:Superset}. \hfill\textbf{(M if Superset)}
+\item[\prop{dcat:distribution}] provides the \keyword{Distributions} of a \keyword{Dataset} and should be used distinct from \prop{void:subset}. \hfill\textbf{(M for non Supersets)}
+\item[\prop{void:subset}] is the property used to reference \keyword{Sub-Datasets} which are part of a \keyword{Superset}. Its use is limited to \prop{dataid:Superset}. \hfill\textbf{(M if Superset)}
 \item[\prop{dct:license}] this property is restricted in the context of \dataid to instances of the class \prop{odrl:Policy} (cf. \Cref{sec:odrl})of the \odrl ontology, providing machine-readable licensing information. \hfill\textbf{(M)}
-\item[\prop{dct:language}:] this property from the Dublin Core vocabulary is used to point out the predominant language used within a \important{Dataset}. Since a \prop{rdfs:range} statement is not provided in its original definition, even simple literals could be used with this predicate. \core restricts the range of this property to instances of  \prop{lvont:Language} from the Lexvo ontology (cf. \Cref{sec:lexvo}), describing human languages in a machine readable way. \hfill\textbf{(R)}
-\item[\prop{void:vocabulary}] in the \void vocabulary, this property is used to point out the associated ontology used to create a \important{Dataset}. \core broadens its use so that any schema document (e.g. XSD or database schemata) can be pointed out, depending on the type of data. \hfill\textbf{(R)}
+\item[\prop{dct:language}:] this property from the Dublin Core vocabulary is used to point out the predominant language used within a \keyword{Dataset}. Since a \prop{rdfs:range} statement is not provided in its original definition, even simple literals could be used with this predicate. \core restricts the range of this property to instances of  \prop{lvont:Language} from the Lexvo ontology (cf. \Cref{sec:lexvo}), describing human languages in a machine readable way. \hfill\textbf{(R)}
+\item[\prop{void:vocabulary}] in the \void vocabulary, this property is used to point out the associated ontology used to create a \keyword{Dataset}. \core broadens its use so that any schema document (e.g. XSD or database schemata) can be pointed out, depending on the type of data. \hfill\textbf{(R)}
 \item[\prop{foaf:page}] is commonly used to point out web pages which have the function of a manual or documentation for the resource at hand. \hfill\textbf{(R)}
 \item[\prop{dct:rights}] this property is used to provide a statement or resource about issues like copyrights or legal notes. To avoid unqualifiable literal statements, this property is restricted to be used with \prop{dataid:SimpleStatement} (cf. \Cref{sec:simplestatement}). \hfill\textbf{(O)}
 \item[\prop{foaf:isPrimaryTopicOf}] is the inverse property of \prop{foaf:primaryTopic} (cf. \Cref{sec:coredataid}). \hfill\textbf{(O)}
-\item[\prop{dataid:relatedDataset}:] generic pointer to related \important{Datasets} (sub-property of \prop{dct:relation}), qualifiable by \prop{dataid:qualifiedDatasetRelation}. Refer to \Cref{sec:corerelation} for more. \hfill\textbf{(O)}
+\item[\prop{dataid:relatedDataset}:] generic pointer to related \keyword{Datasets} (sub-property of \prop{dct:relation}), qualifiable by \prop{dataid:qualifiedDatasetRelation}. Refer to \Cref{sec:corerelation} for more. \hfill\textbf{(O)}
 \item[\prop{dataid:qualifiedDatasetRelation}] provides an instance of concept \prop{dataid:DatasetRelationship} which is a qualification class for the generic property \prop{dataid:relatedDataset} (cf. \Cref{sec:corerelation}). \hfill\textbf{(O)}
-\item[\prop{dataid:identifierScheme}:] provides a resource, describing the identifiers used within the \important{Dataset} to uniquely identify a record (data point, datum). Refer to \Cref{sec:coreidentifier} to learn more about \important{Identifiers}. \hfill\textbf{(O)}
-\item[\prop{dcat:keyword}:] a simple keyword or tag associated with this \important{Dataset} \hfill\textbf{(O)}
+\item[\prop{dataid:identifierScheme}:] provides a resource, describing the identifiers used within the \keyword{Dataset} to uniquely identify a record (data point, datum). Refer to \Cref{sec:coreidentifier} to learn more about \keyword{Identifiers}. \hfill\textbf{(O)}
+\item[\prop{dcat:keyword}:] a simple keyword or tag associated with this \keyword{Dataset} \hfill\textbf{(O)}
 \item[\prop{dcat:landingpage}:] references a web page of general character (such as the homepage of an organisation) \hfill\textbf{(O)}
 \end{description}
 
-Multiple properties for textual statements on different aspects of a \important{Dataset} were created. All of which provide \important{Publishers}, \important{Maintainers} and other \important{Agents} a way to convey statements of general character on such subjects as described below. This information will be useful in many scenarios related to dissemination tasks, for example, those described by the Horizon 2020\footnoteurl{https://ec.europa.eu/programmes/horizon2020/} data management plan guidelines\footnoteurl{https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf} (see also \Cref{chap:dmp}).
+Multiple properties for textual statements on different aspects of a \keyword{Dataset} were created. All of which provide \keyword{Publishers}, \keyword{Maintainers} and other \keyword{Agents} a way to convey statements of general character on such subjects as described below. This information will be useful in many scenarios related to dissemination tasks, for example, those described by the Horizon 2020\footnoteurl{https://ec.europa.eu/programmes/horizon2020/} data management plan guidelines\footnoteurl{https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf} (see also \Cref{chap:dmp}).
 
 All of these properties listed below have the common \prop{rdfs:range} of \prop{dataid:SimpleStatement}, which allows to either provide a literal or reference a web page containing the textual information about the resource (cf. \Cref{sec:corestatement}). 
 
 \begin{description}
-\item[\prop{dataid:dataDescription}:] provides a detailed textual description of the data represented by this \important{Dataset}. \hfill\textbf{(O)}
-\item[\prop{dataid:growth}:] an indication of what size the approximated end volume of the \important{Dataset} is. \hfill\textbf{(O)}
-\item[\prop{dataid:usefulness}:] is used to state to whom the \important{Dataset} could be useful, and whether it underpins a scientific publication. \hfill\textbf{(O)}
+\item[\prop{dataid:dataDescription}:] provides a detailed textual description of the data represented by this \keyword{Dataset}. \hfill\textbf{(O)}
+\item[\prop{dataid:growth}:] an indication of what size the approximated end volume of the \keyword{Dataset} is. \hfill\textbf{(O)}
+\item[\prop{dataid:usefulness}:] is used to state to whom the \keyword{Dataset} could be useful, and whether it underpins a scientific publication. \hfill\textbf{(O)}
 \item[\prop{dataid:similarData}:] a statement on the existence (or absence) of similar data (see also \prop{dataid:relatedDataset}). \hfill\textbf{(O)}
-\item[\prop{dataid:reuseAndIntegration}:] information on the possibilities for integration and reuse of the \important{Dataset}. \hfill\textbf{(O)}
-\item[\prop{dataid:openness}:] General description of how data will be shared. For example embargo periods (if any), outlines of technical mechanisms for dissemination or a definition of whether access will be widely open or restricted to specific groups. In case the \important{Dataset} cannot be shared, the reasons for this should be mentioned (e.g. ethical, rules of personal data, intellectual property, commercial, privacy-related, security-related). \hfill\textbf{(O)}
+\item[\prop{dataid:reuseAndIntegration}:] information on the possibilities for integration and reuse of the \keyword{Dataset}. \hfill\textbf{(O)}
+\item[\prop{dataid:openness}:] General description of how data will be shared. For example embargo periods (if any), outlines of technical mechanisms for dissemination or a definition of whether access will be widely open or restricted to specific groups. In case the \keyword{Dataset} cannot be shared, the reasons for this should be mentioned (e.g. ethical, rules of personal data, intellectual property, commercial, privacy-related, security-related). \hfill\textbf{(O)}
 \end{description}
 
 \pagebreak
-The running example is structured in a shallow hierarchy with an instance of \prop{dataid:Superset} representing all \important{Datasets} of an Arabic \dbpedia language edition:
+The running example is structured in a shallow hierarchy with an instance of \prop{dataid:Superset} representing all \keyword{Datasets} of an Arabic \dbpedia language edition:
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Instance of a Superset,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <dataid_ar.ttl?set=maindataset>
@@ -1733,7 +1730,7 @@ The running example is structured in a shallow hierarchy with an instance of \pr
         foaf:page                   <http://wiki.dbpedia.org/Downloads2015-10> .  
 \end{lstlisting}
 
-This \important{Dataset} has no \important{Distributions}, the data it represents is referred to via its \important{Sub-Datasets}. As an example for one of its \important{Sub-Datasets}, the following listing exemplifies this difference (use of \prop{dcat:distribution} instead of \prop{void:subset}):
+This \keyword{Dataset} has no \keyword{Distributions}, the data it represents is referred to via its \keyword{Sub-Datasets}. As an example for one of its \keyword{Sub-Datasets}, the following listing exemplifies this difference (use of \prop{dcat:distribution} instead of \prop{void:subset}):
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Instance of a Dataset,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <dataid_ar.ttl?set=long_abstracts_en_uris>
         a                       dataid:Dataset, dataid-ld:LinkedDataDataset ;
@@ -1761,7 +1758,7 @@ This \important{Dataset} has no \important{Distributions}, the data it represent
 \subsection{Distribution} 
 \label{sec:coredist}
 
-The class \prop{dataid:Distribution} provides the technical description of the data, the 'manifestation' of a \important{Dataset}. In addition, it serves as documentation of how to access the data described (e.g. \prop{dcat:accessURL}), and which conditions apply (e.g. \prop{dataid:accessProcedure}). Every \important{Distribution} of a \important{Dataset} must contain all data of the \important{Dataset} in the format and location described. It may contain additional data exceeding the defined \important{Dataset}, for example when describing a service endpoint. Two \important{Distributions} of the same \important{Dataset}, therefore, must either contain the same data (for example in two different serialisations), or one \important{Distribution} must completely subsume the other. The \important{Distribution} concept, introduced by the \dcat vocabulary, is crucial to be able to automatically retrieve and use the data described in a \dataid document, simplifying, for example, data analysis. Additional sub-classes, to further distinguish how the data is available on the Web, were introduced:
+The class \prop{dataid:Distribution} provides the technical description of the data, the 'manifestation' of a \keyword{Dataset}. In addition, it serves as documentation of how to access the data described (e.g. \prop{dcat:accessURL}), and which conditions apply (e.g. \prop{dataid:accessProcedure}). Every \keyword{Distribution} of a \keyword{Dataset} must contain all data of the \keyword{Dataset} in the format and location described. It may contain additional data exceeding the defined \keyword{Dataset}, for example when describing a service endpoint. Two \keyword{Distributions} of the same \keyword{Dataset}, therefore, must either contain the same data (for example in two different serialisations), or one \keyword{Distribution} must completely subsume the other. The \keyword{Distribution} concept, introduced by the \dcat vocabulary, is crucial to be able to automatically retrieve and use the data described in a \dataid document, simplifying, for example, data analysis. Additional sub-classes, to further distinguish how the data is available on the Web, were introduced:
 
 \begin{figure}[!htbp]
 \centering
@@ -1771,9 +1768,9 @@ The class \prop{dataid:Distribution} provides the technical description of the d
 \end{figure}
 
 \begin{description}
-\item[\prop{dataid:SingleFile}:] all data of a \important{Dataset} is available in a single file.
-\item[\prop{dataid:Directory}:] the data of a \important{Dataset} is represented by the files in a single Directory on a file system.
-\item[\prop{dataid:FileCollection}:] an arbitrary collection of (different files, not restricted to one file system), which in their accumulation represent the data of a \important{Dataset}.
+\item[\prop{dataid:SingleFile}:] all data of a \keyword{Dataset} is available in a single file.
+\item[\prop{dataid:Directory}:] the data of a \keyword{Dataset} is represented by the files in a single Directory on a file system.
+\item[\prop{dataid:FileCollection}:] an arbitrary collection of (different files, not restricted to one file system), which in their accumulation represent the data of a \keyword{Dataset}.
 \item[\prop{dataid:ServiceEndpoint}:] is a superclass for all service/api endpoints which could provide datasets. For example, REST APIs for databases\footnoteurl{https://docs.oracle.com/cloud/latest/mysql-cloud/CSMCS/index.html} or SPARQL endpoints.
 \end{description}
 
@@ -1781,20 +1778,20 @@ Except for \prop{dataid:SingleFile}, all of these subclasses may need additional
 
 Properties used with \prop{dataid:Distribution}:
 \begin{description}
-\item[\prop{dcat:mediaType}:] is restricted to a range of \prop{dataid:MediaType} (cf. \Cref{sec:coremediatype}). This property is absolutely necessary to digest the content of a \important{Distribution} automatically. \hfill\textbf{(M)}
-\item[\prop{dcat:downloadURL}:] this property supplies a URL under which the described \important{Distribution} can be downloaded directly (without any access procedure or intermediate steps) and completely. \hfill\textbf{(M if no \prop{dcat:accessURL})}
-\item[\prop{dcat:accessURL}:] when additional steps are necessary to achieve access to the data of this \important{Distribution} (such as authorisations, querying or selecting data from a repository), \prop{dcat:accessURL} is used to provide the initial URL. If the process necessary to retrieve the data is not evident by the content of the web page referred, publishers should make use of property. \prop{dataid:accessProcedure}. \hfill\textbf{(M if no \prop{dcat:downloadURL})}
-\item[\prop{dataid:accessProcedure}:] is used to convey a description of necessary steps, needed to retrieve the data of this \important{Distribution} from the \prop{dcat:accessURL}. This property has the range\prop{dataid:SimpleStatement} and should not be used in connection with \prop{dcat:downloadURL}. \hfill\textbf{(R if no \prop{dcat:downloadURL})}
+\item[\prop{dcat:mediaType}:] is restricted to a range of \prop{dataid:MediaType} (cf. \Cref{sec:coremediatype}). This property is absolutely necessary to digest the content of a \keyword{Distribution} automatically. \hfill\textbf{(M)}
+\item[\prop{dcat:downloadURL}:] this property supplies a URL under which the described \keyword{Distribution} can be downloaded directly (without any access procedure or intermediate steps) and completely. \hfill\textbf{(M if no \prop{dcat:accessURL})}
+\item[\prop{dcat:accessURL}:] when additional steps are necessary to achieve access to the data of this \keyword{Distribution} (such as authorisations, querying or selecting data from a repository), \prop{dcat:accessURL} is used to provide the initial URL. If the process necessary to retrieve the data is not evident by the content of the web page referred, publishers should make use of property. \prop{dataid:accessProcedure}. \hfill\textbf{(M if no \prop{dcat:downloadURL})}
+\item[\prop{dataid:accessProcedure}:] is used to convey a description of necessary steps, needed to retrieve the data of this \keyword{Distribution} from the \prop{dcat:accessURL}. This property has the range\prop{dataid:SimpleStatement} and should not be used in connection with \prop{dcat:downloadURL}. \hfill\textbf{(R if no \prop{dcat:downloadURL})}
 \item[\prop{dataid:checksum}:] the range of this property is restricted to \prop{spdx:Checksum} \cite{spdx}, providing \prop{spdx:checksumValue} and \prop{spdx:algorithm} properties for an exact definition of a checksum. Checksums can be used to validate the correctness of downloaded files, directories and API endpoint responses. \hfill\textbf{(R)}
-\item[\prop{dcat:byteSize}:] The exact size of a \important{Distribution} in bytes. \hfill\textbf{(R)}
+\item[\prop{dcat:byteSize}:] The exact size of a \keyword{Distribution} in bytes. \hfill\textbf{(R)}
 \item[\prop{dataid:softwareRequirement}:] Some data formats/serialisations are only useful with a particular software product. This statement offers the possibility to name such circumstances. \hfill\textbf{(O)}
-\item[\prop{dataid:uncompressedByteSize}:] Often, files and media streams are compressed to reduce the number of bytes to be transferred. This optional property provides the means to specify the size of the \important{Distribution} in its uncompressed extension. \hfill\textbf{(O)}
-\item[\prop{dataid:preview}:] While the exact format and serialisation of the \important{Distribution} is defined by \prop{dataid:MediaType}, it is often beneficial for publishers and consumers to have a look at the actual format of the (uncompressed) data. This property points out a web resource providing such a preview. \hfill\textbf{(O)}
-\item[\prop{dataid:distributionOf}:] the inverse property of \prop{dcat:distribution}, pointing back to the \important{Dataset} instance this \important{Distribution} belongs to. \hfill\textbf{(O)}
-\item[\prop{dct:license}:] see \Cref{sec:coredataset} for a detailed description. Often, the license used for the \important{Distribution} is the same as for the pertaining \important{Dataset}. For those cases where this is not true, the use of this property in the context of a \important{Distribution} is advised. \hfill\textbf{(O)}
+\item[\prop{dataid:uncompressedByteSize}:] Often, files and media streams are compressed to reduce the number of bytes to be transferred. This optional property provides the means to specify the size of the \keyword{Distribution} in its uncompressed extension. \hfill\textbf{(O)}
+\item[\prop{dataid:preview}:] While the exact format and serialisation of the \keyword{Distribution} is defined by \prop{dataid:MediaType}, it is often beneficial for publishers and consumers to have a look at the actual format of the (uncompressed) data. This property points out a web resource providing such a preview. \hfill\textbf{(O)}
+\item[\prop{dataid:distributionOf}:] the inverse property of \prop{dcat:distribution}, pointing back to the \keyword{Dataset} instance this \keyword{Distribution} belongs to. \hfill\textbf{(O)}
+\item[\prop{dct:license}:] see \Cref{sec:coredataset} for a detailed description. Often, the license used for the \keyword{Distribution} is the same as for the pertaining \keyword{Dataset}. For those cases where this is not true, the use of this property in the context of a \keyword{Distribution} is advised. \hfill\textbf{(O)}
 \end{description}
 
-The first example is an instance of \prop{dataid:SingleFile}, describing a single RDF file (which contains the whole \important{Dataset}) in Turtle syntax, compressed with the bzip2 compression\footnoteurl{http://www.bzip.org}. It can be downloaded directly (without any intermediate steps), hence the property \prop{dcat:downloadURL} is used to point out the resource on the Web. Since it is a compressed file, the byte size in its compressed and uncompressed state is provided. An instance of \prop{spdx:Checksum} was included, providing the checksum value for this \important{Distribution}.
+The first example is an instance of \prop{dataid:SingleFile}, describing a single RDF file (which contains the whole \keyword{Dataset}) in Turtle syntax, compressed with the bzip2 compression\footnoteurl{http://www.bzip.org}. It can be downloaded directly (without any intermediate steps), hence the property \prop{dcat:downloadURL} is used to point out the resource on the Web. Since it is a compressed file, the byte size in its compressed and uncompressed state is provided. An instance of \prop{spdx:Checksum} was included, providing the checksum value for this \keyword{Distribution}.
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Example of a SingleFile Distribution,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <dataid_ar.ttl?file=long_abstracts_en_uris_ar.ttl.bz2>
@@ -1816,7 +1813,7 @@ The first example is an instance of \prop{dataid:SingleFile}, describing a singl
         spdx:checksumValue  "2503179cd96452d33becd1e974d6a163"^^xsd:hexBinary .  
 \end{lstlisting}
 
-The second example is an instance of \prop{dataid-ld:SparqlEndpoint}, a sub-class of \prop{dataid:ServiceEndpoint} and \prop{sd:Service} which was introduced with the \dataid extension for Linked Data (cf. \Cref{sec:extensions}). Additional properties from the SPARQL 1.1 Service Description Language are used to describe the endpoint further. As opposed to the previous example, this SPARQL endpoint provides multiple \important{Datasets} at once in the context of the original \dataid from \dbpedia.
+The second example is an instance of \prop{dataid-ld:SparqlEndpoint}, a sub-class of \prop{dataid:ServiceEndpoint} and \prop{sd:Service} which was introduced with the \dataid extension for Linked Data (cf. \Cref{sec:extensions}). Additional properties from the SPARQL 1.1 Service Description Language are used to describe the endpoint further. As opposed to the previous example, this SPARQL endpoint provides multiple \keyword{Datasets} at once in the context of the original \dataid from \dbpedia.
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Example Distribution of a SPARQL endpoint,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <dataid_ar.ttl?sparql=DBpediaSparqlEndpoint>
@@ -1835,7 +1832,7 @@ The second example is an instance of \prop{dataid-ld:SparqlEndpoint}, a sub-clas
 
 \subsection{MediaType} 
 \label{sec:coremediatype}
-\dcat does not offer an intrinsic way of specifying the exact format of the content described by a \important{Distribution}. While the property \prop{dcat:mediaType} does exist, its expected range \prop{dct:MediaTypeOrExtend} is an empty concept, not extended by \dcat. Therefore, the \prop{dataid:MediaType} was introduced to qualify this crucial piece of information in a better way. The following properties are of interest:
+\dcat does not offer an intrinsic way of specifying the exact format of the content described by a \keyword{Distribution}. While the property \prop{dcat:mediaType} does exist, its expected range \prop{dct:MediaTypeOrExtend} is an empty concept, not extended by \dcat. Therefore, the \prop{dataid:MediaType} was introduced to qualify this crucial piece of information in a better way. The following properties are of interest:
 
 \begin{description}
 \item[\prop{dataid:typeTemplate}:] the IANA\footnoteurl{http://www.iana.org} media type\footnoteurl{http://www.iana.org/assignments/media-types/media-types.xhtml} - also named mime type \cite{freed1996rfc2046}. This property is of utmost importance for the automatic processing of content. Through its registration with the IANA, each type is unambiguously defined and the format of data content can be interpreted in automated processes (e.g. 'text/turtle'). \hfill\textbf{(M)}
@@ -1873,13 +1870,13 @@ The following extract exemplifies the use of these properties:
 
 \subsection{Agent} 
 \label{sec:coreagent}
-An \important{Agent} is something or someone that bears some form of responsibility for an \important{Entity} or activities which create, transform or manage \important{Entities} in some way. \important{Agents} are real or legal persons, groups of persons, programs, organisations, etc. The class \prop{dataid:Agent} subsumes both agent concepts of the \prov and \foaf ontologies, to further incorporate \prov into the context of \dcat (which uses the class \prop{foaf:Agent} to portray this concept). 
+An \keyword{Agent} is something or someone that bears some form of responsibility for an \keyword{Entity} or activities which create, transform or manage \keyword{Entities} in some way. \keyword{Agents} are real or legal persons, groups of persons, programs, organisations, etc. The class \prop{dataid:Agent} subsumes both agent concepts of the \prov and \foaf ontologies, to further incorporate \prov into the context of \dcat (which uses the class \prop{foaf:Agent} to portray this concept). 
 
 The attributes of the \foaf vocabulary\footnoteurl{http://xmlns.com/foaf/spec/} are used to describe aspects such as name and e-mail address of a person. In addition, the following properties were introduced in \core:
 
 \begin{description}
-\item[\prop{dataid:hasAuthorization}:] the inverse property of \prop{dataid:authorizedAgent}, pointing out an \important{Authorization} which grants an \important{Agent} some kind of authority over \important{Entities}. This is explained in detail in the example on \important{Authorizations} in the next \Cref{sec:coreauthorization}. \hfill\textbf{(R)}
-\item[\prop{dataid:identifier}:] often, \important{Agents} already have unique identifiers specified in a different context on the Web (in addition to the URI used in the context of a \dataid document, such as URI, ORCID\footnoteurl{http://orcid.org} or researcherId\footnoteurl{http://www.researcherid.com}). This property points out additional identifiers (cf. \Cref{sec:coreidentifier}). \hfill\textbf{(O)}
+\item[\prop{dataid:hasAuthorization}:] the inverse property of \prop{dataid:authorizedAgent}, pointing out an \keyword{Authorization} which grants an \keyword{Agent} some kind of authority over \keyword{Entities}. This is explained in detail in the example on \keyword{Authorizations} in the next \Cref{sec:coreauthorization}. \hfill\textbf{(R)}
+\item[\prop{dataid:identifier}:] often, \keyword{Agents} already have unique identifiers specified in a different context on the Web (in addition to the URI used in the context of a \dataid document, such as URI, ORCID\footnoteurl{http://orcid.org} or researcherId\footnoteurl{http://www.researcherid.com}). This property points out additional identifiers (cf. \Cref{sec:coreidentifier}). \hfill\textbf{(O)}
 \end{description}
 
 \begin{figure}[!htbp]
@@ -1890,7 +1887,7 @@ The attributes of the \foaf vocabulary\footnoteurl{http://xmlns.com/foaf/spec/} 
 \end{figure}
 
 \pagebreak
-This example of an \important{Agent} portrays the \dbpedia Association\footnoteurl{http://wiki.dbpedia.org/dbpedia-association}:
+This example of an \keyword{Agent} portrays the \dbpedia Association\footnoteurl{http://wiki.dbpedia.org/dbpedia-association}:
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an Agent,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <http://wiki.dbpedia.org/dbpedia-association>
@@ -1903,9 +1900,9 @@ This example of an \important{Agent} portrays the \dbpedia Association\footnoteu
 
 \subsection{Authorization} 
 \label{sec:coreauthorization}
-One objective of \core is the detailed expression of the relations between \important{Agents} and \important{Entities}. To qualify these relations (summarised under the property \prop{dataid:associatedAgent}) \important{AgentRoles} have to be assigned to the involved \important{Agents} (such as \important{Maintainer}, \important{Publisher}, etc.). This is achieved by the class \prop{dataid:Authorization}, which is a sub-class of \prop{prov:Attribution}, a qualification of the property \prop{prov:wasAttributedTo}. It basically states, which \important{AgentRoles} (pointed out with \prop{dataid:authorityAgentRole}) an \important{Agent} (via \prop{dataid:authorizedAgent}) has, regarding a certain collection of \important{Entities} (\prop{dataid:authorizedFor}). This mediator is further qualified by an optional period for which it is valid and access restrictions by the \important{Entities} themselves, allowing only specific \important{Authorizations} to exert influence over them (cf. \prop{dataid:needsSpecialAuthorization}). 
+One objective of \core is the detailed expression of the relations between \keyword{Agents} and \keyword{Entities}. To qualify these relations (summarised under the property \prop{dataid:associatedAgent}) \keyword{AgentRoles} have to be assigned to the involved \keyword{Agents} (such as \keyword{Maintainer}, \keyword{Publisher}, etc.). This is achieved by the class \prop{dataid:Authorization}, which is a sub-class of \prop{prov:Attribution}, a qualification of the property \prop{prov:wasAttributedTo}. It basically states, which \keyword{AgentRoles} (pointed out with \prop{dataid:authorityAgentRole}) an \keyword{Agent} (via \prop{dataid:authorizedAgent}) has, regarding a certain collection of \keyword{Entities} (\prop{dataid:authorizedFor}). This mediator is further qualified by an optional period for which it is valid and access restrictions by the \keyword{Entities} themselves, allowing only specific \keyword{Authorizations} to exert influence over them (cf. \prop{dataid:needsSpecialAuthorization}). 
 
-\Cref{sec:exauthorization} contains a detailed example on \important{Authorizations}, to deepen the understanding of this concept as well as to provide a suitable use case.
+\Cref{sec:exauthorization} contains a detailed example on \keyword{Authorizations}, to deepen the understanding of this concept as well as to provide a suitable use case.
 
 \begin{figure}[!htbp]
 \centering
@@ -1915,20 +1912,20 @@ One objective of \core is the detailed expression of the relations between \impo
 \end{figure}
 
 \begin{description}
-\item[\prop{dataid:authorizedAgent}:] each \important{Authorization} shall have at least one associated \important{Agent}, which is pointed out via this property (sub-property of \prop{prov:agent}). \hfill\textbf{(M)}
-\item[\prop{dataid:authorityAgentRole}:] provides the \important{AgentRole} the \important{Agent}(s) of this \important{Authorization} are assigned with (sub-property of \prop{prov:hadRole}). \hfill\textbf{(M)}
-\item[\prop{dataid:authorizedFor}:] points out those \important{Entities} for which this \important{Authorization} is valid (sub-property of \prop{dataid:authorizationScope}). \hfill\textbf{(M)}
-\item[\prop{dataid:authorizedAction}:] an \important{AgentRole} entails the right (or responsibility) for \important{Agents} to execute a predefined collection \important{AuthorizedAction}(s). This property can be inferred by a chain of properties (OWL property chain axiom): \prop{dataid:authorityAgentRole} / \prop{dataid:allowsFor}. \hfill\textbf{(O)}
-\item[\prop{dataid:isInheritable}:] indicates whether an \important{Authorization} is transferable when changing versions of a \dataid. Thus, keeping \important{Agent}, \important{AgentRole} and \important{Actions} in place for the updated versions of all involved \important{Entities}. \textbf{(O)}
-\item[\prop{dataid:validFrom}:] defining the temporal beginning (inclusive) of an \important{Authorization} (the time from which on out the axioms of an \important{Authorization} are valid). \hfill\textbf{(O)}
-\item[\prop{dataid:validUntil}:] defining the temporal ending (exclusive) of an \important{Authorization} (the time from which on out the axioms of an \important{Authorization} are no longer valid). \hfill\textbf{(O)}
+\item[\prop{dataid:authorizedAgent}:] each \keyword{Authorization} shall have at least one associated \keyword{Agent}, which is pointed out via this property (sub-property of \prop{prov:agent}). \hfill\textbf{(M)}
+\item[\prop{dataid:authorityAgentRole}:] provides the \keyword{AgentRole} the \keyword{Agent}(s) of this \keyword{Authorization} are assigned with (sub-property of \prop{prov:hadRole}). \hfill\textbf{(M)}
+\item[\prop{dataid:authorizedFor}:] points out those \keyword{Entities} for which this \keyword{Authorization} is valid (sub-property of \prop{dataid:authorizationScope}). \hfill\textbf{(M)}
+\item[\prop{dataid:authorizedAction}:] an \keyword{AgentRole} entails the right (or responsibility) for \keyword{Agents} to execute a predefined collection \keyword{AuthorizedAction}(s). This property can be inferred by a chain of properties (OWL property chain axiom): \prop{dataid:authorityAgentRole} / \prop{dataid:allowsFor}. \hfill\textbf{(O)}
+\item[\prop{dataid:isInheritable}:] indicates whether an \keyword{Authorization} is transferable when changing versions of a \dataid. Thus, keeping \keyword{Agent}, \keyword{AgentRole} and \keyword{Actions} in place for the updated versions of all involved \keyword{Entities}. \textbf{(O)}
+\item[\prop{dataid:validFrom}:] defining the temporal beginning (inclusive) of an \keyword{Authorization} (the time from which on out the axioms of an \keyword{Authorization} are valid). \hfill\textbf{(O)}
+\item[\prop{dataid:validUntil}:] defining the temporal ending (exclusive) of an \keyword{Authorization} (the time from which on out the axioms of an \keyword{Authorization} are no longer valid). \hfill\textbf{(O)}
 \end{description}
 
-The property \prop{dataid:authorizationScope} is an abstract super-property of \prop{dataid:authorizedFor}, pointing to all referred and inferred \important{Entities} which are under a certain \important{Authorization}. Triples with this predicate are inferred by its sub-properties \prop{dataid:authorizedFor} and the virtual properties \prop{dataid:authorizationChain1} to \prop{dataid:authorizationChain9}. 
+The property \prop{dataid:authorizationScope} is an abstract super-property of \prop{dataid:authorizedFor}, pointing to all referred and inferred \keyword{Entities} which are under a certain \keyword{Authorization}. Triples with this predicate are inferred by its sub-properties \prop{dataid:authorizedFor} and the virtual properties \prop{dataid:authorizationChain1} to \prop{dataid:authorizationChain9}. 
 
-Furthermore, property \prop{dataid:underAuthorization} is the inverse of \prop{dataid:authorizationScope} and a sub-property of \prop{prov:wasAttributedTo}. It points out an \important{Authorization} which qualifies the relation \prop{dataid:associatedAgent} of an \important{Entity}. Its sub-property \prop{dataid:needsSpecialAuthorization} was introduced to restrict the reach of \important{Authorizations}, to the exclusion of those \important{Authorizations}, not referenced via this property (or simply: if an \important{Entity} has a \prop{dataid:needsSpecialAuthorization} instance, all \important{Authorizations} without this referral have no influence over this \important{Entity}, disregarding its specification). An exact explanation of \important{Authorizations} and all involved properties is accompanying the extended example on \important{Authorizations} at the end of this chapter (cf. \Cref{sec:exauthorization}).
+Furthermore, property \prop{dataid:underAuthorization} is the inverse of \prop{dataid:authorizationScope} and a sub-property of \prop{prov:wasAttributedTo}. It points out an \keyword{Authorization} which qualifies the relation \prop{dataid:associatedAgent} of an \keyword{Entity}. Its sub-property \prop{dataid:needsSpecialAuthorization} was introduced to restrict the reach of \keyword{Authorizations}, to the exclusion of those \keyword{Authorizations}, not referenced via this property (or simply: if an \keyword{Entity} has a \prop{dataid:needsSpecialAuthorization} instance, all \keyword{Authorizations} without this referral have no influence over this \keyword{Entity}, disregarding its specification). An exact explanation of \keyword{Authorizations} and all involved properties is accompanying the extended example on \keyword{Authorizations} at the end of this chapter (cf. \Cref{sec:exauthorization}).
 
-The following snippet provides a simple example of two \important{AgentRoles} being assigned to two \important{Agents} for a \important{DataId} instance (and thereby for every \important{Entity} involved in this \dataid  - see \Cref{sec:exauthorization} for more).
+The following snippet provides a simple example of two \keyword{AgentRoles} being assigned to two \keyword{Agents} for a \keyword{DataId} instance (and thereby for every \keyword{Entity} involved in this \dataid  - see \Cref{sec:exauthorization} for more).
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Example of two Agents and their pertaining Authorizations,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg>
@@ -1960,7 +1957,7 @@ The following snippet provides a simple example of two \important{AgentRoles} be
 
 \subsection{AuthorizedAction \& AgentRole} 
 \label{sec:coreaction}
-The \important{AgentRole} assigned to an \important{Agent} in the context of an \prop{dataid:Authorization} is defined only by the property \prop{dataid:allowsFor}, pointing out the \important{AuthorizedActions} it entails. A \prop{dataid:AuthorizedAction} shall either be a \prop{dataid:EntitledAction}, representing all \important{AuthorizedActions} an \important{Agent} could take, or the \important{AuthorizedActions} an \important{Agent} has to take (\prop{dataid:ResponsibleAction}). 
+The \keyword{AgentRole} assigned to an \keyword{Agent} in the context of an \prop{dataid:Authorization} is defined only by the property \prop{dataid:allowsFor}, pointing out the \keyword{AuthorizedActions} it entails. A \prop{dataid:AuthorizedAction} shall either be a \prop{dataid:EntitledAction}, representing all \keyword{AuthorizedActions} an \keyword{Agent} could take, or the \keyword{AuthorizedActions} an \keyword{Agent} has to take (\prop{dataid:ResponsibleAction}). 
 
 \begin{figure}[!htbp]
 \centering
@@ -1969,39 +1966,39 @@ The \important{AgentRole} assigned to an \important{Agent} in the context of an 
   \label{fig:example}
 \end{figure}
 
-\important{AuthorizedActions} and \important{AgentRoles} defined in this ontology are only examples of possible implementations, reflecting a common environment of a File or Document Management System. They can be replaced to fit the use case at hand. Implementing them as a \prop{skos:ConceptScheme}\footnoteurl{https://www.w3.org/TR/skos-reference/#ConceptScheme} offers additional semantics, for example in determining which \important{AgentRole} can override \important{AuthorizedActions} initiated by \important{Agents} with other \important{AgentRoles} for the same \important{Entity}. The following descriptions will shortly introduce each individual of these classes, predefined in the \core ontology.
+\keyword{AuthorizedActions} and \keyword{AgentRoles} defined in this ontology are only examples of possible implementations, reflecting a common environment of a File or Document Management System. They can be replaced to fit the use case at hand. Implementing them as a \prop{skos:ConceptScheme}\footnoteurl{https://www.w3.org/TR/skos-reference/#ConceptScheme} offers additional semantics, for example in determining which \keyword{AgentRole} can override \keyword{AuthorizedActions} initiated by \keyword{Agents} with other \keyword{AgentRoles} for the same \keyword{Entity}. The following descriptions will shortly introduce each individual of these classes, predefined in the \core ontology.
 
 {\large\textbf{AgentRoles:}}
 \begin{description}
-\item[\prop{dataid:Creator}:] Creator of the resource. An \important{AgentRole} that is credited with the main part in the initial creation of the resource.
-\item[\prop{dataid:Contact}:] An \important{Agent} that can be contacted for general requests about the resource.
-\item[\prop{dataid:Contributor}:] Contributor to the resource. An \important{Agent} that was involved in creating or maintaining the resource but did not have the main part in this activity.
-\item[\prop{dataid:Guest}:] A visitor or anonymous \important{Agent} which only has the right to read public documents.
-\item[\prop{dataid:Maintainer}:] Maintainer of the \important{Dataset}. An \important{Agent} that ensures the technical correctness, accessibility and up-to-dateness of a \important{Dataset}.
-\item[\prop{dataid:Publisher}:] An \important{Agent} that makes the \important{Dataset} accessible online on a server or repository without necessarily being involved in its creation and decides on all dissemination related tasks as well (e.g. data portal entries).
+\item[\prop{dataid:Creator}:] Creator of the resource. An \keyword{AgentRole} that is credited with the main part in the initial creation of the resource.
+\item[\prop{dataid:Contact}:] An \keyword{Agent} that can be contacted for general requests about the resource.
+\item[\prop{dataid:Contributor}:] Contributor to the resource. An \keyword{Agent} that was involved in creating or maintaining the resource but did not have the main part in this activity.
+\item[\prop{dataid:Guest}:] A visitor or anonymous \keyword{Agent} which only has the right to read public documents.
+\item[\prop{dataid:Maintainer}:] Maintainer of the \keyword{Dataset}. An \keyword{Agent} that ensures the technical correctness, accessibility and up-to-dateness of a \keyword{Dataset}.
+\item[\prop{dataid:Publisher}:] An \keyword{Agent} that makes the \keyword{Dataset} accessible online on a server or repository without necessarily being involved in its creation and decides on all dissemination related tasks as well (e.g. data portal entries).
 \\
 \end{description}
 
 {\large\textbf{ResponsibleActions:}}
 \begin{description}
-\item[\prop{dataid:ResponseToContact}:] The responsibility to respond to contact attempts by external \important{Agents}. A contact point for the \important{Entity}.
-\item[\prop{dataid:ResponseToLifeCycleEvent}:] The responsibility to manage changes and react to any event related to the lifecycle of a \important{Dataset} (e.g. issue tracker entries, unavailable download URL, etc.).
-\item[\prop{dataid:PublishingDecision}:] The final decision if an \important{Entity} (or a version of it) should be published.
+\item[\prop{dataid:ResponseToContact}:] The responsibility to respond to contact attempts by external \keyword{Agents}. A contact point for the \keyword{Entity}.
+\item[\prop{dataid:ResponseToLifeCycleEvent}:] The responsibility to manage changes and react to any event related to the lifecycle of a \keyword{Dataset} (e.g. issue tracker entries, unavailable download URL, etc.).
+\item[\prop{dataid:PublishingDecision}:] The final decision if an \keyword{Entity} (or a version of it) should be published.
 \item[\prop{dataid:UpdateDataId}:] The responsibility to update dataset metadata.
-\item[\prop{dataid:AgentSupervision}:] The responsibility to supervise other \important{Agents}.\\
+\item[\prop{dataid:AgentSupervision}:] The responsibility to supervise other \keyword{Agents}.\\
 \end{description}
 
 {\large\textbf{EntitledActions:}}
 \begin{description}
 \item[\prop{dataid:ReadDataId}:] read the \dataid dataset metadata.
-\item[\prop{dataid:ReadContent}:] read the content of an \important{Entity}.
-\item[\prop{dataid:ModifyContent}:] modify the content of an \important{Entity}.
-\item[\prop{dataid:DeleteContent}:] delete some content of an \important{Entity}.
-\item[\prop{dataid:ModifyAuthorization}:] modify an \important{Authorization}.
-\item[\prop{dataid:ModifyAgentRoles}:] modify \important{AgentRoles} and \important{AuthorizedActions}.
+\item[\prop{dataid:ReadContent}:] read the content of an \keyword{Entity}.
+\item[\prop{dataid:ModifyContent}:] modify the content of an \keyword{Entity}.
+\item[\prop{dataid:DeleteContent}:] delete some content of an \keyword{Entity}.
+\item[\prop{dataid:ModifyAuthorization}:] modify an \keyword{Authorization}.
+\item[\prop{dataid:ModifyAgentRoles}:] modify \keyword{AgentRoles} and \keyword{AuthorizedActions}.
 \end{description}
 
-This example has been lent from the \core ontology document itself. Here the \important{AgentRole} 'Contact' is defined in the context of a \prop{skos:ConceptScheme}.
+This example has been lent from the \core ontology document itself. Here the \keyword{AgentRole} 'Contact' is defined in the context of a \prop{skos:ConceptScheme}.
 \\
 \begin{lstlisting}[language=ttl, captionpos=b,caption=Example of an AgentRole definition,label=lst:coresuperset,linewidth=\columnwidth,breaklines=true]
 dataid:Contact
@@ -2019,12 +2016,13 @@ dataid:Contact
 
 \subsection{DatasetRelationship} 
 \label{sec:corerelation}
-A \important{DatasetRelationship} is a qualification of the generic property \prop{dataid:relatedDataset} (which is a sub-property of \prop{dct:relation}). The \prop{dataid:DatasetRelationship} is a subclass of \prop{prov:EntityInfluence} and is defined by three properties:
+A \keyword{DatasetRelationship} is a qualification of the generic property \prop{dataid:relatedDataset} (which is a sub-property of \prop{dct:relation}). The \prop{dataid:DatasetRelationship} is a subclass of \prop{prov:EntityInfluence} and is defined by three properties:
 
 \begin{description}
-\item[\prop{dataid:datasetRelationRole}:] specifying the role (or type) of this relationship, defining the exact role the 'target' \important{Dataset} takes regarding the 'origin' \important{Dataset} of this relationship. \hfill\textbf{(M)}
-\item[\prop{dataid:qualifiedRelationOf}:] the inverse property of \prop{dataid:qualifiedDatasetRelation} is pointing out the origin \important{Dataset} of this qualification. \hfill\textbf{(M)}
-\item[\prop{dataid:qualifiedRelationTo}:] the target \important{Dataset} of this qualification. \hfill\textbf{(M)}
+\item[\prop{dataid:datasetRelationRole}:] specifying the role (or type) of this relationship, defining the exact role the 'target' \keyword{Dataset} takes regarding the 'origin' \keyword{Dataset} of this relationship. \hfill\textbf{(M)}
+\item[\prop{dataid:qualifiedRelationOf}:] pointing out the origin \keyword{Dataset} of this qualification as
+the inverse property of \prop{dataid:qualifiedDatasetRelation}. \hfill\textbf{(M)}
+\item[\prop{dataid:qualifiedRelationTo}:] the target \keyword{Dataset} of this qualification. \hfill\textbf{(M)}
 \end{description}
 
 \begin{figure}[!htbp]
@@ -2037,11 +2035,11 @@ A \important{DatasetRelationship} is a qualification of the generic property \pr
 The class \prop{dataid:DatasetRelationRole} is not further qualified in the context of \core, which could be done in an extension to \core, similar to \prop{dataid:AgentRole}. Some instances of this class are already provided:
 
 \begin{description}
-\item[\prop{dataid:GenericRelation}:] specifies a \prop{dataid:DatasetRelationship} between two \important{Datasets} which have a relation to an unknown quality (such a relation is equivalent to direct \prop{dct:relation} property).
-\item[\prop{dataid:DerivateRole}:] specifies a \prop{dataid:DatasetRelationship} where one \important{Dataset} points out a second \important{Dataset}, which is a derivate of the first.
-\item[\prop{dataid:SourceRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \important{Dataset} is created by transforming/collecting data from the target \important{Dataset}.
-\item[\prop{dataid:CopyRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \important{Dataset} is an exact copy of the target \important{Dataset} (e.g. when republished under a different domain).
-\item[\prop{dataid:SimilarityRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \important{Dataset} has a significant similarity to the target \important{Dataset} (without any assertion as to a dimension of similarity).
+\item[\prop{dataid:GenericRelation}:] specifies a \prop{dataid:DatasetRelationship} between two \keyword{Datasets} which have a relation to an unknown quality (such a relation is equivalent to direct \prop{dct:relation} property).
+\item[\prop{dataid:DerivateRole}:] specifies a \prop{dataid:DatasetRelationship} where one \keyword{Dataset} points out a second \keyword{Dataset}, which is a derivate of the first.
+\item[\prop{dataid:SourceRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \keyword{Dataset} is created by transforming/collecting data from the target \keyword{Dataset}.
+\item[\prop{dataid:CopyRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \keyword{Dataset} is an exact copy of the target \keyword{Dataset} (e.g. when republished under a different domain).
+\item[\prop{dataid:SimilarityRole}:] specifies a \prop{dataid:DatasetRelationship} where the origin \keyword{Dataset} has a significant similarity to the target \keyword{Dataset} (without any assertion as to a dimension of similarity).
 \end{description}
 
 In the example, the \wikipedia source Dataset (named 'pages\_articles') of a given \dbpedia dataset is referred to with the help of this concept:
@@ -2056,7 +2054,7 @@ In the example, the \wikipedia source Dataset (named 'pages\_articles') of a giv
 
 \subsection{Identifier} 
 \label{sec:coreidentifier}
-The class \prop{dataid:Identifier} uniquely identifies any resource (incl. \important{Entities} and \important{Agents}), given an identifier as a literal and a corresponding \prop{datacite:IdentifierScheme} (e.g. ORCID, ResearcherID etc.). Typically an organisation is responsible for issuing and managing Identifiers described with this concept, which can be referred to with \prop{dct:creator}. \core adopted this approach from Datacite ontology (cf. \Cref{sec:datacite}) to provide a schematic way of adding additional, existing identifiers to \important{Entities} and \important{Agents} referenced in a \dataid document.
+The class \prop{dataid:Identifier} uniquely identifies any resource (incl. \keyword{Entities} and \keyword{Agents}), given an identifier as a literal and a corresponding \prop{datacite:IdentifierScheme} (e.g. ORCID, ResearcherID etc.). Typically an organisation is responsible for issuing and managing Identifiers described with this concept, which can be referred to with \prop{dct:creator}. \core adopted this approach from Datacite ontology (cf. \Cref{sec:datacite}) to provide a schematic way of adding additional, existing identifiers to \keyword{Entities} and \keyword{Agents} referenced in a \dataid document.
 
 \begin{figure}[!htbp]
 \centering
@@ -2122,11 +2120,11 @@ Two instances from the running example demonstrating the different usage scenari
 \section{Complex Example on Authorizations} 
 \label{sec:exauthorization}
 
-I decided to provide a more prolific example on the subject of \important{Authorizations} since this concept is of more complex nature. In particular, the impact of \prop{dataid:authorizationScope} with its sub-properties is difficult to understand at first sight.
+I decided to provide a more prolific example on the subject of \keyword{Authorizations} since this concept is of more complex nature. In particular, the impact of \prop{dataid:authorizationScope} with its sub-properties is difficult to understand at first sight.
 
-The property \prop{dataid:authorizationScope} has the role of an abstract super property, pointing out all referred and inferred \important{Entities} under a given \important{Authorization} and is usually not instantiated in a \dataid graph. It can be inferred directly by the existence of property \prop{dataid:authorizedFor}, which is used to reference \important{Entities} to which an \important{Authorization} applies and its rules and restrictions are tailored for.
+The property \prop{dataid:authorizationScope} has the role of an abstract super property, pointing out all referred and inferred \keyword{Entities} under a given \keyword{Authorization} and is usually not instantiated in a \dataid graph. It can be inferred directly by the existence of property \prop{dataid:authorizedFor}, which is used to reference \keyword{Entities} to which an \keyword{Authorization} applies and its rules and restrictions are tailored for.
 
-The following axioms for the transitive property \prop{dataid:authorizationScope} would be desirable to extend the influence of an \important{Authorization} along any property path combined of \prop{foaf:primaryTopic}, \prop{void:subset} and \prop{dcat:distribution}, initiated by an instance of \prop{dataid:authorizedFor}.
+The following axioms for the transitive property \prop{dataid:authorizationScope} would be desirable to extend the influence of an \keyword{Authorization} along any property path combined of \prop{foaf:primaryTopic}, \prop{void:subset} and \prop{dcat:distribution}, initiated by an instance of \prop{dataid:authorizedFor}.
 
 {\footnotesize
 \vspace*{-0.5cm}
@@ -2152,7 +2150,7 @@ void:subset \circ void:subset \circ dcat:distribution \sqsubseteq dataid:authori
 foaf:primaryTopic \circ void:subset \circ dcat:distribution \sqsubseteq dataid:authorizationScope
 \end{align*}
 }%
-With these properties, all subsequent \important{Entities} connected to the origin \important{Entity} (the \important{Entity} referenced from an \important{Authorization} with \prop{dataid:authorizedFor}), are under the influence of this \important{Authorization}, connected with it via the transitive property \prop{dataid:authorizationScope}. One exception remains: those \important{Entities} second in line after the origin \important{Entity} are skipped in this progression.
+With these properties, all subsequent \keyword{Entities} connected to the origin \keyword{Entity} (the \keyword{Entity} referenced from an \keyword{Authorization} with \prop{dataid:authorizedFor}), are under the influence of this \keyword{Authorization}, connected with it via the transitive property \prop{dataid:authorizationScope}. One exception remains: those \keyword{Entities} second in line after the origin \keyword{Entity} are skipped in this progression.
 Properties \prop{dataid:authorisationChain7} to \prop{dataid:authorisationChain9} are solving this issue:
 
 {\footnotesize
@@ -2193,9 +2191,9 @@ With these virtual properties the inference of \prop{dataid:authorizationScope} 
   \label{fig:dlaxioms}
 \end{figure}
 
-Here the \important{Authorization} for \important{Agent} Yellow is not only valid for the \important{DataId} entity, referred to via \prop{dataid:authorizedFor}. By inferring additional statements of this kind, the scope of this \important{Authorization} is extended to every \important{Dataset} and \important{Distribution} connected via \prop{foaf:primaryTopic}, \prop{dcat:distribution} and \prop{void:subset}. By this means, extending the influence (or scope) of an \important{Authorization} over multiple \important{Entities}, without having to point out all of them with \prop{dataid:authorizedFor}, is realised. External properties involved did not have to be distorted, by adding sub-property axioms or an inclusion of rule-based axioms (such as SWRL\footnoteurl{https://www.w3.org/Submission/SWRL/}), avoiding unforeseeable complications in use case extensions, importing \core.
+Here the \keyword{Authorization} for \keyword{Agent} Yellow is not only valid for the \keyword{DataId} entity, referred to via \prop{dataid:authorizedFor}. By inferring additional statements of this kind, the scope of this \keyword{Authorization} is extended to every \keyword{Dataset} and \keyword{Distribution} connected via \prop{foaf:primaryTopic}, \prop{dcat:distribution} and \prop{void:subset}. By this means, extending the influence (or scope) of an \keyword{Authorization} over multiple \keyword{Entities}, without having to point out all of them with \prop{dataid:authorizedFor}, is realised. External properties involved did not have to be distorted, by adding sub-property axioms or an inclusion of rule-based axioms (such as SWRL\footnoteurl{https://www.w3.org/Submission/SWRL/}), avoiding unforeseeable complications in use case extensions, importing \core.
 
-The automatic extension of an \important{Authorization} has also its drawbacks. By introducing multiple \important{Authorizations} in the context of a \dataid document, providing the same \important{AgentRole} for an \important{Entity}, the author can encounter unintended behaviours. In this example the previous context is enriched by introducing an additional \important{Agent} Blue with \important{AgentRole} \important{Maintainer}:
+The automatic extension of an \keyword{Authorization} has also its drawbacks. By introducing multiple \keyword{Authorizations} in the context of a \dataid document, providing the same \keyword{AgentRole} for an \keyword{Entity}, the author can encounter unintended behaviours. In this example the previous context is enriched by introducing an additional \keyword{Agent} Blue with \keyword{AgentRole} \keyword{Maintainer}:
 
 \begin{figure}[!htbp]
 \centering
@@ -2204,9 +2202,9 @@ The automatic extension of an \important{Authorization} has also its drawbacks. 
   \label{fig:dlaxioms}
 \end{figure}
 
-\textit{Dataset C} (and all its \important{Distributions}) has two \important{Maintainers}, both equally permitted to wield \important{AuthorizedActions} as defined by the definition of \prop{dataid:Maintainer}. This behaviour may or may not be intended by the author. To provide the means for restricting \important{Entities} to specific \important{Authorizations}, the property \prop{dataid:needsSpecialAuthorization} was introduced. This sub-property of \prop{dataid:underAuthorization} (the inverse of \prop{dataid:authorizationScope}) allows to point out those \important{Authorizations} with sufficient importance to exert their authority over an \important{Entity}, to the exclusion of other \important{Authorizations} referenced via \prop{dataid:authorizationScope}.
+\textit{Dataset C} (and all its \keyword{Distributions}) has two \keyword{Maintainers}, both equally permitted to wield \keyword{AuthorizedActions} as defined by the definition of \prop{dataid:Maintainer}. This behaviour may or may not be intended by the author. To provide the means for restricting \keyword{Entities} to specific \keyword{Authorizations}, the property \prop{dataid:needsSpecialAuthorization} was introduced. This sub-property of \prop{dataid:underAuthorization} (the inverse of \prop{dataid:authorizationScope}) allows to point out those \keyword{Authorizations} with sufficient importance to exert their authority over an \keyword{Entity}, to the exclusion of other \keyword{Authorizations} referenced via \prop{dataid:authorizationScope}.
 
-The following example again expands the already known scenario, by introducing a third \important{Authorization} for \important{Agent} Green:
+The following example again expands the already known scenario, by introducing a third \keyword{Authorization} for \keyword{Agent} Green:
 
 \begin{figure}[!htbp]
 \centering
@@ -2215,9 +2213,9 @@ The following example again expands the already known scenario, by introducing a
   \label{fig:dlaxioms}
 \end{figure}
 
-While \textit{Dataset A} and \textit{Distributions A1} and \textit{A2} are under the \important{Authorizations} of \important{Agent} Yellow and \important{Agent} Green, only \textit{Distribution A2} will be maintained by both \important{Agents}. \textit{Dataset A} and \textit{Distribution A1} require specifically the \important{Authorization} of \important{Agent} Green for the purpose of providing the \important{AgentRole} of \important{Maintainer}.
+While \textit{Dataset A} and \textit{Distributions A1} and \textit{A2} are under the \keyword{Authorizations} of \keyword{Agent} Yellow and \keyword{Agent} Green, only \textit{Distribution A2} will be maintained by both \keyword{Agents}. \textit{Dataset A} and \textit{Distribution A1} require specifically the \keyword{Authorization} of \keyword{Agent} Green for the purpose of providing the \keyword{AgentRole} of \keyword{Maintainer}.
 
-This mechanism is useful when introducing different levels of privacy into the domain, for example, a Document Management System (DMS). Two groups of users are specified: The first group (yellow group) should only be able to read the content of a given collection of documents, while the second group (blue group) is also allowed to modify these documents. Therefore, defining two new \important{AgentRoles} is advisable. \important{AgentRole} 'Reader' can only read the content of \important{Entities} available to it, while the 'Editor' also allows for modifying the content. These \important{AgentRoles} are linked to via \prop{dataid:authorityAgentRole} from the respective \important{Authorizations} of the two groups (\prop{dataid:authorizedAgent} points out the members of a group).
+This mechanism is useful when introducing different levels of privacy into the domain, for example, a Document Management System (DMS). Two groups of users are specified: The first group (yellow group) should only be able to read the content of a given collection of documents, while the second group (blue group) is also allowed to modify these documents. Therefore, defining two new \keyword{AgentRoles} is advisable. \keyword{AgentRole} 'Reader' can only read the content of \keyword{Entities} available to it, while the 'Editor' also allows for modifying the content. These \keyword{AgentRoles} are linked to via \prop{dataid:authorityAgentRole} from the respective \keyword{Authorizations} of the two groups (\prop{dataid:authorizedAgent} points out the members of a group).
 
 \begin{figure}[!htbp]
 \centering
@@ -2226,7 +2224,7 @@ This mechanism is useful when introducing different levels of privacy into the d
   \label{fig:dlaxioms}
 \end{figure}
 
-Both \important{Authorizations} are authorised for the same document collection (\important{Dataset}) and its \important{Distributions} as PDF and MS\_Word versions of the same content in the DMS. Since the MS\_Word version of the documents is used for editing the content, while its PDF counterpart is the publishing version, it is sensible to allow only the Editors (blue group) access to the MS\_Word \important{Distribution} by using \prop{dataid:needsSpecialAuthorization}. 
+Both \keyword{Authorizations} are authorised for the same document collection (\keyword{Dataset}) and its \keyword{Distributions} as PDF and MS\_Word versions of the same content in the DMS. Since the MS\_Word version of the documents is used for editing the content, while its PDF counterpart is the publishing version, it is sensible to allow only the Editors (blue group) access to the MS\_Word \keyword{Distribution} by using \prop{dataid:needsSpecialAuthorization}. 
 
 \chapter{Publishing Datasets with DataID}
 \label{chap:bestprctice}
@@ -2560,8 +2558,8 @@ Providing raw RDF data alone is not enough to disseminate Linked Open Data.
 \label{chap:dmp}
 Over the last years, Data Management Plans (\dmp) have become a requirement for project proposals within most major research funding institutions. It states what types of data and metadata are employed, which limitations apply, where responsibilities lie and how the data is stored, both during research project and after the project is completed. 
 
-The use case described here will introduce an extension to the \core ontology to extensively describe a Data Management Plan for digital data in a universal way, laying the foundation for tools helping researchers and funders with the drafting and implementing of \dmp{}s.
-Based on multiple requirements, raised from different \dmp guidelines, I will showcase the creation of a \dataid extension. I incorporated the \redata ontology to describe repositories and institutions, exemplifying the use of external ontologies. This approach will demonstrate the application of the best practices introduced in \Cref{sec:composingmetadata} for the stages 'Specify' and 'Model' of the lifecycle for dataset metadata. Furthermore, this use case exemplifies the ability of the \ecosystem to solve complex demands on dataset metadata based on its trait of Extensibility.
+The use case described here will introduce an extension to the \core ontology to describe Data Management Plans for digital data in an extensive and universal way, laying the foundation for tools helping researchers and funders with the drafting and implementing of \dmp{}s.
+Based on multiple requirements, raised from different \dmp guidelines, I will showcase the creation of a \dataid extension. I incorporated the \redata ontology to describe repositories and institutions, exemplifying the use of external ontologies. This approach will demonstrate the application of the best practices introduced in \Cref{sec:composingmetadata} for the stages 'Specify' and 'Model' of the lifecycle for dataset metadata. Furthermore, this use case exemplifies the ability of the \ecosystem to solve complex demands on dataset metadata, exploiting its trait of Extensibility.
 %A concise summary of how we solved all of our requirements finalises this section.
 
 \section{Specifying requirements of a DMP} 
@@ -2631,12 +2629,12 @@ My goal is to provide aid for researchers in drafting a \dmp and implementing it
 
 The final \dmp use case extension, created to resolve the requirements listed in the last section, will extend \core together with the existing extension \textit{Activities \& Plans} and the repository ontology of \textit{re3data.org} (cf. \Cref{sec:re3data}). All three ontologies will be outlined in this section in a concise manner. For an exhaustive description, please refer to the online documentation referenced below. 
 
-\paragraph{Activities \& Plans} To utilise the full breath of provenance offered by \prov and adding further semantics to satisfy all provenance related requirements is the purpose of this extension, providing the means to record all steps which are necessary to recreate a certain dataset, given the same data sources.
+\paragraph{Activities \& Plans} To utilise the full breath of provenance offered by \prov and adding further semantics to satisfy all provenance related requirements, is the purpose of this extension, providing the means to record all steps which are necessary to recreate a certain dataset, given the same data sources.
 Besides \prov and \core, it imports the following ontologies:
 
 \begin{description}
 \item[\dlo] The Data Lifecycle Ontology (cf. \Cref{sec:dlo}) is used to define stages of the data management lifecycle. By combining both ontologies of the data engineering side of the ALIGNED project (i.e. \dlo and \core) \cite{SolankiBFKDB16}, I established the means to portray datasets (or any data artefact) in the context of the data management life-cycle. 
-\item[\org] The Organization Ontology (cf. \Cref{sec:org}) extends \core with important context information about the organisational background of involved Agents, which is an important detail when describing the interplay of \important{Agents} and \important{Activities}.
+\item[\org] The Organization Ontology (cf. \Cref{sec:org}) extends \core with important context information about the organisational background of involved Agents, which is an important detail when describing the interplay of \keyword{Agents} and \keyword{Activities}.
 \end{description}
 \begin{figure}
 \vspace*{-1.5cm}
@@ -2648,9 +2646,9 @@ Besides \prov and \core, it imports the following ontologies:
 \end{figure}
 
 To integrate DLO in the existing landscape of \dataid and \prov concepts (\Cref{fig:acp} - specification:\footnoteurl{https://github.com/dbpedia/DataId-Ontology/blob/07a6a1795637973a921a37f086d0e4f57968b1d5/acp/activitiesPlansExt.ttl}), I extended the list of sub-class axioms for \prop{dataid:Dataset}, to inherit \prop{dlo:DataEntity}\footnote{Note: this is no ontology hijacking, since one reason for creating the \ecosystem was to provide a controlled environment for redefining concepts or properties in the extension (cf. \Cref{sec:landscaping}).}.
-DLO is used to classify different types of activities (\prop{dlo:LifeCycleProcess}) and to adopt its basic semantics for an exchange of data artefacts between activities. Similar to \prop{dataid:associatedAgent} and \prop{dataid:Authorization} (cf. \Cref{sec:coreauthorization}), the property \prop{prov:wasAssociatedWith} is further qualified by the class \prop{dataid-acp:ActivityAssociation}, reusing relevant properties for this kind of mediator (such as \prop{dataid:authorizedAgent}). This class can not only qualify a generic association with an \important{Agent}, \important{AgentRole} and a time interval but provides the means of referencing a \prop{prov:Plan}, which was responsible for the scheduling of an \important{Activity} in the first place.
+DLO is used to classify different types of activities (\prop{dlo:LifeCycleProcess}) and to adopt its basic semantics for an exchange of data artefacts between activities. Similar to \prop{dataid:associatedAgent} and \prop{dataid:Authorization} (cf. \Cref{sec:coreauthorization}), the property \prop{prov:wasAssociatedWith} is further qualified by the class \prop{dataid-acp:ActivityAssociation}, reusing relevant properties for this kind of mediator (such as \prop{dataid:authorizedAgent}). This class can not only qualify a generic association with an \keyword{Agent}, \keyword{AgentRole} and a time interval but provides the means of referencing a \prop{prov:Plan}, which was responsible for the scheduling of an \keyword{Activity} in the first place.
 
-\important{Plans} offer the necessary properties to (pre-) define a sequence of \important{Activities}, governed by \important{Agents} (with responsibilities), which are generating \important{Entities}. An instance of \prop{prov:Plan} is constituted of multiple sub-plans, which have a defined order. This order specifies when an \important{Activity} is executed. While \prop{dataid-acp:ActivityAssociation} (and its associated \important{AgentRole}) specifies responsibilities for a specific \important{Activity}, \prop{dataid-acp:PlanResponsibility} defines responsibilities of \important{Agents} regarding the \important{Plan} itself (such as defining the order of \important{Activities} etc.).
+\keyword{Plans} offer the necessary properties to (pre-) define a sequence of \keyword{Activities}, governed by \keyword{Agents} (with responsibilities), which are generating \keyword{Entities}. An instance of \prop{prov:Plan} is constituted of multiple sub-plans, which have a defined order. This order specifies when an \keyword{Activity} is executed. While \prop{dataid-acp:ActivityAssociation} (and its associated \keyword{AgentRole}) specifies responsibilities for a specific \keyword{Activity}, \prop{dataid-acp:PlanResponsibility} defines responsibilities of \keyword{Agents} regarding the \keyword{Plan} itself (such as defining the order of \keyword{Activities} etc.).
 
 \paragraph{The re3data.org ontology} To cover the requirements for preservation (e.g. \textbf{(R1)}), a comprehensive description of repositories is necessary. The \redata schema \cite{r3dSchema} (cf. \Cref{sec:re3data}) does provide a thorough description of repositories and the unique opportunity to incorporate an existing, up-to-date collection of research repositories in future \dataid{}-based applications. To accomplish the integration into the \dmp ontology extension, I transformed the current XML-based schema into an OWL-ontology, using established vocabularies like \prov and \org. The schema, as well as the data provided by \redata, will be available as Linked Data (e.g. via \redata ReSTful-API), thus making it discoverable and more easily accessible for services and applications, reaching a larger circle of users. This effort was support generously by the re3data.org project.
 
@@ -2667,8 +2665,7 @@ The current version can be accessed here:\\
 \url{https://github.com/re3data/ontology/blob/master/r3dOntology.ttl}}
 \end{figure}
 
-Alongside the repository concept, a rudimentary description of institutions which are hosting or funding a repository is needed to ensure long-term sustainability and availability of a repository. The derived \redata ontology (\Cref{fig:re3data}) supplements \prop{r3d:Repository} and \prop{r3d:Institution} with fitting \prov sub-classes 
-(\prop{prov:Entity}, \prop{prov:Organization}),
+Alongside the repository concept, a rudimentary description of institutions which are hosting or funding a repository is needed to ensure long-term sustainability and availability of a repository. The derived \redata ontology (\Cref{fig:re3data}) supplements \prop{r3d:Repository} and \prop{r3d:Institution} with fitting \prov concepts (\prop{prov:Entity}, \prop{prov:Organization}),
 making them subject to provenance descriptions. The \org ontology is used to extend the institution class further, providing organisational descriptions.
 
 In the ontology version of the \redata schema, I tried to combine multiple similarly structured XML elements into a single concept, where possible.
@@ -2724,7 +2721,7 @@ Thereby, the full Data Management Lifecycle of datasets is supported \textbf{(R1
 
 \section{Summary} 
 \label{sec:dmpsummary}
-I created 3 classes and 17 properties for this use case extension, which, together with the concepts and properties introduced by the \redata ontology and the \textit{Activities \& Plans} extension, can describe Data Management Plans as demanded by the requirements of \Cref{sec:dmprequ}. 
+I created 3 classes and 17 properties for this use case extension, which, together with the concepts and properties introduced by the \redata ontology and the Activities \& Plans extension, can describe Data Management Plans as demanded by the requirements of \Cref{sec:dmprequ}. 
 %(e.g. the English \dbpedia dataset\footnoteurl{http://downloads.dbpedia.org/2015-10/core-i18n/en/2015-10_dataid_en.ttl}).
 
 This approach of extending and specialising the use of \core, while reusing (partial) solutions to more specific problems, demonstrates the capability of the \ecosystem to adapt to any use case for dataset metadata, without impacting the kernel nature of \core. Thereby, proving its Extensibility.
@@ -2736,16 +2733,23 @@ This section demonstrated the first two stages of the engineering lifecycle for 
 \label{chap:map}
 
 This section is focused on the Interoperability of \core with other dataset metadata vocabularies. As discussed in \Cref{sec:extensvsinter}, Interoperability is more easy to establish, when interoperating with an upper (general) ontology. 
-In the case of \dataid, Interoperability is achieved on a semantic level (the fourth level of conceptual interoperability - cf. \Cref{sec:interoperability}) without consideration for contextual restrictions on properties. Vocabularies imported into \core are conceivably easy to interoperate with, since an agreement on the metadata format exists (i.e. Dublin Core, \dcat, \prov, \void). Other vocabularies need a metadata mapping to achieve full Interoperability.
+In the case of \core, Interoperability is achieved on a semantic level (the fourth level of conceptual interoperability - cf. \Cref{sec:interoperability}) without consideration for contextual restrictions on properties. Vocabularies imported into \core are conceivably easy to interoperate with, since an agreement on the metadata format exists (i.e. Dublin Core, \dcat, \prov, \void). Other vocabularies need a metadata mapping to achieve full Interoperability.
 
 \section{DCAT Application Profile} 
 \label{sec:mapdcatap}
 
-I will demonstrate how easy a metadata mapping can be achieved between \core and another \dcat{}-based vocabulary. \dcatap is an application profile (cf. \Cref{sec:dcatap}) of \dcat which also imports the \adms (cf. \Cref{sec:adms}), Dublin Core and other vocabularies \cite{dcatap11}. Properties of the \dcat or Dublin Core vocabularies only need minimal attention to achieve a mapping. In fact, only those properties which are restricted in range (such as \prop{dct:license}, \prop{dcat:mediaType} or \prop{dct:language}) are of concern. Others need no mapping at all. Since \dcatap uses the same basic concept structure and the same levels of abstraction, no special consideration of redistributing properties over different concepts with different meanings has to be undertaken. When converting \dataid metadata to \dcatap, information about \important{Authorizations} and all pertaining concepts are lost. Some associated agent relations might be converted to standard properties such as \prop{dct:publisher} or \prop{dct:maintainer}.
+I will demonstrate how easy a metadata mapping can be achieved between \core and another \dcat{}-based vocabularies. \dcatap (cf. \Cref{sec:dcatap}) is an application profile of \dcat which also imports the \adms (cf. \Cref{sec:adms}), Dublin Core and other vocabularies \cite{dcatap11}. Properties of the \dcat or Dublin Core vocabularies only need minimal attention to achieve a mapping. In fact, only those properties which are restricted in range by \core (such as \prop{dct:license}, \prop{dcat:mediaType} or \prop{dct:language}) are of concern. Since \dcatap uses the same basic concept structure and the same levels of abstraction, no special consideration of redistributing properties over different concepts with different meanings has to be undertaken. When converting \dataid metadata to \dcatap, information about \keyword{Authorizations} and all pertaining concepts are lost. Some associated agent relations might be converted to standard properties such as \prop{dct:publisher} or \prop{dct:maintainer}.
 
-When converting into a \dataid, properties of the \adms vocabulary, reused by \dcatap, will need either a mapping or are otherwise dealt with. 
+When converting into a \dataid, properties of the \adms vocabulary, reused by \dcatap, will need either a mapping or they are neglected.
 %Properties of \spdx can easily be reused, since this ontology is only used in connection with checksums in both vocabularies.
 The easiest way to resolve most of the issues in this particular instance, would be to extend \core with the \adms vocabulary if the surrounding circumstances would allow for this change.
+
+The reason why a particular property is in need of a mapping might differ. Possible resolutions of such issues are listed below:
+\begin{description}
+\item[missing equivalent:] \core has no suitable property to reflect this information. To resolve this mapping, either an extension to \core is constructed, an unused property (e.g. from \dcat) is re-purposed (which I strongly discourage) or it is neglected all together.
+\item[property mapping:] An existing property is available in \core to convey this kind of information. In where the ranges of both properties do not match, a transformation of the object instance/value has to be performed (see next item).
+\item[range restriction:] \core imposes a range restriction on this property. As a result, the values used with \dcatap often need to be transformed into an instance of the concept it is restricted to (e.g. for \prop{dct:language}: literal "en" transformed to <http://lexvo.org/id/iso639-3/eng>).
+\end{description}
 
 This is the list of all properties of the \dcatap vocabulary, which would need a mapping (or other actions) to interoperate safely with \core:
 
@@ -2773,13 +2777,6 @@ This is the list of all properties of the \dcatap vocabulary, which would need a
     \caption{Properties of the \dcatap vocabulary in need of a mapping to \core}
     \label{tab:dcatapmapping}
 \end{table}
-
-Possible resolutions:
-\begin{description}
-\item[missing equivalent:] \core has no suitable property to reflect this information. To resolve this mapping, either an extension to \core is constructed, an unused property (e.g. from \dcat) is re-purposed (which I strongly discourage) or it is neglected all together.
-\item[property mapping:] An existing property is available in \core to convey this kind of information. In where the ranges of both properties do not match, a transformation of the object instance/value has to be performed (see next item).
-\item[range restriction:] \core imposes a range restriction on this property. As a result, the values used with \dcatap often need to be transformed into an instance of the concept it is restricted to (e.g. for \prop{dct:language}: literal "en" transformed to <http://lexvo.org/id/iso639-3/eng>).
-\end{description}
 
 I will not produce an actual mapping here. It is obvious that the extend of this effort can not be immense. One advantage of basing \dataid on \dcat is the evident ease in with many metadata formats can be interoperated with.
 
@@ -2810,7 +2807,7 @@ I created explicit mappings for \cmd profiles, accountable for 56\% of all publi
     \label{tab:cmdi_profiles}
 \end{table}
 
-The creation and further adaptation of these mappings showed that the support of data considered essential in \dataid differs between all profiles. The summary table \ref{tab:cmdi_profiles} demonstrates this effect for primary properties of \prop{dataid:Dataset} and the support of different \important{AgentRoles} specified in \prop{dataid:Agent}. Apparently there is a varying degree of conformance of both approaches, indicating possible shortcomings in specific \cmd profiles. An example for such a potential deficit is the fine-grained modelling of involved persons or organisations via \dataid{}'s Agent concept that is only partially supported in most profiles.
+The creation and further adaptation of these mappings showed that the support of data considered essential in \dataid differs between all profiles. The summary table \ref{tab:cmdi_profiles} demonstrates this effect for primary properties of \prop{dataid:Dataset} and the support of different \keyword{AgentRoles} specified in \prop{dataid:Agent}. Apparently there is a varying degree of conformance of both approaches, indicating possible shortcomings in specific \cmd profiles. An example for such a potential deficit is the fine-grained modelling of involved persons or organisations via \dataid{}'s Agent concept that is only partially supported in most profiles.
 Some \cmd profiles can not be covered solely with \core. In these cases, an specific extension (or the reuse of existing \dataid extensions) is necessary to convey the complete metadata document with \dataid.
 
 
@@ -2819,8 +2816,7 @@ Some \cmd profiles can not be covered solely with \core. In these cases, an spec
 
 \section{Publishing DBpedia datasets with DataID metadata} 
 \label{sec:evaldbpedia}
-In this first approach to evaluate \dataid, I want to have a closer look on the already presented example of \dbpedia datasets (cf. \Cref{sec:coreclasses}) in affiliation with \dataid metadata. Therefore, this section will not only evaluate metadata specific aspects of this example, but tries to measure the overall effect of better metadata on datasets.
-\todo{maybe rephrase} 
+In this first approach to evaluate \dataid, I want to have a closer look on the already presented example of \dbpedia datasets (cf. \Cref{sec:coreclasses}) in affiliation with \dataid metadata. Therefore, this section will not only evaluate metadata specific aspects of this example but it measure the overall effect of better metadata on datasets.
 I will do so by evaluating against the best practices presented by the W3C 'Data on the Web' working group and the FAIR Principles (cf. \Cref{sec:fair}). In both cases I will gauge each practice by its state of fulfilment for the \dbpedia use case. I will assign one of the following ratings to every practice: \textbf{(2)} The requirement is supported in full. \textbf{(1)} The requirement is partially met. \textbf{(0)} \dbpedia does not support this requirement. A short statement will explain the decision. While this is an evaluation of the \dbpedia datasets against these practices, many of them are dependent on the \dataid documents, published alongside the datasets, for completion. To point out these instances, a second look at these particular practices is taken in \Cref{sec:evaldataid}.
 
 \subsection{Data on the Web Best Practices} 
@@ -3117,8 +3113,7 @@ With the evidence already gathered in this section, I want to assess the fulfilm
 
 \paragraph{Objective 1.} Provide sufficient support for extensive and machine-readable representations for Provenance, Licensing and data Access.
 
-Beginning with the very first version of \dataid, Provenance was one of the topmost items on my list to improve dataset metadata, as an omnipresent requirement in most use cases with large or complex datasets. With the conception of the Provenance Ontology (\prov) and its characteristic way of representation and interchange of provenance information on the Web, the ideal companion ontology for \dcat was found. By creating the means to qualify relations, (re-) introducing the effective approach of inserting relationship objects as mediators between subject and object, relationships can express roles, temporal or spatial restrictions and experience state changes. This measure ensures the referential and functional integrity of the involved Entities.
-\todo{talk about referential integrity}
+Beginning with the very first version of \dataid, Provenance was one of the topmost items on my list to improve dataset metadata, as an omnipresent requirement in most use cases with large or complex datasets. With the conception of the Provenance Ontology (\prov) and its characteristic way of representation and interchange of provenance information on the Web, the ideal companion ontology for \dcat was found. By creating the means to qualify relations, (re-) introducing the effective approach of inserting relationship objects as mediators between subject and object, relationships can express roles, temporal or spatial restrictions and experience state changes.
 
 In addition to the basic possibility to qualify relations between Entities, Agents and Activities, \core specialised in particular on relations between (dataset) Entities and Agents. With \prop{dataid:Authorization} a qualification object for such relations was introduced, providing a record about what an Agent is allowed to do with a particular collection of Entities. The \prop{dataid:DatasetRelationship} mediator between different datasets allows for a well-defined possibility to declare any relation, two datasets might enter into. 
 Currently, the \ecosystem provides the extension \textit{Activities \& Plans}, which further specifies ways to record Provenance, focusing on Activities and Plans. Its applicability was demonstrated in \Cref{chap:dmp}.
@@ -3161,16 +3156,13 @@ This table shows the result of this effort. Each reused ontology from the \ecosy
 \end{table}
 
 \core only imports recommended or otherwise supported ontologies by the W3C.
-\todo{datacite?}
 Ontologies, such as \lvont, \odrl and \spdx are used to restrict some property ranges but are not imported, as to keep a separation between \dataid and developments of the origin environment of these ontologies.
 
 \paragraph{Objective 3.} Show, that by modularising into a landscape of ontologies, \dataid preserves the general character of \dcat, supporting Extensibility and Interoperability.
 
 As discussed in \Cref{sec:multilayer}, to keep \dataid as extensible and interoperable as \dcat, I decided to modularize \dataid into multiple extension ontologies around a single core. 
 
-The modular approach paired with the effort to keep \core as general (simplistic) as possible, without compromising on the goals lined out, has proven to be an expedient solution. As a side effect, \core adheres to profile OWL2 RL\footnote{with the exception of the 5 axioms of the \prov ontology pointed out in the \prov specification: \url{https://www.w3.org/TR/prov-o/#owl-profile}} 
-\todo{put this somewhere not in a footnote} 
-which adds additional possibilities to use cases where reasoning over metadata is of concern and simplifies the extending of this ontology.
+The modular approach paired with the effort to keep \core as general (simplistic) as possible, without compromising on the goals lined out, has proven to be an expedient solution. As a side effect, \core adheres to profile OWL2 RL which adds additional possibilities to use cases where reasoning over metadata is of concern and simplifies the extending of this ontology.
 
 Modularity and simplicity are general aspects of good metadata (cf. \Cref{sec:metadata}) and can be seen as the foundation for subsequent traits such as Extensibility and Interoperability. Both of these characteristics were demonstrated in \Cref{chap:dmp} and \Cref{chap:map} respectively. With these measures in place, \core extends \dcat in a way, which does not impede its wide applicability in data portals and other applications. Existing \dcat solutions can therefore easily be transformed into \dataid based metadata. 
 
@@ -3226,21 +3218,21 @@ Combining data and software engineering processes to increase quality, productiv
 \chapter{Conclusion and Future Work}
 \label{chap:future}
 
-This work presented a comprehensive introduction to \dataid, providing structured dataset metadata for any domain, type of data or dataset structure. In particular, \core was portrayed in great detail as the kernel element of the \ecosystem. 
+This work presented a comprehensive introduction to the \ecosystem, a multi-layered ontology environment, facilitating the means to reuse and extend ontologies effortlessly to meet complex demands on dataset metadata. In particular, \core was described in great detail as the kernel element of this ecosystem. 
 
 Based on a study of existing metadata vocabularies, an extensive list of inadequacies and further demands on dataset metadata was compiled, guiding the course of this work.
-As a result, the monolithic approach of a first version of the \dataid ontology was modularised into multiple extension ontologies around a single core.
+As a result, the monolithic approach of a first version of the \dataid ontology was modularised into multiple extension ontologies around a single core, establishing the \ecosystem.
+
 \core extends the \dcat vocabulary to provide greater specificity on many important issues (such as Access, Licensing and Provenance), without encroaching on the central traits of \dcat, easy Extensibility and Interoperability with other existing dataset metadata formats. 
-Furthermore, this thesis demonstrated the abilities of the \ecosystem to accommodate for complex metadata requirements (i.e. Data Management Plans), by extending \core and even incorporating external ontologies (i.e. \redata ontology), while keeping the ability to interoperate with other metadata vocabularies (such as \cmdi) in turn.
+In total, \core consists of 19 classes, 43 object properties, eight datatype properties and 29 named individuals. Also, it conforms to the OWL2 RL profile (apart from minor caveats, see \Cref{sec:coreintro}).
 Its ability to model complex authorisations with minimal effort for any dataset environment offers additional possibilities for comprehensive metadata demands.
+
+This thesis demonstrated the capabilities of the \ecosystem to accommodate for complex metadata requirements (i.e. Data Management Plans), expanding \core with existing extensions and incorporating an external ontology (i.e. \redata ontology), while maintaining the ability to interoperate with other metadata vocabularies (such as \cmdi) in turn.
+The \ecosystem provides a controlled environment, in which the interplay of different extensions and \core will be regulated and documented, making it easy to combine multiple extensions with \core to solve a given usage scenario. Currently, \core can be extended by three existing extensions from the common layer of the \ecosystem, with more already planned.
 %It serves as a controlled environment in which to extend \core with existing extensions and use case specific adaptations
 
 \dataid metadata has proven to be a very promising partner for dataset publishers, such as \dbpedia, aiding not only publication tasks, but providing the comprehensive metadata needed to align with the best practices of FAIR and the Data on the Web W3C working group.
 Moreover, \dataid has shown that it is capable of serving as a pivotal member in the ALIGNED Suite of Ontologies to cover all demands for dataset metadata in the context of the co-evolving lifecycles of software and data management.
-
-In total, \core consists of 19 classes, 43 object properties, eight datatype properties and 29 named individuals. It is consistent with the OWL2 RL profile (with minor adaptations, see \Cref{}).
-\todo{todo} 
-The \ecosystem provides a controlled environment, in which the interplay of different extensions and \core is regulated and documented, making it easy to combine multiple extensions with \core to solve a given usage scenario. Currently, \core can be extended by three existing extensions from the common layer of the \ecosystem, with more already planned.
 
 Additional work has to be done in defining the proper inter-semantics of the \ecosystem.
 In that, appropriate regulations and guidelines have to be in place before incorporating new \dataid extensions into the common layer of ontologies. A toolchain for validating the interoperability of multiple extensions in one ontology would go a long way in helping users to compile their use case extensions. I have suggested the Dacura Data Curation System\footnoteurl{http://dacura.cs.tcd.ie} as a possible solution.
@@ -3254,20 +3246,21 @@ Currently, a \dataid service stack and website is being implemented, to simplify
 \item automatic publication of \dataid documents to dataset portals like Datahub\footnoteurl{https://datahub.io} or Linghub\footnoteurl{http://linghub.lider-project.eu}
 \end{itemize}
 
-Integrating \dataid fully into the processes and tools defined by the ALIGNED project is another outstanding task.
+Integrating \dataid fully into the processes, use cases and tools developed by the ALIGNED project is another outstanding task.
 
 
 %************************************************************************************************************************
 %* glossary, appendix, bibliography, etc.
 %************************************************************************************************************************
 
+\iffalse
 \addchap{Glossary}   
 \begin{description}
 \item[Vocabulary] On the Semantic Web, vocabularies define the concepts and relationships (also referred to as "terms") used to describe and represent an area of concern. Vocabularies are used to classify the terms that can be used in a particular application, characterize possible relationships, and define possible constraints on using those terms. In practice, vocabularies can be very complex (with several thousands of terms) or very simple (describing one or two concepts only)\cite{W3CVOCONTO}.
 
 \item[Ontology] There is no clear division between what is referred to as "vocabularies" (cf. Vocabulary) and "ontologies". The trend is to use the word "ontology" for more complex, and possibly quite formal collection of terms, whereas "vocabulary" is used when such strict formalism is not necessarily used or only in a very loose sense. Vocabularies are the basic building blocks for inference techniques on the Semantic Web\cite{W3CVOCONTO}.
 
-\item[Application Profile] a set of metadata elements defined for a particular application or other limited purposes, often based on a broader schema (like an ontology). Such a profile is either constructed under a closed world assumption or provides many restrictions to create a view \todo{go on}
+\item[Application Profile] a set of metadata elements defined for a particular application or other limited purposes, often based on a broader schema (like an ontology). Such a profile is either constructed under a closed world assumption or provides many restrictions to create a view
 
 \item[AP-NISO]Profiles are subsets of a scheme
 that are implemented by a particular
@@ -3293,10 +3286,17 @@ number of elements.
 
 \item[Entity–relationship model] describes inter-related things of interest in a specific domain of knowledge. An ER model is composed of entity types (which classify the things of interest) and specifies relationships that can exist between instances of those entity types.
 \end{description}
+\fi
 
 %\bibliographystyle{alpha}
 %\bibliography{own.bib}
 \printbibliography[title=References]
+
+
+%\sloppy{}
+\listoffigures
+\listoftables
+%\fussy{}
 
 \addchap{Appendix I}
 \label{chap:appendix1}

@@ -72,7 +72,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.7}Data Lifecycle Ontology (DLO)}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}The Organization Ontology (ORG)}{37}
+\contentsline {subsection}{\numberline {3.2.8}The Organization Ontology (ORG)}{38}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.9}DBpedia}{38}
 \defcounter {refsection}{0}\relax 
@@ -226,12 +226,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {10}Conclusion and Future Work}{129}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Glossary}{131}
+\contentsline {chapter}{\nonumberline Appendix I}{143}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Appendix I}{141}
+\contentsline {paragraph}{DataID core specification}{143}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{DataID core specification}{141}
+\contentsline {chapter}{\nonumberline Appendix II}{145}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Appendix II}{143}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Declaration}{151}
+\contentsline {chapter}{\nonumberline Declaration}{153}

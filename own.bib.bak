@@ -1208,3 +1208,21 @@ Lessons from the Dublin Core Experience},
   type        = "{W3C} Implementation Report",
   institution = "W3C"
 }
+
+@inproceedings{akhtar2008xsparql,
+  address = {Berlin, Heidelberg},
+  author = {Akhtar, Waseem and Kopecky, Jacek and Krennwallner, Thomas and Polleres, Axel},
+  biburl = {https://www.bibsonomy.org/bibtex/23893fa9e66b3f12d435ce19c253d860b/benedikt.linse},
+  booktitle = {Proceedings of the 5th European Semantic Web Conference},
+  editor = {Hauswirth, Manfred and Koubarakis, Manolis and Bechhofer, Sean},
+  interhash = {32f21ca6ffe06780f5f900919fc14b22},
+  intrahash = {3893fa9e66b3f12d435ce19c253d860b},
+  keywords = {RDF XML XSLT XSPARQL},
+  month = {June},
+  publisher = {Springer Verlag},
+  series = {LNCS},
+  timestamp = {2008-11-21T11:32:48.000+0100},
+  title = {{XSPARQL}: Traveling between the {XML} and {RDF} worlds ? and avoiding the {XSLT} pilgrimage},
+  url = {http://data.semanticweb.org/conference/eswc/2008/papers/119},
+  year = 2008
+}
